@@ -22,7 +22,7 @@ provider "registry.scalr.io/scalr/scalr" {
 
 provider "registry.terraform.io/hashicorp/aws" {
   version     = "4.55.0"
-  constraints = "4.55.0"
+  constraints = ">= 2.46.0, 4.55.0"
   hashes = [
     "h1:FimynEcnzzaqRpUr0U02YZ4Q+Xk4sIaa+sxbAVEkCvo=",
     "h1:znXGcgeQe5QHI6n7XbGCd/o1uc9r5Z1H533+V520l8g=",
