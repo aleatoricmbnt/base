@@ -1,0 +1,1 @@
+keeper-variable = "expected string"
