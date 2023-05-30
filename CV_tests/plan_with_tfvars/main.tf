@@ -6,5 +6,5 @@ resource "null_resource" "test" {
 
 variable "string" {
   type = string
-  description = "Set relative path to varfile as '..\tfvars\default.tfvars'"
+  description = "Set relative path to varfile as '..\\tfvars\\default.tfvars'"
 }
