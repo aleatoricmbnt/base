@@ -1,5 +1,5 @@
 module "referencing" {
-  source = "../main/git_https_target"
+  source = "../../main/git_https_target"
 }
 
 output "referencing_module_id_from_output" {
