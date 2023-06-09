@@ -8,7 +8,8 @@ resource "null_resource" "check_ip" {
 }
 
 data "local_file" "read_ip" {
-  filename = "ip.txt"
+  depends_on = [ null_resource.check_ip ]
+  filename = "./ip.txt"
 }
 
 output "scalr_ip" {
