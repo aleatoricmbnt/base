@@ -1,6 +1,6 @@
 version = "v1"
 
-policy "always_failed" {
+policy "failed_by_error_name" {
   enabled           = true
   enforcement_level = "soft-mandatory"
 }
