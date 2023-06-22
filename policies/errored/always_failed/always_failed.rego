@@ -1,3 +1,5 @@
+package terraform
+
 deny[reason] {
     2 < 3
 
