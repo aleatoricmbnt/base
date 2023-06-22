@@ -1,5 +1,5 @@
 deny[reason] {
-    true
+    2 < 3
 
     reason := "I am failed :c"
 }
