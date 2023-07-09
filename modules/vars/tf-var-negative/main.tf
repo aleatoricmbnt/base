@@ -85,3 +85,11 @@ output "substraction_C3_C-3" {
 output "hardcoded_negative_float" {
   value = -0.192
 }
+
+output "varlist" {
+  value = var.untyped_list
+}
+
+output "varobject" {
+  value = var.typed_object
+}
