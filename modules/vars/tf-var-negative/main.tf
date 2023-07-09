@@ -50,6 +50,20 @@ variable "typed_object" {
   }
 }
 
+variable "list_numbers" {
+  type = list(number)
+  default = [0, 1, 2]
+}
+
+locals {
+  json_content = jsondecode(file("test_data.json"))
+  first_value  = local.json_content.list[0]
+}
+
+output "read_json" {
+  value = local.json_content.list[var.list_numbers[0]]
+}
+
 output "complex_addition" {
   value = var.untyped_list[0] + var.typed_object["num_attr"]
 }
