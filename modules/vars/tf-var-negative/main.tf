@@ -50,8 +50,12 @@ variable "typed_object" {
   }
 }
 
-output "list_addition" {
+output "complex_addition" {
   value = var.untyped_list[0] + var.typed_object["num_attr"]
+}
+
+output "complex_addition_long" {
+  value = var.untyped_list[0] + var.typed_object["num_attr"] + var.typed_object["list_attr"][0]
 }
 
 output "addition_A10_A-10" {
