@@ -25,10 +25,12 @@ variable "typed_B-5" {
 
 variable "string_C3" {
   default = "3"
+  type = string
 }
 
 variable "string_C-3" {
-  default = "-5"
+  default = "-3"
+  type = string
 }
 
 output "addition_A10_A-10" {
