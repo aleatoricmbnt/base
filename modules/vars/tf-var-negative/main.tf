@@ -33,6 +33,27 @@ variable "string_C-3" {
   type = string
 }
 
+variable "untyped_list" {
+  value = [-9, "untyped list index 0"]
+}
+
+variable "typed_object" {
+  type = object({
+    str_attr = string
+    num_attr = number
+    list_attr = list(any)
+  })
+  value = {
+    str_attr = "Hello world!"
+    num_attr = -7.32
+    list_attr = ["list_attr value 0", -3.64, 0]
+  }
+}
+
+output "list_addition" {
+  value = var.untyped_list[0] + var.typed_object["num_attr"]
+}
+
 output "addition_A10_A-10" {
   value = var.untyped_A10 + var.untyped_A-10
 }
