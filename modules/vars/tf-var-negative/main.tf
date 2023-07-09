@@ -55,13 +55,21 @@ variable "list_numbers" {
   default = [0, 1, 2]
 }
 
+variable "list_numbers_untyped" {
+  default = [0, 1, "string"]
+}
+
 locals {
   json_content = jsondecode(file("test_data.json"))
   first_value  = local.json_content.list[0]
 }
 
-output "read_json" {
+output "read_json_with_typed_list" {
   value = local.json_content.list[var.list_numbers[0]]
+}
+
+output "read_json_with_untyped_list" {
+  value = local.json_content.list[var.list_numbers_untyped[1]]
 }
 
 output "complex_addition" {
