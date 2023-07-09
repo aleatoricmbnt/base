@@ -2,5 +2,5 @@
     "str":"John",
     "num":30,
     "num_neg": -80,
-    "cars": ["Zero", "One", "Two"]
-    }
+    "list": ["Zero", "One", "Two"]
+}
