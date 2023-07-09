@@ -34,7 +34,7 @@ variable "string_C-3" {
 }
 
 variable "untyped_list" {
-  value = [-9, "untyped list index 0"]
+  default = [-9, "untyped list index 0"]
 }
 
 variable "typed_object" {
@@ -43,7 +43,7 @@ variable "typed_object" {
     num_attr = number
     list_attr = list(any)
   })
-  value = {
+  default = {
     str_attr = "Hello world!"
     num_attr = -7.32
     list_attr = ["list_attr value 0", -3.64, 0]
