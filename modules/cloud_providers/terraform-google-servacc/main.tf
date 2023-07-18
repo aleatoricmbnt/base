@@ -12,7 +12,7 @@ terraform {
 # -------------------------------------------------------------------------------------------
 
 provider "google" {
-  
+  project = var.google_project_id
 }
 
 # -------------------------------------------------------------------------------------------
@@ -32,4 +32,8 @@ variable "service-account_id" {
 variable "service-account_name" {
   type = string
   default = "PCFG Service Account"
+}
+
+variable "google_project_id" {
+  default = null
 }
