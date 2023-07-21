@@ -3,3 +3,5 @@ resource "null_resource" "string_trigger" {
         string = var.string
     }
 }
+
+variable "string" {}
