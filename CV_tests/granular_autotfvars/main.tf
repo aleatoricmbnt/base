@@ -4,4 +4,9 @@ resource "null_resource" "string_trigger" {
     }
 }
 
-variable "string" {}
+variable "string" {
+    validation {
+        condition = contains(["1999"], var.string)
+        error_message = "If files are parsed correctly, the value should contain 1999 number"
+    }
+}
