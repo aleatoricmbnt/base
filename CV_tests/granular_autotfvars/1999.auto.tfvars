@@ -1,1 +1,1 @@
-string = "2000; the previous one is skipped"
+string = 1999
