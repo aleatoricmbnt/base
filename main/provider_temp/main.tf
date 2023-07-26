@@ -14,7 +14,7 @@ resource "scalr_provider_configuration" "oidc" {
   aws {
     credentials_type           = "oidc"
     role_arn                   = "arn:aws:iam::123456789012:role/scalr-oidc-role"
-    workload_identity_audience = "aws.scalr-run-workload"
+    audience                   = "aws.scalr-run-workload"
   }
 }
 
