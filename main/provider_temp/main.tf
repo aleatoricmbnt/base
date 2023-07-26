@@ -7,14 +7,20 @@ terraform {
   }
 }
 
-resource "scalr_provider_configuration" "oidc" {
-  name                   = "provider_oidc_${formatdate("DD-MMM-YYYY_hh-mm", timestamp())}"
-  export_shell_variables = false
-  environments           = ["*"]
-  aws {
-    credentials_type           = "oidc"
-    role_arn                   = "arn:aws:iam::123456789012:role/scalr-oidc-role"
-    audience                   = null # "aws.scalr-run-workload"
+data "scalr_vcs_provider" "vcs_github" {
+  name = "alea_github"
+}
+
+resource "scalr_workspace" "vcs-driven" {
+  name            = "provider_temp_${formatdate("DD-MMM-YYYY_hh-mm", timestamp())}"
+  environment_id  = data.scalr_current_run.run.environment_id
+  vcs_provider_id = data.scalr_vcs_provider.vcs_github.id
+
+  working_directory = "main/local_wait"
+
+  vcs_repo {
+      identifier          = "aleatoricmbnt/base"
+      branch              = "master"
   }
 }
 
