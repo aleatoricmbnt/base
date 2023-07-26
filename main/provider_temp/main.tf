@@ -31,5 +31,5 @@ output "acc" {
 }
 
 output "run" {
-  value = yamlencode(data.scalr_current_account.run)
+  value = yamlencode(data.scalr_current_run.run)
 }
