@@ -1,6 +1,6 @@
 resource "null_resource" "optional_changes" {
     triggers = {
-        conditional == var.question = "yes" ? timestamp() : "unchanged string"
+        conditional != var.question = "yes" ? "unchanged string" : timestamp()
     }
 }
 
