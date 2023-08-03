@@ -4,6 +4,8 @@ resource "null_resource" "optional_changes" {
     }
 }
 
+resource "random_pet" "PR" {}
+
 variable "question" {
   default = "no"
   type = string
