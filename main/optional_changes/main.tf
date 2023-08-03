@@ -4,8 +4,6 @@ resource "null_resource" "optional_changes" {
     }
 }
 
-# comment to trigger run
-
 variable "question" {
   default = "no"
   type = string
