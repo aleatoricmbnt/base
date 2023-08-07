@@ -15,5 +15,5 @@ variable "one" {
 
 variable "two" {
   type = number
-  default = 222222222222222222222
+  default = 2222
 }
