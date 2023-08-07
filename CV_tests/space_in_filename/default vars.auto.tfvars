@@ -1,1 +1,1 @@
-keeper-variable = "expected string"
+keeper-variable = "custom_1337"
