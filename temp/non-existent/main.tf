@@ -17,5 +17,3 @@ variable "two" {
   type = number
   default = 2222
 }
-
-#comment
