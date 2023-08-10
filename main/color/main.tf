@@ -17,7 +17,7 @@ GREEN=${random_integer.color_list[1].id}
 BLUE=${random_integer.color_list[2].id}
 
 # String to be highlighted
-STRING="Hello, Highlighted Text!"
+STRING="I AM COLORED WOW!!!"
 
 # ANSI escape codes for RGB color
 COLOR="\033[38;2;$${RED};$${GREEN};$${BLUE}m"
