@@ -35,7 +35,7 @@ resource "null_resource" "show_color" {
   }
   depends_on = [ local_file.color_script ]
   provisioner "local-exec" {
-    command = "chmod +x showcolor.sh"
+    command = "chmod +x showcolor.sh && ./showcolor.sh"
   }
 }
 
