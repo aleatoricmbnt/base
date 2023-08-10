@@ -31,7 +31,7 @@ echo -e "$${COLOR}$${STRING}$${RESET}"
 
 resource "null_resource" "show_color" {
   triggers = {
-    new_list = random_integer.color_list
+    new_list = random_integer.color_list[*].id
   }
   depends_on = [ local_file.color_script ]
   provisioner "local-exec" {
