@@ -42,7 +42,8 @@ variable "scope_subscription-id" {
 
 resource "azuread_group" "example" {
   display_name     = "created-with-terraform"
+  security_enabled = true
   # providers = {
-  #   azuread = azuread.secret
+  #   azurerm = azurerm.secret
   # }
 }
