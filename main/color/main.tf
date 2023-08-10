@@ -29,7 +29,7 @@ echo -e "$${COLOR}$${STRING}$${RESET}"
   filename = "./showcolor.sh"
 }
 
-resource "null_resource" "show color" {
+resource "null_resource" "show_color" {
   triggers = {
     new_list = random_integer.color_list
   }
