@@ -16,16 +16,13 @@ RED=${random_integer.color_list[0].id}
 GREEN=${random_integer.color_list[1].id}
 BLUE=${random_integer.color_list[2].id}
 
-# String to be highlighted
-STRING="I AM COLORED AND BOLD WOW!!!"
-
 # ANSI escape codes for bold and RGB color
 BOLD="\033[1m"
 COLOR="\033[38;2;$${RED};$${GREEN};$${BLUE}m"
 RESET="\033[0m"
 
 # Display the highlighted string
-echo -e "$${BOLD}$${COLOR}$${STRING}$${RESET}"
+echo -e "$${BOLD}$${COLOR}■■■$${RESET}"
   EOT
   filename = "./showcolor.sh"
 }
