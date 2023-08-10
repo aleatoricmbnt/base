@@ -25,7 +25,7 @@ provider "azurerm" {
 # -------------------------------------------------------------------------------------------
 
 resource "azurerm_role_definition" "azure_role_oidc" {
-  name        = "pcfg-test-role"
+  name        = "pcfg-test-role_oidc"
   scope       = var.scope_subscription-id
   description = "PCFG-TEST This is a custom role created via Terraform"
 
@@ -36,7 +36,7 @@ resource "azurerm_role_definition" "azure_role_oidc" {
 }
 
 resource "azurerm_role_definition" "azure_role_secrets" {
-  name        = "pcfg-test-role"
+  name        = "pcfg-test-role-secrets"
   scope       = var.scope_subscription-id
   description = "PCFG-TEST This is a custom role created via Terraform"
 
