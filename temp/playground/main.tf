@@ -10,7 +10,7 @@
 
 resource "random_pet" "name" {
   count = 500
-  triggers {
+  keepers = {
     time = timestamp()
   }
 
