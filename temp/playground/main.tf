@@ -10,4 +10,3 @@
 
 resource "random_string" "name" {
   length = 1000
-}
