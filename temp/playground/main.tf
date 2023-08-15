@@ -9,10 +9,9 @@
 # }
 
 resource "random_pet" "name" {
-  count = 500
+  count = 20
 }
 
-output "pet" {
-  count = 500
-  value = random_pet.name[count.index].id
+output "pet_names" {
+  value = { for idx, name in random_pet.name : idx => name.id }
 }
