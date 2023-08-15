@@ -9,7 +9,11 @@
 # }
 
 resource "random_pet" "name" {
-  count = 20
+  count = 500
+  triggers {
+    time = timestamp()
+  }
+
 }
 
 output "pet_names" {
