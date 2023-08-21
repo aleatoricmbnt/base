@@ -14,7 +14,7 @@ resource "random_pet" "name" {
     time = timestamp()
   }
 
-}
+
 
 output "pet_names" {
   value = { for idx, name in random_pet.name : idx => name.id }
