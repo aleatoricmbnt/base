@@ -2,7 +2,7 @@ package terraform
 import input.tfrun as tfrun
 
 deny[reason] {
-    test := tfrun.workspace.name
-    test == "error"
-    reason := sprintf("I am failed because my current workspace is named %s! :c",[test])
+    contains_error := strings.contains("error", tfrun.workspace.name)
+    contains_error
+    reason := sprintf("I am failed because my current workspace contains 'error'! :c")
 }
