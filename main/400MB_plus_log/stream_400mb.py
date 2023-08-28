@@ -3,10 +3,10 @@ import string
 
 # Define the total file size in megabytes
 total_size_mb = 400
-chunk_size_mb = 0.1
+chunk_size_kb = 100
 
 # Calculate chunk size in bytes
-chunk_size_bytes = chunk_size_mb * 1024 * 1024
+chunk_size_bytes = chunk_size_kb * 1024
 
 # Define the characters you want to include
 allowed_characters = string.ascii_letters + string.digits + "\n" + "!@#~#$%^&*()_+=-"
