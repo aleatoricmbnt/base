@@ -1,9 +1,12 @@
+import os
 import random
 import string
 
-# Define the total file size in megabytes
-total_size_mb = 1
-chunk_size_kb = 1
+# Get total_size_mb from the environment variable or use the default value
+total_size_mb = int(os.environ.get("TOTAL_SIZE_MB", 1))
+
+# Get chunk_size_kb from the environment variable or use the default value
+chunk_size_kb = int(os.environ.get("CHUNK_SIZE_KB", 1))
 
 # Calculate chunk size in bytes
 chunk_size_bytes = chunk_size_kb * 1024
