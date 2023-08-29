@@ -60,14 +60,13 @@ echo "---------------------------------------"
 echo "Red"
 echo "---------------------------------------"
 echo -e "\033[38;5;9mThis text is red.
-red red red rede!
-Wow.\033[0m"
+Second line also should be red!
+And this one too.\033[0m"
 
 
 
 
-echo -e  "\033[38;5;9mBright Red\033[0m text.
-\033[38;5;10mBright Green\033[0m text.
+echo -e  "\033[38;5;10mBright Green\033[0m text.
 \033[38;5;11mBright Yellow\033[0m text.
 \033[38;5;12mBright Blue\033[0m text.
 \033[38;5;13mBright Magenta\033[0m text.
