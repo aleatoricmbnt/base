@@ -25,7 +25,10 @@ def generate_chunk_header(current_chunk, total_chunks):
 
 # Function to generate the footer for a chunk
 def generate_chunk_footer():
-    return f"{ANSI_BRIGHT}{'-' * 88}\n{ANSI_RESET}"
+    footer = f"{ANSI_BRIGHT}\n{'-' * 88}\n"
+    footer += f"{' ' * 40}END OF CHUNK\n"
+    footer += f"{'-' * 88}\n{ANSI_RESET}\n"
+    return footer
 
 # Function to continuously generate and stream random data
 def stream_data():
