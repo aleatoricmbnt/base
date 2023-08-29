@@ -3,7 +3,7 @@ import string
 
 # Define the total file size in megabytes
 total_size_mb = 400
-chunk_size_kb = 1024
+chunk_size_kb = 20480
 
 # Calculate chunk size in bytes
 chunk_size_bytes = chunk_size_kb * 1024
