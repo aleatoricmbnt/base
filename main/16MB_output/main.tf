@@ -9,3 +9,7 @@ data "local_file" "file_16mb" {
 output "output_16mb" {
   value = data.local_file.file_16mb.content
 }
+
+output "small" {
+  value = "some string"
+}
