@@ -11,13 +11,21 @@ chunk_size_bytes = chunk_size_kb * 1024
 # Define the characters you want to include
 allowed_characters = string.ascii_letters + string.digits + "\n" + "!@#~#$%^&*()_+=-"
 
+# ANSI escape codes for bright color and bold text
+ANSI_BOLD = "\033[1m"
+ANSI_RESET = "\033[0m"
+ANSI_BRIGHT = "\033[1;37m"
+
 # Function to generate the header for a chunk
 def generate_chunk_header(current_chunk, total_chunks):
-    return f"{'-' * 33}CHUNK # {current_chunk} / {total_chunks}{'-' * 34}\n"
+    header = f"{ANSI_BRIGHT}{'-' * 88}\n"
+    header += f"{' ' * 40}CHUNK {current_chunk} / {total_chunks}\n"
+    header += f"{'-' * 88}{ANSI_RESET}\n"
+    return header
 
 # Function to generate the footer for a chunk
 def generate_chunk_footer():
-    return '-' * 88 + '\n'
+    return f"{ANSI_BRIGHT}{'-' * 88}\n{ANSI_RESET}"
 
 # Function to continuously generate and stream random data
 def stream_data():
