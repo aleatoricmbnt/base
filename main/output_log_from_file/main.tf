@@ -3,7 +3,7 @@ resource "null_resource" "tip" {
     time = timestamp()
   }
   provisioner "local-exec" {
-    command = "echo 'Use custom hook to execute output_log.py' && echo 'Control the size of log with TOTAL_SIZE_KB'"
+    command = "cat README.md"
   }
 }
 
