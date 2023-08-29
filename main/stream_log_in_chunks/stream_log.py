@@ -18,7 +18,6 @@ allowed_characters = string.ascii_letters + string.digits + "\n" + "!@#~#$%^&*()
 ANSI_BOLD = "\033[1m"
 ANSI_RESET = "\033[0m"
 ANSI_ORANGE = "\033[1;33m"
-ANSI_BRIGHT = "\033[1;37m"
 
 # Function to generate the header for a chunk
 def generate_chunk_header(current_chunk, total_chunks):

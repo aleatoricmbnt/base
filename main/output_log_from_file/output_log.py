@@ -2,8 +2,8 @@ import os
 import random
 import string
 
-file_size_kb = 409600
-file_name = "409600.txt"
+file_size_kb = int(os.environ.get("TOTAL_SIZE_KB", 1))
+file_name = "data.txt"
 
 # Define the characters you want to include
 allowed_characters = string.ascii_letters + string.digits + "\n" + "!@#~#$%^&*()_+=-"
