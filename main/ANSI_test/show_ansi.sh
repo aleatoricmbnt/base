@@ -17,6 +17,6 @@ echo -e "\033[2mThis is dim text.\nIt's not as prominent.\nBut it still has its 
 echo "---------------------------------------"
 echo "Italic"
 echo "---------------------------------------"
-echo -e "\033[3mThis is italic text.\033[0m
-\033[3mIt's slanted and stylish.\033[0m
-\033[3mPerfect for emphasis.\033[0m"
+echo -e "\033[3mThis is italic text.
+It's slanted and stylish.
+Perfect for emphasis.\033[0m"
