@@ -50,9 +50,10 @@ def stream_data():
         
         # Generate a chunk footer
         # footer = generate_chunk_footer()
+        footer = "\n"
         
         # Print the header, chunk, and footer to the console
-        print(header + chunk, end='', flush=True)
+        print(header + chunk + footer, end='', flush=True)
         
         # Update the generated size
         generated_size_bytes += chunk_size_bytes
