@@ -26,9 +26,18 @@ deny[reason] {
     )
 }
 
+random_number2 = num2 {
+    request := {
+        "url": "https://www.random.org/integers/?num=1&min=0&max=9&base=10&col=1&format=plain",
+        "method": "GET"
+    }
+    response := http.send(request)
+    response.status_code == 200
+    num2 := to_number(trim(response.raw_body, "\n"))
+}
 
 deny[reason] {
-    number := random_number
+    number := random_number2
     number < 2
 
     reason := sprintf(
@@ -37,9 +46,19 @@ deny[reason] {
     )
 }
 
+random_number3 = num3 {
+    request := {
+        "url": "https://www.random.org/integers/?num=1&min=0&max=9&base=10&col=1&format=plain",
+        "method": "GET"
+    }
+    response := http.send(request)
+    response.status_code == 200
+    num3 := to_number(trim(response.raw_body, "\n"))
+}
+
 
 deny[reason] {
-    number := random_number
+    number := random_number3
     number < 3
 
     reason := sprintf(
