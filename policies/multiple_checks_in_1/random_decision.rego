@@ -1,6 +1,5 @@
 package terraform
 import input.tfrun as tfrun
-import future.keywords.contains
 
 bool_value = true
 
