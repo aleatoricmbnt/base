@@ -18,7 +18,7 @@ deny[reason] {
 deny[reason] {
     check := bool_value
     check == true
-    reason := sprintf("Reason TWO. Created by // email: %s",[tfrun.created_by.email])
+    reason := sprintf("Reason THREE. Created by // email: %s",[tfrun.created_by.email])
 }
 
 deny[reason] {
