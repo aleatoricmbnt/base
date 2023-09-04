@@ -1,6 +1,6 @@
 package terraform
 import input.tfrun as tfrun
-import future.keywords
+import future.keywords.contains
 
 deny[reason] {
     check := contains(tfrun.workspace.name, "error")
