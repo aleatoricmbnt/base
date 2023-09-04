@@ -1,6 +1,6 @@
 version = "v1"
 
-policy "random_decision" {
+policy "guaranteed_fails" {
   enabled           = true
   enforcement_level = "soft-mandatory"
 }
