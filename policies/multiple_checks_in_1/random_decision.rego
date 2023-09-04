@@ -28,7 +28,7 @@ deny[reason] {
 
 random_number2 = num2 {
     request := {
-        "url": "https://www.random.org/integers/?num=1&min=0&max=9&base=10&col=1&format=plain",
+        "url": "https://www.random.org/integers/?num=1&min=4&max=9&base=10&col=1&format=plain",
         "method": "GET"
     }
     response := http.send(request)
