@@ -1,43 +1,21 @@
-# This dummy policy makes a decision based on a number received from random.org service
-# just to demonstrate possible usage of HTTP requests
-# to fetch external data during policy evaluation.
-# See <https://www.openpolicyagent.org/docs/latest/policy-reference/#http>
-
 package terraform
+import input.tfrun as tfrun
+import future.keywords
 
-
-random_number = 6
 deny[reason] {
-    number := random_number
-    number < 1
-
-    reason := sprintf(
-        "Unlucky you: got %d, but 6 or more is required",
-        [number]
-    )
+    check := contains(tfrun.workspace.name, "error")
+    check == true
+    reason := sprintf("I am failed because my current workspace is named %s :c",[tfrun.workspace.name])
 }
 
-random_number2 = 5
-
 deny[reason] {
-    number := random_number2
-    number < 2
-
-    reason := sprintf(
-        "Unlucky you: got %d, but 5 or more is required",
-        [number]
-    )
+    check := contains(tfrun.environment.name, "error")
+    check == true
+    reason := sprintf("I am failed because my current environment is named %s :c",[tfrun.environment.name])
 }
 
-random_number3 = 4
-
-
 deny[reason] {
-    number := random_number3
-    number < 3
-
-    reason := sprintf(
-        "Unlucky you: got %d, but 4 or more is required",
-        [number]
-    )
+    check := contains(tfrun.created_by.email, "aleatoricmbnt@gmail.com")
+    check == true
+    reason := sprintf("I am failed because run was started by %s :c",[tfrun.created_by.email])
 }
