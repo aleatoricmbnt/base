@@ -1,9 +1,9 @@
 terraform {
-  required_providers {
-    scalr {
-        source = "registry.scalr.io/scalr/scalr"
+    required_providers {
+        scalr = {
+            source = "registry.scalr.io/scalr/scalr"
+        }
     }
-  }
 }
 
 resource "scalr_workspace" "cli-driven" {
