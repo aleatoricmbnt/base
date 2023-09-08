@@ -12,9 +12,9 @@ resource "scalr_workspace" "cli-driven" {
     environment_id  = "env-v0o2dm5uk9c5qum71"
 }
 
-resource "null_resource" "name" {
-  count = 200
-}
+# resource "null_resource" "name" {
+#   count = 200
+# }
 
 resource "scalr_environment" "test" {
     count = 10
