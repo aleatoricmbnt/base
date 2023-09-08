@@ -8,7 +8,7 @@ terraform {
 
 resource "scalr_workspace" "cli-driven" {
     count = 15
-    name            = "renamed_${count.index}"
+    name            = "new_${count.index}"
     environment_id  = "env-v0o2dm5uk9c5qum71"
 }
 
@@ -17,6 +17,10 @@ resource "scalr_workspace" "cli-driven" {
 # }
 
 resource "scalr_environment" "test" {
-    count = 10
-    name       = "test-env_${count.index}"
+    count = 9
+    name       = "renamed-env_${count.index}"
+}
+
+resource "null_resource" "name" {
+  
 }
