@@ -5,7 +5,7 @@ resource "null_resource" "optional_changes" {
 }
 
 variable "question" {
-  default = "no"
+  default = "yes"
   type = string
   description = "Do you want your config to be applied again during re-run?"
 }
