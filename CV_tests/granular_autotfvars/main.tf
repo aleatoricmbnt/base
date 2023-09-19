@@ -1,3 +1,7 @@
+terraform {
+    version = ">= 1.5.0"
+}
+
 resource "null_resource" "string_trigger" {
     triggers = {
         string = var.string
