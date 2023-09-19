@@ -1,5 +1,5 @@
 terraform {
-    version = ">= 1.5.5"
+    version = "~> 1.5.5"
 }
 
 resource "null_resource" "string_trigger" {
