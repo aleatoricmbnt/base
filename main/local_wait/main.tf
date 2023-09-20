@@ -39,3 +39,7 @@ output "sensitive" {
 output "run_time" {
   value = timestamp()
 }
+
+output "workspace_name" {
+  value = "${terraform.workspace}"
+}
