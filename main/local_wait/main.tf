@@ -2,6 +2,10 @@ terraform {
     required_version = "<= 1.1.0"
 }
 
+terraform {
+    required_version = ">= 1.3.0"
+}
+
 variable "sleep_time" {
   default = 1
 }
