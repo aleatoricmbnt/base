@@ -24,7 +24,7 @@ variable "triggers_to_be_joined" {
 }
 
 variable "basic" {
-  value = "ABC123"
+  default = "ABC123"
 }
 
 variable "layered" {
