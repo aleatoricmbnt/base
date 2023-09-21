@@ -1,26 +1,26 @@
 variable "triggers_to_be_joined" {
-    type = map(string)
-    default = {
-        name = "John Doe"
-        age = "30"
-        city = "New York"
-        country = "United States"
-        favorite_color = "Blue"
-        occupation = "Software Engineer"
-        education = "Bachelor's Degree"
-        hobby = "Photography"
-        team = "Terraform Enthusiasts"
-        project = "Infrastructure Automation"
-        company = "TechCorp Inc."
-        status = "Active"
-        email = "john.doe@example.com"
-        phone = "+1 (555) 123-4567"
-        website = "https://www.example.com"
-        timezone = "UTC-5"
-        start_date = "2022-01-15"
-        end_date = "2022-12-31"
-        salary = "80000"
-    }
+  type = map(string)
+  default = {
+    name           = "John Doe"
+    age            = "30"
+    city           = "New York"
+    country        = "United States"
+    favorite_color = "Blue"
+    occupation     = "Software Engineer"
+    education      = "Bachelor's Degree"
+    hobby          = "Photography"
+    team           = "Terraform Enthusiasts"
+    project        = "Infrastructure Automation"
+    company        = "TechCorp Inc."
+    status         = "Active"
+    email          = "john.doe@example.com"
+    phone          = "+1 (555) 123-4567"
+    website        = "https://www.example.com"
+    timezone       = "UTC-5"
+    start_date     = "2022-01-15"
+    end_date       = "2022-12-31"
+    salary         = "80000"
+  }
 }
 
 variable "basic" {
@@ -66,5 +66,9 @@ variable "secrets" {
     username = "admin"
     password = "c!Sx&n8MfZ#jK$4E"
   }
+}
+
+variable "marked_as_sensitive_on_UI" {
+  description = "Set any value here, but mark as sensitive via Scalr UI"
 }
 
