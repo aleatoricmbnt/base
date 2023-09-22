@@ -44,11 +44,11 @@ resource "azurerm_role_definition" "azure_role_secrets" {
     actions     = ["*"]
     not_actions = []
   }
-  
+
   provider = azurerm.secret
 }
 
 variable "scope_subscription-id" {
-  type = string
+  type    = string
   default = "/subscriptions/957ab5e0-6cf3-4167-89ce-119e4977bf12"
 }

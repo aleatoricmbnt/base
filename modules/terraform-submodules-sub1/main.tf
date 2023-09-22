@@ -17,5 +17,5 @@ module "iam_iam-account" {
 }
 
 resource "random_pet" "pet" {
-  
+
 }

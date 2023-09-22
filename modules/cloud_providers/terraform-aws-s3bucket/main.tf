@@ -21,18 +21,18 @@ provider "aws" {
 
 
 resource "aws_s3_bucket" "b" {
-  count = var.quantity
+  count  = var.quantity
   bucket = var.bucket_name
-  tags = var.tags
+  tags   = var.tags
 }
 
 variable "bucket_name" {
   default = "bucketaleatoric"
-  type = string
+  type    = string
 }
 
 variable "tags" {
-  type = map
+  type = map(any)
   default = {
     Name        = "My bucket"
     Environment = "Dev"
@@ -40,6 +40,6 @@ variable "tags" {
 }
 
 variable "quantity" {
-  type = number
+  type        = number
   description = "Number of buckets to be created"
 }

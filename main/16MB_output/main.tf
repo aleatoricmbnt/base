@@ -1,5 +1,5 @@
 resource "null_resource" "check_state" {
-  
+
 }
 
 data "local_file" "file_16mb" {

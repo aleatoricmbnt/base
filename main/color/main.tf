@@ -2,7 +2,7 @@ resource "random_integer" "color_list" {
   count = 3
   keepers = {
     conditional = var.question != "yes" ? "unchanged string" : timestamp()
-    }
+  }
   min = 0
   max = 255
 }
@@ -31,15 +31,15 @@ resource "null_resource" "show_color" {
   triggers = {
     new_list = random_integer.color_list[1].id
   }
-  depends_on = [ local_file.color_script ]
+  depends_on = [local_file.color_script]
   provisioner "local-exec" {
     command = "chmod +x showcolor.sh && ./showcolor.sh"
   }
 }
 
 variable "question" {
-  default = "no"
-  type = string
+  default     = "no"
+  type        = string
   description = "Do you want your config to be applied again during re-run?"
 }
 

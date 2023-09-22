@@ -149,8 +149,8 @@ resource "random_password" "sensitive_values_as_keepers" {
   keepers = {
     credentials = join("/", values(var.secrets))
   }
-  upper            = var.change_me_upper
-  min_lower        = var.change_me_min_lower
+  upper     = var.change_me_upper
+  min_lower = var.change_me_min_lower
 }
 
 resource "random_id" "name" {

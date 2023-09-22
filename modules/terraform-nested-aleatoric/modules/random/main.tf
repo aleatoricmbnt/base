@@ -22,5 +22,5 @@ resource "null_resource" "modules_random" {
 
 output "modules_random_id" {
   description = "The `id` of the `modules_random` resource in this module."
-  value       = "${null_resource.modules_random.id}"
+  value       = null_resource.modules_random.id
 }

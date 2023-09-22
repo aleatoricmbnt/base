@@ -1,8 +1,8 @@
 terraform {
   required_providers {
     scalr = {
-      source = "registry.scalr.io/scalr/scalr"
-      version= "~> 1.3.0"
+      source  = "registry.scalr.io/scalr/scalr"
+      version = "~> 1.3.0"
     }
   }
 }
@@ -19,17 +19,17 @@ resource "scalr_workspace" "vcs-driven" {
   working_directory = "main/local_wait"
 
   vcs_repo {
-      identifier          = "aleatoricmbnt/base"
-      branch              = "master"
+    identifier = "aleatoricmbnt/base"
+    branch     = "master"
   }
 }
 
 data "scalr_current_account" "acc" {
-  
+
 }
 
 data "scalr_current_run" "run" {
-  
+
 }
 
 output "acc" {

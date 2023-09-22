@@ -1,4 +1,4 @@
-low = 3
+low    = 3
 medium = 3
-high = 3
-test = 3
+high   = 3
+test   = 3

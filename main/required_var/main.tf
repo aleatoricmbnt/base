@@ -5,5 +5,5 @@ resource "null_resource" "triggered_by_var" {
 }
 
 variable "trigger" {
-  
+
 }

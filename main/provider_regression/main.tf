@@ -188,13 +188,13 @@ output "out-ap" {
 # data "scalr_current_account" "data_acc" {}
 
 # output "out_acc" {
-  # value = yamlencode(data.scalr_current_account.data_acc)
+# value = yamlencode(data.scalr_current_account.data_acc)
 # }
 
 # data "scalr_current_run" "data_run" {}
 
 # output "out_run" {
-  # value = yamlencode(data.scalr_current_run.data_run)
+# value = yamlencode(data.scalr_current_run.data_run)
 # }
 
 data "scalr_endpoint" "data_ep" {

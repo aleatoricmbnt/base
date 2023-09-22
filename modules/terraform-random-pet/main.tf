@@ -20,6 +20,6 @@ output "info" {
 }
 
 variable "pet_count" {
-  type = number
+  type    = number
   default = 3
 }

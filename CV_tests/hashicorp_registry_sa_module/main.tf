@@ -13,7 +13,7 @@
 
 
 module "service-accounts_example_single_service_account" {
-  source  = "terraform-google-modules/service-accounts/google//examples/single_service_account"
-  version = "4.1.1"
+  source     = "terraform-google-modules/service-accounts/google//examples/single_service_account"
+  version    = "4.1.1"
   project_id = "fair-backbone-351510"
 }

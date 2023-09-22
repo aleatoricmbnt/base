@@ -1,10 +1,10 @@
 terraform {
-    required_version = "~> 1.3.0"
+  required_version = "~> 1.3.0"
 }
 
 
 resource "random_pet" "pet" {
-  
+
 }
 
 output "pet_name" {

@@ -25,12 +25,12 @@ resource "google_service_account" "gcp_service-acc" {
 }
 
 variable "service-account_id" {
-  type = string
+  type    = string
   default = "pcfg-mmoh-test"
 }
 
 variable "service-account_name" {
-  type = string
+  type    = string
   default = "PCFG Service Account"
 }
 

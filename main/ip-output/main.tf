@@ -1,5 +1,5 @@
 terraform {
-    required_version = "= 1.6.0-preview"
+  required_version = "= 1.6.0-preview"
 }
 
 resource "null_resource" "check_ip" {
@@ -12,8 +12,8 @@ resource "null_resource" "check_ip" {
 }
 
 data "local_file" "read_ip" {
-  depends_on = [ null_resource.check_ip ]
-  filename = "./ip.txt"
+  depends_on = [null_resource.check_ip]
+  filename   = "./ip.txt"
 }
 
 output "scalr_ip" {

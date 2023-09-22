@@ -15,22 +15,22 @@ variable "untyped_A-10" {
 
 variable "typed_B5" {
   default = 5
-  type = number
+  type    = number
 }
 
 variable "typed_B-5" {
   default = -5
-  type = number
+  type    = number
 }
 
 variable "string_C3" {
   default = "3"
-  type = string
+  type    = string
 }
 
 variable "string_C-3" {
   default = "-3"
-  type = string
+  type    = string
 }
 
 variable "untyped_list" {
@@ -39,19 +39,19 @@ variable "untyped_list" {
 
 variable "typed_object" {
   type = object({
-    str_attr = string
-    num_attr = number
+    str_attr  = string
+    num_attr  = number
     list_attr = list(any)
   })
   default = {
-    str_attr = "Hello world!"
-    num_attr = -7.32
+    str_attr  = "Hello world!"
+    num_attr  = -7.32
     list_attr = ["list_attr value 0", -3.64, 0]
   }
 }
 
 variable "list_numbers" {
-  type = list(number)
+  type    = list(number)
   default = [0, 1, 2]
 }
 

@@ -14,5 +14,5 @@ resource "random_integer" "terraform-random-nested" {
 
 output "terraform-random-nested_id" {
   description = "The `id` of the `terraform-random-nested` resource in this module."
-  value       = "${random_integer.terraform-random-nested.id}"
+  value       = random_integer.terraform-random-nested.id
 }

@@ -2,7 +2,7 @@ resource "random_pet" "head" {
   keepers = {
     # Generate a new pet name each time
     time = timestamp()
-  } 
+  }
 }
 
 output "head_pet" {

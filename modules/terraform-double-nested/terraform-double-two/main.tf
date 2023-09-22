@@ -21,7 +21,7 @@ resource "null_resource" "env_vars" {
 }
 
 data "local_file" "env_vars" {
-  filename = "env_vars_${timestamp()}.txt"
+  filename   = "env_vars_${timestamp()}.txt"
   depends_on = [resource.null_resource.env_vars]
 }
 
@@ -30,16 +30,16 @@ output "environment_variables" {
 }
 
 output "output_sleep_time" {
-  value = var.sleep_time
+  value     = var.sleep_time
   sensitive = false
 }
 
 output "very_long" {
-  value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"  
+  value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
 }
 
 output "sens_out" {
-  value = "XXX"
+  value       = "XXX"
   description = "Sensitive output"
-  sensitive = true
+  sensitive   = true
 }

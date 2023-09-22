@@ -1,12 +1,12 @@
 resource "null_resource" "simple_types_trigger" {
   triggers = {
     trigger_time = timestamp()
-    trigger_01 = var.string
-    trigger_02 = var.string_untyped
-    trigger_03 = var.number
-    trigger_04 = var.number_untyped
-    trigger_05 = var.bool
-    trigger_06 = var.bool_untyped
+    trigger_01   = var.string
+    trigger_02   = var.string_untyped
+    trigger_03   = var.number
+    trigger_04   = var.number_untyped
+    trigger_05   = var.bool
+    trigger_06   = var.bool_untyped
   }
 }
 
@@ -102,35 +102,35 @@ variable "set_untyped" {
 variable "map" {
   type        = map(string)
   description = "A variable with an explicitly set map of strings type"
-  default     = {"key1" = "value1", "key2" = "value2"}
+  default     = { "key1" = "value1", "key2" = "value2" }
 }
 
 variable "map_untyped" {
   description = "A variable without an explicitly set type"
-  default     = {"foo" = "bar", "baz" = 42, "qux" = [1, 2, 3]}
+  default     = { "foo" = "bar", "baz" = 42, "qux" = [1, 2, 3] }
 }
 
 variable "object" {
-  type        = object({
-                  name  = string
-                  value = number
-                  list  = list(string)
-                })
+  type = object({
+    name  = string
+    value = number
+    list  = list(string)
+  })
   description = "A variable with an explicitly set object type"
-  default     = {
-                  name  = "my_object"
-                  value = 3.14
-                  list  = ["one", "two", "three"]
-                }
+  default = {
+    name  = "my_object"
+    value = 3.14
+    list  = ["one", "two", "three"]
+  }
 }
 
 variable "object_untyped" {
   description = "A variable without an explicitly set type"
-  default     = {
-                  name  = "another_object"
-                  value = "42"
-                  list  = [1, 2, 3]
-                }
+  default = {
+    name  = "another_object"
+    value = "42"
+    list  = [1, 2, 3]
+  }
 }
 
 variable "tuple" {

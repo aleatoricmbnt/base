@@ -7,7 +7,7 @@ resource "random_pet" "pet" {
 }
 
 variable "rp_count" {
-  type = number
+  type    = number
   default = 100535
 }
 

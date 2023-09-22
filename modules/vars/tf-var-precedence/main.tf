@@ -11,7 +11,7 @@ var-file */
 
 resource "null_resource" "check" {
   triggers = {
-    "time" = timestamp()
+    "time"   = timestamp()
     "string" = var.str
   }
 
@@ -21,7 +21,7 @@ resource "null_resource" "check" {
 }
 
 variable "str" {
-  
+
 }
 
 output "str_output" {

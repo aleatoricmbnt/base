@@ -1,3 +1,3 @@
-    module "instance2" {
-        source = "./instance2"
-    }
+module "instance2" {
+  source = "./instance2"
+}

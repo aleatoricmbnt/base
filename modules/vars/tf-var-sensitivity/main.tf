@@ -1,8 +1,8 @@
 # Simple type sensitive variable
 variable "password" {
-  type = string
+  type      = string
   sensitive = true
-  default = "4PHw4RAEWRyVXgM6XGy7"
+  default   = "4PHw4RAEWRyVXgM6XGy7"
 }
 
 # Complex type sensitive variable
@@ -22,9 +22,9 @@ variable "secrets" {
 
 # Multiline sensitive variable
 variable "private_key" {
-  type = string
+  type      = string
   sensitive = true
-  default = <<-EOT
+  default   = <<-EOT
     -----BEGIN PRIVATE KEY-----
     <Your Private Key Here>
     -----END PRIVATE KEY-----
@@ -33,25 +33,25 @@ variable "private_key" {
 
 # Sensitive output
 output "db_password" {
-  value = "sensitive-password"
+  value     = "sensitive-password"
   sensitive = true
 }
 
 # Sensitive output
 output "private_key_out" {
-  value = "This shouldn't be shown: ${var.private_key}"
+  value     = "This shouldn't be shown: ${var.private_key}"
   sensitive = true
 }
 
 # Sensitive output
 output "secrets_out" {
-  value = var.secrets
+  value     = var.secrets
   sensitive = true
 }
 
 # Multiline sensitive output
 output "sensitive_key" {
-  value = <<-EOT
+  value     = <<-EOT
     -----BEGIN PRIVATE KEY-----
     <Your Private Key Here>
     -----END PRIVATE KEY-----

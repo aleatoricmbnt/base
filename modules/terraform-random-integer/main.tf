@@ -9,17 +9,17 @@ resource "random_integer" "int" {
 
 
 variable "count-value" {
-  type = number
+  type    = number
   default = 1
 }
 
 variable "min" {
-  type = number
+  type    = number
   default = 0
 }
 
 variable "max" {
-  type = number
+  type    = number
   default = 255
 }
 

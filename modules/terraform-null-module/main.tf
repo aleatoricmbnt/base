@@ -6,7 +6,7 @@ resource "null_resource" "test" {
 }
 
 variable "quantity" {
-  type = number
+  type        = number
   description = "Number of resources to be created"
 }
 
