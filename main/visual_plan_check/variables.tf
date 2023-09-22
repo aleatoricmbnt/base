@@ -72,3 +72,15 @@ variable "marked_as_sensitive_on_UI" {
   description = "Set any value here, but mark as sensitive via Scalr UI"
 }
 
+
+variable "change_me_upper" {
+  type        = bool
+  description = "CHANGE ME TO 'false'"
+  default     = true
+}
+
+variable "change_me_min_lower" {
+  type        = number
+  description = "CHANGE ME TO '10'"
+  default     = 2
+}
