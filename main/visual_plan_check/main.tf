@@ -245,8 +245,7 @@ resource "scalr_provider_configuration" "nested_resource" {
 # ----------------------------------------------------------------------------------------- #
 
 data "http" "random" {
-  url = "https://www.random.org/integers/?num=1&min=1&max=2&base=10&col=1&format=plain"
-  depends_on = [ null_resource.countable[0] ]
+  url = "https://www.random.org/integers/?num=1&min=1&max=2&base=10&col=1&format=plain&${formatdate("HH-mm-ss", timestamp())}"
 }
 
 resource "null_resource" "long_triggers_replacement" {
