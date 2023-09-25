@@ -100,4 +100,5 @@ variable "replacement" {
 
 variable "question" {
   description = "What variable to use as a trigger for the null_resource.long_triggers_replacement? Options: initial, replacement."
+  default = initial
 }
