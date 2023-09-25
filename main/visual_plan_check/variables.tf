@@ -86,6 +86,6 @@ variable "change_me_min_lower" {
 }
 
 
-variable "pg-reference-name" {
-  description = "Name of the exisiting policy group for the data_source. Exisiting policy group will be used as a reference and the duplicate will be created."
+variable "pg-reference-id" {
+  description = "ID of the exisiting policy group for the data_source. Exisiting policy group will be used as a reference and the duplicate will be created."
 }
