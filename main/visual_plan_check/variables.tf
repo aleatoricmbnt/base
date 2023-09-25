@@ -84,3 +84,8 @@ variable "change_me_min_lower" {
   description = "CHANGE ME TO '10'"
   default     = 2
 }
+
+
+variable "pg-reference-name" {
+  description = "Name of the exisiting policy group for the data_source. Exisiting policy group will be used as a reference and the duplicate will be created."
+}
