@@ -201,19 +201,23 @@ data "scalr_policy_group" "pg_reference" {
   # depends_on = [ null_resource.countable[0] ]
 }
 
-resource "scalr_policy_group" "object_known_after_apply" {
-  name            = "policy_${formatdate("HH-mm-ss", timestamp())}"
-  opa_version     = "0.55.0"
-  vcs_provider_id = data.scalr_policy_group.pg_reference.vcs_provider_id
-  vcs_repo {
-    identifier = data.scalr_policy_group.pg_reference.vcs_repo.identifier
-    path       = data.scalr_policy_group.pg_reference.vcs_repo.path
-    branch     = data.scalr_policy_group.pg_reference.vcs_repo.branch
-  }
+output "test" {
+  value = data.scalr_policy_group.pg_reference
 }
 
-resource "scalr_environment" "list_known_after_apply" {
-  name       = "environment_${formatdate("HH-mm-ss", timestamp())}"
-  cost_estimation_enabled = true
-  policy_groups = [ scalr_policy_group.object_known_after_apply]
-}
+# resource "scalr_policy_group" "object_known_after_apply" {
+#   name            = "policy_${formatdate("HH-mm-ss", timestamp())}"
+#   opa_version     = "0.55.0"
+#   vcs_provider_id = data.scalr_policy_group.pg_reference.vcs_provider_id
+#   vcs_repo {
+#     identifier = data.scalr_policy_group.pg_reference.vcs_repo.identifier
+#     path       = data.scalr_policy_group.pg_reference.vcs_repo.path
+#     branch     = data.scalr_policy_group.pg_reference.vcs_repo.branch
+#   }
+# }
+
+# resource "scalr_environment" "list_known_after_apply" {
+#   name       = "environment_${formatdate("HH-mm-ss", timestamp())}"
+#   cost_estimation_enabled = true
+#   policy_groups = [ scalr_policy_group.object_known_after_apply]
+# }
