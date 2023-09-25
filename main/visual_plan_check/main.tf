@@ -198,7 +198,7 @@ resource "null_resource" "multiple_triggers" {
 
 data "scalr_policy_group" "pg_reference" {
   id         = var.pg-reference-id
-  depends_on = [ null_resource.countable[0] ]
+  # depends_on = [ null_resource.countable[0] ]
 }
 
 resource "scalr_policy_group" "object_known_after_apply" {
