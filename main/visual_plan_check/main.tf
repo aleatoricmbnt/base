@@ -251,6 +251,6 @@ data "http" "random" {
 resource "null_resource" "long_triggers_replacement" {
   triggers = {
     # condition ? true_val : false_val
-    long = data.http.random.response_body == 1 ? var.long_1 : var.long_2
+    long = data.http.random.response_body != 1 ? var.long_2 : var.long_1
   }
 }
