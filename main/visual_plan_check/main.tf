@@ -215,5 +215,5 @@ resource "scalr_policy_group" "object_known_after_apply" {
 resource "scalr_environment" "list_known_after_apply" {
   name       = "environment_${formatdate("HH-mm-ss", timestamp())}"
   cost_estimation_enabled = true
-  policy_groups = [ scalr_policy_group.object_known_after_apply]
+  policy_groups = [ scalr_policy_group.object_known_after_apply.id]
 }
