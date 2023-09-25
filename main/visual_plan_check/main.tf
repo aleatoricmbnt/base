@@ -205,12 +205,11 @@ resource "scalr_policy_group" "object_known_after_apply" {
   name            = "policy_${formatdate("HH-mm-ss", timestamp())}"
   opa_version     = "0.55.0"
   vcs_provider_id = data.scalr_policy_group.pg_reference.vcs_provider_id
-  vcs_repo { data.scalr_policy_group.pg_reference.vcs_repo }
-  # vcs_repo {
-  #   identifier = "org/repo"
-  #   path       = "policies/instance"
-  #   branch     = "dev"
-  # }
+  vcs_repo {
+    identifier = data.scalr_policy_group.pg_reference.vcs_repo.identifier
+    path       = data.scalr_policy_group.pg_reference.vcs_repo.path
+    branch     = data.scalr_policy_group.pg_reference.vcs_repo.branch
+  }
 }
 
 resource "scalr_environment" "list_known_after_apply" {
