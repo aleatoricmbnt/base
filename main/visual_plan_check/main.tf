@@ -244,13 +244,9 @@ resource "scalr_provider_configuration" "nested_resource" {
 
 # ----------------------------------------------------------------------------------------- #
 
-data "http" "random" {
-  url = "https://www.random.org/integers/?num=1&min=1&max=2&base=10&col=1&format=plain&${formatdate("HH-mm-ss", timestamp())}"
-}
-
 resource "null_resource" "long_triggers_replacement" {
   triggers = {
     # condition ? true_val : false_val
-    long = data.http.random.response_body != 1 ? var.long_2 : var.long_1
+    long = var.replacement != "" ? "${formatdate("HH-mm-ss", timestamp())}_${var.replacement}_${formatdate("HH-mm-ss", timestamp())}": timestamp()
   }
 }
