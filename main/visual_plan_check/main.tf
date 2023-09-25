@@ -247,6 +247,6 @@ resource "scalr_provider_configuration" "nested_resource" {
 resource "null_resource" "long_triggers_replacement" {
   triggers = {
     # condition ? true_val : false_val
-    long = contains([self.triggers.long], "burro") ? var.long_1 : var_long_2
+    long = contains([null_resource.long_triggers_replacement.triggers.long], "burro") ? var.long_1 : var.long_2
   }
 }
