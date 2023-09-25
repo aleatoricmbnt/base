@@ -247,6 +247,6 @@ resource "scalr_provider_configuration" "nested_resource" {
 resource "null_resource" "long_triggers_replacement" {
   triggers = {
     # condition ? true_val : false_val
-    long = var.replacement != "" ? "${formatdate("HH-mm-ss", timestamp())}_${var.replacement}_${formatdate("HH-mm-ss", timestamp())}": timestamp()
+    long = var.question != "initial" ? var.replacement : var.initial
   }
 }
