@@ -1,9 +1,9 @@
 resource "null_resource" "name" {
   triggers = {
-    string = var.string-trigger
+    string = var.string_trigger
   }
 }
 
-variable "string-trigger" {
+variable "string_trigger" {
   default = "DEFAULT VALUE"
 }

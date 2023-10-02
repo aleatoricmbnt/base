@@ -1,1 +1,1 @@
-string-trigger = "VAR-FILE"
+string_trigger = "VAR-FILE"

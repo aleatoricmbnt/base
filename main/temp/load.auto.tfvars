@@ -1,1 +1,1 @@
-string-trigger = "AUTO TFVARS"
+string_trigger = "AUTO TFVARS"
