@@ -1,0 +1,1 @@
+string-trigger = "VAR-FILE"
