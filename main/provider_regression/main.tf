@@ -318,6 +318,7 @@ data "scalr_webhook" "data_wh" {
 
 output "out_wh" {
   value = yamlencode(data.scalr_webhook.data_wh)
+  sensitive = true
 }
 
 data "scalr_workspace" "data_ws" {
