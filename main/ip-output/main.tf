@@ -16,6 +16,6 @@ data "local_file" "read_ip" {
   filename   = "./ip.txt"
 }
 
-output "scalr_ip" {
-  value = "Current instance IP is: ${data.local_file.read_ip.content}"
-}
+# output "scalr_ip" {
+#   value = "Current instance IP is: ${data.local_file.read_ip.content}"
+# }
