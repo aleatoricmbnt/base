@@ -11,11 +11,11 @@ resource "null_resource" "check_ip" {
   }
 }
 
-# data "local_file" "read_ip" {
-#   depends_on = [null_resource.check_ip]
-#   filename   = "./ip.txt"
-# }
+data "local_file" "read_ip" {
+  depends_on = [null_resource.check_ip]
+  filename   = "./ip.txt"
+}
 
-# output "scalr_ip" {
-#   value = "Current instance IP is: ${data.local_file.read_ip.content}"
-# }
+output "scalr_ip" {
+  value = "Current instance IP is: ${data.local_file.read_ip.content}"
+}
