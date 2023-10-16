@@ -1,1 +1,1 @@
-string = "1337"
+../tfvars/default.tfvars
