@@ -12,7 +12,7 @@
     "lineage": "6378832f-c96f-d892-c7cc-af9ca64fbaaa"
 }
 ```
-3. Create in repo `.tfsate` file with the contents above and push it 
+3. Create in repo `some-state.tfstate` file with the contents above and push it 
 4. Add pre-plan hook:
 ```
 x=3 y=`expr $x + 10`; while  [ $x -le $y ]; do sed -i -e "s/\"serial\": .*/\"serial\": $x,/g" some-state.tfstate; terraform state push some-state.tfstate; x=`expr $x + 1`; sleep 1; done
