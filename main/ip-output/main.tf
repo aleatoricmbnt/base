@@ -1,7 +1,3 @@
-# terraform {
-#   required_version = "= 1.6.0-preview"
-# }
-
 resource "null_resource" "check_ip" {
   triggers = {
     current_time = timestamp()
