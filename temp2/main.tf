@@ -5,5 +5,5 @@ module "integer" {
 
 module "role" {
 	source  = "aleatoric.main.scalr.dev/env-v0ns0m539r05815rg/role/azurerm"
-	version = "0.0.5"
+	version = "0.0.6"
 }
