@@ -7,6 +7,38 @@ terraform {
   }
 }
 
+# ----------------------------------------------------------------------------------------- #
+
+variable "custom_arguments" {
+  default = {
+    my_custom_name = {
+      level_one = "value"
+      level_two = "another_value"
+      level_three = {
+        nested_key = "nested_value"
+      }
+    }
+  }
+}
+
+resource "null_resource" "test" {
+  for_each = var.custom_arguments
+
+  dynamic "custom_dynamic" {
+    for_each = lookup(each.value, "level_three", {})
+    content {
+      level_one = each.value.level_one
+      level_two = each.value.level_two
+
+      dynamic "nested" {
+        for_each = can(each.value, "level_three") ? [1] : []
+        content {
+          nested_key = lookup(each.value.level_three, "nested_key", null)
+        }
+      }
+    }
+  }
+}
 
 # ----------------------------------------------------------------------------------------- #
 
