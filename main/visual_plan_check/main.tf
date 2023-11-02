@@ -17,6 +17,13 @@ module "long-module-name-" {
 
 # ----------------------------------------------------------------------------------------- #
 
+module "long-module-name-" {
+  source = "./long-attr"
+  trigger-value = "AMITX-+@MotyhtsV>0f>b]>6?{#Gr7FRyGQZ0h+z2-J&LJ5nrYSXGb:Jre$F*bREG8Q#h)tmD3>Htr5LTkI)Zp(E#3(}z_&EIh}g}@fwt!tKQF<ZwXg)q!kx(]s=P=}@D*YJ0p5%%u[:>n]-7GQ=Fyc9@CEsu8CcFP5{X_jmcjCnj5Du&:**XXs)g&nn6Og+u("
+}
+
+# ----------------------------------------------------------------------------------------- #
+
 resource "null_resource" "countable" {
   count = 3
   triggers = {
