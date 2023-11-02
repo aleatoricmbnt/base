@@ -4,6 +4,6 @@ module "integer" {
 }
 
 module "role" {
-	source  = "aleatoric.main.scalr.dev/env-v0ns0m539r05815rg/role/azurerm"
-	version = "0.0.7"
+	source  = "aleatoric.main.scalr.dev/env-v0ns0m539r05815rg/mommy/big"
+	version = "0.0.2"
 }
