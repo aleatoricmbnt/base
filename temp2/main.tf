@@ -1,9 +1,14 @@
-module "integer" {
-	source  = "aleatoric.main.scalr.dev/acc-ttf6li416m4sbi0/integer/random"
-	version = "0.0.1"
+module "role1" {
+	source  = "aleatoric.main.scalr.dev/env-v0ns0m539r05815rg/mommy/big"
+	version = "0.0.2"
 }
 
-module "role" {
+module "role2" {
+	source  = "aleatoric.main.scalr.dev/env-v0ns0m539r05815rg/mommy/big"
+	version = "0.0.2"
+}
+
+module "role3" {
 	source  = "aleatoric.main.scalr.dev/env-v0ns0m539r05815rg/mommy/big"
 	version = "0.0.2"
 }
