@@ -8,7 +8,3 @@ module "role2" {
 	version = "0.0.2"
 }
 
-module "role3" {
-	source  = "aleatoric.main.scalr.dev/env-v0ns0m539r05815rg/mommy/big"
-	version = "0.0.2"
-}
