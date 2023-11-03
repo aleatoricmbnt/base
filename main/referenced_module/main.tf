@@ -1,6 +1,12 @@
 module "referenced" {
+  count = var.count
   source = var.source
   version = var.version
+}
+
+variable "count" {
+  type = number
+  description = "The number of modules to be created"
 }
 
 variable "source" {
