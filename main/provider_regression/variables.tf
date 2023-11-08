@@ -10,7 +10,7 @@ variable "opa_version" {
 
 variable "pg_vcs-repo_identifier" {
   description = "'vcs_repo.indentifier' used to create policy group."
-  default     = "aleatoricmbnt/tf-revizor-fixtures"
+  default     = "aleatoricmbnt/base"
 }
 
 variable "pg_vcs-repo_path" {
@@ -30,7 +30,7 @@ variable "ep_url" {
 
 variable "mod_vcs-repo_identifier" {
   description = "'vcs_repo.indentifier' used to create a module."
-  default     = "aleatoricmbnt/tf-revizor-fixtures"
+  default     = "aleatoricmbnt/base"
 }
 
 variable "mod_vcs-repo_path" {
@@ -50,7 +50,7 @@ variable "pcfg_gcp_credentials" {
 
 variable "ws-vcs_vcs-repo_identifier" {
   description = "'vcs_repo.indentifier' used to create policy group."
-  default     = "aleatoricmbnt/tf-revizor-fixtures"
+  default     = "aleatoricmbnt/base"
 }
 
 variable "ws-vcs_vcs-repo_branch" {
