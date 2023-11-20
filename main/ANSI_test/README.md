@@ -4,7 +4,7 @@ This Terraform module is designed for testing purposes and can be used as a star
 
 ## Usage
 
-### `script.sh` 
+### script.sh
 
 `script.sh` contains the following code
 
@@ -33,7 +33,7 @@ echo -e "\033[38;5;9mThis text is red.
 Second line also should be red!
 And this one too.\033[0m"
 ```
-### `show_ansi.sh` 
+### show_ansi.sh
 
 `show_ansi.sh` contains the following code
 
