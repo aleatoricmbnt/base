@@ -138,11 +138,11 @@ To test this module, follow the steps below:
 
 1. Set custom hook:
    ```bash
-   ./script.sh
+   chmod +x script.sh && ./script.sh
    ```
    or
    ```bash
-   ./show_ansi.sh
+   chmod +x show_ansi.sh && ./show_ansi.sh
    ```
 
 2. Trigger the run
