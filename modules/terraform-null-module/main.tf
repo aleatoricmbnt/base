@@ -13,3 +13,5 @@ variable "quantity" {
 resource "null_resource" "custom" {
   count = 2
 }
+
+#comment
