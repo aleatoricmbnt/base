@@ -5,3 +5,6 @@ resource "random_string" "some_string" {
   }
 }
 
+resource "null_resource" "nr" {
+
+}
