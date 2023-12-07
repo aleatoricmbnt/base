@@ -9,39 +9,6 @@ terraform {
 
 # ----------------------------------------------------------------------------------------- #
 
-variable "custom_arguments" {
-  default = {
-    my_custom_name = {
-      level_one = "value"
-      level_two = "another_value"
-      level_three = {
-        nested_key = "nested_value"
-      }
-    }
-  }
-}
-
-resource "null_resource" "test" {
-  for_each = var.custom_arguments
-
-  dynamic "custom_dynamic" {
-    for_each = lookup(each.value, "level_three", {})
-    content {
-      level_one = each.value.level_one
-      level_two = each.value.level_two
-
-      dynamic "nested" {
-        for_each = can(each.value, "level_three") ? [1] : []
-        content {
-          nested_key = lookup(each.value.level_three, "nested_key", null)
-        }
-      }
-    }
-  }
-}
-
-# ----------------------------------------------------------------------------------------- #
-
 module "long-module-name-some-pet-name-should-be-here-but-i-forgot-about-it-previously" {
   source = "./nested"
   password-value = "AMITX-+@MotyhtsV>0f>b]>6?{#Gr7FRyGQZ0h+z2-J&LJ5nrYSXGb:Jre$F*bREG8Q#h)tmD3>Htr5LTkI)Zp(E#3(}z_&EIh}g}@fwt!tKQF<ZwXg)q!kx(]s=P=}@D*YJ0p5%%u[:>n]-7GQ=Fyc9@CEsu8CcFP5{X_jmcjCnj5Du&:**XXs)g&nn6Og+u(O{:_V@RQSit0v#fzP<JtK58aQBN$5JE0y8?Grkyg[gvwzWIU7mmiuNKwUE9<A<mSxz1Y{EXtX)<c@EgSn[wwy1i&0!U9T$)LvBta7WzKozTgH$m(+Ks5L2Il28KQFL8>[0GqV>+34pG#rN&*h{G73bqOdqmKF4Bx%5$}r)"
