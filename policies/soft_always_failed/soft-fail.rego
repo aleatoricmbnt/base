@@ -6,5 +6,5 @@ bool_value = true
 deny[reason] {
     check := bool_value
     check == true
-    reason := sprintf("This policy is always soft-failed")
+    reason := "This policy is always soft-failed"
 }
