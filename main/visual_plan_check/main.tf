@@ -26,8 +26,8 @@ module "regular-module-name" {
 variable "array-letters" { default = ["a", "b", "c", "d"] }
 
 resource "random_shuffle" "my_shuffle" {
-  input        = var.strings
-  result_count = length(var.strings)
+  input        = array-letters
+  result_count = length(array-letters)
 }
 
 output "shuffle_out" {
