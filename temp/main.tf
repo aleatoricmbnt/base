@@ -5,5 +5,5 @@ resource "null_resouce" "name" {
 }
 
 output "nams" {
-  value = null_resouce
+  value = null_resource
 }
