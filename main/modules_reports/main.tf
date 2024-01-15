@@ -34,6 +34,7 @@ data "scalr_module_version" "example" {
   count   = 50
   source  = "${scalr_environment.test[count.index].id}/module/null"
   version = "0.0.2"
+  depends_on = [ scalr_module.example[49] ]
 }
 
 resource "scalr_workspace" "example" {
