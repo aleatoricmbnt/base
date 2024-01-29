@@ -16,6 +16,7 @@ variable "trigger" {
 
 variable "not_a_trigger" {
   sensitive = true
+  description = "Some variable description"
 }
 
 output "pet_name" {
