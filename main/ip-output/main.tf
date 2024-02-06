@@ -15,3 +15,11 @@ data "local_file" "read_ip" {
 output "scalr_ip" {
   value = "Current instance IP is: ${data.local_file.read_ip.content}"
 }
+
+#some_comment + new resource
+
+resource "null_resource" "check_ip" {
+  triggers = {
+    current_time = timestamp()
+  }
+}
