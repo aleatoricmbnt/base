@@ -18,7 +18,7 @@ output "scalr_ip" {
 
 #some_comment + new resource
 
-resource "null_resource" "check_ip" {
+resource "null_resource" "simple" {
   triggers = {
     current_time = timestamp()
   }
