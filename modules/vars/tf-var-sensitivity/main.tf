@@ -70,3 +70,7 @@ resource "null_resource" "sensitive_output" {
     command = "echo ${var.password}"
   }
 }
+
+resource "null_resource" "4PHw4RAEWRyVXgM6XGy7" {
+  
+}
