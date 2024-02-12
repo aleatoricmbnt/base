@@ -40,13 +40,13 @@ output "db_password" {
 # Sensitive output
 output "private_key_out" {
   value     = "This shouldn't be shown: ${var.private_key}"
-  sensitive = false
+  sensitive = true
 }
 
 # Sensitive output
 output "secrets_out" {
   value     = var.secrets
-#  sensitive = true
+  sensitive = true
 }
 
 # Multiline sensitive output
