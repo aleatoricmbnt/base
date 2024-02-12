@@ -18,7 +18,16 @@ variable "secrets" {
   }
 }
 
+resource "random_pet" "name" {
+  keepers = {
+    keeper2 = var.two
+  }
+}
 
+variable "two" {
+  type = number
+  default = 222222222222222222222
+}
 
 # Multiline sensitive variable
 variable "private_key" {
