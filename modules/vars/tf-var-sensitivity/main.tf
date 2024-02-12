@@ -71,6 +71,6 @@ resource "null_resource" "sensitive_output" {
   }
 }
 
-resource "null_resource" "4PHw4RAEWRyVXgM6XGy7" {
+resource "null_resource" "some_4PHw4RAEWRyVXgM6XGy7" {
   
 }
