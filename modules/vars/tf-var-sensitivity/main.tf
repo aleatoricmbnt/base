@@ -40,13 +40,13 @@ output "db_password" {
 # Sensitive output
 output "private_key_out" {
   value     = "This shouldn't be shown: ${var.private_key}"
-  sensitive = true
+  sensitive = false
 }
 
 # Sensitive output
 output "secrets_out" {
   value     = var.secrets
-  sensitive = true
+#  sensitive = true
 }
 
 # Multiline sensitive output
@@ -69,8 +69,4 @@ resource "null_resource" "sensitive_output" {
   provisioner "local-exec" {
     command = "echo ${var.password}"
   }
-}
-
-resource "null_resource" "some_4PHw4RAEWRyVXgM6XGy7" {
-  
 }
