@@ -3,6 +3,6 @@ resource "null_resource" "provisioner" {
     current_time = (formatdate("YYYY-MM-DD_hh:mm:ss",timestamp()))
   }
   provisioner "local-exec" {
-    command = "script.sh"
+    command = "./script.sh"
   }
 }
