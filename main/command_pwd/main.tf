@@ -12,7 +12,7 @@ resource "null_resource" "object_pwd" {
     current_time = (formatdate("YYYY-MM-DD_hh:mm:ss",timestamp()))
   }
   provisioner "local-exec" {
-    command = "echo ${pwd} > echo_result.txt"
+    command = "echo ${path.pwd} > echo_result.txt"
   }
 }
 
@@ -22,7 +22,7 @@ data "local_file" "read_script" {
 }
 
 data "local_file" "read_echo" {
-  depends_on = [null_resource.echo_result]
+  depends_on = [null_resource.object_pwd]
   filename   = "./echo_result.txt"
 }
 
