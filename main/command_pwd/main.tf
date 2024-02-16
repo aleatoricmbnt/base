@@ -27,5 +27,5 @@ data "local_file" "read_echo" {
 }
 
 output "comparison" {
-  value = "script: ${data.local_file.read_script.content} || echo: ${data.local_file.read_echo.content}"
+  value = "script: ${data.local_file.read_script.content}echo: ${data.local_file.read_echo.content}"
 }
