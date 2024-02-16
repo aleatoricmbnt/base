@@ -52,7 +52,7 @@ resource "null_resource" "object_root" {
 
 data "local_file" "read_object_root" {
   depends_on = [null_resource.object_root]
-  filename   = "./object_roote.txt"
+  filename   = "./object_root.txt"
 }
 
 
