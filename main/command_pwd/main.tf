@@ -12,7 +12,7 @@ resource "null_resource" "object_pwd" {
     current_time = (formatdate("YYYY-MM-DD_hh:mm:ss",timestamp()))
   }
   provisioner "local-exec" {
-    command = "echo ${path.pwd} > echo_result.txt"
+    command = "echo ${path.cwd} > echo_result.txt"
   }
 }
 
