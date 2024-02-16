@@ -28,7 +28,7 @@ deny[reason] {
     not array_contains(allowed_resources, resource.type)
 
     reason := sprintf(
-        "%s: resource type %q is not allowed",
+        "%s: resource type %q is not allowed. Only `null_resource` type resources, please",
         [resource.address, resource.type]
     )
 }
