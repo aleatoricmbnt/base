@@ -1,11 +1,11 @@
-# data "scalr_environment" "possibly_read_env" {
-#   id         = var.read_env_2_id
-#   depends_on = [ null_resource.cat_get_users ]
-# }
+data "scalr_environment" "possibly_read_env" {
+  id         = var.read_env_2_id
+  depends_on = [ null_resource.cat_get_users ]
+}
 
-# output "possible_env" {
-#   value = data.scalr_environment.possibly_read_env.cost_estimation_enabled
-# }
+output "possible_env" {
+  value = data.scalr_environment.possibly_read_env.cost_estimation_enabled
+}
 
 
 data "scalr_workspaces" "possibly_read_ws" {
@@ -24,11 +24,11 @@ resource "null_resource" "possibly_get_state" {
   depends_on = [ null_resource.cat_get_users ]
 }
 
-# data "scalr_variable" "possibly_read_var_2" {
-#   id         = var.read_var_2_id
-#   depends_on = [ null_resource.cat_get_users ]
-# }
+data "scalr_variable" "possibly_read_var_2" {
+  id         = var.read_var_2_id
+  depends_on = [ null_resource.cat_get_users ]
+}
 
-# output "possibly_read_var_2" {
-#   value = data.scalr_variable.possibly_read_var_2.key
-# }
+output "possibly_read_var_2" {
+  value = data.scalr_variable.possibly_read_var_2.key
+}
