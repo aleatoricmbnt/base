@@ -21,14 +21,27 @@ resource "null_resource" "possibly_get_state" {
   }
 }
 
-data "local_file" "name" {
-  filename = "./response.json"
-  depends_on = [ null_resource.possibly_get_state ]
+# data "local_file" "name" {
+#   filename = "./response.json"
+#   depends_on = [ null_resource.possibly_get_state ]
+# }
+
+# output "state" {
+#   value = data.local_file.name.content
+# }
+
+data "terraform_remote_state" "vlad" {
+  backend = "remote"
+
+  config = {
+    hostname = "test.mvsession.testenv.scalr.dev"
+    organization = "env-v0o8t3gcnn3ffh59k"
+    workspaces = {
+      name = "new_state"
+    }
+  }
 }
 
-output "state" {
-  value = data.local_file.name.content
-}
 
 # data "scalr_variable" "possibly_read_var_2" {
 #   id         = var.read_var_2_id
