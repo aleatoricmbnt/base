@@ -24,13 +24,10 @@ resource "null_resource" "possibly_get_state" {
   depends_on = [ null_resource.cat_get_users ]
 }
 
-data "scalr_variables" "possibly_read_vars" {
-  keys             = ["key1", "key2", "key3"]
-  category         = "terraform" # or shell
-  environment_ids = ["${var.read_env_2_id}", "null"]
-  depends_on = [ null_resource.cat_get_users ]
+data "scalr_variable" "can_read_var_2" {
+  id         = var.read_var_2_id
 }
 
-output "possible_vars" {
-  value = join(",", data.scalr_variables.possibly_read_vars[*].hcl)
+output "read_var" {
+  value = data.scalr_variable.can_read_var_2.key
 }

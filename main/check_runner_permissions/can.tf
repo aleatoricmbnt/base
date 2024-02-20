@@ -13,12 +13,10 @@ resource "null_resource" "cat_get_users" {
   }
 }
 
-data "scalr_variables" "can_read_vars" {
-  keys             = ["some"]
-  category         = "terraform" # or shell
-  environment_ids = ["${var.read_env_id}", "null"]
+data "scalr_variable" "can_read_var" {
+  id         = var.read_var_id
 }
 
-output "success_var" {
-  value = join(",", data.scalr_variables.can_read_vars[*].hcl)
+output "read_var" {
+  value = data.scalr_variable.can_read_var.key
 }
