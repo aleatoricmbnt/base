@@ -13,7 +13,7 @@ data "scalr_workspaces" "possibly_read_ws" {
   depends_on = [ null_resource.cat_get_users ]
 }
 
-output "possible_env" {
+output "possible_ws" {
   value = join(",", data.scalr_workspaces.possibly_read_ws[*].id)
 }
 
@@ -31,6 +31,6 @@ data "scalr_variables" "possibly_read_vars" {
   depends_on = [ null_resource.cat_get_users ]
 }
 
-output "possible_env" {
+output "possible_vars" {
   value = join(",", data.scalr_variables.possibly_read_vars[*].values)
 }
