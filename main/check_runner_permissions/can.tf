@@ -5,13 +5,7 @@ data "scalr_module_version" "can_get_modver" {
 
 resource "null_resource" "cat_get_users" {
   provisioner "local-exec" {
-    command = <<EOT
-    curl --request GET \
-        --url 'https:///$${SCALR_HOSTNAME}/api/iacp/v3/users' \
-        --header 'Prefer: profile=preview' \
-        --header 'accept: application/vnd.api+json' \
-        --header 'authorization: Bearer $${SCALR_TOKEN}'
-    EOT
+    command = "curl --request GET --url 'https:///$${SCALR_HOSTNAME}/api/iacp/v3/users' --header 'Prefer: profile=preview' --header 'accept: application/vnd.api+json' --header 'authorization: Bearer $${SCALR_TOKEN}'"
   }
 }
 
