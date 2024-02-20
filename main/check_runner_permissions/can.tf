@@ -16,7 +16,7 @@ resource "null_resource" "cat_get_users" {
 }
 
 data "scalr_variables" "can_read_vars" {
-  keys             = ["key1", "key2", "key3"]
+  keys             = ["some"]
   category         = "terraform" # or shell
   envrironment_ids = ["${var.read_env_id}", "null"]
 }
