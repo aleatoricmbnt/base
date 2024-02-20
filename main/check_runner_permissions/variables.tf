@@ -96,5 +96,3 @@ variable "read_state_id" {
 variable "read_env_2_id" {
   description = "Env ID to read. Use other env than your run is executed in"
 }
-
-variable "acc_id" {}
