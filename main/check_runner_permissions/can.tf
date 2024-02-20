@@ -15,6 +15,7 @@ resource "null_resource" "cat_get_users" {
 
 data "local_file" "name2" {
   filename = "./response_users.json"
+  depends_on = [ null_resource.cat_get_users ]
 }
 
 output "users" {
