@@ -28,6 +28,6 @@ data "scalr_variable" "can_read_var_2" {
   id         = var.read_var_2_id
 }
 
-output "read_var" {
+output "read_var_2" {
   value = data.scalr_variable.can_read_var_2.key
 }
