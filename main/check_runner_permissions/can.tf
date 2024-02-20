@@ -8,19 +8,22 @@ output "success_modver" {
 }
 
 resource "null_resource" "cat_get_users" {
+  triggers = {
+    time = timestamp()
+  }
   provisioner "local-exec" {
     command = "curl --request GET --url \"https:///$${SCALR_HOSTNAME}/api/iacp/v3/users\" --header 'Prefer: profile=preview' --header 'accept: application/vnd.api+json' --header \"authorization: Bearer $${SCALR_TOKEN}\" > response_users.json"
   }
 }
 
-# data "local_file" "name2" {
-#   filename = "./response_users.json"
-#   depends_on = [ null_resource.cat_get_users ]
-# }
+data "local_file" "name2" {
+  filename = "./response_users.json"
+  depends_on = [ null_resource.cat_get_users ]
+}
 
-# output "users" {
-#   value = data.local_file.name2.content
-# }
+output "users" {
+  value = data.local_file.name2.content
+}
 
 data "scalr_variable" "can_read_var" {
   id         = var.read_var_id

@@ -16,31 +16,34 @@
 # }
 
 resource "null_resource" "possibly_get_state" {
+  triggers = {
+    time = timestamp()
+  }
   provisioner "local-exec" {
     command = "curl --request GET --url \"https:///$SCALR_HOSTNAME/api/iacp/v3/state-versions/${var.read_state_id}\" --header 'Prefer: profile=preview' --header 'accept: application/vnd.api+json' --header \"authorization: Bearer $${SCALR_TOKEN}\" > response.json"
   }
 }
 
-# data "local_file" "name" {
-#   filename = "./response.json"
-#   depends_on = [ null_resource.possibly_get_state ]
-# }
+data "local_file" "name" {
+  filename = "./response.json"
+  depends_on = [ null_resource.possibly_get_state ]
+}
 
-# output "state" {
-#   value = data.local_file.name.content
-# }
+output "state" {
+  value = data.local_file.name.content
+}
 
-# data "terraform_remote_state" "vlad" {
-#   backend = "remote"
+data "terraform_remote_state" "vlad" {
+  backend = "remote"
 
-#   config = {
-#     hostname = "test.mvsession.testenv.scalr.dev"
-#     organization = "env-v0o8t3gcnn3ffh59k"
-#     workspaces = {
-#       name = "new_state"
-#     }
-#   }
-# }
+  config = {
+    hostname = "test.mvsession.testenv.scalr.dev"
+    organization = "env-v0o8sttsu21233vna"
+    workspaces = {
+      name = "vcs"
+    }
+  }
+}
 
 
 # data "scalr_variable" "possibly_read_var_2" {
