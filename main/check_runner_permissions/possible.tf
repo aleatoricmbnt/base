@@ -19,7 +19,7 @@ resource "null_resource" "possibly_get_state" {
   }
 }
 
-data "scalr_variables" "can_read_vars" {
+data "scalr_variables" "possibly_read_vars" {
   keys             = ["key1", "key2", "key3"]
   category         = "terraform" # or shell
   envrironment_ids = ["${var.read_env_2_id}", "null"]
