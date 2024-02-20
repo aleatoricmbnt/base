@@ -30,5 +30,5 @@ data "scalr_variable" "possibly_read_var_2" {
 }
 
 output "possibly_read_var_2" {
-  value = data.scalr_variable.can_read_var_2.key
+  value = data.scalr_variable.possibly_read_var_2.key
 }
