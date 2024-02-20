@@ -38,9 +38,9 @@ data "terraform_remote_state" "vlad" {
 
   config = {
     hostname = "test.mvsession.testenv.scalr.dev"
-    organization = "env-v0o8sttsu21233vna"
+    organization = "env-v0o8t3gcnn3ffh59k"
     workspaces = {
-      name = "vcs"
+      name = "new_state"
     }
   }
 }
