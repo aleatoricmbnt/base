@@ -32,5 +32,5 @@ data "scalr_variables" "possibly_read_vars" {
 }
 
 output "possible_vars" {
-  value = join(",", data.scalr_variables.possibly_read_vars[*].values)
+  value = join(",", yamlencode(data.scalr_variables.possibly_read_vars[*]))
 }
