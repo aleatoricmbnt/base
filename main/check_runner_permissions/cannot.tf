@@ -1,5 +1,6 @@
 data "scalr_vcs_provider" "cannot_read_vcs" {
   id = var.read_vcs_id
+  depends_on = [ null_resource.cat_get_users ]
 }
 
 resource "scalr_module" "cannot_create_module" {
