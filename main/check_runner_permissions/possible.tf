@@ -11,7 +11,7 @@ data "scalr_workspaces" "possibly_read_ws" {
 
 resource "null_resource" "possibly_get_state" {
   provisioner "local-exec" {
-    command = "curl --request GET --url 'https:///$SCALR_HOSTNAME/api/iacp/v3/state-versions/${var.read_state_id}' --header 'Prefer: profile=preview' --header 'accept: application/vnd.api+json' --header 'authorization: Bearer $${SCALR_TOKEN}'"
+    command = "curl --request GET --url \"https:///$SCALR_HOSTNAME/api/iacp/v3/state-versions/${var.read_state_id}\" --header 'Prefer: profile=preview' --header 'accept: application/vnd.api+json' --header \"authorization: Bearer $${SCALR_TOKEN}\""
   }
   depends_on = [ null_resource.cat_get_users ]
 }
