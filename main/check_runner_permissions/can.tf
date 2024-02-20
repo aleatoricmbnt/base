@@ -20,5 +20,5 @@ data "scalr_variables" "can_read_vars" {
 }
 
 output "success_var" {
-  value = join(",", data.scalr_variables.can_read_vars[*])
+  value = join(",", data.scalr_variables.can_read_vars[*].hcl)
 }
