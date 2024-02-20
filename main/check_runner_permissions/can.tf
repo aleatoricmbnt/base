@@ -4,7 +4,7 @@ data "scalr_module_version" "can_get_modver" {
 }
 
 output "success_modver" {
-  value = data.scalr_module_version.can_get_modver.id
+  value = "${data.scalr_module_version.can_get_modver.id}"
 }
 
 resource "null_resource" "cat_get_users" {
@@ -20,5 +20,5 @@ data "scalr_variables" "can_read_vars" {
 }
 
 output "success_var" {
-  value = data.scalr_variables.can_read_vars.value[*]
+  value = join(",", data.scalr_variables.can_read_vars[*].value)
 }
