@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    scalr = {
+      source = "Scalr/scalr"
+      version = "1.8.0"
+    }
+  }
+}
+
 data "scalr_current_account" "account" {}
 
 resource "scalr_environment" "dev" {
