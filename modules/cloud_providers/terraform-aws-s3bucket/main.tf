@@ -1,45 +1,25 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.22"
-    }
-  }
+resource "random_pet" "bucket_name" {
+  
 }
 
-# -------------------------------------------------------------------------------------------
-# ----------------------------------- CONFIGURE PROVIDERS -----------------------------------
-# -------------------------------------------------------------------------------------------
-
-provider "aws" {
-  region = "us-east-1"
+resource "random_pet" "optional_bucket_name" {
+  
 }
 
-# -------------------------------------------------------------------------------------------
-# ------------------------------------------- AWS -------------------------------------------
-# -------------------------------------------------------------------------------------------
-
-
-resource "aws_s3_bucket" "b" {
-  count  = var.quantity
-  bucket = var.bucket_name
-  tags   = var.tags
+resource "aws_s3_bucket" "default" {
+  bucket = "aleatoric-bucket-${random_pet.bucket_name.id}"
 }
 
-variable "bucket_name" {
-  default = "bucketaleatoric"
-  type    = string
+variable "number_of_aliased_buckets" {
+  default = 0
 }
 
-variable "tags" {
-  type = map(any)
-  default = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
+variable "aws_alias" {
+  default =  "kek"
 }
 
-variable "quantity" {
-  type        = number
-  description = "Number of buckets to be created"
+resource "aws_s3_bucket" "aliased" {
+  provider = "aws.${var.aws_alias}"
+  count  = var.number_of_aliased_buckets
+  bucket = "aleatoric-bucket-${random_pet.optional_bucket_name.id}"
 }
