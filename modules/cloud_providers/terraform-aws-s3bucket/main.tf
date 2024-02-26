@@ -14,12 +14,8 @@ variable "number_of_aliased_buckets" {
   default = 0
 }
 
-variable "aws_alias" {
-  default =  "kek"
-}
-
 resource "aws_s3_bucket" "aliased" {
-  provider = "aws.${var.aws_alias}"
+  provider = aws.kek
   count  = var.number_of_aliased_buckets
   bucket = "aleatoric-bucket-${random_pet.optional_bucket_name.id}"
 }
