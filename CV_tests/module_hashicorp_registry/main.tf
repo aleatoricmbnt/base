@@ -1,6 +1,6 @@
 module "label" {
     source  = "cloudposse/label/null"
-    version = "0.25.0"
+    version = "0.17.0"
 
     enabled = true
     namespace = "qa"
