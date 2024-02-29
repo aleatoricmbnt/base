@@ -1,4 +1,4 @@
-resource "null_resource" "test" {
+resource "null_resource" "test_pr" {
   count = var.quantity
   triggers = {
     trigger = timestamp()
