@@ -3,10 +3,3 @@ resource "null_resource" "no_vars" {
     "timestamp" = timestamp()
   }
 }
-
-
-resource "null_resource" "no_vars2" {
-  triggers = {
-    "timestamp" = timestamp()
-  }
-}
