@@ -9,3 +9,6 @@ variable "question" {
   type        = string
   description = "Do you want your config to be applied again during re-run?"
 }
+
+resource "null_resource" "no_optional_changes" {
+}
