@@ -1,1 +1,1 @@
-custom_string = "initial.string"
+custom_string = "dev.tfvars string"
