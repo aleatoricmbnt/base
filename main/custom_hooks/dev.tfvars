@@ -1,0 +1,1 @@
+custom_string = "initial.string"
