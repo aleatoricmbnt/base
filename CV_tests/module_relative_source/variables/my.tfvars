@@ -1,1 +1,1 @@
-subdir_var = "value of subdir var-file"
+subdir-var = "value of subdir var-file"
