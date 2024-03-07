@@ -1,4 +1,4 @@
-resource "random_pet" "referenced" {
+resource "random_pet" "subdir_referenced" {
   keepers = {
     time = timestamp()
     custom = var.custom_var

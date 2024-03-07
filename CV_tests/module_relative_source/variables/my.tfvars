@@ -1,0 +1,1 @@
+subdir_var = "value of subdir var-file"

@@ -1,0 +1,1 @@
+parent_var = "value of the tfvars in parent folder"

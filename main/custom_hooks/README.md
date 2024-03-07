@@ -109,11 +109,15 @@ SCALR_RUN_VCS_COMMIT=
 ```
 # TEST 5
 ## Setup
-Set var-file to dev.tfvars (in the workdir) and pre-plan hook. Then trigger the run and check the resource triggers:
+Set var-file to dev.tfvars (in the workdir) and pre-plan hook. Then trigger the run:
 ```
-NEW_VALUE="hook.value"; VAR_FILE="dev.tfvars"; sed -i "/^custom_string\s*=/c\custom_string=\"$NEW_VALUE\"" $VAR_FILE
+echo && cat dev.tfvars && NEW_VALUE="hook.value"; VAR_FILE="dev.tfvars"; sed -i "/^custom_string\s*=/c\custom_string=\"$NEW_VALUE\"" $VAR_FILE && echo && cat dev.tfvars 
 ```
 ## Verification
 ```
-
+Executing pre-init hook...
+~$ echo && cat dev.tfvars && NEW_VALUE="hook.value"; VAR_FILE="dev.tfvars"; sed -i "/^custom_string\s*=/c
+custom_string = "dev.tfvars string"
+custom_string="hook.value"
+Exit code: 0
 ```
