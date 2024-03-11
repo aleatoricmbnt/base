@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir subdir_script && pwd && ls -la
+mkdir subdir_script
