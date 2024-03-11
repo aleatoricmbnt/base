@@ -1,2 +1,2 @@
 #!/bin/bash
-mkdir subdir_script
+mkdir ./subdir_script
