@@ -1,4 +1,2 @@
 #!/bin/bash
-cd ..
-mkdir subdir_script
-echo "Created"
+cd .. && pwd && mkdir subdir_script && echo "Created"
