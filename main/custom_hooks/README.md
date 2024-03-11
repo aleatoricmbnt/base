@@ -1,8 +1,9 @@
 Tests are designed for agent. Some commands might not work on the server backend.
 
 # TEST 1
+Checks if different special special characters are correctly parsed.
 ## Setup 
-Add the following custom hook to the workspace configuration and trigger run
+Set the following custom hook:
 ```
 echo "Test special characters in commands: "  && echo "The date is: `date`" && cat file.txt | grep 'some.*string' && echo "The current directory is: $(pwd)" && echo "He said, \"BEEP BOOP!\"" && echo 'This is a single-quoted string with special characters *&^%'
 ```
@@ -17,7 +18,9 @@ He said, "BEEP BOOP!"
 This is a single-quoted string with special characters *&^%
 ```
 # TEST 2
-## Setup (not fixed yet)
+Checks whether the software can be installed on agent via hook and if execution of the hook can be canceled manually.
+> **Note:** ⚠️ Works only for the Docker and Kubernetes agents.
+## Setup 
 Add the following custom hook to the workspace configuration, trigger run and cancel run some time after the ping started execution:
 ```
 apt-get update && apt-get install -y iputils-ping && ping 8.8.8.8
@@ -28,6 +31,7 @@ The console output for the hook should be following:
 
 ```
 # TEST 3
+Checks if default curl usage is available (with quotes and `{}` characters)
 ## Setup 
 Add the following custom hook to the workspace configuration and trigger run
 ```
@@ -85,6 +89,7 @@ Dload  Upload   Total   Spent    Left  Speed
 Exit code: 0
 ```
 # TEST 4
+Checks if all SCALR_ shell variables are automatically passed to agent run.
 ## Setup 
 Add the following custom hook to the workspace configuration and trigger run
 ```
@@ -108,6 +113,7 @@ TF_VAR_SCALR_OIDC_TOKEN=***************
 SCALR_RUN_VCS_COMMIT=
 ```
 # TEST 5
+Checks if `.tfvars` value can be changed with `sed` hook. 
 ## Setup
 Set var-file to dev.tfvars (in the workdir) and pre-plan hook. Then trigger the run:
 ```
@@ -116,8 +122,37 @@ echo && cat dev.tfvars && NEW_VALUE="hook.value"; VAR_FILE="dev.tfvars"; sed -i 
 ## Verification
 ```
 Executing pre-init hook...
-~$ echo && cat dev.tfvars && NEW_VALUE="hook.value"; VAR_FILE="dev.tfvars"; sed -i "/^custom_string\s*=/c
+~$ echo && cat dev.tfvars && NEW_VALUE="hook.value"; VAR_FILE="dev.tfvars"; sed -i "/^custom_string\s*=/c\custom_string=\"$NEW_VALUE\"" $VAR_FILE && echo && cat dev.tfvars
 custom_string = "dev.tfvars string"
 custom_string="hook.value"
 Exit code: 0
+```
+# TEST 6
+Checks the agent OOM message.
+> **Note:** ⚠️ It's easier to use with docker or k8s agents (because of config). DO NOT USE WITHOUT THE FOLLOWING STEP: set `-e SCALR_CONTAINER_TASK_MEM_LIMIT=256` if using `docker run` OR `--set agent.container_task_mem_limit=256` if using k8s agent
+## Setup
+Set custom hook and trigger the run:
+```
+python3 -c  "['abc' for _ in range(2**38)]; print('OOM killer is failed')"
+```
+## Verification
+Note that Run memoty limits number should vary depending on the pre-config value you used
+```
+ Killed
+Plan operation failed
+Error: The Run has reached the memory limit, and this operation was aborted. Please ensure there is enough memory on the Scalr Agent instances and/or consider increasing 
+the Run memory limits (256MB) for the Scalr Agent.
+```
+
+# TEST 7
+Checks if hooks with relative paths can be correctly executed
+## Setup
+Set custom hook and trigger the run:
+```
+./subdir/subdir.sh && ../scripts/create_dir.sh && ls -la | grep script
+```
+## Verification
+Console output should be:
+```
+
 ```
