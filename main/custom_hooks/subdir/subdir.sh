@@ -1,2 +1,2 @@
 #!/bin/bash
-cd .. && pwd && mkdir subdir_script && echo "Created"
+mkdir subdir_script && pwd && ls -la
