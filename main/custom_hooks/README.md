@@ -149,7 +149,7 @@ Checks if hooks with relative paths can be correctly executed
 ## Setup
 Set custom hook and trigger the run:
 ```
-./subdir/subdir.sh && ../scripts/create_dir.sh && ls -la | grep script
+chmod +x ./subdir/subdir.sh && ./subdir/subdir.sh && chmod +x ../scripts/create_dir.sh && ../scripts/create_dir.sh && ls -la | grep script
 ```
 ## Verification
 Console output should be:
