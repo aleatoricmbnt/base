@@ -152,7 +152,7 @@ Set custom hook and trigger the run:
 chmod +x ./subdir/subdir.sh && ./subdir/subdir.sh  && chmod +x ../scripts/create_dir.sh && ../scripts/create_dir.sh && echo && pwd &&  ls -la | grep script
 ```
 ## Verification
-Console output should be (note that `/opt/workdir/...` depends on your repo structure. The main idea is that the folder corresponds to your workdir and 2 folders are found with `grep` ):
+Console output should be as below. Note that `/opt/workdir/...` depends on your repo structure. The main idea is that the folder corresponds to your workdir and 2 folders are found with `grep`. Also, ensure that you have `scripts` folder along with `custom_hooks` (workdir):
 ```
 Executing pre-init hook...
 ~$ chmod +x ./subdir/subdir.sh && ./subdir/subdir.sh  && chmod +x ../scripts/create_dir.sh && ../scripts/create_dir.sh && echo && pwd &&  ls -la | grep script
