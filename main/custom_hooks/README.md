@@ -149,10 +149,15 @@ Checks if hooks with relative paths can be correctly executed
 ## Setup
 Set custom hook and trigger the run:
 ```
-chmod +x ./subdir/subdir.sh && ./subdir/subdir.sh && chmod +x ../scripts/create_dir.sh && ../scripts/create_dir.sh && ls -la | grep script
+chmod +x ./subdir/subdir.sh && ./subdir/subdir.sh  && chmod +x ../scripts/create_dir.sh && ../scripts/create_dir.sh && echo && pwd &&  ls -la | grep script
 ```
 ## Verification
-Console output should be:
+Console output should be (note that `/opt/workdir/...` depends on your repo structure. The main idea is that the folder corresponds to your workdir and 2 folders are found with `grep` ):
 ```
-
+Executing pre-init hook...
+~$ chmod +x ./subdir/subdir.sh && ./subdir/subdir.sh  && chmod +x ../scripts/create_dir.sh && ../scripts/create_dir.sh && echo && pwd &&  ls -la | grep script
+/opt/workdir/main/custom_hooks
+drwxr-xr-x  2 997 997 4096 Mar 11 16:58 parent_script
+drwxr-xr-x  2 997 997 4096 Mar 11 16:58 subdir_script
+Exit code: 0
 ```
