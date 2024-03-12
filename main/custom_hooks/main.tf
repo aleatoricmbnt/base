@@ -8,3 +8,5 @@ resource "null_resource" "time" {
 variable "custom_string" {
   default = "main.tf string"
 }
+
+resource "null_resource" "alea" {}
