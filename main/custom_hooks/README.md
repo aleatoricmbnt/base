@@ -161,3 +161,13 @@ drwxr-xr-x  2 997 997 4096 Mar 11 16:58 parent_script
 drwxr-xr-x  2 997 997 4096 Mar 11 16:58 subdir_script
 Exit code: 0
 ```
+# TEST 8
+Checks if force cancel works
+## Setup
+Set custom hook and trigger the run:
+```
+i=1; trap "echo BOOM" TERM SIGTERM; while true; do  echo "Waiting for signal: ${i}s"; i=$((i + 1)); sleep 1; done
+```
+## Verification
+Cancel run once hook started reporting "Waiting for signal" and click "Force Cancel" when available
+
