@@ -7,3 +7,5 @@ resource "null_resource" "name" {
     time = timestamp()
   }
 }
+
+# comment
