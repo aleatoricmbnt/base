@@ -2,5 +2,5 @@ version = "v1"
 
 policy "deletion_confirmation" {
   enabled           = true
-  enforcement_level = "soft-mandatory"
+  enforcement_level = "advisory"
 }
