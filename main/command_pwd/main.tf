@@ -59,3 +59,5 @@ data "local_file" "read_object_root" {
 output "pwd_results" {
   value = "script: ${data.local_file.read_script.content}object_pwd: ${data.local_file.read_object_pwd.content}object_module: ${data.local_file.read_object_module.content}object_root: ${data.local_file.read_object_root.content}"
 }
+
+#comment
