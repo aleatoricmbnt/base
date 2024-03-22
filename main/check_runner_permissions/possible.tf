@@ -36,7 +36,7 @@ output "state" {
 data "terraform_remote_state" "vlad" {
   backend = "remote"
 
-  config = {
+ config = {
     hostname = "test.permstore.testenv.scalr.dev"
     organization = "env-v0oa2s4i8nu3r61al"
     workspaces = {
