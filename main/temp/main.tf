@@ -19,10 +19,6 @@ resource "null_resource" "always_replaced" {
 
 resource "scalr_workspace" "cli" {
   count = 25
-  name = "ws_${count.index}"
+  name = "w3s_${count.index}"
   environment_id = "env-v0oa3vc08ek0pvau7"
-}
-
-resource "null_resource" "to_be_deleted" {
-  count = 500
 }
