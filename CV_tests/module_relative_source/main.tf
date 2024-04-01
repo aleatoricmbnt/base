@@ -9,7 +9,7 @@ module "referencing_subdir" {
 }
 
 variable "parent-var" {
-  
+
 }
 
 variable "subdir-var" {
