@@ -9,7 +9,3 @@ module "referencing_subdir" {
 variable "subdir-var" {
   default = "some_string"
 }
-
-output "referencing_output_subdir" {
-  value = module.referencing_subdir.pet_name
-}
