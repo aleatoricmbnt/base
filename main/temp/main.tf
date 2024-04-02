@@ -9,6 +9,6 @@ variable "special_s" {
   default = false
 }
 
-variable "special_s" {
+variable "lower_s" {
   default = false
 }
