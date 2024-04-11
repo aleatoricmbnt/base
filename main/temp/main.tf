@@ -21,8 +21,11 @@ terraform {
   }
 }
 
+resource "random_pet" "name" {
+  
+}
 
 resource "scalr_environment" "test" {
-  name                            = "test-env"
+  name                            = random_pet.name.id
   account_id                      = "acc-v0oarthieg22m0a5e"
 }
