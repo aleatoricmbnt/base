@@ -8,12 +8,12 @@ terraform {
 
 
 resource "scalr_environment" "test" {
-  name                            = "account"
+  name                            = "5char"
   account_id                      = "acc-v0ob25tvb18lmtqbb"
 }
 
 variable "env-name" {
-  default = "account"
+  default = "5char"
 }
 
 resource "null_resource" "name" {
