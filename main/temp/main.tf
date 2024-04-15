@@ -13,7 +13,6 @@ resource "scalr_environment" "test" {
 }
 
 variable "env-name" {
-  sensitive = true
   default = "account"
 }
 
@@ -36,6 +35,5 @@ resource "random_password" "password2" {
 variable "my-var" {
   type = bool
   default = false
-  sensitive = true
 }
 
