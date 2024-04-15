@@ -1,9 +1,13 @@
-resource "null_resource" "test" {
-  triggers = {
-    smth = var.some
+terraform {
+  required_providers {
+    scalr = {
+      source = "Scalr/scalr"
+    }
   }
 }
 
-variable "some" {
-  default = "account"
+
+resource "scalr_environment" "test" {
+  name                            = "${var.env-name}test"
+  account_id                      = "acc-v0ob25tvb18lmtqbb"
 }
