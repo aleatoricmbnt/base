@@ -26,14 +26,3 @@ resource "random_password" "password" {
   length           = 16
   special          = false
 }
-
-resource "random_password" "password2" {
-  length           = 16
-  special          = var.my-var
-}
-
-variable "my-var" {
-  type = bool
-  default = false
-}
-
