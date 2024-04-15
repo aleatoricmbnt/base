@@ -18,7 +18,7 @@ variable "env-name" {
 
 resource "null_resource" "name" {
   triggers = {
-    sens_value = var.env-name
+    var_value = var.env-name
   }
 }
 
