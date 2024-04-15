@@ -26,7 +26,7 @@ resource "random_pet" "name" {
 
 variable "two" {
   type = number
-  default = 222222222222222222222
+  default = 2222222222
 }
 
 # Multiline sensitive variable
