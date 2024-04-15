@@ -8,7 +8,7 @@ terraform {
 
 
 resource "scalr_environment" "test" {
-  name                            = "${var.env-name}test"
+  name                            = "${var.env-name}"
   account_id                      = "acc-v0ob25tvb18lmtqbb"
 }
 
