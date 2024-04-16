@@ -8,18 +8,8 @@ terraform {
 
 
 resource "scalr_environment" "test" {
-  name                            = "provisioner"
-  account_id                      = "acc-v0ob25tvb18lmtqbb"
-}
-
-variable "env-name" {
-  default = "provisioner"
-}
-
-resource "null_resource" "name" {
-  triggers = {
-    var_value = var.env-name
-  }
+  name                            = "something"
+  account_id                      = "acc-v0ob3doqkfgijg2c0"
 }
 
 resource "random_password" "password" {
