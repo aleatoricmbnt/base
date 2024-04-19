@@ -9,7 +9,7 @@ terraform {
 
 resource "scalr_environment" "test" {
   name                            = "something"
-  account_id                      = "acc-v0ob3doqkfgijg2c0"
+  account_id                      = "acc-v0ob72lqf5c990dek"
 }
 
 resource "random_password" "password" {
