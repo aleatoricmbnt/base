@@ -18,13 +18,12 @@ provider "scalr" {}
 # -------------------------------------------------------------------------------------------
 
 resource "scalr_workspace" "cli-driven" {
-  name           = var.ws_name
+  name           = "automatically_created_${random_pet.name.id}"
   environment_id = var.env_id
 }
 
-variable "ws_name" {
-  type    = string
-  default = "pcfg-cli-test"
+resource "random_pet" "name" {
+  
 }
 
 variable "env_id" {
