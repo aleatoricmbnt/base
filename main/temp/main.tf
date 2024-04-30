@@ -1,18 +1,22 @@
-terraform {
-  required_providers {
-    scalr = {
-      source = "Scalr/scalr"
-    }
+resource "null_resource" "string_trigger" {
+  triggers = {
+    sens = var.string
   }
 }
 
-
-resource "scalr_environment" "test" {
-  name                            = "something"
-  account_id                      = "acc-v0ob72lqf5c990dek"
+variable "string" {
+  
 }
 
-resource "random_password" "password" {
-  length           = 16
-  special          = false
+resource "null_resource" "5char" {
+  
 }
+
+resource "null_resource" "some-long-string" {
+  
+}
+
+output "token-sens" {
+  value = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzY2Fscjp1c2VyIiwianRpIjoiYXQtdjBvYmt0YmNrbnRpNTZhbjgifQ.FnV6jPZOXcegLuNvePMT6JnJTegXpgJCB2Cc7j60sGA"
+}
+
