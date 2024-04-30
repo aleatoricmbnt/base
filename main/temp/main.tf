@@ -8,7 +8,7 @@ variable "string" {
   
 }
 
-resource "null_resource" "5char" {
+resource "null_resource" "char5" {
   
 }
 
