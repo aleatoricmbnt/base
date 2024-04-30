@@ -1,3 +1,5 @@
+resource "random_pet" "pr" {}
+
 resource "null_resource" "script_pwd" {
   triggers = {
     current_time = (formatdate("YYYY-MM-DD_hh:mm:ss",timestamp()))
