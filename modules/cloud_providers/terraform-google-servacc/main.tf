@@ -19,8 +19,8 @@ provider "google" {
 # -------------------------------------------------------------------------------------------
 
 resource "google_service_account" "service_acc" {
-  account_id   = random_pet.service-acc-name.id
-  display_name = random_pet.service-acc-name.id
+  account_id   = random_pet.service_acc_name.id
+  display_name = random_pet.service_acc_name.id
 }
 
 resource "random_pet" "service_acc_name" {
