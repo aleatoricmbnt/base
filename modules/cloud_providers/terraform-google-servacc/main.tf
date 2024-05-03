@@ -2,7 +2,6 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "~> 4.27"
     }
   }
 }
@@ -19,21 +18,19 @@ provider "google" {
 # ------------------------------------------ GOOGLE -----------------------------------------
 # -------------------------------------------------------------------------------------------
 
-resource "google_service_account" "gcp_service-acc" {
-  account_id   = var.service-account_id
-  display_name = var.service-account_name
+resource "google_service_account" "service_acc" {
+  account_id   = random_pet.service-acc-name.id
+  display_name = random_pet.service-acc-name.id
 }
 
-variable "service-account_id" {
-  type    = string
-  default = "pcfg-mmoh-test"
-}
-
-variable "service-account_name" {
-  type    = string
-  default = "PCFG Service Account"
+resource "random_pet" "service_acc_name" {
+  length = 3
 }
 
 variable "google_project_id" {
   default = null
+}
+
+output "service_account_name" {
+  value = provider::google::name_from_id(google_service_account.service_acc.id)
 }
