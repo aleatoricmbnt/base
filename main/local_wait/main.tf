@@ -1,8 +1,3 @@
-# To test `auto` version
-# terraform {
-#     required_version = "<= 1.1.0"
-# }
-
 variable "sleep_time" {
   default = 1
 }
