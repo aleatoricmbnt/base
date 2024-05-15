@@ -9,7 +9,7 @@ terraform {
 resource "scalr_workspace" "test-ws" {
   name = "created_to_check_if_all_vars_are_passed"
   environment_id = var.env_id
-  vcs_provider_id = data.scalr_vcs_provider.example.id
+  vcs_provider_id = var.vcs_id
 
   working_directory = "main/100_vars"
 
@@ -21,6 +21,10 @@ resource "scalr_workspace" "test-ws" {
 
 variable "env_id" {
   description = "ID of the environment where the workspace should be created "
+}
+
+variable "vcs_id" {
+  description = "ID of the VCS that the workspace should be created from"
 }
 
 resource "scalr_workspace_run_schedule" "example" {
