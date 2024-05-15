@@ -23,6 +23,9 @@ variable "env_id" {
   description = "ID of the environment where the workspace should be created "
 }
 
+variable "acc_id" {
+}
+
 variable "vcs_id" {
   description = "ID of the VCS that the workspace should be created from"
 }
@@ -37,5 +40,5 @@ resource "scalr_variable" "name" {
   key = "user_var${count.index}"
   value = "value_${count.index}"
   category = "terraform"
-  account_id = scalr_workspace.test-ws.account_id
+  account_id = var.acc_id
 }
