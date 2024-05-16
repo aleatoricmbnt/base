@@ -54,14 +54,17 @@ variable "sens-object" {
   sensitive = true
 }
 
-variable "keys_list" {
+variable "key-name" {
   description = "List of keys"
-  type        = list(string)
+  type        = string
 }
 
 variable "map-with-non-literal-key" {
   type = map(string)
-  default = { for key in var.keys_list : key => "default" }
+  default = { 
+    stable = "constant"
+    (var.key-name) = "unstable"
+   }
 }
 
 variable "type-any" {
