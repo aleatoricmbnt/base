@@ -28,14 +28,6 @@ variable "sens-bool-hcl" {
   sensitive = true
 }
 
-variable "list-hcl" {
-  type = list(object({
-    password-length = number
-    password-special = bool
-    password-override-special = string
-  }))
-}
-
 variable "sens-list-hcl" {
   type = list(string)
   sensitive = true
@@ -95,10 +87,18 @@ resource "random_password" "sens-number-and-bool" {
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
+variable "list-hcl" {
+  type = list(object({
+    password-length = number
+    password-special = bool
+    password-override-special = string
+  }))
+}
+
 resource "random_password" "list-of-objects" {
   length           = var.list-hcl[0].password-length
   special          = var.list-hcl[0].password-special
-  override_special = var.list-hcl[0].password-overide-special
+  override_special = var.list-hcl[0].password-override-special
 }
 
 resource "random_shuffle" "name" {
