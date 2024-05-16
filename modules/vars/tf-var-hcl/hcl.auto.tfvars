@@ -16,4 +16,4 @@ locations = <<-EOT
 EOT
 
 length-hcl = 18
-bool-hcl = True
+bool-hcl = true
