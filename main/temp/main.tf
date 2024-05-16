@@ -1,22 +1,23 @@
-resource "null_resource" "string_trigger" {
-  triggers = {
-    sens = var.string
+terraform {
+  required_providers {
+    scalr = {
+      source = "scalr/scalr"
+    }
   }
 }
 
-variable "string" {
+resource "scalr_provider_configuration" "google" {
+  name       = "google_main"
+  account_id = var.acc_id
+  google {
+    credentials = var.g-creds
+  }
+}
+
+variable "acc_id" {
   
 }
 
-resource "null_resource" "char5" {
+variable "g-creds" {
   
 }
-
-resource "null_resource" "some-long-string" {
-  
-}
-
-output "token-sens" {
-  value = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzY2Fscjp1c2VyIiwianRpIjoiYXQtdjBvYmt0YmNrbnRpNTZhbjgifQ.FnV6jPZOXcegLuNvePMT6JnJTegXpgJCB2Cc7j60sGA"
-}
-

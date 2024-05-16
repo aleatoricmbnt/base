@@ -21,3 +21,18 @@ resource "null_resource" "null1" {
     time = timestamp()
   }
 }
+
+resource "random_password" "password" {
+  length           = var.length-hcl
+  special          = var.bool-hcl
+  override_special = "!#$%&*()-_=+[]{}<>:?"
+}
+
+variable "length-hcl" {
+  type = number
+}
+
+variable "bool-hcl" {
+  type = bool
+}
+
