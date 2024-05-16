@@ -8,12 +8,81 @@ variable "locations" {
     cidr_db  = string
     gw_db    = string
   }))
-  default = {
-
-  }
 }
 
-resource "null_resource" "null1" {
+variable "number-hcl" {
+  type = number
+}
+
+variable "bool-hcl" {
+  type = bool
+}
+
+variable "sens-number-hcl" {
+  type = number
+  sensitive = true
+}
+
+variable "sens-bool-hcl" {
+  type = bool
+  sensitive = true
+}
+
+variable "list-hcl" {
+  type = list(object({
+    password-length = number
+    password-special = bool
+    password-override-special = string
+  }))
+}
+
+variable "sens-list-hcl" {
+  type = list(string)
+  sensitive = true
+}
+
+variable "list-untyped" {
+  
+}
+
+variable "sens-object" {
+  type = object({
+    id = string
+    labels = map(string)
+    size = number
+  })
+  sensitive = true
+}
+
+variable "keys_list" {
+  description = "List of keys"
+  type        = list(string)
+}
+
+variable "map-with-non-literal-key" {
+  type = map(string)
+  default = { for key in var.keys_list : key => "default" }
+}
+
+variable "type-any" {
+  type = any
+}
+
+variable "with-optional-attribute" {
+  type = object({
+    a = string                
+    b = optional(string)      
+    c = optional(number, 127) 
+  })
+}
+
+variable "nullable_var" {
+  type     = string
+  nullable = true
+  default  = null
+}
+
+resource "null_resource" "map-of-objects" {
   provisioner "local-exec" {
     command = "echo ${var.locations.AIMS.cidr}"
   }
@@ -22,17 +91,54 @@ resource "null_resource" "null1" {
   }
 }
 
-resource "random_password" "password" {
-  length           = var.length-hcl
+resource "random_password" "number-and-bool" {
+  length           = var.number-hcl
   special          = var.bool-hcl
   override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
-variable "length-hcl" {
-  type = number
+
+
+resource "random_password" "sens-number-and-bool" {
+  length           = var.sens-number-hcl
+  special          = var.sens-bool-hcl
+  override_special = "!#$%&*()-_=+[]{}<>:?"
 }
 
-variable "bool-hcl" {
-  type = bool
+resource "random_password" "list-of-objects" {
+  length           = var.list-hcl[0].password-length
+  special          = var.list-hcl[0].password-special
+  override_special = var.list-hcl[0].password-overide-special
 }
 
+resource "random_shuffle" "name" {
+  input = var.sens-list-hcl
+}
+
+resource "terraform_data" "list-untyped-and-sens-object" {
+  input = var.list-untyped
+  triggers_replace  = var.sens-object
+}
+
+resource "null_resource" "triggered-by-non-literal-map" {
+  triggers = var.map-with-non-literal-key
+}
+
+
+resource "null_resource" "nullable_trigger" {
+  triggers = {
+    example_variable = var.nullable_var != null ? var.nullable_var : "default_value"
+  }
+}
+
+output "nullable_output" {
+  value = var.nullable_var
+}
+
+output "type-any-out" {
+  value = jsonencode(var.type-any)
+}
+
+output "optional-attributes-out" {
+  value = var.with-optional-attribute
+}

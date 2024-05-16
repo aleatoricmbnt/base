@@ -1,4 +1,4 @@
-Set the value of the required variable:
+`locations`
 ```
 {
   "AIMS" = {
@@ -13,5 +13,90 @@ Set the value of the required variable:
     cidr_db = "10.162.41.0/24"
     gw_db   = "10.162.41.1"
   }
+}
+```
+`list-hcl`
+```
+[
+    {
+      password-length = 25
+      password-special = true
+      password-override-special = "!#$%&*()-_=+[]{}<>:?"
+    }
+  ]
+```
+`sens-list-hcl`
+```
+["us-west-1a", "us-west-1c", "us-west-1d", "us-west-1e"]
+```
+`list-untyped`
+```
+["a", 15, true]
+```
+`sens-object`
+```
+{
+  id = "id-ywe3jkf"
+  labels = {
+    user = "test"
+    env = "staging"
+  }
+  size = 256
+}
+```
+`keys-list`
+```
+["key1", "key2", "key3", "key4"]
+```
+`type-any`
+```
+{
+  name = "example_name"
+  metadata = {
+    version = "1.0"
+    tags = {
+      env = "production"
+      project = "example_project"
+    }
+    nested_metadata = {
+      created_by = "admin"
+      created_at = "2024-05-16"
+      permissions = [
+        {
+          user = "user1"
+          access_level = "read"
+        },
+        {
+          user = "user2"
+          access_level = "write"
+        }
+      ]
+    }
+  }
+  configuration = {
+    settings = [
+      {
+        key = "setting1"
+        value = "value1"
+      },
+      {
+        key = "setting2"
+        value = "value2"
+      }
+    ]
+    options = {
+      enable_feature_x = true
+      feature_x_settings = {
+        settingA = "A"
+        settingB = "B"
+      }
+    }
+  }
+}
+```
+`with-optional-attribute`
+```
+{
+  a = "some string (b attribute should be missing)"
 }
 ```
