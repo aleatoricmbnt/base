@@ -54,19 +54,6 @@ variable "sens-object" {
   sensitive = true
 }
 
-variable "key-name" {
-  description = "List of keys"
-  type        = string
-}
-
-variable "map-with-non-literal-key" {
-  type = map(string)
-  default = { 
-    stable = "constant"
-    (var.key-name) = "unstable"
-   }
-}
-
 variable "type-any" {
   type = any
 }
@@ -123,10 +110,6 @@ resource "terraform_data" "list-untyped-and-sens-object" {
   triggers_replace  = var.sens-object
 }
 
-resource "null_resource" "triggered-by-non-literal-map" {
-  triggers = var.map-with-non-literal-key
-}
-
 
 resource "null_resource" "nullable_trigger" {
   triggers = {
@@ -144,4 +127,23 @@ output "type-any-out" {
 
 output "optional-attributes-out" {
   value = var.with-optional-attribute
+}
+
+variable "key-name" {
+  type        = string
+}
+
+locals {
+  map_with_non_literal_key = {
+    stable = "constant"
+    (var.key-name) = "unstable"
+  }
+}
+
+resource "null_resource" "triggered-by-non-literal-map" {
+  triggers = local.map_with_non_literal_key
+}
+
+output "map_with_non_literal_key_output" {
+  value = local.map_with_non_literal_key
 }
