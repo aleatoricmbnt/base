@@ -27,7 +27,7 @@
   </tr>
   <tr>
     <td>list_sensitive</td>
-    <td><pre><code>["...", "jsdkflsdf"]</code></pre></td>
+    <td><pre><code>["secret1", "secret2", "secret3"]</code></pre></td>
   </tr>
   <tr>
     <td>list_untyped</td>
