@@ -4,9 +4,6 @@ variable "nullable" {
 }
 
 resource "null_resource" "name" {
-  triggers = {
-    vari = var.nullable
-  }
 }
 
 output "nullable_output" {
