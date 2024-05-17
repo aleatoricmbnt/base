@@ -1,5 +1,3 @@
-# map (object)
-
 variable "map_object" {
   type = map(object({
     cidr     = string
@@ -16,7 +14,5 @@ resource "null_resource" "map_object" {
   provisioner "local-exec" {
     command = "echo ${var.map_object.AIMS.cidr}"
   }
-  triggers = {
-    time = timestamp()
-  }
+  triggers = var.map_object.AIMS.tags
 }
