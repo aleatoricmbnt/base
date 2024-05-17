@@ -10,5 +10,5 @@ resource "null_resource" "name" {
 }
 
 output "nullable_output" {
-  value = null
+  value = var.nullable
 }
