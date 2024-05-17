@@ -1,23 +1,15 @@
-terraform {
-  required_providers {
-    scalr = {
-      source = "scalr/scalr"
-    }
+variable "nullable" {
+  type     = string
+  nullable = true
+  default  = null
+}
+
+resource "null_resource" "nullable_trigger" {
+  triggers = {
+    example_variable = var.nullable != null ? var.nullable : "default_value"
   }
 }
 
-resource "scalr_provider_configuration" "google" {
-  name       = "google_main"
-  account_id = var.acc_id
-  google {
-    credentials = var.g-creds
-  }
-}
-
-variable "acc_id" {
-  
-}
-
-variable "g-creds" {
-  
+output "nullable_output" {
+  value = var.nullable
 }
