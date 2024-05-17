@@ -63,7 +63,7 @@
   </tr>
   <tr>
     <td>nullable</td>
-    <td>⚠️ Do not set</td>
+    <td></td>
   </tr>
   <tr>
     <td>number</td>
