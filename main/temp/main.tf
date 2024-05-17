@@ -1,10 +1,12 @@
 variable "nullable" {
-  type     = bool
+  type     = string
+  default = null
 }
 
-resource "random_password" "name" {
-  length = 16
-  special = var.nullable
+resource "null_resource" "name" {
+  triggers = {
+    vari = var.nullable
+  }
 }
 
 output "nullable_output" {
