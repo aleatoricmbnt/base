@@ -1,4 +1,4 @@
-`locations`
+`map_object`
 ```
 {
   "AIMS" = {
