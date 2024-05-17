@@ -1,3 +1,13 @@
+| Key | Value |
+|-----------------|-----------------|
+| `bool`  | ```
+true
+```  |
+| Row 2 Column 1  | Row 2 Column 2  |
+| Row 3 Column 1  | Row 3 Column 2  |
+
+
+
 `map_object`
 ```
 {
