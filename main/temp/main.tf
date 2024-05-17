@@ -8,5 +8,5 @@ resource "random_password" "name" {
 }
 
 output "nullable_output" {
-  value = var.nullable
+  value = null
 }
