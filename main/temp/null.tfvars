@@ -1,1 +1,1 @@
-nullable = null
+nullable = ""
