@@ -8,10 +8,6 @@
     <td><pre><code>true</code></pre></td>
   </tr>
   <tr>
-    <td>bool_sensitive</td>
-    <td><pre><code>true</code></pre></td>
-  </tr>
-  <tr>
     <td>key_name</td>
     <td><pre><code>beep-boop</code></pre></td>
   </tr>
@@ -26,7 +22,7 @@
 ]</code></pre></td>
   </tr>
   <tr>
-    <td>list_sensitive</td>
+    <td>list_string</td>
     <td><pre><code>["secret1", "secret2", "secret3"]</code></pre></td>
   </tr>
   <tr>
@@ -51,7 +47,7 @@
 }</code></pre></td>
   </tr>
   <tr>
-    <td>nested_object_sensitive</td>
+    <td>nested_object</td>
     <td><pre><code>{
   id = "id-ywe3jkf"
   labels = {
@@ -63,7 +59,7 @@
   </tr>
   <tr>
     <td>nullable</td>
-    <td></td>
+    <td>null</td>
   </tr>
   <tr>
     <td>number</td>
