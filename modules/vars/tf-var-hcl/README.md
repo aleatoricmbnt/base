@@ -80,10 +80,6 @@
     <td><pre><code>example_string</code></pre></td>
   </tr>
   <tr>
-    <td>string_sensitive</td>
-    <td><pre><code>example_sensitive_string</code></pre></td>
-  </tr>
-  <tr>
     <td>type_any</td>
     <td><pre><code>{
   name = "example_name"

@@ -59,7 +59,6 @@ resource "random_password" "list_object_per_attribute_usage" {
 
 variable "list_string" {
   type = list(string)
-  sensitive = true
 }
 
 resource "random_shuffle" "name" {
