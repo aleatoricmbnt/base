@@ -16,9 +16,7 @@ resource "null_resource" "map_object" {
   provisioner "local-exec" {
     command = "echo ${var.map_object.AIMS.cidr}"
   }
-  triggers = {
-    time = timestamp()
-  }
+  triggers = var.map_object.AIMS.tags
 }
 
 # number, bool and string
@@ -41,28 +39,6 @@ resource "random_password" "number_bool_string" {
   override_special = var.string
 }
 
-# sensitive number, bool and string
-
-variable "number_sensitive" {
-  type = number
-  sensitive = true
-}
-
-variable "bool_sensitive" {
-  type = bool
-  sensitive = true
-}
-
-variable "string_sensitive" {
-  type = string
-}
-
-resource "random_password" "number_bool_string_sensitive" {
-  length           = var.number_sensitive
-  special          = var.bool_sensitive
-  override_special = var.string_sensitive
-}
-
 # list(object)
 
 variable "list" {
@@ -79,37 +55,35 @@ resource "random_password" "list_object_per_attribute_usage" {
   override_special = var.list[0].password-override-special
 }
 
-# sensitive list(string)
+# list(string)
 
-variable "list_sensitive" {
+variable "list_string" {
   type = list(string)
   sensitive = true
 }
 
 resource "random_shuffle" "name" {
-  input = var.list_sensitive
+  input = var.list_string
 }
 
-# untyped list, sensitive nested object, referencing the variable as a whole
+# untyped list, nested object, referencing the variable as a whole
 
 variable "list_untyped" {}
 
-variable "nested_object_sensitive" {
+variable "nested_object" {
   type = object({
     id = string
     labels = map(string)
     size = number
   })
-  sensitive = true
 }
 
-resource "terraform_data" "list_untyped_nested_object_sensitive" {
+resource "terraform_data" "list_untyped_nested_object" {
   input = var.list_untyped
-  triggers_replace  = var.nested_object_sensitive
+  triggers_replace  = var.nested_object
 }
 
 # object with optional attribute and attribute with a default value 
-
 
 variable "object_with_optional_attribute" {
   type = object({
@@ -119,8 +93,9 @@ variable "object_with_optional_attribute" {
   })
 }
 
-output "optional-attributes-out" {
-  value = var.object_with_optional_attribute
+resource "terraform_data" "object_with_optional_attribute" {
+  input = var.object_with_optional_attribute
+  triggers_replace = var.object_with_optional_attribute
 }
 
 # nullable variable as a trigger
@@ -147,8 +122,9 @@ variable "type_any" {
   type = any
 }
 
-output "type_any_output" {
-  value = jsonencode(var.type_any)
+resource "terraform_data" "type_any" {
+  input = var.type_any
+  triggers_replace = var.type_any
 }
 
 # map with non-literal key
@@ -159,15 +135,11 @@ variable "key-name" {
 
 locals {
   map_with_non_literal_key = {
-    stable = "constant"
-    (var.key-name) = "unstable"
+    stable = "value1"
+    (var.key-name) = "value2"
   }
 }
 
 resource "null_resource" "triggered-by-non-literal-map" {
   triggers = local.map_with_non_literal_key
-}
-
-output "map_with_non_literal_key_output" {
-  value = local.map_with_non_literal_key
 }
