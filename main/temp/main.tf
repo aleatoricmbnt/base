@@ -10,6 +10,6 @@ resource "null_resource" "name" {
   }
 }
 
-output "nullable_output" {
-  value = var.nullable
-}
+# output "nullable_output" {
+#   value = var.nullable
+# }
