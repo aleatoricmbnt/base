@@ -40,5 +40,5 @@ resource "scalr_variable" "name" {
   key = "user_var${count.index}"
   value = "value_${count.index}"
   category = "terraform"
-  workspace_id = var.scalr_workspace.test-ws.id
+  workspace_id = scalr_workspace.test-ws.id
 }
