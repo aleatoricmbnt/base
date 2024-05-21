@@ -2,7 +2,6 @@ terraform {
   required_providers {
     scalr = {
       source  = "registry.scalr.io/scalr/scalr"
-      version = "> 1.0.0"
     }
   }
 }
@@ -34,6 +33,44 @@ output "shuffle_out" {
   value       = random_shuffle.my_shuffle.result
   description = "123456789"
   sensitive   = false
+}
+
+# ----------------------------------------------------------------------------------------- #
+
+resource "terraform_data" "list_untyped_nested_object" {
+  input = var.list_untyped
+  triggers_replace  = var.type_any
+}
+
+variable "list_untyped" {}
+
+variable "type_any" {
+  type = any
+}
+
+# ----------------------------------------------------------------------------------------- #
+
+data "local_file" "json" {
+  filename = "./sample.json"
+}
+
+resource "terraform_data" "list_untyped_nested_object" {
+  input = data.local_file.json.content
+}
+
+# ----------------------------------------------------------------------------------------- #
+
+locals {
+  map =  {
+    some_long_string = 10
+    even_much_longer_string = 20
+    the_string_as_hard_as_a_day_and_as_long_as_the_whole_week_without_beer = 30
+  }
+}
+
+resource "random_password" "test" {
+  for_each = local.map
+  length = each.value
 }
 
 # ----------------------------------------------------------------------------------------- #
@@ -223,55 +260,6 @@ resource "null_resource" "multiple_triggers" {
   }
 }
 
-# ----------------------------------------------------------------------------------------- #
-
-data "scalr_policy_group" "pg_reference" {
-  id         = var.pg-reference-id
-  depends_on = [null_resource.countable[0]]
-}
-
-resource "scalr_policy_group" "object_known_after_apply" {
-  name            = "policy_${formatdate("HH-mm-ss", timestamp())}"
-  opa_version     = "0.55.0"
-  vcs_provider_id = data.scalr_policy_group.pg_reference.vcs_provider_id
-  vcs_repo {
-    identifier = data.scalr_policy_group.pg_reference.vcs_repo[0].identifier
-    path       = data.scalr_policy_group.pg_reference.vcs_repo[0].path
-    branch     = data.scalr_policy_group.pg_reference.vcs_repo[0].branch
-  }
-}
-
-resource "scalr_environment" "list_known_after_apply" {
-  name                    = "environment_${formatdate("HH-mm-ss", timestamp())}"
-  cost_estimation_enabled = true
-  policy_groups           = [scalr_policy_group.object_known_after_apply.id]
-}
-
-# ----------------------------------------------------------------------------------------- #
-
-# resource "scalr_provider_configuration" "nested_resource" {
-#   name                   = "pcfg2_${formatdate("HH-mm-ss", timestamp())}"
-#   custom {
-#     provider_name = "kubernetes"
-#     argument {
-#       name        = "host"
-#       value       = "my-host"
-#       description = "The hostname (in form of URI) of the Kubernetes API."
-#     }
-#     argument {
-#       name  = "username"
-#       value = "my-username"
-#       description = "probably-centrally-vertically-likely-currently-inherently-repeatedly-strongly-deeply-safely-willingly-clearly-intensely-repeatedly-frankly-lively-duly-blatantly-certainly-weekly-accurately-externally-openly-seriously-miserably-nationally-reliably-slightly-trivially-roughly-socially-equally-openly-severely-mutually-rapidly-infinitely-violently-thoroughly-sincerely-largely-roughly-largely-quickly-amazingly-likely-utterly-namely-only-openly-reliably-initially-surely-firmly-early-rarely-frequently-hopefully"
-#     }
-#     argument {
-#       name      = "password"
-#       value     = "AMITX-+@MotyhtsV>0f>b]>6?{#Gr7FRyGQZ0h+z2-J&LJ5nrYSXGb:Jre$F*bREG8Q#h)tmD3>Htr5LTkI)Zp(E#3(}z_&EIh}g}@fwt!tKQF<ZwXg)q!kx(]s=P=}@D*YJ0p5%%u[:>n]-7GQ=Fyc9@CEsu8CcFP5{X_jmcjCnj5Du&:**XXs)g&nn6Og+u(O{:_V@RQSit0v#fzP<JtK58aQBN$5JE0y8?Grkyg[gvwzWIU7mmiuNKwUE9<A<mSxz1Y{EXtX)<c@EgSn[wwy1i&0!U9T$)LvBta7WzKozTgH$m(+Ks5L2Il28KQFL8>[0GqV>+34pG#rN&*h{G73bqOdqmKF4Bx%5$}r)"
-#       sensitive = true
-#     }
-#   }
-# }
-
-# ----------------------------------------------------------------------------------------- #
 
 resource "null_resource" "long_triggers_replacement" {
   triggers = {
