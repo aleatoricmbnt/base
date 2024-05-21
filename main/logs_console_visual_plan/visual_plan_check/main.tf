@@ -54,7 +54,7 @@ data "local_file" "json" {
   filename = "./sample.json"
 }
 
-resource "terraform_data" "list_untyped_nested_object" {
+resource "terraform_data" "local_json" {
   input = data.local_file.json.content
 }
 
