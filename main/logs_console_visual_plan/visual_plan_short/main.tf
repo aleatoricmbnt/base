@@ -28,7 +28,7 @@ variable "for_data" {
   EOT
   ] 
         source  = "message"
-        grok {
+        grok = {
           support_rules = ""
           match_rules   = "Rule %%{word:my_word2} %%{number:my_float2}"
         }
