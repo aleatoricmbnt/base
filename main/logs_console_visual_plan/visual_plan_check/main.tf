@@ -41,7 +41,7 @@ output "shuffle_out" {
 # ----------------------------------------------------------------------------------------- #
 
 variable "array-long-types" { 
-    default     = ["This is a string", 12345, true, false,
+    default     = ["This is a string", 12345, true, false, null,
     {
       key1 = "value1",
       key2 = 67890,
@@ -52,15 +52,8 @@ variable "array-long-types" {
   ]
 }
 
-resource "random_shuffle" "long_shuffle" {
-  input        = var.array-long-types
-  result_count = length(var.array-long-types)
-}
-
-output "long_values_shufflle_out" {
-  value       = random_shuffle.long_shuffle.result
-  description = "123456789"
-  sensitive   = false
+resource "terraform_data" "array_long_input" {
+  input = var.array-long-types
 }
 
 # ----------------------------------------------------------------------------------------- #
