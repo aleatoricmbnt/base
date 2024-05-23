@@ -1,7 +1,10 @@
 terraform {
   required_providers {
     scalr = {
-      source  = "registry.scalr.io/scalr/scalr"
+      source  = "scalr/scalr"
+    }
+    datadog = {
+      source = "DataDog/datadog"
     }
   }
 }
