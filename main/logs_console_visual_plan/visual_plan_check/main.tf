@@ -41,7 +41,7 @@ output "shuffle_out" {
 # ----------------------------------------------------------------------------------------- #
 
 variable "array-long-types" { 
-    default     = ["This is a string", 12345, true, false, null,
+    default     = ["This is a string", 12345, true, false,
     {
       key1 = "value1",
       key2 = 67890,
