@@ -70,7 +70,9 @@ resource "terraform_data" "list_untyped_nested_object" {
   triggers_replace  = var.type_any
 }
 
-variable "list_untyped" {}
+variable "list_untyped" {
+  default = ["a", 15, true]
+}
 
 variable "type_any" {
   type = any
