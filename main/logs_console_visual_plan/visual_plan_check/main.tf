@@ -54,7 +54,7 @@ resource "random_shuffle" "long_shuffle" {
   result_count = length(var.array-long-types)
 }
 
-output "shuffle_out" {
+output "long_values_shufflle_out" {
   value       = random_shuffle.long_shuffle.result
   description = "123456789"
   sensitive   = false
