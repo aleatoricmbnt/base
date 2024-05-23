@@ -73,40 +73,6 @@ resource "terraform_data" "first" {
 #   }
 # }
 
-resource "null_resource" "countable" {
-  count = 3
-  triggers = {
-    time = timestamp()
-  }
-  depends_on = [ terraform_data.first ]
-}
-
-resource "null_resource" "provisioning" {
-  triggers = {
-    null_resource_ids = join(",", null_resource.countable[*].id)
-  }
-
-  provisioner "local-exec" {
-    command     = "echo 'THIS RESOURCE IS DESTOYED NOW'"
-    when        = destroy
-    interpreter = ["/bin/bash"]
-    on_failure  = continue
-    environment = {
-      DESTROY_VARIABLE_1 = "Lorem"
-      DESTROY_VARIABLE_2 = "Ipsum"
-      DESTROY_VARIABLE_3 = 1
-    }
-    quiet = false
-  }
-
-  provisioner "local-exec" {
-    command     = "echo 'THIS RESOURCE IS CREATED NOW'"
-    interpreter = ["/bin/bash"]
-    on_failure  = continue
-    environment = {
-      APPLY_VARIABLE_1 = "Lorem"
-      APPLY_VARIABLE_2 = "Ipsum"
-      APPLY_VARIABLE_3 = 1
-    }
-  }
+resource "terraform_data" "second" {
+  input = "some input" 
 }
