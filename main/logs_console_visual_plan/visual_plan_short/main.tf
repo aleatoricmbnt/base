@@ -39,7 +39,7 @@ variable "for_data" {
   }
 }
 
-resource "terraform_data" "name" {
+resource "terraform_data" "first" {
   input = var.for_data
 }
 
@@ -78,6 +78,7 @@ resource "null_resource" "countable" {
   triggers = {
     time = timestamp()
   }
+  depends_on = [ terraform_data.first ]
 }
 
 resource "null_resource" "provisioning" {
