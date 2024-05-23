@@ -37,6 +37,31 @@ output "shuffle_out" {
 
 # ----------------------------------------------------------------------------------------- #
 
+variable "array-long-types" { 
+    default     = ["This is a string", 12345, true, false, null,
+    {
+      key1 = "value1",
+      key2 = 67890,
+      key3 = true,
+      key4 = null
+    },
+    ["nested", "array", 999, false]
+  ]
+}
+
+resource "random_shuffle" "long_shuffle" {
+  input        = var.array-long-types
+  result_count = length(var.array-long-types)
+}
+
+output "shuffle_out" {
+  value       = random_shuffle.long_shuffle.result
+  description = "123456789"
+  sensitive   = false
+}
+
+# ----------------------------------------------------------------------------------------- #
+
 resource "terraform_data" "list_untyped_nested_object" {
   input = var.list_untyped
   triggers_replace  = var.type_any
@@ -189,9 +214,11 @@ resource "random_pet" "long-named-pet-consisting-of-words-and-characters-with-da
 
 # ----------------------------------------------------------------------------------------- #
 
+data "scalr_current_run" "get_data" {}
+
 resource "scalr_workspace" "cli-ws_to-be-updated-on-rerun" {
   name           = "workspace_${formatdate("HH-mm-ss", timestamp())}"
-  environment_id = var.env-id
+  environment_id = data.scalr_current_run.get_data.environment_id
 
   working_directory           = "example/path"
   auto_apply                  = true
@@ -223,6 +250,99 @@ resource "random_id" "name" {
   byte_length = 128
   keepers = {
     sanitized = var.marked_as_sensitive_on_UI
+  }
+}
+
+# ----------------------------------------------------------------------------------------- #
+
+resource "datadog_logs_custom_pipeline" "sample_pipeline" {
+  filter {
+    query = "source:foo"
+  }
+  name       = "sample pipeline"
+  is_enabled = true
+  processor {
+    grok_parser {
+      samples = [ "[fooExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample TeamExample Team]", 
+      "[samle2]", 
+      "[samle3]", 
+      "[qwe \n rty]", 
+      "This is my string. \n The first 3 rows are short, \n and the next one is long. \n Constructed with a high-impact polymer, the AUG is lightweight yet durable, making it suitable for harsh environments. Its receiver is made from aluminum, further reducing weight while maintaining structural integrity. The rifle is designed for ease of use with ambidextrous controls, including a reversible ejection port and a cross-bolt safety, making it user-friendly for both right-handed and left-handed shooters.The AUG uses a proprietary 30-round magazine made of translucent polymer, allowing users to easily see the remaining ammunition. It operates on a gas-piston system with a rotating bolt, ensuring reliable performance and reducing the risk of malfunctions in adverse conditions. The AUG's firing modes include semi-automatic and fully automatic, selectable via a two-stage trigger: a partial pull for semi-auto and a full pull for full-auto. " ] # add some multi-line strings here
+      source  = "message"
+      grok {
+        support_rules = ""
+        match_rules   = "Rule %%{word:my_word2} %%{number:my_float2}"
+      }
+      name       = "sample grok parser"
+      is_enabled = true
+    }
+  }
+}
+
+resource "datadog_logs_custom_pipeline" "sample_pipeline2" {
+  filter {
+    query = "source:foo"
+  }
+  name       = "sample pipeline"
+  is_enabled = true
+  processor {
+    grok_parser {
+      samples = [<<EOT
+      The M16 is a family of military rifles originally designed by Eugene Stoner and manufactured by various companies, most notably Colt. First introduced in the 1960s, the M16 has become one of the most widely used rifles in the world, particularly within the United States military. Known for its lightweight design, accuracy, and adaptability, the M16 has a rich history and numerous variants.
+
+      The original M16, designated the AR-15 by its designer, Eugene Stoner of the Armalite Corporation, was developed in the late 1950s. The rifle uses a direct impingement gas operating system and is chambered for the 5.56x45mm NATO cartridge, which provides a good balance of range, accuracy, and manageable recoil. The design features a straight-line barrel/stock configuration, which helps manage recoil, and a rotating bolt, which enhances reliability.
+
+      The M16 was first adopted by the United States Air Force in 1962. The U.S. Army followed suit, and it saw extensive use during the Vietnam War. The initial version, the M16A1, featured improvements over the original AR-15, including a forward assist mechanism to help chamber rounds and a chrome-plated bore to reduce fouling and corrosion.
+
+      Despite its age, the M16 remains a highly effective weapon due to its accuracy, modularity, and ease of use. Modern versions of the M16 can be equipped with a variety of accessories, such as advanced optics, laser aiming devices, and under-barrel grenade launchers, making it a versatile tool for contemporary military operations.
+
+      EOT
+      ] # add some multi-line strings here
+      source  = "message"
+      grok {
+        support_rules = ""
+        match_rules   = "Rule %%{word:my_word2} %%{number:my_float2}"
+      }
+      name       = "sample grok parser"
+      is_enabled = true
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------------------- #
+
+data "local_file" "nested-long" {
+  filename = "./nested-long.json"
+}
+
+resource "terraform_data" "nested_json_input" {
+  input = data.local_file.nested-long.content
+  triggers_replace  = var.map_object
+}
+
+variable "map_object" {
+  type = map(object({
+    cidr     = string
+    zone     = string
+    tags     = map(string)
+    cidr_app = string
+    gw_app   = string
+    cidr_db  = string
+    gw_db    = string
+  }))
+  default = {
+    "AIMS" = {
+      cidr     = "10.162.40.0/22"
+      zone     = "abc"
+      tags     = {
+        environment = "DR"
+        project = "InterPac"
+      }
+      cidr_app = "10.162.40.0/24"
+      gw_app   = "10.162.40.1"
+      cidr_db = "10.162.41.0/24"
+      gw_db   = "10.162.41.1"
+    }
   }
 }
 
@@ -323,10 +443,6 @@ variable "layered" {
   }
 }
 
-variable "env-id" {
-  description = "ID of the environment to create workspace in"
-}
-
 variable "secrets" {
   type = object({
     username = string
@@ -343,7 +459,6 @@ variable "marked_as_sensitive_on_UI" {
   description = "Set any value here, but mark as sensitive via Scalr UI"
 }
 
-
 variable "change_me_upper" {
   type        = bool
   description = "CHANGE ME TO 'false'"
@@ -354,11 +469,6 @@ variable "change_me_min_lower" {
   type        = number
   description = "CHANGE ME TO '10'"
   default     = 2
-}
-
-
-variable "pg-reference-id" {
-  description = "ID of the exisiting policy group for the data_source. Exisiting policy group will be used as a reference and the duplicate will be created."
 }
 
 variable "initial" {
