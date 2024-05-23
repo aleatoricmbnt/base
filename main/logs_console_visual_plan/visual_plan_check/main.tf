@@ -9,6 +9,19 @@ terraform {
   }
 }
 
+provider "datadog" {
+  app_key = var.dd_app
+  api_key = var.dd_api
+}
+
+variable "dd_api" {
+  sensitive = true
+}
+
+variable "dd_app" {
+  sensitive = true
+}
+
 # ----------------------------------------------------------------------------------------- #
 
 module "long-module-name-some-pet-name-should-be-here-but-i-forgot-about-it-previously" {
