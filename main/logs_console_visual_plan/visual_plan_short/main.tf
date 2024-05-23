@@ -1,26 +1,11 @@
 terraform {
   required_providers {
-    scalr = {
-      source  = "scalr/scalr"
-    }
     datadog = {
       source = "DataDog/datadog"
     }
   }
 }
 
-provider "datadog" {
-  app_key = var.dd_app
-  api_key = var.dd_api
-}
-
-variable "dd_api" {
-  sensitive = true
-}
-
-variable "dd_app" {
-  sensitive = true
-}
 
 resource "datadog_logs_custom_pipeline" "sample_pipeline2" {
   filter {
