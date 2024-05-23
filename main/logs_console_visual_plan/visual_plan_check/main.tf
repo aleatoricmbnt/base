@@ -9,10 +9,6 @@ terraform {
   }
 }
 
-provider "datadog" {
-  
-}
-
 # ----------------------------------------------------------------------------------------- #
 
 module "long-module-name-some-pet-name-should-be-here-but-i-forgot-about-it-previously" {
