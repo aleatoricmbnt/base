@@ -17,6 +17,7 @@ variable "sensitive_resource_name" {
 
 output "remington_700_out" {
   value = var.sensitive_resource_name
+  sensitive = true
 }
 
 # ----------------------------------------- #
@@ -34,6 +35,7 @@ variable "sensitive_resource_type" {
 
 output "glock17_out" {
   value = var.sensitive_resource_type
+  sensitive = true
 }
 
 # ----------------------------------------- #
