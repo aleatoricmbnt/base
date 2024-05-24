@@ -53,21 +53,19 @@ output "single_line" { # create sensitive shell variable with the same value as 
 }
 
 output "multi_line" { # create sensitive shell variable with the same value as output
-  value = <<-EOT
-{
-  "product": {
-    "id": "12345",
-    "name": "Wireless Mouse",
-    "price": 25.99,
-    "in_stock": true,
-    "specifications": {
-      "color": "black",
-      "connectivity": "wireless",
-      "battery_life": "12 months"
+  value = {
+    "product": {
+        "id": "12345",
+        "name": "Wireless Mouse",
+        "price": 25.99,
+        "in_stock": true,
+        "specifications": {
+        "color": "black",
+        "connectivity": "wireless",
+        "battery_life": "12 months"
+        }
     }
   }
-}
-  EOT
 }
 
 output "single_line_sensitive" {
