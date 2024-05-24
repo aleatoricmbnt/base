@@ -109,6 +109,10 @@ data "scalr_current_run" "this" {
 }
 
 resource "scalr_workspace" "sensitive_id" {
-  name = "workspace4"
+  name = "workspace"
   environment_id = data.scalr_current_run.this.environment_id
+}
+
+output "workspace_with_attributes" {
+  value = scalr_workspace.sensitive_id
 }
