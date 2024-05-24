@@ -114,5 +114,5 @@ resource "scalr_workspace" "sensitive_id" {
 }
 
 output "workspace_with_attributes" {
-  value = scalr_workspace.sensitive_id
+  value = jsondecode(scalr_workspace.sensitive_id)
 }
