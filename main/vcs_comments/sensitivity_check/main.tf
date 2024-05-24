@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    scalr = {
+        source = "scalr/scalr"
+    }
+  }
+}
+
 resource "terraform_data" "remington_700" {
   triggers_replace = timestamp()
 }
@@ -87,4 +95,20 @@ output "multi_line" {
 }
   EOT
   sensitive = true
+}
+
+# ----------------------------------------- #
+
+variable "created_workspace_id" { # set the created workspace id once applied
+  sensitive = true
+  default = "ws-xxxx"
+}
+
+data "scalr_current_run" "this" {
+  
+}
+
+resource "scalr_workspace" "sensitive_id" {
+  name = "workspace"
+  environment_id = data.scalr_current_run.this.environment_id
 }
