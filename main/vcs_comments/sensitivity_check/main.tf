@@ -73,7 +73,7 @@ output "single_line_sensitive" {
   sensitive = true
 }
 
-output "multi_line" {
+output "multi_line_sensitive" {
   value = <<-EOT
 {
   "user": {
