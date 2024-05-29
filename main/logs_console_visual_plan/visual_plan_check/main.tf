@@ -148,52 +148,59 @@ resource "random_string" "long_id_string" {
   min_numeric      = 64
   min_special      = 64
   min_upper        = 64
-  override_special = <<EOT
-    CeeF2TzvB@burp0EorS914cbeWA9wn*=
-    URpcah*JSo@3q13xZvp$ZmnBfp@okaTO
-    rrAbvkQ!Gc$PWeDm9H&42@ZT@7#t!j#+
-    ER@ekXud58%%b&f+3Ecj7yuYej469jAh
-    %@NY$CTMSNo*YaK6mB%S#1&Ns$+QN#Qe
-    Dsrj6O8NQosfwh!FP&2Bnvz8Yr6AD2@R
-    Kht@jwWhO0VoC%@K8rQZ4!HY096ajx0$
-    76n$jn5WNNuST!@$FEp8Zd@eapYMnHsx
-    @#V9vDTNvKfhgzgZhO8+ukFERy*K+2u%
-    G2B$2g1z#U1jst&gkVGeSm4wA6pJ%M%s
-    TNnd3cPsCPAW9bM7rZDT3K76aZShuve8
-    dqE8yyNaxv4vbkWoqb7e0#D0P@5!uAXo
-    uR*fP0vwG+*1Uo37dFx#H6Bea86xAg6N
-    RujKnROothsCg$gqo4YDJyyoF%mbgjT2
-    9g!9PQpvRKAS9ABX&TTV+wNx!TBymEc3
-    !$ONb&vYjXu0eMVCR=&DK*XMJ+rG&y=d
-    $Kk1@HfkmsCx82NvBj&3Usja5@eX2Dpm
-    !$$F0bvpc5BPeaH&B8e62$Xr54D*Y*%M
-    oDK+oDT@KTXt=ACQkEEQJjnee0Ka0Xoy
-    MY0MU!9prR=yODEE%v*$xpdGVMhobOeb
-    aY5MZCKOX1nY!*AsXQTo5PRgYx%YAax&
-    Nvo6JXR$*Ut0pa@mA9K=$REFxE$5ru+q
-    r$JmZphE&ZqUk2sJeBVEufEVOeGUhO#t
-    =y=WpWJBMVznrJ+Ds#c+OFvPPBBaqdxt
-    H%pY9tcV$+@&*!ZbV6P%A6u4QVReR3hV
-    KGJ+Rzt@R4w+9WC6=PS56Yo0R%Ug+1b&
-    55WaSSXEu6&eKt@K09bNnHg2Xg%4gBpN
-    yE++jgCwMj98QtZC$4TbHfA@Kp9#FVCX
-    @PjSWcRZ=3DA@Bz&z*QvJwj%bDnuk4&S
-    Qq0!!&M%Obq5NzEa3YGmmu2&MM4KwNF4
-    t5+7zY0+hdXp!!0&wrykyse0mfYbgkTr
-    =+9DEqaZMjr!PEhM=5YADMgn%Pw$563Q
-    U+8BrfP9FZtqtCAo52Vhj&@C6Y2@Cs+h
-    0Z7$&A9K1cf6uxAJk0RoK9kskZN*Muy#
-    gSYfeNGu&VXuAvXRty7mQx64t&XFy&96
-    0WXPQO%1x3OgKYa2sNpaXWdA$$frjYG*
-    w6HdssxB3!Y5z@RYdwN!Na02%VwcKGND
-    BZkQOdcZ*%3r4Tt&G6@GfB4=bc!!@Yuh
-    ystX=Pb%y5wPm7%70x4Y7gDoerof17c5
-    2a#od=j1JpA8*e1rasSe!ogxjz7R7SNJ
-  EOT
+  override_special = var.override_special
+  # override_special = <<EOT
+  #   CeeF2TzvB@burp0EorS914cbeWA9wn*=
+  #   URpcah*JSo@3q13xZvp$ZmnBfp@okaTO
+  #   rrAbvkQ!Gc$PWeDm9H&42@ZT@7#t!j#+
+  #   ER@ekXud58%%b&f+3Ecj7yuYej469jAh
+  #   %@NY$CTMSNo*YaK6mB%S#1&Ns$+QN#Qe
+  #   Dsrj6O8NQosfwh!FP&2Bnvz8Yr6AD2@R
+  #   Kht@jwWhO0VoC%@K8rQZ4!HY096ajx0$
+  #   76n$jn5WNNuST!@$FEp8Zd@eapYMnHsx
+  #   @#V9vDTNvKfhgzgZhO8+ukFERy*K+2u%
+  #   G2B$2g1z#U1jst&gkVGeSm4wA6pJ%M%s
+  #   TNnd3cPsCPAW9bM7rZDT3K76aZShuve8
+  #   dqE8yyNaxv4vbkWoqb7e0#D0P@5!uAXo
+  #   uR*fP0vwG+*1Uo37dFx#H6Bea86xAg6N
+  #   RujKnROothsCg$gqo4YDJyyoF%mbgjT2
+  #   9g!9PQpvRKAS9ABX&TTV+wNx!TBymEc3
+  #   !$ONb&vYjXu0eMVCR=&DK*XMJ+rG&y=d
+  #   $Kk1@HfkmsCx82NvBj&3Usja5@eX2Dpm
+  #   !$$F0bvpc5BPeaH&B8e62$Xr54D*Y*%M
+  #   oDK+oDT@KTXt=ACQkEEQJjnee0Ka0Xoy
+  #   MY0MU!9prR=yODEE%v*$xpdGVMhobOeb
+  #   aY5MZCKOX1nY!*AsXQTo5PRgYx%YAax&
+  #   Nvo6JXR$*Ut0pa@mA9K=$REFxE$5ru+q
+  #   r$JmZphE&ZqUk2sJeBVEufEVOeGUhO#t
+  #   =y=WpWJBMVznrJ+Ds#c+OFvPPBBaqdxt
+  #   H%pY9tcV$+@&*!ZbV6P%A6u4QVReR3hV
+  #   KGJ+Rzt@R4w+9WC6=PS56Yo0R%Ug+1b&
+  #   55WaSSXEu6&eKt@K09bNnHg2Xg%4gBpN
+  #   yE++jgCwMj98QtZC$4TbHfA@Kp9#FVCX
+  #   @PjSWcRZ=3DA@Bz&z*QvJwj%bDnuk4&S
+  #   Qq0!!&M%Obq5NzEa3YGmmu2&MM4KwNF4
+  #   t5+7zY0+hdXp!!0&wrykyse0mfYbgkTr
+  #   =+9DEqaZMjr!PEhM=5YADMgn%Pw$563Q
+  #   U+8BrfP9FZtqtCAo52Vhj&@C6Y2@Cs+h
+  #   0Z7$&A9K1cf6uxAJk0RoK9kskZN*Muy#
+  #   gSYfeNGu&VXuAvXRty7mQx64t&XFy&96
+  #   0WXPQO%1x3OgKYa2sNpaXWdA$$frjYG*
+  #   w6HdssxB3!Y5z@RYdwN!Na02%VwcKGND
+  #   BZkQOdcZ*%3r4Tt&G6@GfB4=bc!!@Yuh
+  #   ystX=Pb%y5wPm7%70x4Y7gDoerof17c5
+  #   2a#od=j1JpA8*e1rasSe!ogxjz7R7SNJ
+  # EOT
 
   lifecycle {
     replace_triggered_by = [terraform_data.replace_trigger]
   }
+}
+
+variable "override_special" {
+  default = <<-EOT
+  !@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`!@#$%^&*()_+-=[]{}|;:'",.<>?/~`
+EOT
 }
 
 # ----------------------------------------------------------------------------------------- #
