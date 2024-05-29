@@ -48,11 +48,11 @@ resource "random_pet" "sensitive_shell_variable" { # create 2 sensitive shell va
 
 # ----------------------------------------- #
 
-output "single_line" { # create sensitive shell variable with the same value as output
+output "single_line" { # create sensitive shell variable with the same value as output (and its name)
   value = "Single line output"
 }
 
-output "multi_line" { # create sensitive shell variable with the same value as output
+output "multi_line" { # create sensitive shell variable with the same value as output (and its name)
   value = {
     "product": {
         "id": "12345",
