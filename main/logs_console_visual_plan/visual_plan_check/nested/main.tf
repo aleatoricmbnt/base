@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    scalr = {
+      source  = "scalr/scalr"
+    }
+  }
+}
+
 resource "scalr_provider_configuration" "nested_resource" {
   name                   = "pcfg_${formatdate("HH-mm-ss", timestamp())}"
   custom {
