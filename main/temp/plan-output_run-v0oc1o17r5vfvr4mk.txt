@@ -1,0 +1,1622 @@
+Terraform v1.5.7
+Initializing Terraform configuration...
+Configuring remote state backend...
+Initializing plugins and modules...
+
+------------------------------------------------------------------------
+
+module.main.random_pet.tlf_constellation_external_id: Refreshing state... [id=forcibly-thoroughly-allegedly-visually-gradually-broadly-casual-moccasin]
+module.main.module.billing_jobs["enabled"].data.opsgenie_team.service_owner: Reading...
+module.main.data.opsgenie_team.oasis_service_owner: Reading...
+module.main.module.kubra_processing["enabled"].data.opsgenie_team.service_owner: Reading...
+module.main.module.kubra_processing["enabled"].data.opsgenie_team.service_owner: Read complete after 0s [id=d5e30596-4e52-4c42-9b33-3c01baafaab4]
+module.main.module.billing_jobs["enabled"].data.opsgenie_team.service_owner: Read complete after 0s [id=e9f6595b-e94e-430b-992c-c734b5b139b2]
+module.main.data.opsgenie_team.oasis_service_owner: Read complete after 0s [id=e9f6595b-e94e-430b-992c-c734b5b139b2]
+module.main.module.kubra_processing["enabled"].opsgenie_service.kubra_reports: Refreshing state... [id=b306dbc8-1512-4d6e-b44b-ca173b0429ea]
+module.main.module.kubra_processing["enabled"].opsgenie_service.kubra_upload: Refreshing state... [id=19556469-6523-4c67-9161-21fca71c8191]
+module.main.module.kubra_processing["enabled"].opsgenie_service.kubra_remittance: Refreshing state... [id=7ad5c532-51d2-4b1b-a34f-03654971e9de]
+module.main.module.kubra_processing["enabled"].module.reports_success.opsgenie_api_integration.generic: Refreshing state... [id=b67e2c03-ab8e-4107-a16b-47c21a1a4e7e]
+module.main.module.kubra_processing["enabled"].opsgenie_service.kubra_recurring: Refreshing state... [id=8951dceb-d27f-4545-91b7-594f84d2cdb8]
+module.main.module.kubra_processing["enabled"].module.balance_file_errors.opsgenie_api_integration.generic: Refreshing state... [id=e4cc7db9-8a8e-41fd-af72-c0d52b0c0737]
+module.main.module.kubra_processing["enabled"].module.invoices_errors.opsgenie_api_integration.generic: Refreshing state... [id=f5e551ac-4589-4cc2-ac84-ad668d932399]
+module.main.module.kubra_processing["enabled"].module.reports_errors.opsgenie_api_integration.generic: Refreshing state... [id=237ddfb3-0043-47e6-aeb1-9045c98580be]
+module.main.module.billing_jobs["enabled"].module.billing_jobs.opsgenie_api_integration.generic: Refreshing state... [id=1065de95-d0d7-4088-af4b-fc452474eab6]
+module.main.module.kubra_processing["enabled"].module.recurring_errors.opsgenie_api_integration.generic: Refreshing state... [id=8cd0587d-2569-4cc4-b31d-67e457e3db4c]
+module.main.module.opsgenie_ses_emails.opsgenie_api_integration.generic: Refreshing state... [id=e4c2988c-657a-4314-9e17-f0400ed92039]
+module.main.module.kubra_processing["enabled"].module.recurring_success.opsgenie_api_integration.generic: Refreshing state... [id=7f16d787-1835-4211-9e31-86b662e2d08f]
+module.main.module.opsgenie_cloudwatch_alerts.opsgenie_api_integration.cloudwatch: Refreshing state... [id=e5dc27fd-bb8e-4296-822e-9501a8ca43c6]
+module.main.opsgenie_service.oasis: Refreshing state... [id=cc98d9eb-24dd-4780-839a-0c2015045b44]
+module.main.module.opsgenie_rds_events.opsgenie_api_integration.rds: Refreshing state... [id=1b2d1d41-8cd1-4f1a-a8bc-cbf55b03f9cb]
+module.main.module.kubra_processing["enabled"].module.remittance_errors.opsgenie_api_integration.generic: Refreshing state... [id=f2d35308-0ef5-4484-ba7e-9b173f7c4148]
+module.main.module.billing_jobs["enabled"].opsgenie_integration_action.billing_jobs: Refreshing state... [id=1065de95-d0d7-4088-af4b-fc452474eab6]
+module.main.module.kubra_processing["enabled"].opsgenie_integration_action.remittance_error: Refreshing state... [id=f2d35308-0ef5-4484-ba7e-9b173f7c4148]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public2: Reading...
+module.main.data.aws_availability_zone.secondary: Reading...
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public1: Reading...
+module.main.data.aws_availability_zone.tertiary: Reading...
+module.main.data.aws_ec2_managed_prefix_list.zone_admin_workstations: Reading...
+module.main.data.aws_ec2_managed_prefix_list.zone_end_user_compute: Reading...
+module.main.data.aws_subnet.secondary_az: Reading...
+module.main.aws_kms_key.oasis_non_sensitive: Refreshing state... [id=d69b63b3-63dd-4622-a9ad-56fe5587e418]
+module.main.aws_kms_key.oasis_sensitive: Refreshing state... [id=f20173bc-1552-4fcf-a047-533d08b9160b]
+module.main.module.kubra_processing["enabled"].aws_kms_key.kubra: Refreshing state... [id=816e2612-6daf-47b4-bc60-32d15a2abc6c]
+module.main.data.aws_availability_zone.tertiary: Read complete after 0s [id=us-east-1b]
+module.main.module.ses_domain.data.aws_caller_identity.main: Reading...
+module.main.data.aws_availability_zone.secondary: Read complete after 0s [id=us-east-1a]
+data.aws_rds_engine_version.oracle: Reading...
+module.main.module.ses_domain.data.aws_caller_identity.main: Read complete after 0s [id=707589232221]
+module.main.aws_ram_resource_share.aws_ec2_managed_prefix_list: Refreshing state... [id=arn:aws:ram:us-east-1:707589232221:resource-share/ec2c17f3-6b15-4739-a522-a688f2b706b3]
+module.main.data.aws_subnet.secondary_az: Read complete after 0s [id=subnet-0780ea12f6a1f2bd4]
+data.aws_vpc.main: Reading...
+module.main.aws_ecs_cluster.oasis_weblogic: Refreshing state... [id=arn:aws:ecs:us-east-1:707589232221:cluster/OasisECSCluster]
+module.main.data.aws_availability_zone.primary: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_sns_subscription_assume_role_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_sns_subscription_assume_role_policy: Read complete after 0s [id=318828377]
+module.main.data.aws_iam_policy_document.dms_assume_role: Reading...
+module.main.data.aws_iam_policy_document.dms_assume_role: Read complete after 0s [id=3935035000]
+module.main.module.ses_domain.aws_ses_receipt_rule_set.sns: Refreshing state... [id=send-to-sns]
+module.main.data.aws_ec2_managed_prefix_list.zone_public2: Reading...
+module.main.data.aws_ec2_managed_prefix_list.zone_public1: Reading...
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public1: Read complete after 0s [id=pl-0088f15656d2b09dd]
+module.main.data.aws_ec2_managed_prefix_list.zone_end_user_compute: Read complete after 0s [id=pl-0c5fc3c0229f00646]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_iam_policy_document.assume_role_lambda: Reading...
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_iam_policy_document.assume_role_lambda: Read complete after 0s [id=2690255455]
+module.main.data.aws_ec2_managed_prefix_list.zone_admin_workstations: Read complete after 0s [id=pl-0e80e6938796af6b8]
+module.main.data.aws_organizations_organization.primary: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_sns_subscription_assume_role_policy: Reading...
+module.main.data.aws_subnet.tertiary_az: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_sns_subscription_assume_role_policy: Read complete after 0s [id=318828377]
+module.main.data.aws_iam_policy_document.tlf_constellation_assume_role_policy: Reading...
+module.main.data.aws_iam_policy_document.tlf_constellation_assume_role_policy: Read complete after 0s [id=530302047]
+module.main.aws_iam_policy.rds_enhanced_monitoring: Refreshing state... [id=arn:aws:iam::707589232221:policy/rds_enhanced_monitoring20230926154511654700000001]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public2: Read complete after 0s [id=pl-0278e4bd5594465aa]
+module.main.aws_s3_bucket.oasis_schema_data: Refreshing state... [id=oasis-schema-data-dev-20240131184850036400000001]
+module.main.data.aws_subnet.tertiary_az: Read complete after 0s [id=subnet-04c1c4d62e8fa2d1c]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public1: Reading...
+data.aws_rds_engine_version.oracle: Read complete after 0s [id=19.0.0.0.ru-2024-04.rur-2024-04.r1]
+module.main.aws_iam_policy.ssm_debug: Refreshing state... [id=arn:aws:iam::707589232221:policy/ssm-ecs-debugging]
+data.aws_vpc.main: Read complete after 0s [id=vpc-0af50cb13e1c76d4b]
+module.main.aws_route53_delegation_set.main: Refreshing state... [id=N00168142YCTM7IT1O8K0]
+module.main.module.kubra_processing["enabled"].aws_s3_bucket.kubra_processing: Refreshing state... [id=kubra-dev-20230831204921682800000001]
+module.main.data.aws_ec2_managed_prefix_list.zone_public1: Read complete after 0s [id=pl-0088f15656d2b09dd]
+module.main.data.aws_ec2_managed_prefix_list.service_vpc_endpoints: Reading...
+module.main.module.billing_jobs["enabled"].aws_kms_key.billing_jobs: Refreshing state... [id=55a6fc32-b0be-492e-a7e9-d84723d97c8c]
+module.main.data.aws_availability_zone.primary: Read complete after 1s [id=us-east-1d]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_lambda: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_lambda: Read complete after 0s [id=2690255455]
+module.main.data.aws_caller_identity.main: Reading...
+module.main.data.aws_caller_identity.main: Read complete after 0s [id=707589232221]
+module.main.data.aws_vpc.main: Reading...
+module.main.data.aws_organizations_organization.primary: Read complete after 1s [id=o-nhfxvbvzxb]
+module.main.module.billing_jobs["enabled"].aws_scheduler_schedule_group.billing_jobs: Refreshing state... [id=billing-jobs]
+module.main.data.aws_region.main: Reading...
+module.main.data.aws_region.main: Read complete after 0s [id=us-east-1]
+module.main.data.aws_iam_policy_document.skeddly_assume_role_document: Reading...
+module.main.data.aws_iam_policy_document.skeddly_assume_role_document: Read complete after 0s [id=270275434]
+module.main.data.aws_subnet.primary_az: Reading...
+module.main.data.aws_elb_service_account.main: Reading...
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public1: Read complete after 1s [id=pl-0088f15656d2b09dd]
+module.main.data.aws_elb_service_account.main: Read complete after 0s [id=127311923021]
+module.main.module.kubra_processing["enabled"].aws_ssm_parameter.last_invoice_processed: Refreshing state... [id=/kubra/invoices/last-invoice-processed]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_iam_policy_document.assume_role_lambda: Reading...
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_iam_policy_document.assume_role_lambda: Read complete after 0s [id=2690255455]
+module.main.aws_s3_bucket.access_logs: Refreshing state... [id=weblogic-access-logs20230817140603707100000001]
+module.main.data.aws_subnet.primary_az: Read complete after 0s [id=subnet-0bb0a2d860451e111]
+module.main.module.kubra_processing["enabled"].aws_scheduler_schedule_group.kubra_processing: Refreshing state... [id=kubra-processing]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_sns_subscription_assume_role_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_sns_subscription_assume_role_policy: Read complete after 0s [id=318828377]
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.oracle_db_job_sfn_sfn: Reading...
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.oracle_db_job_sfn_sfn: Read complete after 0s [id=3923079540]
+module.main.module.kubra_processing["enabled"].data.aws_ec2_managed_prefix_list.zone_public1: Reading...
+module.main.data.aws_ec2_managed_prefix_list.zone_public2: Read complete after 1s [id=pl-0278e4bd5594465aa]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public2: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_ec2_managed_prefix_list.zone_public2: Reading...
+module.main.module.ses_domain.data.aws_region.main: Reading...
+module.main.module.ses_domain.data.aws_region.main: Read complete after 0s [id=us-east-1]
+module.main.aws_kms_alias.oasis_non_sensitive: Refreshing state... [id=alias/oasis_non_sensitive]
+module.main.aws_secretsmanager_secret.billing_jobs_oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:billing_jobs_oasis_db20231013163017905400000001-JiGag0]
+module.main.data.aws_ec2_managed_prefix_list.service_vpc_endpoints: Read complete after 1s [id=pl-0fa9755b06c31c4d5]
+module.main.aws_cloudwatch_log_group.oasis_weblogic_ecs: Refreshing state... [id=ecs/oasis-weblogic]
+module.main.aws_sns_topic.rds_oasis: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:rds-oasis-20231006153722682800000002]
+module.main.aws_sns_topic.cloudwatch_alarms: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:cloudwatch-alarms]
+module.main.data.aws_vpc.main: Read complete after 0s [id=vpc-0af50cb13e1c76d4b]
+module.main.module.kubra_processing["enabled"].data.aws_ec2_managed_prefix_list.zone_public1: Read complete after 0s [id=pl-0088f15656d2b09dd]
+module.main.aws_secretsmanager_secret.oasis_jobs_oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_jobs_oasis_db20231017225537436400000002-tFl0GC]
+module.main.aws_cloudwatch_log_group.smtp_ses_gateway: Refreshing state... [id=ecs/smtp-ses-gateway]
+module.main.aws_secretsmanager_secret.swat_apps_oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:swat_apps_oasis_db20231017225537436300000001-ucTtkT]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_ec2_managed_prefix_list.zone_public2: Read complete after 0s [id=pl-0278e4bd5594465aa]
+module.main.aws_s3_bucket.oasis_data_bucket: Refreshing state... [id=oasis-data-bucket20230204023833344800000019]
+module.main.aws_s3_bucket.ods: Refreshing state... [id=ods-dev-20230816130021867500000001]
+module.main.module.kubra_processing["enabled"].data.aws_ec2_managed_prefix_list.zone_public2: Read complete after 0s [id=pl-0278e4bd5594465aa]
+module.main.aws_kms_alias.oasis_sensitive: Refreshing state... [id=alias/oasis_sensitive]
+module.main.aws_s3_bucket.tlf_dividend_data_bucket: Refreshing state... [id=tlf-dividend-data-bucket20230811140036400000000001]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.remittance_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-remittance-success]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.invoices_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-invoices-success]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret.oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_oasis_db_20240130205814049100000008-NPfDNT]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.recurring_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-recurring-error]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.invoices_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-invoices-error]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret.curi_pgp_private_key: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:curi_pgp_private_key_2024013020581434140000000a-tzXWUM]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret.kubra_sftp_credentials: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_sftp_credentials20240130205813364300000007-lxscJi]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret.kubra_pgp_public_key: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_pgp_public_key_20240130205814220600000009-3o2dgb]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.balance_file_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-balance-file-error]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.remittance_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-remittance-error]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.recurring_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-recurring-success]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.reports_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-reports-error]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.balance_file_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-balance-file-success]
+module.main.module.kubra_processing["enabled"].aws_kms_alias.kubra: Refreshing state... [id=alias/kubra_processing]
+module.main.module.kubra_processing["enabled"].aws_sns_topic.reports_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-reports-success]
+module.main.aws_ecs_cluster_capacity_providers.oasis_weblogic: Refreshing state... [id=OasisECSCluster]
+module.main.module.ses_domain.aws_ses_active_receipt_rule_set.sns: Refreshing state... [id=send-to-sns]
+module.main.data.aws_iam_policy_document.sns_topic_cloudwatch_alarms: Reading...
+module.main.data.aws_iam_policy.role_permissions_boundary: Reading...
+module.main.data.aws_iam_policy_document.sns_topic_cloudwatch_alarms: Read complete after 0s [id=495509272]
+module.main.data.aws_iam_session_context.main: Reading...
+module.main.aws_ram_principal_association.aws_ec2_managed_prefix_list: Refreshing state... [id=arn:aws:ram:us-east-1:707589232221:resource-share/ec2c17f3-6b15-4739-a522-a688f2b706b3,arn:aws:organizations::637804786885:organization/o-nhfxvbvzxb]
+module.main.data.aws_ip_ranges.region_aws_services: Reading...
+module.main.data.aws_ip_ranges.region_aws_ec2: Reading...
+module.main.aws_db_subnet_group.oracle_subnet_group: Refreshing state... [id=oracle_subnet_group]
+module.main.aws_ec2_managed_prefix_list.oasis_subnets: Refreshing state... [id=pl-0bc153ad10ceab641]
+module.main.data.aws_iam_session_context.main: Read complete after 1s [id=arn:aws:sts::707589232221:assumed-role/CuriPipelineAdministratorAccess/run-v0oc1o17r5vfvr4mk]
+module.main.aws_dms_replication_subnet_group.oasis["enabled"]: Refreshing state... [id=oasis-dms-replication-subnet-group]
+module.main.data.aws_iam_policy.role_permissions_boundary: Read complete after 1s [id=arn:aws:iam::707589232221:policy/CuriPipelineAdministratorAccessPermBoundaries]
+module.main.module.billing_jobs["enabled"].aws_sns_topic.billing_jobs: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:billing-jobs]
+module.main.data.aws_ip_ranges.region_aws_ec2: Read complete after 1s [id=1715298790]
+module.main.data.aws_ip_ranges.region_aws_services: Read complete after 1s [id=1715298790]
+module.main.module.billing_jobs["enabled"].aws_kms_alias.billing_jobs: Refreshing state... [id=alias/billing_jobs]
+module.main.module.ses_domain.aws_sns_topic.ses_emails: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:ses-emails]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_parameters: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_parameters: Read complete after 0s [id=1643939153]
+module.main.aws_s3_bucket_public_access_block.oasis_schema_data: Refreshing state... [id=oasis-schema-data-dev-20240131184850036400000001]
+module.main.aws_s3_bucket_server_side_encryption_configuration.oasis_schema_data: Refreshing state... [id=oasis-schema-data-dev-20240131184850036400000001]
+module.main.data.aws_iam_policy_document.oasis_schema_data_access: Reading...
+module.main.data.aws_iam_policy_document.oasis_schema_data_access: Read complete after 0s [id=3578246427]
+module.main.aws_security_group.oasis_lb: Refreshing state... [id=sg-0d3d332fa710b0d76]
+module.main.aws_security_group.oasis_weblogic_ecs: Refreshing state... [id=sg-0b307e3f58af27ec6]
+module.main.aws_security_group.smtp_ses_gateway: Refreshing state... [id=sg-0a07afa3a9d311d9e]
+module.main.aws_service_discovery_private_dns_namespace.oasis: Refreshing state... [id=ns-mzoses6gxnmf7nmf]
+module.main.aws_lb_target_group.oasis_https: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:707589232221:targetgroup/ohttps20230213174751005700000003/acc66f9bc2c6a8b2]
+module.main.aws_security_group.oracle_oem_sg: Refreshing state... [id=sg-002412b70ad4c8709]
+module.main.aws_secretsmanager_secret_version.billing_jobs_oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:billing_jobs_oasis_db20231013163017905400000001-JiGag0|terraform-20240212210036084800000001]
+module.main.aws_security_group.oracle_db_sg: Refreshing state... [id=sg-0bbf922febc660d70]
+module.main.module.elastic_filesystem["enabled"].aws_efs_file_system.oasis_files: Refreshing state... [id=fs-0745f9cf9a0e5d22a]
+module.main.aws_secretsmanager_secret_version.oasis_jobs_oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_jobs_oasis_db20231017225537436400000002-tFl0GC|AA152C6C-ADF6-41AF-AB42-60276F50197D]
+module.main.aws_cloudwatch_metric_alarm.rds_free_storage_space["enabled"]: Refreshing state... [id=DEV - Free Storage Space Monitor]
+module.main.data.aws_iam_policy_document.kms_oasis_non_sensitive: Reading...
+module.main.aws_cloudwatch_metric_alarm.rds_cpu_utilization["enabled"]: Refreshing state... [id=DEV RDS - CPU Alarm]
+module.main.aws_secretsmanager_secret_version.swat_apps_oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:swat_apps_oasis_db20231017225537436300000001-ucTtkT|terraform-20240212210036093400000002]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.lambda_access_s3_bucket: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.lambda_access_s3_bucket: Read complete after 0s [id=455074906]
+module.main.data.aws_iam_policy_document.kms_oasis_non_sensitive: Read complete after 0s [id=4245249386]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.athena_reporting_s3_bucket_access: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.athena_reporting_s3_bucket_access: Read complete after 0s [id=3142972640]
+module.main.module.kubra_processing["enabled"].aws_s3_bucket_server_side_encryption_configuration.kubra_processing: Refreshing state... [id=kubra-dev-20230831204921682800000001]
+module.main.module.kubra_processing["enabled"].aws_athena_database.kubra_reporting: Refreshing state... [id=kubra_reporting]
+module.main.module.kubra_processing["enabled"].aws_s3_bucket_lifecycle_configuration.kubra_processing: Refreshing state... [id=kubra-dev-20230831204921682800000001]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_access_s3: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_access_s3: Read complete after 0s [id=455074906]
+module.main.module.kubra_processing["enabled"].aws_s3_bucket_public_access_block.kubra_processing: Refreshing state... [id=kubra-dev-20230831204921682800000001]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_access_s3: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.athena_reporting_s3_object_access: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_access_s3: Read complete after 0s [id=455074906]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.athena_reporting_s3_object_access: Read complete after 0s [id=1728365320]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_version.curi_pgp_private_key: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:curi_pgp_private_key_2024013020581434140000000a-tzXWUM|53C6ACE7-8B81-418B-8336-C629D3DB7B61]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.process_remittance_lambda_access_database_secret: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.process_remittance_lambda_access_database_secret: Read complete after 0s [id=2721706052]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_version.oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_oasis_db_20240130205814049100000008-NPfDNT|74EC2EE5-A745-41CA-972A-77BE0EB28756]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_sns_publish: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sftp_operations_lambda_access_sftp_secret: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_sns_publish: Read complete after 0s [id=159185513]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sftp_operations_lambda_access_sftp_secret: Read complete after 0s [id=450542898]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_version.kubra_sftp_credentials: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_sftp_credentials20240130205813364300000007-lxscJi|232CE00E-C40B-4E1E-A08F-36AA99C1325C]
+module.main.aws_s3_bucket_public_access_block.access_logs: Refreshing state... [id=weblogic-access-logs20230817140603707100000001]
+module.main.data.aws_iam_policy_document.s3_log_delivery: Reading...
+module.main.data.aws_iam_policy_document.s3_log_delivery: Read complete after 0s [id=1582497331]
+module.main.aws_s3_bucket_lifecycle_configuration.access_logs: Refreshing state... [id=weblogic-access-logs20230817140603707100000001]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.file_operations_lambda_access_pgp_secrets: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.file_operations_lambda_access_pgp_secrets: Read complete after 0s [id=4110735388]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_version.kubra_pgp_public_key: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_pgp_public_key_20240130205814220600000009-3o2dgb|76A16BD2-07E6-49A6-B62B-B0E4FE21FC18]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_sns_publish: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_sns_publish: Read complete after 0s [id=696467630]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_scheduler_assume_role: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_assume_role_policy: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_scheduler_assume_role: Read complete after 0s [id=2925894712]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_assume_role_policy: Read complete after 0s [id=727365814]
+module.main.module.kubra_processing["enabled"].aws_athena_data_catalog.kubra_reports: Refreshing state... [id=Kubra_Reports]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kubra_scheduler_assume_role: Reading...
+module.main.aws_db_parameter_group.rds_oasis: Refreshing state... [id=rds-oasis20230516153215929200000001]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kubra_scheduler_assume_role: Read complete after 0s [id=2925894712]
+module.main.module.kubra_processing["enabled"].aws_athena_workgroup.kubra_reporting_primary: Refreshing state... [id=kubra_reporting_primary]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_assume_role_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_assume_role_policy: Read complete after 0s [id=727365814]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_assume_role_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_assume_role_policy: Read complete after 0s [id=727365814]
+module.main.aws_sns_topic_policy.cloudwatch_alarms: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:cloudwatch-alarms]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_sns_publish: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_sns_publish: Read complete after 0s [id=3399342385]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.kms_logs: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.assume_role_billing_jobs_sfn_role: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.assume_role_billing_jobs_sfn_role: Read complete after 0s [id=4289225857]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.kms_logs: Read complete after 0s [id=403063690]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_invoices_sfn_role: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_invoices_sfn_role: Read complete after 0s [id=4289225857]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_remittance_sfn_role: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_policy: Read complete after 0s [id=4010588461]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_remittance_sfn_role: Read complete after 0s [id=4289225857]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_balance_file_sfn_role: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_balance_file_sfn_role: Read complete after 0s [id=4289225857]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kms_logs: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_kubra_reprts_athena_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kms_logs: Read complete after 0s [id=403063690]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_kubra_reprts_athena_policy: Read complete after 0s [id=3883039796]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_recurring_sfn_role: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_policy: Read complete after 1s [id=2310111045]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_reports_sfn_role: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_recurring_sfn_role: Read complete after 0s [id=4289225857]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.assume_role_reports_sfn_role: Read complete after 0s [id=4289225857]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_sfn_sns_publish: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_policy: Read complete after 0s [id=4073998069]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_sfn_sns_publish: Read complete after 0s [id=2557173112]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_sns_publish: Reading...
+module.main.aws_iam_role.oasis_db_role: Refreshing state... [id=oasis_db_role20230204023810312600000002]
+module.main.aws_iam_role.dms_vpc_role: Refreshing state... [id=dms-vpc-role]
+module.main.aws_iam_role.oasis_weblogic_task_ecs: Refreshing state... [id=OasisWebLogicEcsTaskRole2023020402381234500000000c]
+module.main.aws_iam_role.rds_enhanced_monitoring: Refreshing state... [id=rds_enhanced_monitoring20230926154511658400000002]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_sns_publish: Read complete after 0s [id=1947588795]
+module.main.aws_iam_role.oasis_weblogic_ecs_execution: Refreshing state... [id=OasisWebLogicEcsExecutionRole20230204023810316700000004]
+module.main.aws_iam_role.dms_cloudwatch_logs_role: Refreshing state... [id=dms-cloudwatch-logs-role]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_sfn_sns_publish: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_sfn_sns_publish: Read complete after 0s [id=2654347162]
+module.main.aws_iam_role.dms: Refreshing state... [id=dms20240131184851332600000002]
+module.main.module.elastic_filesystem["enabled"].aws_security_group.efs: Refreshing state... [id=sg-0f59dd712ec649e1b]
+module.main.module.kubra_processing["enabled"].aws_security_group.process_remittance_lambda: Refreshing state... [id=sg-0df06fa455f5ed933]
+module.main.module.ses_domain.data.aws_iam_policy_document.ses_emails: Reading...
+module.main.module.ses_domain.data.aws_iam_policy_document.ses_emails: Read complete after 0s [id=629207258]
+module.main.aws_ram_resource_association.aws_ec2_managed_prefix_list_subnets: Refreshing state... [id=arn:aws:ram:us-east-1:707589232221:resource-share/ec2c17f3-6b15-4739-a522-a688f2b706b3,arn:aws:ec2:us-east-1:707589232221:prefix-list/pl-0bc153ad10ceab641]
+module.main.aws_s3_bucket_public_access_block.oasis_data_bucket: Refreshing state... [id=oasis-data-bucket20230204023833344800000019]
+module.main.aws_iam_policy.oasis_db_s3_access: Refreshing state... [id=arn:aws:iam::707589232221:policy/s3_access_policy2023020402383489100000001a]
+module.main.aws_s3_bucket_public_access_block.tlf_dividend_data_bucket: Refreshing state... [id=tlf-dividend-data-bucket20230811140036400000000001]
+module.main.data.aws_iam_policy_document.tlf_constellation_role_policy: Reading...
+module.main.data.aws_iam_policy_document.tlf_constellation_role_policy: Read complete after 0s [id=2185143636]
+module.main.aws_s3_bucket_lifecycle_configuration.dip_import: Refreshing state... [id=ods-dev-20230816130021867500000001]
+module.main.aws_s3_bucket_public_access_block.ods: Refreshing state... [id=ods-dev-20230816130021867500000001]
+module.main.aws_security_group_rule.oasis_lb_ingress_weblogic_https: Refreshing state... [id=sgrule-1541284738]
+module.main.aws_security_group_rule.oasis_lb_ingress_https_euc: Refreshing state... [id=sgrule-3101727471]
+module.main.aws_security_group_rule.oasis_lb_ingress_https_extra["enabled"]: Refreshing state... [id=sgrule-4220438747]
+module.main.module.opsgenie_rds_events.aws_sns_topic_subscription.rds: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:rds-oasis-20231006153722682800000002:cfbf3904-989c-4ed3-9d67-fa7ec9766ac8]
+module.main.module.opsgenie_cloudwatch_alerts.aws_sns_topic_subscription.cloudwatch: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:cloudwatch-alarms:ee65ec44-00f3-427b-b849-2387d1c0293e]
+module.main.aws_security_group_rule.oasis_lb_egress_weblogic: Refreshing state... [id=sgrule-2461116093]
+module.main.aws_security_group_rule.oasis_weblogic_ecs_lb_ingress_weblogic_https: Refreshing state... [id=sgrule-3989406356]
+module.main.aws_security_group_rule.oasis_lb_egress_oasis: Refreshing state... [id=sgrule-2711488102]
+module.main.aws_security_group_rule.oasis_weblogic_ecs_sg_ad: Refreshing state... [id=sgrule-852954266]
+module.main.aws_security_group_rule.oasis_weblogic_ecs_sg_egress_https: Refreshing state... [id=sgrule-1256022083]
+module.main.aws_security_group_rule.oasis_weblogic_ecs_sg_legacy_db["enabled"]: Refreshing state... [id=sgrule-3078431079]
+module.main.aws_security_group_rule.oasis_smtp_gateway_to_internet: Refreshing state... [id=sgrule-352638168]
+module.main.aws_security_group_rule.oasis_weblogic_ecs_lb_ingress_https: Refreshing state... [id=sgrule-4244350568]
+module.main.aws_security_group_rule.oracle_db_sg_agent_to_oms_tls: Refreshing state... [id=sgrule-4020925838]
+module.main.aws_security_group_rule.oracle_db_sg_agent_to_oms: Refreshing state... [id=sgrule-1703244810]
+module.main.aws_security_group_rule.oracle_db_sg_allow_oms_to_agent: Refreshing state... [id=sgrule-528453881]
+module.main.aws_service_discovery_service.smtp_ses_gateway: Refreshing state... [id=srv-juw44ojmc2je3t73]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_iam_policy_document.db_query_lambda_access_s3_bucket["enabled"]: Reading...
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_iam_policy_document.db_query_lambda_access_s3_bucket["enabled"]: Read complete after 0s [id=455074906]
+module.main.aws_kms_key_policy.oasis_non_sensitive: Refreshing state... [id=d69b63b3-63dd-4622-a9ad-56fe5587e418]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_iam_policy_document.db_query_lambda_access_database_secret: Reading...
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.data.aws_iam_policy_document.db_query_lambda_access_database_secret: Read complete after 0s [id=2721706052]
+module.main.module.kubra_processing["enabled"].module.recurring_errors.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-recurring-error:afd354ab-1824-4ba2-84ce-f39beb4743a0]
+module.main.module.kubra_processing["enabled"].module.invoices_errors.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-invoices-error:ea83cccc-7c5f-4f43-988a-39594b0b3576]
+module.main.aws_security_group_rule.oracle_db_sg_allow_egress_smtprelay01: Refreshing state... [id=sgrule-1382264160]
+module.main.aws_security_group_rule.oasis_db_to_smtp_gateway: Refreshing state... [id=sgrule-444546135]
+module.main.aws_security_group_rule.oracle_db_sg_allow_oem: Refreshing state... [id=sgrule-2622374915]
+module.main.aws_security_group_rule.oracle_db_sg_allow_admins: Refreshing state... [id=sgrule-1876939217]
+module.main.aws_security_group_rule.oasis_rds_db_sg_egress_dbora_nlb["enabled"]: Refreshing state... [id=sgrule-878648022]
+module.main.aws_security_group_rule.oracle_db_sg_allow_oasis_application: Refreshing state... [id=sgrule-149526321]
+module.main.aws_db_option_group.oasis_db_option: Refreshing state... [id=oasis-db-option-group]
+module.main.aws_security_group.dms["enabled"]: Refreshing state... [id=sg-08bb78a094d3b3710]
+module.main.aws_security_group_rule.oracle_db_sg_allow_extras_ingress["enabled"]: Refreshing state... [id=sgrule-2755719740]
+module.main.aws_security_group_rule.oasis_weblogic_ecs_sg_db: Refreshing state... [id=sgrule-637366822]
+module.main.aws_security_group_rule.oracle_db_sg_allow_egress_smtp: Refreshing state... [id=sgrule-3122461607]
+module.main.aws_s3_bucket_policy.access_log_bucket: Refreshing state... [id=weblogic-access-logs20230817140603707100000001]
+module.main.module.kubra_processing["enabled"].module.balance_file_errors.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-balance-file-error:92256481-6d48-4e5f-8f26-38b4b3b736b5]
+module.main.module.kubra_processing["enabled"].module.remittance_errors.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-remittance-error:b4c5290c-881f-41aa-b5f8-8cacc739561c]
+module.main.module.elastic_filesystem["enabled"].aws_efs_access_point.oasis_files: Refreshing state... [id=fsap-065744b43d3bd53f2]
+module.curi_private_zone.aws_route53_zone.private: Refreshing state... [id=Z01827082CORE30NNYTX9]
+module.main.module.kubra_processing["enabled"].module.recurring_success.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-recurring-success:ff7bb91e-3a55-4ac9-a69b-21938dbf7fc6]
+module.main.module.kubra_processing["enabled"].module.reports_errors.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-reports-error:038d639e-8f58-4e9b-af95-5cbbd1ff3bfd]
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.assume_role_oracle_db_job_sfn_role: Reading...
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.assume_role_oracle_db_job_sfn_role: Read complete after 0s [id=4289225857]
+module.main.module.billing_jobs["enabled"].aws_kms_key.logs: Refreshing state... [id=ca100727-a735-4bfa-bd02-d3c1466fd942]
+module.main.module.kubra_processing["enabled"].aws_kms_key.logs: Refreshing state... [id=245a48a6-5d36-4bb5-81aa-81850f3896d2]
+module.main.module.kubra_processing["enabled"].module.reports_success.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-reports-success:706376e2-a566-4dc1-938c-a704853d305c]
+module.main.module.kubra_processing["enabled"].aws_iam_role.invoices_results_firehose: Refreshing state... [id=invoicesResultsFirehose-2024013020581436880000000b]
+module.main.module.kubra_processing["enabled"].aws_iam_role.file_operations_lambda: Refreshing state... [id=FileOperationsLambda-20240130205815836000000010]
+module.main.module.kubra_processing["enabled"].aws_iam_role.process_remittance_lambda: Refreshing state... [id=ProcessRemittanceLambda-2024013020581526550000000f]
+module.main.module.kubra_processing["enabled"].aws_iam_role.recurring_sfn_role: Refreshing state... [id=RecurringStepFunction-20240423211506828300000001]
+module.main.module.kubra_processing["enabled"].aws_iam_role.reports_sfn_role: Refreshing state... [id=ReportsStepFunction-20240412185340434700000001]
+module.main.module.kubra_processing["enabled"].aws_iam_role.remittance_results_firehose: Refreshing state... [id=RemittanceResultsFirehose-2024013020581450820000000d]
+module.main.module.kubra_processing["enabled"].aws_iam_role.sftp_operations_lambda: Refreshing state... [id=SftpOperationsLambda-2024013020581472310000000e]
+module.main.module.kubra_processing["enabled"].aws_iam_role.remittance_sfn_role: Refreshing state... [id=RemittanceStepFunction-20240130205804660200000002]
+module.main.module.kubra_processing["enabled"].aws_iam_role.invoices_sfn_role: Refreshing state... [id=InvoicesStepFunction-20240130205804582800000001]
+module.main.module.kubra_processing["enabled"].aws_iam_role.balance_file_results_firehose: Refreshing state... [id=balance_fileResultsFirehose-2024013020581449690000000c]
+module.main.module.billing_jobs["enabled"].module.billing_jobs.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:billing-jobs:5494523a-bcdd-4246-b73f-e18189ae6ab9]
+module.main.data.aws_iam_policy_document.oasis_data_bucket: Reading...
+module.main.data.aws_iam_policy_document.oasis_data_bucket: Read complete after 0s [id=4243089222]
+module.main.aws_iam_role_policy_attachment.dms_vps_management_role: Refreshing state... [id=dms-vpc-role-20240131202426597800000001]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.aws_security_group.db_query_lambda: Refreshing state... [id=sg-046bf457032f81200]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.aws_security_group.db_query_lambda: Refreshing state... [id=sg-0c0d8d89c7c0b3b0c]
+module.main.aws_iam_role_policy_attachment.rds_enhanced_monitoring: Refreshing state... [id=rds_enhanced_monitoring20230926154511658400000002-20230926154512239100000003]
+module.main.aws_iam_role_policy_attachment.ssm_debug_attach_to_ecs_task: Refreshing state... [id=OasisWebLogicEcsTaskRole2023020402381234500000000c-20240509180547981400000001]
+module.main.module.ses_domain.aws_sns_topic_policy.ses_emails: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:ses-emails]
+module.main.module.elastic_filesystem["enabled"].aws_security_group_rule.efs_icmp_ingress: Refreshing state... [id=sgrule-4259478577]
+module.main.module.elastic_filesystem["enabled"].aws_security_group_rule.cidr_blocks_to_efs_ingress: Refreshing state... [id=sgrule-212244170]
+module.main.module.elastic_filesystem["enabled"].aws_security_group_rule.prefix_lists_to_efs_ingress: Refreshing state... [id=sgrule-994052368]
+module.main.module.elastic_filesystem["enabled"].aws_efs_mount_target.oasis_files["subnet-0780ea12f6a1f2bd4"]: Refreshing state... [id=fsmt-08d0bdf25d8a2bda7]
+module.main.module.elastic_filesystem["enabled"].aws_efs_mount_target.oasis_files["subnet-0bb0a2d860451e111"]: Refreshing state... [id=fsmt-0e03333c6eefba05a]
+module.main.aws_iam_role_policy_attachment.dms_cloudwatch_logs_role: Refreshing state... [id=dms-cloudwatch-logs-role-20240131205021138100000001]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_tlf_s3_access: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_tlf_s3_access: Read complete after 0s [id=4137333186]
+module.main.aws_iam_role.tlf_constellation_file_writer: Refreshing state... [id=tlf_constellation_file_writer20231102200606872000000001]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_access_s3: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_access_s3: Read complete after 0s [id=2177803132]
+module.main.aws_secretsmanager_secret.oasis_weblogic_admin_credential: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_weblogic_admin_credential20231018194207157800000002-mVTCzp]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_access_s3: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_access_s3: Read complete after 0s [id=2177803132]
+module.main.aws_secretsmanager_secret.oasis_weblogic_active_directory_credential: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_weblogic_active_directory_credential20231018194207156000000001-dkKro4]
+module.main.aws_secretsmanager_secret.oasis_weblogic_oracle_db_oasis_credential: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_weblogic_oracle_db_oasis_credential20231018194207161400000003-im3iF6]
+module.main.aws_iam_role_policy_attachment.oasis_weblogic_ecs_execution: Refreshing state... [id=OasisWebLogicEcsExecutionRole20230204023810316700000004-2023020402381309340000000e]
+module.main.module.kubra_processing["enabled"].aws_security_group_rule.process_remittance_lambda_egress_to_public_https: Refreshing state... [id=sgrule-2705231394]
+module.main.data.aws_iam_policy_document.oasis_schema_data_bucket: Reading...
+module.main.data.aws_iam_policy_document.oasis_schema_data_bucket: Read complete after 0s [id=1078099410]
+module.main.aws_dms_s3_endpoint.oasis_schema_data_bucket["enabled"]: Refreshing state... [id=oasis-schema-data-bucket]
+module.main.aws_iam_role_policy_attachment.oasis_db_s3_access: Refreshing state... [id=oasis_db_role20230204023810312600000002-2023020402383515350000001b]
+module.main.module.elastic_filesystem["enabled"].aws_security_group_rule.oasis_to_efs_ingress: Refreshing state... [id=sgrule-1810590075]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_iam_policy_document.db_query_lambda_access_database_secret: Reading...
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.data.aws_iam_policy_document.db_query_lambda_access_database_secret: Read complete after 0s [id=2078580881]
+module.main.module.kubra_processing["enabled"].aws_security_group_rule.process_remittance_lambda_egress_to_db: Refreshing state... [id=sgrule-3260732710]
+module.main.aws_db_instance.oasis["enabled"]: Refreshing state... [id=db-HPOMMN72PLQY72DTS5G6I3BSFQ]
+module.main.aws_security_group_rule.oracle_db_sg_allow_dms["enabled"]: Refreshing state... [id=sgrule-4261553198]
+module.main.aws_lb.oasis: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:707589232221:loadbalancer/app/oasis20230213174807278700000005/8b56702e15c7b8c4]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.aws_iam_role.db_query_lambda: Refreshing state... [id=Kubra-Db-QueryLambda-20240130205816074100000011]
+module.main.module.kubra_processing["enabled"].aws_kms_alias.logs: Refreshing state... [id=alias/kubra_processing_logs]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.invoices_sfn: Refreshing state... [id=InvoicesStepFunction]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.lambda_file_operations: Refreshing state... [id=/aws/lambda/file_operations]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.balance_file_sfn: Refreshing state... [id=BalanceFileStepFunction]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.lambda_sftp_operations: Refreshing state... [id=/aws/lambda/sftp_operations]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.reports_sfn: Refreshing state... [id=ReportsStepFunction]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.lambda_process_remittance: Refreshing state... [id=/aws/lambda/process_remittance]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.recurring_sfn: Refreshing state... [id=RecurringStepFunction]
+module.main.module.kubra_processing["enabled"].aws_cloudwatch_log_group.remittance_sfn: Refreshing state... [id=RemittanceStepFunction]
+module.main.module.billing_jobs["enabled"].aws_cloudwatch_log_group.billing_jobs_sfn: Refreshing state... [id=BillingJobsStepFunction]
+module.main.module.billing_jobs["enabled"].aws_kms_alias.logs: Refreshing state... [id=alias/billing_job_logs]
+module.curi_private_zone.aws_route53_vpc_association_authorization.shared_services_us_west_2: Refreshing state... [id=Z01827082CORE30NNYTX9:vpc-0447704837c560e04]
+module.curi_private_zone.aws_route53_vpc_association_authorization.shared_services_us_east_1: Refreshing state... [id=Z01827082CORE30NNYTX9:vpc-017fc186d2adab503]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.secret_pgp_keys: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.secret_pgp_keys: Read complete after 0s [id=2451477151]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.secret_kubra_sftp_credentials: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.secret_kubra_sftp_credentials: Read complete after 0s [id=2446801427]
+module.main.aws_s3_bucket_policy.oasis_data_bucket: Refreshing state... [id=oasis-data-bucket20230204023833344800000019]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.recurring_sfn_access_s3: Refreshing state... [id=RecurringStepFunction-20240423211506828300000001:S3Access]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.recurring_sfn_sns_publish: Refreshing state... [id=RecurringStepFunction-20240423211506828300000001:SNSPublishing]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_recurring_policy: Reading...
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.aws_security_group_rule.db_query_lambda_egress_to_public_https: Refreshing state... [id=sgrule-3287614687]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_recurring_policy: Read complete after 0s [id=2809407132]
+module.main.module.opsgenie_ses_emails.aws_sns_topic_subscription.generic: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:ses-emails:5d5091a6-7d8f-44fd-9a8d-697c6fb704a7]
+module.main.aws_security_group_rule.oasis_weblogic_ecs_sg_egress_nfs["enabled"]: Refreshing state... [id=sgrule-1140835569]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.reports_sfn_access_s3: Refreshing state... [id=ReportsStepFunction-20240412185340434700000001:S3Access]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_reports_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_reports_policy: Read complete after 0s [id=604886844]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.reports_sfn_sns_publish: Refreshing state... [id=ReportsStepFunction-20240412185340434700000001:SNSPublishing]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.aws_security_group_rule.db_query_lambda_egress_to_public_https: Refreshing state... [id=sgrule-2593495961]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_remittance_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_remittance_policy: Read complete after 0s [id=762863288]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.remittance_sfn_sns_publish: Refreshing state... [id=RemittanceStepFunction-20240130205804660200000002:SNSPublishing]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.remittance_sfn_access_s3: Refreshing state... [id=RemittanceStepFunction-20240130205804660200000002:S3Access]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.invoices_sfn_parameters: Refreshing state... [id=InvoicesStepFunction-20240130205804582800000001:SsmParameterAccess]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_invoices_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_invoices_policy: Read complete after 0s [id=539148460]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.invoices_sfn_access_s3: Refreshing state... [id=InvoicesStepFunction-20240130205804582800000001:S3Access]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.invoices_sfn_sns_publish: Refreshing state... [id=InvoicesStepFunction-20240130205804582800000001:SNSPublishing]
+module.main.aws_secretsmanager_secret_version.oasis_weblogic_active_directory_credential: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_weblogic_active_directory_credential20231018194207156000000001-dkKro4|92BB89B7-34B3-4FA7-80C8-6E76768E607F]
+module.main.aws_secretsmanager_secret_version.oasis_weblogic_admin_credential: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_weblogic_admin_credential20231018194207157800000002-mVTCzp|45B3F8BC-977C-4F32-B3AA-96FD2D370B5D]
+module.main.aws_s3_bucket_policy.oasis_schema_data: Refreshing state... [id=oasis-schema-data-dev-20240131184850036400000001]
+module.main.aws_secretsmanager_secret_version.oasis_weblogic_oracle_db_oasis_credential: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:oasis_weblogic_oracle_db_oasis_credential20231018194207161400000003-im3iF6|5F41F1A0-9DF0-4335-B8A6-3583759D8239]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.aws_iam_role.db_query_lambda: Refreshing state... [id=Billing-Jobs-Db-QueryLambda-20240130205805018700000004]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.aws_security_group_rule.db_query_lambda_egress_to_db: Refreshing state... [id=sgrule-3929837769]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.aws_security_group_rule.db_query_lambda_egress_to_db: Refreshing state... [id=sgrule-442256753]
+module.main.module.kubra_processing["enabled"].aws_iam_role.kubra_reports_athena_role: Refreshing state... [id=KubraReportsAthenaRole-20240509180548242000000002]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.aws_cloudwatch_log_group.lambda_db_query: Refreshing state... [id=/aws/lambda/kubra-db-query]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_logging: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_logging: Read complete after 0s [id=355073704]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_sfn_logging: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_sfn_logging: Read complete after 0s [id=1990478276]
+module.main.module.kubra_processing["enabled"].aws_lambda_function.file_operations: Refreshing state... [id=file_operations]
+module.main.data.aws_iam_policy_document.sns_rds_oasis_policy["enabled"]: Reading...
+module.main.data.aws_iam_policy_document.sns_rds_oasis_policy["enabled"]: Read complete after 0s [id=343111518]
+module.main.aws_dms_endpoint.oasis_rds_database["enabled"]: Refreshing state... [id=oasis-rds-database]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.aws_cloudwatch_log_group.lambda_db_query: Refreshing state... [id=/aws/lambda/billing-jobs-db-query]
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.aws_cloudwatch_log_group.oracle_db_job_sfn: Refreshing state... [id=OracleDbJobStepFunction]
+module.main.aws_db_instance_role_association.oasis["enabled"]: Refreshing state... [id=oasisdev20240429212354291400000001,arn:aws:iam::707589232221:role/oasis_db_role20230204023810312600000002]
+module.main.data.aws_iam_policy_document.rds_skeddly_role_permissions["enabled"]: Reading...
+module.main.data.aws_iam_policy_document.rds_skeddly_role_permissions["enabled"]: Read complete after 0s [id=915862479]
+module.main.module.kubra_processing["enabled"].aws_lambda_function.sftp_operations: Refreshing state... [id=sftp_operations]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_logging: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_logging: Read complete after 0s [id=1691636465]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_logging: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_logging: Read complete after 0s [id=1174830723]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_policy.curi_pgp_private_key: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:curi_pgp_private_key_2024013020581434140000000a-tzXWUM]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_policy.kubra_pgp_public_key: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_pgp_public_key_20240130205814220600000009-3o2dgb]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_policy.kubra_sftp_credentials: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_sftp_credentials20240130205813364300000007-lxscJi]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_sfn_logging: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_sfn_logging: Read complete after 0s [id=3508267499]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_logging: Reading...
+module.main.module.kubra_processing["enabled"].aws_lambda_function.process_remittance: Refreshing state... [id=process_remittance]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_logging: Read complete after 0s [id=3333119929]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.recurring_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-recurring-error]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.recurring_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-recurring-success]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.reports_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-reports-success]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.reports_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-reports-error]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.remittance_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-remittance-success]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.remittance_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-remittance-error]
+module.main.data.aws_iam_policy_document.ods_bucket: Reading...
+module.main.data.aws_iam_policy_document.ods_bucket: Read complete after 0s [id=3332824003]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.invoices_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-invoices-success]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.invoices_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-invoices-error]
+module.main.aws_iam_role_policy.oasis_weblogic_ecs_execution: Refreshing state... [id=OasisWebLogicEcsExecutionRole20230204023810316700000004:AccessSecrets]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.invoices_sfn_logging: Refreshing state... [id=InvoicesStepFunction-20240130205804582800000001:CloudWatchLogs]
+module.main.aws_ecs_task_definition.oasis_weblogic: Refreshing state... [id=oasis-weblogic]
+module.main.aws_sns_topic_policy.rds_oasis["enabled"]: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:rds-oasis-20231006153722682800000002]
+module.main.module.kubra_processing["enabled"].module.lambda_db_query.aws_lambda_function.db_query: Refreshing state... [id=kubra-db-query]
+module.main.aws_iam_role.skeddly: Refreshing state... [id=skeddly_20231114205256982900000001]
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.oracle_db_job_sfn_logging: Reading...
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.oracle_db_job_sfn_logging: Read complete after 0s [id=1002680436]
+module.main.aws_route53_zone.oasis_domain: Refreshing state... [id=Z03708192JCNO0VOO7IHU]
+module.main.aws_route53_record.oasis_private_domains_alb: Refreshing state... [id=Z01827082CORE30NNYTX9_oasis-dev.internal.curi.com_A]
+module.main.aws_route53_record.oasis_private_domains_db["enabled"]: Refreshing state... [id=Z01827082CORE30NNYTX9_db_CNAME]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.reports_sfn_logging: Refreshing state... [id=ReportsStepFunction-20240412185340434700000001:CloudWatchLogs]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.remittance_sfn_logging: Refreshing state... [id=RemittanceStepFunction-20240130205804660200000002:CloudWatchLogs]
+module.main.module.billing_jobs["enabled"].module.lambda_db_query.aws_lambda_function.db_query: Refreshing state... [id=billing-jobs-db-query]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.secret_oasis_db: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.secret_oasis_db: Read complete after 0s [id=2179183247]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.bucket_kubra_processing: Reading...
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.recurring_sfn_logging: Refreshing state... [id=RecurringStepFunction-20240423211506828300000001:CloudWatchLogs]
+module.main.aws_dms_replication_config.name["enabled"]: Refreshing state... [id=arn:aws:dms:us-east-1:707589232221:replication-config:oasis-rds-to-s3-bucket]
+module.main.aws_security_group_rule.oracle_db_sg_allow_billing_jobs["one"]: Refreshing state... [id=sgrule-1157006264]
+module.main.aws_security_group_rule.oracle_db_sg_allow_kubra_processing["two"]: Refreshing state... [id=sgrule-3529233300]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.bucket_kubra_processing: Read complete after 0s [id=170489609]
+module.main.aws_security_group_rule.oracle_db_sg_allow_kubra_processing["one"]: Refreshing state... [id=sgrule-2918974217]
+module.main.module.kubra_processing["enabled"].aws_sfn_state_machine.reports: Refreshing state... [id=arn:aws:states:us-east-1:707589232221:stateMachine:kubra-reports]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_lambda: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_lambda: Read complete after 0s [id=2490445033]
+module.main.module.kubra_processing["enabled"].aws_sfn_state_machine.recurring: Refreshing state... [id=arn:aws:states:us-east-1:707589232221:stateMachine:kubra-recurring-report]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_lambda: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_lambda: Read complete after 0s [id=2490445033]
+module.main.aws_s3_bucket_policy.ods: Refreshing state... [id=ods-dev-20230816130021867500000001]
+module.main.module.kubra_processing["enabled"].aws_sfn_state_machine.remittance: Refreshing state... [id=arn:aws:states:us-east-1:707589232221:stateMachine:kubra-remittance]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_lambda: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_lambda: Read complete after 0s [id=3971982895]
+module.main.aws_db_event_subscription.oasis["enabled"]: Refreshing state... [id=opsgenie-OASISDEV20231006153723523300000003]
+module.main.module.kubra_processing["enabled"].aws_secretsmanager_secret_policy.oasis_db: Refreshing state... [id=arn:aws:secretsmanager:us-east-1:707589232221:secret:kubra_oasis_db_20240130205814049100000008-NPfDNT]
+module.main.aws_acm_certificate.oasis: Refreshing state... [id=arn:aws:acm:us-east-1:707589232221:certificate/9a5fb721-ba02-45ee-8701-b42b57946825]
+module.main.module.kubra_processing["enabled"].aws_s3_bucket_policy.kubra_processing: Refreshing state... [id=kubra-dev-20230831204921682800000001]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.recurring_sfn_lambda: Refreshing state... [id=RecurringStepFunction-20240423211506828300000001:Lambdas]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.reports_sfn_lambda: Refreshing state... [id=ReportsStepFunction-20240412185340434700000001:Lambdas]
+aws_route53_record.documents_nfs: Refreshing state... [id=Z01827082CORE30NNYTX9_documents-nfs_A]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.remittance_sfn_lambda: Refreshing state... [id=RemittanceStepFunction-20240130205804660200000002:Lambdas]
+module.main.module.kubra_processing["enabled"].aws_sfn_state_machine.invoices: Refreshing state... [id=arn:aws:states:us-east-1:707589232221:stateMachine:kubra-invoices]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_lambda: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_lambda: Read complete after 0s [id=1375367617]
+module.main.module.ses_domain.data.aws_route53_zone.domain: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_sfn_lambda: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_sfn_lambda: Read complete after 0s [id=1375367617]
+module.main.aws_iam_role.smtp_ses_gateway_task: Refreshing state... [id=SmtpGatewayEcsTaskRole2023020402384223170000001c]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_sfn: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.recurring_sfn_sfn: Read complete after 0s [id=521257549]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_sfn: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.reports_sfn_sfn: Read complete after 0s [id=4017526533]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_sfn: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_sfn_sfn: Read complete after 0s [id=831867143]
+module.main.module.kubra_processing["enabled"].aws_kinesis_firehose_delivery_stream.remittance_results: Refreshing state... [id=arn:aws:firehose:us-east-1:707589232221:deliverystream/kubra-remittance]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.invoices_sfn_lambda: Refreshing state... [id=InvoicesStepFunction-20240130205804582800000001:Lambdas]
+module.main.module.kubra_processing["enabled"].aws_iam_role.balance_file_sfn_role: Refreshing state... [id=BalanceFileStepFunction-20240130210216215500000013]
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.oracle_db_job_sfn_lambda: Reading...
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.data.aws_iam_policy_document.oracle_db_job_sfn_lambda: Read complete after 0s [id=2230362428]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.recurring_sfn_sfn: Refreshing state... [id=RecurringStepFunction-20240423211506828300000001:StepFunctionAccess]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.reports_sfn_sfn: Refreshing state... [id=ReportsStepFunction-20240412185340434700000001:StepFunctionAccess]
+module.main.module.ses_domain.data.aws_route53_zone.domain: Read complete after 0s [id=Z03708192JCNO0VOO7IHU]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.remittance_sfn_sfn: Refreshing state... [id=RemittanceStepFunction-20240130205804660200000002:StepFunctionAccess]
+module.main.aws_route53_record.acm_validation["oasis-dev.internal.curi.com"]: Refreshing state... [id=Z03708192JCNO0VOO7IHU__5c5797c2858b7508d60815424cad539a.oasis-dev.internal.curi.com._CNAME]
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.aws_iam_role.oracle_db_job_sfn_role: Refreshing state... [id=OracleDbJobStepFunction-20240130210216082600000012]
+module.main.module.kubra_processing["enabled"].aws_kinesis_firehose_delivery_stream.invoices_results: Refreshing state... [id=arn:aws:firehose:us-east-1:707589232221:deliverystream/kubra-invoices]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_sfn: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_sfn_sfn: Read complete after 0s [id=601737612]
+module.main.module.ses_domain.aws_ses_domain_identity.main: Refreshing state... [id=oasis-dev.internal.curi.com]
+module.main.module.ses_domain.aws_route53_record.ses_dmarc: Refreshing state... [id=Z03708192JCNO0VOO7IHU__dmarc_TXT]
+module.main.module.ses_domain.aws_route53_record.ses_inbound_mail_from_mx: Refreshing state... [id=Z03708192JCNO0VOO7IHU_oasis-dev.internal.curi.com_MX]
+module.main.module.ses_domain.aws_ses_configuration_set.main: Refreshing state... [id=Oasis-DevInternalCuriCom]
+module.main.module.ses_domain.aws_route53_record.ses_spf: Refreshing state... [id=Z03708192JCNO0VOO7IHU_oasis-dev.internal.curi.com_TXT]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_sns_subscription_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.remittance_results_firehose_sns_subscription_policy: Read complete after 0s [id=3028426599]
+module.main.aws_ecs_task_definition.smtp_ses_gateway: Refreshing state... [id=smtp-ses-gateway]
+module.main.module.kubra_processing["enabled"].aws_iam_role_policy.invoices_sfn_sfn: Refreshing state... [id=InvoicesStepFunction-20240130205804582800000001:StepFunctionAccess]
+module.main.module.ses_domain.aws_route53_record.ses_verification_record: Refreshing state... [id=Z03708192JCNO0VOO7IHU__amazonses_TXT]
+module.main.module.ses_domain.aws_ses_identity_notification_topic.complaint: Refreshing state... [id=oasis-dev.internal.curi.com|Complaint]
+module.main.module.ses_domain.aws_ses_domain_mail_from.main: Refreshing state... [id=oasis-dev.internal.curi.com]
+module.main.module.ses_domain.aws_ses_identity_notification_topic.bounce: Refreshing state... [id=oasis-dev.internal.curi.com|Bounce]
+module.main.module.ses_domain.aws_ses_domain_dkim.main: Refreshing state... [id=oasis-dev.internal.curi.com]
+module.main.aws_acm_certificate_validation.oasis: Refreshing state... [id=2024-01-14 07:12:13.658 +0000 UTC]
+module.main.module.kubra_processing["enabled"].aws_iam_role.remittance_results_firehose_sns_subscription: Refreshing state... [id=SNSRemittanceResultsFirehose-2024013021095580040000001d]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_sns_subscription_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_balance_file_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.invoices_results_firehose_sns_subscription_policy: Read complete after 0s [id=469083365]
+module.main.module.kubra_processing["enabled"].aws_sfn_state_machine.balance_file: Refreshing state... [id=arn:aws:states:us-east-1:707589232221:stateMachine:kubra-balance-file]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.sns_balance_file_policy: Read complete after 0s [id=2909726432]
+module.main.module.ses_domain.aws_route53_record.ses_mail_from_spf: Refreshing state... [id=Z03708192JCNO0VOO7IHU_mail.oasis-dev.internal.curi.com_TXT]
+module.main.aws_ecs_service.smtp_ses_gateway: Refreshing state... [id=arn:aws:ecs:us-east-1:707589232221:service/OasisECSCluster/smtp-ses-gateway]
+module.main.module.ses_domain.aws_route53_record.ses_mail_from_mx: Refreshing state... [id=Z03708192JCNO0VOO7IHU_mail.oasis-dev.internal.curi.com_MX]
+module.main.module.ses_domain.aws_route53_record.ses_dkim_record[0]: Refreshing state... [id=Z03708192JCNO0VOO7IHU_3lfosc2xtki2jl36rjcujgwxrwlqbrvc._domainkey_CNAME]
+module.main.module.ses_domain.aws_route53_record.ses_dkim_record[1]: Refreshing state... [id=Z03708192JCNO0VOO7IHU_imkqy6uj5wibqjq6sozadkgfw5whhjbg._domainkey_CNAME]
+module.main.module.ses_domain.aws_route53_record.ses_dkim_record[2]: Refreshing state... [id=Z03708192JCNO0VOO7IHU_3yojyyd7h67ey2tj3zkh5ndrtsupuuss._domainkey_CNAME]
+module.main.module.ses_domain.aws_ses_email_identity.main["notify"]: Refreshing state... [id=notify@oasis-dev.internal.curi.com]
+module.main.module.ses_domain.aws_ses_email_identity.main["dmarc"]: Refreshing state... [id=dmarc@oasis-dev.internal.curi.com]
+module.main.module.ses_domain.aws_ses_domain_identity_verification.main: Refreshing state... [id=oasis-dev.internal.curi.com]
+module.main.module.kubra_processing["enabled"].aws_iam_role.invoices_results_firehose_sns_subscription: Refreshing state... [id=SNSinvoicesResultsFirehose-2024013021085488410000001c]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.balance_file_success: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-balance-file-success]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_policy.balance_file_error: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-balance-file-error]
+module.main.module.billing_jobs["enabled"].module.oracle_db_job_sfn.aws_sfn_state_machine.oracle_db_job: Refreshing state... [id=arn:aws:states:us-east-1:707589232221:stateMachine:oracle-db-job]
+module.main.aws_lb_listener.oasis: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:707589232221:listener/app/oasis20230213174807278700000005/8b56702e15c7b8c4/3c58ea4edbd62c9e]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kubra_scheduler_sfn: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kubra_scheduler_sfn: Read complete after 0s [id=2799009621]
+module.main.module.kubra_processing["enabled"].aws_kinesis_firehose_delivery_stream.balance_file_results: Refreshing state... [id=arn:aws:firehose:us-east-1:707589232221:deliverystream/kubra-balance-file]
+module.main.module.ses_domain.aws_ses_receipt_rule.dmarc_stop: Refreshing state... [id=dmarc-stop]
+module.main.module.ses_domain.aws_ses_receipt_rule.sns: Refreshing state... [id=sns]
+module.main.module.ses_domain.data.aws_iam_policy_document.main_ses_email_identity["dmarc"]: Reading...
+module.main.module.ses_domain.data.aws_iam_policy_document.main_ses_email_identity["dmarc"]: Read complete after 0s [id=3792869644]
+module.main.module.ses_domain.data.aws_iam_policy_document.main_ses_email_identity["notify"]: Reading...
+module.main.module.ses_domain.data.aws_iam_policy_document.main_ses_email_identity["notify"]: Read complete after 0s [id=2316495565]
+module.main.module.ses_domain.aws_ses_domain_mail_from.emails["dmarc"]: Refreshing state... [id=dmarc@oasis-dev.internal.curi.com]
+module.main.module.ses_domain.aws_ses_domain_mail_from.emails["notify"]: Refreshing state... [id=notify@oasis-dev.internal.curi.com]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_subscription.remittance_success_firehose: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-remittance-success:d7007a96-e310-44cc-8422-6dc0e1009c0c]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_subscription.remittance_error_firehose: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-remittance-error:da2d1a49-f411-4b5b-a82f-f7b86f3e6260]
+module.main.module.kubra_processing["enabled"].aws_iam_role.kubra_scheduler: Refreshing state... [id=KubraScheduler-20240130210225723200000015]
+module.main.module.ses_domain.aws_ses_identity_policy.main["notify"]: Refreshing state... [id=arn:aws:ses:us-east-1:707589232221:identity/notify@oasis-dev.internal.curi.com|SendEmail-notify]
+module.main.module.ses_domain.aws_ses_identity_policy.main["dmarc"]: Refreshing state... [id=arn:aws:ses:us-east-1:707589232221:identity/dmarc@oasis-dev.internal.curi.com|SendEmail-dmarc]
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_sns_subscription_policy: Reading...
+module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.balance_file_results_firehose_sns_subscription_policy: Read complete after 0s [id=3593325482]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_subscription.invoices_success_firehose: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-invoices-success:263f0269-520b-4754-959e-432bf1b53909]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_subscription.invoices_error_firehose: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-invoices-error:949219e0-7e60-48b1-90ec-f738843d2eed]
+module.main.module.kubra_processing["enabled"].aws_iam_role.balance_file_results_firehose_sns_subscription: Refreshing state... [id=SNSbalance_fileResultsFirehose-2024013021064171990000001b]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_sfn_sfn: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_sfn_sfn: Read complete after 0s [id=4252507754]
+module.main.module.billing_jobs["enabled"].aws_iam_role.billing_jobs_sfn_role: Refreshing state... [id=BillingJobsStepFunction-20240130210225399400000014]
+module.main.aws_lb_listener_rule.environment_to_root_redirect: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:707589232221:listener-rule/app/oasis20230213174807278700000005/8b56702e15c7b8c4/3c58ea4edbd62c9e/8c0905d43f43d6b4]
+module.main.aws_lb_listener_rule.eoasis_cis_redirect: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-1:707589232221:listener-rule/app/oasis20230213174807278700000005/8b56702e15c7b8c4/3c58ea4edbd62c9e/f657e73633ffa2c6]
+module.main.aws_ecs_service.oasis_weblogic: Refreshing state... [id=arn:aws:ecs:us-east-1:707589232221:service/OasisECSCluster/oasis-weblogic]
+module.main.module.kubra_processing["enabled"].aws_scheduler_schedule.invoices: Refreshing state... [id=kubra-processing/kubra-invoices-schedule-20240130210226244500000017]
+module.main.module.kubra_processing["enabled"].aws_scheduler_schedule.reports: Refreshing state... [id=kubra-processing/kubra-reports-schedule-20240409153815332600000001]
+module.main.module.kubra_processing["enabled"].aws_scheduler_schedule.remittance: Refreshing state... [id=kubra-processing/kubra-remittance-schedule-20240130210226244400000016]
+module.main.module.kubra_processing["enabled"].aws_scheduler_schedule.recurring: Refreshing state... [id=kubra-processing/kubra-recurring-schedule-20240424174836571000000001]
+module.main.module.kubra_processing["enabled"].aws_scheduler_schedule.balance_file: Refreshing state... [id=kubra-processing/kubra-balance-file-schedule-20240130210226245800000018]
+module.main.module.kubra_processing["enabled"].aws_kms_key_policy.kubra: Refreshing state... [id=816e2612-6daf-47b4-bc60-32d15a2abc6c]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_subscription.balance_file_success_firehose: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-balance-file-success:4bc3f768-5821-4a89-9b6a-f8d0c4f6cf0a]
+module.main.module.kubra_processing["enabled"].aws_sns_topic_subscription.balance_file_error_firehose: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:kubra-balance-file-error:302fc078-5e0c-48be-ba43-766461fa98f4]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.sns_billing_jobs_policy: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.kms_billing_jobs: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.sns_billing_jobs_policy: Read complete after 0s [id=3730743326]
+module.main.module.billing_jobs["enabled"].aws_sfn_state_machine.billing_jobs: Refreshing state... [id=arn:aws:states:us-east-1:707589232221:stateMachine:billing-jobs]
+module.main.module.billing_jobs["enabled"].aws_sns_topic_policy.billing_jobs: Refreshing state... [id=arn:aws:sns:us-east-1:707589232221:billing-jobs]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.kms_billing_jobs: Read complete after 0s [id=4195331515]
+module.main.data.aws_iam_policy_document.kms_oasis_sensitive: Reading...
+module.main.data.aws_iam_policy_document.tlf_dividend_data_bucket: Reading...
+module.main.module.billing_jobs["enabled"].aws_kms_key_policy.billing_jobs: Refreshing state... [id=55a6fc32-b0be-492e-a7e9-d84723d97c8c]
+module.main.data.aws_iam_policy_document.tlf_dividend_data_bucket: Read complete after 0s [id=3710727452]
+module.main.aws_s3_bucket_policy.tlf_dividend_data_bucket: Refreshing state... [id=tlf-dividend-data-bucket20230811140036400000000001]
+module.main.data.aws_iam_policy_document.kms_oasis_sensitive: Read complete after 0s [id=4229972924]
+module.main.aws_kms_key_policy.kms_oasis_sensitive: Refreshing state... [id=f20173bc-1552-4fcf-a047-533d08b9160b]
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_scheduler_sfn: Reading...
+module.main.module.billing_jobs["enabled"].data.aws_iam_policy_document.billing_jobs_scheduler_sfn: Read complete after 0s [id=627648038]
+module.main.module.billing_jobs["enabled"].aws_iam_role.billing_jobs_scheduler: Refreshing state... [id=BillingJobsScheduler-20240130210234952700000019]
+module.main.module.billing_jobs["enabled"].aws_scheduler_schedule.nightly_billing_jobs: Refreshing state... [id=billing-jobs/nightly-billing-jobs-2024013021023550220000001a]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+  ~ update in-place
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # module.main.aws_dms_s3_endpoint.oasis_schema_data_bucket["enabled"] will be updated in-place
+  ~ resource "aws_dms_s3_endpoint" "oasis_schema_data_bucket" {
+      - bucket_folder                               = "OASIS" -> null
+        id                                          = "oasis-schema-data-bucket"
+        tags                                        = {
+            "Name"   = "oasis-schema-data-bucket"
+            "Remove" = "to-remove"
+            "Update" = "to-update"
+        }
+        # (38 unchanged attributes hidden)
+    }
+
+  # module.main.aws_iam_role_policy_attachment.ssm_debug_attach_to_ecs_task will be created
+  + resource "aws_iam_role_policy_attachment" "ssm_debug_attach_to_ecs_task" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::707589232221:policy/ssm-ecs-debugging"
+      + role       = "OasisWebLogicEcsTaskRole2023020402381234500000000c"
+    }
+
+  # module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kms_kubra will be read during apply
+  # (depends on a resource or a module with changes pending)
+ <= data "aws_iam_policy_document" "kms_kubra" {
+      + id   = (known after apply)
+      + json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "kms:*",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Enable IAM User Permissions"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:root",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt*",
+              + "kms:Describe*",
+              + "kms:Encrypt*",
+              + "kms:GenerateDataKey*",
+              + "kms:ReEncrypt*",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowCloudWatchLogs"
+
+          + condition {
+              + test     = "ArnEquals"
+              + values   = [
+                  + "arn:aws:logs:us-east-1:707589232221:*",
+                ]
+              + variable = "kms:EncryptionContext:aws:logs:arn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "logs.us-east-1.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowSecretsManager"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "707589232221",
+                ]
+              + variable = "kms:CallerAccount"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "secretsmanager.us-east-1.amazonaws.com",
+                ]
+              + variable = "kms:ViaService"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt*",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowGlue"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "707589232221",
+                ]
+              + variable = "kms:CallerAccount"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "glue.us-east-1.amazonaws.com",
+                ]
+              + variable = "kms:ViaService"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "glue.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt*",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowAthena"
+
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "707589232221",
+                ]
+              + variable = "kms:CallerAccount"
+            }
+          + condition {
+              + test     = "StringEquals"
+              + values   = [
+                  + "athena.us-east-1.amazonaws.com",
+                ]
+              + variable = "kms:ViaService"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "athena.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:GenerateDataKey",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Allow_Balance_File_SFN_to_SNS"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-balance-file-success",
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-balance-file-error",
+                ]
+              + variable = "kms:EncryptionContext:aws:sns:topicArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/BalanceFileStepFunction-20240130210216215500000013",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:GenerateDataKey",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Allow_Invoices_SFN_to_SNS"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-invoices-success",
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-invoices-error",
+                ]
+              + variable = "kms:EncryptionContext:aws:sns:topicArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/InvoicesStepFunction-20240130205804582800000001",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:GenerateDataKey",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Allow_Recurring_SFN_to_SNS"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-recurring-success",
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-recurring-error",
+                ]
+              + variable = "kms:EncryptionContext:aws:sns:topicArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/RecurringStepFunction-20240423211506828300000001",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:GenerateDataKey",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Allow_Remittance_SFN_to_SNS"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-remittance-success",
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-remittance-error",
+                ]
+              + variable = "kms:EncryptionContext:aws:sns:topicArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/RemittanceStepFunction-20240130205804660200000002",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:GenerateDataKey",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Allow_Reports_SFN_to_SNS"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-reports-success",
+                  + "arn:aws:sns:us-east-1:707589232221:kubra-reports-error",
+                ]
+              + variable = "kms:EncryptionContext:aws:sns:topicArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/ReportsStepFunction-20240412185340434700000001",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowScheduler"
+
+          + condition {
+              + test     = "ArnEquals"
+              + values   = [
+                  + "arn:aws:iam::707589232221:role/KubraScheduler-20240130210225723200000015",
+                ]
+              + variable = "aws:scheduler:schedule:arn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/KubraScheduler-20240130210225723200000015",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:GenerateDataKey",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowSSOApplicationAdministrators"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:iam::707589232221:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ApplicationAdministrator_*",
+                ]
+              + variable = "aws:PrincipalArn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "*",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "Allow the Macie service-linked role to use the key"
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/aws-service-role/macie.amazonaws.com/AWSServiceRoleForAmazonMacie",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt",
+              + "kms:GenerateDataKey",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowS3"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:s3:::kubra-dev-20230831204921682800000001",
+                  + "arn:aws:s3:::ods-dev-20230816130021867500000001",
+                ]
+              + variable = "kms:EncryptionContext:aws:s3:arn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "arn:aws:iam::707589232221:role/FileOperationsLambda-20240130205815836000000010",
+                  + "arn:aws:iam::707589232221:role/InvoicesStepFunction-20240130205804582800000001",
+                  + "arn:aws:iam::707589232221:role/Kubra-Db-QueryLambda-20240130205816074100000011",
+                  + "arn:aws:iam::707589232221:role/KubraReportsAthenaRole-20240509180548242000000002",
+                  + "arn:aws:iam::707589232221:role/RecurringStepFunction-20240423211506828300000001",
+                  + "arn:aws:iam::707589232221:role/RemittanceResultsFirehose-2024013020581450820000000d",
+                  + "arn:aws:iam::707589232221:role/RemittanceStepFunction-20240130205804660200000002",
+                  + "arn:aws:iam::707589232221:role/ReportsStepFunction-20240412185340434700000001",
+                  + "arn:aws:iam::707589232221:role/SftpOperationsLambda-2024013020581472310000000e",
+                  + "arn:aws:iam::707589232221:role/balance_fileResultsFirehose-2024013020581449690000000c",
+                  + "arn:aws:iam::707589232221:role/invoicesResultsFirehose-2024013020581436880000000b",
+                ]
+              + type        = "AWS"
+            }
+        }
+      + statement {
+          + actions   = [
+              + "kms:Decrypt*",
+              + "kms:Describe*",
+              + "kms:Encrypt*",
+              + "kms:GenerateDataKey*",
+              + "kms:ReEncrypt*",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "*",
+            ]
+          + sid       = "AllowS3Service"
+
+          + condition {
+              + test     = "ArnLike"
+              + values   = [
+                  + "arn:aws:s3:::kubra-dev-20230831204921682800000001",
+                ]
+              + variable = "kms:EncryptionContext:aws:s3:arn"
+            }
+
+          + principals {
+              + identifiers = [
+                  + "s3.amazonaws.com",
+                ]
+              + type        = "Service"
+            }
+        }
+    }
+
+  # module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kubra_reporting_athena_access will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "kubra_reporting_athena_access" {
+      + id   = (known after apply)
+      + json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "athena:CreateDataCatalog",
+              + "athena:GetDataCatalog",
+              + "athena:GetDatabase",
+              + "athena:GetQueryExecution",
+              + "athena:GetQueryResults",
+              + "athena:GetQueryResultsStream",
+              + "athena:GetTableMetadata",
+              + "athena:GetWorkGroup",
+              + "athena:ListDataCatalogs",
+              + "athena:ListDatabases",
+              + "athena:ListEngineVersions",
+              + "athena:ListQueryExecutions",
+              + "athena:ListTableMetadata",
+              + "athena:ListWorkGroups",
+              + "athena:StartQueryExecution",
+              + "athena:StopQueryExecution",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "arn:aws:athena:us-east-1:707589232221:datacatalog/Kubra_Reports",
+              + "arn:aws:athena:us-east-1:707589232221:workgroup/kubra_reporting_primary",
+              + (known after apply),
+            ]
+          + sid       = "AllowAthena"
+        }
+    }
+
+  # module.main.module.kubra_processing["enabled"].data.aws_iam_policy_document.kubra_reporting_glue_access will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_iam_policy_document" "kubra_reporting_glue_access" {
+      + id   = (known after apply)
+      + json = (known after apply)
+
+      + statement {
+          + actions   = [
+              + "glue:CreateConnection",
+              + "glue:CreateDatabase",
+              + "glue:CreatePartition",
+              + "glue:CreatePartitionIndex",
+              + "glue:CreateSchema",
+              + "glue:CreateTable",
+              + "glue:GetColumnStatisticsTaskRun",
+              + "glue:GetDatabase",
+              + "glue:GetDatabases",
+              + "glue:GetPartition",
+              + "glue:GetPartitions",
+              + "glue:GetSchema",
+              + "glue:GetTable",
+              + "glue:GetTableVersions",
+              + "glue:GetTables",
+              + "glue:ImportCatalogToGlue",
+              + "glue:SearchTables",
+            ]
+          + effect    = "Allow"
+          + resources = [
+              + "arn:aws:athena:us-east-1:707589232221:datacatalog/Kubra_Reports",
+              + "arn:aws:athena:us-east-1:707589232221:workgroup/kubra_reporting_primary",
+              + (known after apply),
+            ]
+          + sid       = "AllowGlue"
+        }
+    }
+
+  # module.main.module.kubra_processing["enabled"].aws_glue_catalog_table.kubra_recurring will be created
+  + resource "aws_glue_catalog_table" "kubra_recurring" {
+      + arn           = (known after apply)
+      + catalog_id    = "Kubra_Reports"
+      + database_name = "kubra_reporting"
+      + id            = (known after apply)
+      + name          = "kubra_recurring"
+      + parameters    = {
+          + "classification"         = "CSV"
+          + "compressionType"        = "none"
+          + "skip.header.line.count" = "1"
+          + "typeOfData"             = "file"
+        }
+      + table_type    = "EXTERNAL_TABLE"
+
+      + storage_descriptor {
+          + input_format  = "org.apache.hadoop.mapred.TextInputFormat"
+          + location      = "s3://arn:aws:s3:::kubra-dev-20230831204921682800000001/recurring/latest/"
+          + output_format = "org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat"
+
+          + columns {
+              + name = "account_number"
+              + type = "string"
+            }
+          + columns {
+              + name = "user_name"
+              + type = "string"
+            }
+          + columns {
+              + name = "createdon"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentoption"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentamount"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentschedule"
+              + type = "string"
+            }
+          + columns {
+              + name = "startpayment"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentaccounttype"
+              + type = "string"
+            }
+          + columns {
+              + name = "lastname"
+              + type = "string"
+            }
+          + columns {
+              + name = "accountnickname"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentperiodsetting"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentfrequencysetting"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentfrequency"
+              + type = "string"
+            }
+          + columns {
+              + name = "numberofpayments"
+              + type = "string"
+            }
+          + columns {
+              + name = "paymentsremaining"
+              + type = "string"
+            }
+          + columns {
+              + name = "lastpaymentamount"
+              + type = "string"
+            }
+          + columns {
+              + name = "lastpaymentcreated"
+              + type = "string"
+            }
+
+          + ser_de_info {
+              + name                  = "OpenCSVSerDe"
+              + parameters            = {
+                  + "escapeChar"          = "\\"
+                  + "quoteChar"           = "\""
+                  + "separatorChar"       = ","
+                  + "seralization.format" = "1"
+                }
+              + serialization_library = "org.apache.hadoop.hive.serde2.OpenCSVSerde"
+            }
+        }
+    }
+
+  # module.main.module.kubra_processing["enabled"].aws_iam_role.kubra_reports_athena_role will be updated in-place
+  ~ resource "aws_iam_role" "kubra_reports_athena_role" {
+        id                    = "KubraReportsAthenaRole-20240509180548242000000002"
+        name                  = "KubraReportsAthenaRole-20240509180548242000000002"
+        tags                  = {}
+        # (11 unchanged attributes hidden)
+
+      - inline_policy {
+          - name   = "AthenaAccess" -> null
+          - policy = jsonencode(
+                {
+                  - Statement = [
+                      - {
+                          - Action   = [
+                              - "athena:StopQueryExecution",
+                              - "athena:StartQueryExecution",
+                              - "athena:ListWorkGroups",
+                              - "athena:ListTableMetadata",
+                              - "athena:ListQueryExecutions",
+                              - "athena:ListEngineVersions",
+                              - "athena:ListDatabases",
+                              - "athena:ListDataCatalogs",
+                              - "athena:GetWorkGroup",
+                              - "athena:GetTableMetadata",
+                              - "athena:GetQueryResultsStream",
+                              - "athena:GetQueryResults",
+                              - "athena:GetQueryExecution",
+                              - "athena:GetDatabase",
+                              - "athena:GetDataCatalog",
+                              - "athena:CreateDataCatalog",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = [
+                              - "arn:aws:athena:us-east-1:707589232221:workgroup/kubra_reporting_primary",
+                              - "arn:aws:athena:us-east-1:707589232221:datacatalog/Kubra_Reports",
+                            ]
+                          - Sid      = "AllowAthena"
+                        },
+                    ]
+                  - Version   = "2012-10-17"
+                }
+            ) -> null
+        }
+      - inline_policy {
+          - name   = "GlueAccess" -> null
+          - policy = jsonencode(
+                {
+                  - Statement = [
+                      - {
+                          - Action   = [
+                              - "glue:SearchTables",
+                              - "glue:ImportCatalogToGlue",
+                              - "glue:GetTables",
+                              - "glue:GetTableVersions",
+                              - "glue:GetTable",
+                              - "glue:GetSchema",
+                              - "glue:GetPartitions",
+                              - "glue:GetPartition",
+                              - "glue:GetDatabases",
+                              - "glue:GetDatabase",
+                              - "glue:GetColumnStatisticsTaskRun",
+                              - "glue:CreateTable",
+                              - "glue:CreateSchema",
+                              - "glue:CreatePartitionIndex",
+                              - "glue:CreatePartition",
+                              - "glue:CreateDatabase",
+                              - "glue:CreateConnection",
+                            ]
+                          - Effect   = "Allow"
+                          - Resource = [
+                              - "arn:aws:athena:us-east-1:707589232221:workgroup/kubra_reporting_primary",
+                              - "arn:aws:athena:us-east-1:707589232221:datacatalog/Kubra_Reports",
+                            ]
+                          - Sid      = "AllowGlue"
+                        },
+                    ]
+                  - Version   = "2012-10-17"
+                }
+            ) -> null
+        }
+      + inline_policy {
+          + name   = "AthenaAccess"
+          + policy = (known after apply)
+        }
+      + inline_policy {
+          + name   = "GlueAccess"
+          + policy = (known after apply)
+        }
+
+        # (2 unchanged blocks hidden)
+    }
+
+  # module.main.module.kubra_processing["enabled"].aws_kms_key_policy.kubra will be updated in-place
+  ~ resource "aws_kms_key_policy" "kubra" {
+        id                                 = "816e2612-6daf-47b4-bc60-32d15a2abc6c"
+      ~ policy                             = jsonencode(
+            {
+              - Statement = [
+                  - {
+                      - Action    = "kms:*"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:root"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Enable IAM User Permissions"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:ReEncrypt*",
+                          - "kms:GenerateDataKey*",
+                          - "kms:Encrypt*",
+                          - "kms:Describe*",
+                          - "kms:Decrypt*",
+                        ]
+                      - Condition = {
+                          - ArnEquals = {
+                              - "kms:EncryptionContext:aws:logs:arn" = "arn:aws:logs:us-east-1:707589232221:*"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "logs.us-east-1.amazonaws.com"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowCloudWatchLogs"
+                    },
+                  - {
+                      - Action    = "kms:Decrypt"
+                      - Condition = {
+                          - StringEquals = {
+                              - "kms:CallerAccount" = "707589232221"
+                              - "kms:ViaService"    = "secretsmanager.us-east-1.amazonaws.com"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "*"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowSecretsManager"
+                    },
+                  - {
+                      - Action    = "kms:Decrypt*"
+                      - Condition = {
+                          - StringEquals = {
+                              - "kms:CallerAccount" = "707589232221"
+                              - "kms:ViaService"    = "glue.us-east-1.amazonaws.com"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "glue.amazonaws.com"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowGlue"
+                    },
+                  - {
+                      - Action    = "kms:Decrypt*"
+                      - Condition = {
+                          - StringEquals = {
+                              - "kms:CallerAccount" = "707589232221"
+                              - "kms:ViaService"    = "athena.us-east-1.amazonaws.com"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "athena.amazonaws.com"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowAthena"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "kms:EncryptionContext:aws:sns:topicArn" = [
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-balance-file-success",
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-balance-file-error",
+                                ]
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:role/BalanceFileStepFunction-20240130210216215500000013"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Allow_Balance_File_SFN_to_SNS"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "kms:EncryptionContext:aws:sns:topicArn" = [
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-invoices-success",
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-invoices-error",
+                                ]
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:role/InvoicesStepFunction-20240130205804582800000001"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Allow_Invoices_SFN_to_SNS"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "kms:EncryptionContext:aws:sns:topicArn" = [
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-recurring-success",
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-recurring-error",
+                                ]
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:role/RecurringStepFunction-20240423211506828300000001"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Allow_Recurring_SFN_to_SNS"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "kms:EncryptionContext:aws:sns:topicArn" = [
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-remittance-success",
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-remittance-error",
+                                ]
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:role/RemittanceStepFunction-20240130205804660200000002"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Allow_Remittance_SFN_to_SNS"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "kms:EncryptionContext:aws:sns:topicArn" = [
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-reports-success",
+                                  - "arn:aws:sns:us-east-1:707589232221:kubra-reports-error",
+                                ]
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:role/ReportsStepFunction-20240412185340434700000001"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Allow_Reports_SFN_to_SNS"
+                    },
+                  - {
+                      - Action    = "kms:Decrypt"
+                      - Condition = {
+                          - ArnEquals = {
+                              - "aws:scheduler:schedule:arn" = "arn:aws:iam::707589232221:role/KubraScheduler-20240130210225723200000015"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:role/KubraScheduler-20240130210225723200000015"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowScheduler"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "aws:PrincipalArn" = "arn:aws:iam::707589232221:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ApplicationAdministrator_*"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "*"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowSSOApplicationAdministrators"
+                    },
+                  - {
+                      - Action    = "kms:Decrypt"
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = "arn:aws:iam::707589232221:role/aws-service-role/macie.amazonaws.com/AWSServiceRoleForAmazonMacie"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "Allow the Macie service-linked role to use the key"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:GenerateDataKey",
+                          - "kms:Decrypt",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "kms:EncryptionContext:aws:s3:arn" = [
+                                  - "arn:aws:s3:::kubra-dev-20230831204921682800000001",
+                                  - "arn:aws:s3:::ods-dev-20230816130021867500000001",
+                                ]
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - AWS = [
+                              - "arn:aws:iam::707589232221:role/invoicesResultsFirehose-2024013020581436880000000b",
+                              - "arn:aws:iam::707589232221:role/balance_fileResultsFirehose-2024013020581449690000000c",
+                              - "arn:aws:iam::707589232221:role/SftpOperationsLambda-2024013020581472310000000e",
+                              - "arn:aws:iam::707589232221:role/ReportsStepFunction-20240412185340434700000001",
+                              - "arn:aws:iam::707589232221:role/RemittanceStepFunction-20240130205804660200000002",
+                              - "arn:aws:iam::707589232221:role/RemittanceResultsFirehose-2024013020581450820000000d",
+                              - "arn:aws:iam::707589232221:role/RecurringStepFunction-20240423211506828300000001",
+                              - "arn:aws:iam::707589232221:role/KubraReportsAthenaRole-20240509180548242000000002",
+                              - "arn:aws:iam::707589232221:role/Kubra-Db-QueryLambda-20240130205816074100000011",
+                              - "arn:aws:iam::707589232221:role/InvoicesStepFunction-20240130205804582800000001",
+                              - "arn:aws:iam::707589232221:role/FileOperationsLambda-20240130205815836000000010",
+                            ]
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowS3"
+                    },
+                  - {
+                      - Action    = [
+                          - "kms:ReEncrypt*",
+                          - "kms:GenerateDataKey*",
+                          - "kms:Encrypt*",
+                          - "kms:Describe*",
+                          - "kms:Decrypt*",
+                        ]
+                      - Condition = {
+                          - ArnLike = {
+                              - "kms:EncryptionContext:aws:s3:arn" = "arn:aws:s3:::kubra-dev-20230831204921682800000001"
+                            }
+                        }
+                      - Effect    = "Allow"
+                      - Principal = {
+                          - Service = "s3.amazonaws.com"
+                        }
+                      - Resource  = "*"
+                      - Sid       = "AllowS3Service"
+                    },
+                ]
+              - Version   = "2012-10-17"
+            }
+        ) -> (known after apply)
+        # (2 unchanged attributes hidden)
+    }
+
+Plan: 2 to add, 3 to change, 0 to destroy.
+╷
+│ Warning: Argument is deprecated
+│ 
+│   with module.main.aws_s3_bucket.oasis_schema_data,
+│   on ../../s3_dms.tf line 7, in resource "aws_s3_bucket" "oasis_schema_data":
+│    7:   acl           = "private"
+│ 
+│ Use the aws_s3_bucket_acl resource instead
+│ 
+│ (and 10 more similar warnings elsewhere)
+╵

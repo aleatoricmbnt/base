@@ -400,15 +400,37 @@ resource "random_pet" "file_name" {
   }
 }
 
-data "local_file" "name" {
+data "local_file" "generated_file" {
   filename = "./file_${random_pet.file_name.id}.txt"
   depends_on = [ terraform_data.this ]
 }
 
+data "local_file" "preloaded" {
+  filename = "./plan-output_run-v0oc1o17r5vfvr4mk.txt"
+  depends_on = [ random_pet.file_name ]
+}
+
 resource "terraform_data" "that" {
+  count = var.quantity
   input = var.that_input
+}
+
+resource "terraform_data" "data_dependency" {
+  triggers_replace = data.local_file.preloaded
 }
 
 variable "that_input" {
   default = "smth"
+}
+
+variable "quantity" {
+  default = 1
+}
+
+output "generated_file_output" {
+  value = data.local_file.generated_file.content
+}
+
+output "preloaded_file_output" {
+  value = data.local_file.preloaded.content
 }
