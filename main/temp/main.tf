@@ -422,9 +422,7 @@ resource "terraform_data" "data_dependency" {
 }
 
 variable "that_input" {
-  default = <<EOT
-\'{\
-  EOT
+  default = {}
 }
 
 variable "quantity" {
