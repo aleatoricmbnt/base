@@ -1,4 +1,5 @@
 resource "terraform_data" "this" {
+  count = var.quantity
   input = <<EOT
 <= data "aws_iam_policy_document" "kms_kubra" {
       + id   = (known after apply)
@@ -416,6 +417,7 @@ resource "terraform_data" "that" {
 }
 
 resource "terraform_data" "data_dependency" {
+  count = var.quantity
   triggers_replace = data.local_file.preloaded
 }
 
