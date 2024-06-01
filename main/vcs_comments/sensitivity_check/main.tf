@@ -112,3 +112,7 @@ resource "scalr_workspace" "sensitive_id" {
   name = "workspace"
   environment_id = data.scalr_current_run.this.environment_id
 }
+
+output "workspace_with_attributes" {
+  value = jsondecode(scalr_workspace.sensitive_id)
+}
