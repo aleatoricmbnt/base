@@ -1,9 +1,4 @@
-module "smth_from_scalr_submodule" {
-  source  = "test.perf.testenv.scalr.dev/env-v0o95plds10au9aie/modules/test//modules/terraform-random-pet"
-	version = "0.0.7"
-}
-
-module "modules" {
-	source  = "test.perf.testenv.scalr.dev/env-v0o95plds10au9aie/modules/test"
+module "modules_terraform-random-pet" {
+	source  = "aleatoric.main.scalr.dev/acc-ttf6li416m4sbi0/modules/test//modules/terraform-random-pet"
 	version = "0.0.8"
 }
