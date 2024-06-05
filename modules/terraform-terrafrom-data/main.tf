@@ -10,6 +10,3 @@ variable "quantity" {
 variable "data_input" {
   
 }
-
-#dfjgklfdl
-#dfg
