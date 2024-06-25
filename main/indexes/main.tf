@@ -27,6 +27,7 @@ resource "null_resource" "test" {
 }
 
 resource "terraform_data" "test" {
+  count = 3
   input = "blah-blah-blah"
 }
 
