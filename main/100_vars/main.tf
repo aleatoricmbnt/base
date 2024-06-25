@@ -14,7 +14,7 @@ data "scalr_workspace" "current_ws" {
   environment_id = data.scalr_current_run.example.environment_id
 }
 
-resource "scalr_variable" "100vars" {
+resource "scalr_variable" "multi-vars" {
   count = 104
   key = "user_var${count.index}"
   value = "${count.index}"
@@ -23,7 +23,7 @@ resource "scalr_variable" "100vars" {
 }
 
 resource "random_pet" "test" {
-  depends_on = [ scalr_variable.100vars ]
+  depends_on = [ scalr_variable.multi-vars ]
   keepers = {
     keeper_1 = "${var.user_var1}"
     keeper_2 = "${var.user_var2}"
