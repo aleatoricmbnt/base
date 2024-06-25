@@ -53,7 +53,7 @@ Dload  Upload   Total   Spent    Left  Speed
 > Content-Type: application/json
 > Content-Length: 36
 > 
-} [36 bytes data]
+ [36 bytes data]
 * upload completely sent off: 36 out of 36 bytes
 * Mark bundle as not supporting multiuse
 < HTTP/1.1 200 OK
@@ -64,7 +64,7 @@ Dload  Upload   Total   Spent    Left  Speed
 < Server: gunicorn/19.9.0
 < Access-Control-Allow-Origin: *
 < Access-Control-Allow-Credentials: true
-{
+
 < 
   "args": {}, 
 { [469 bytes data]
