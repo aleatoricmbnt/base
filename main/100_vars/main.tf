@@ -10,7 +10,7 @@ data "scalr_current_run" "example" {}
 
 
 data "scalr_workspace" "current_ws" {
-  name           = data.scalr_current.run.example.workspace_name
+  name           = data.scalr_current_run.example.workspace_name
   environment_id = data.scalr_current_run.example.environment_id
 }
 
@@ -19,7 +19,7 @@ resource "scalr_variable" "multi-vars" {
   key = "user_var${count.index}"
   value = "${count.index}"
   category = "terraform"
-  workspace_id = data.scalr_workspace.id
+  workspace_id = data.scalr_workspace.current_ws.id
 }
 
 resource "random_pet" "test" {
