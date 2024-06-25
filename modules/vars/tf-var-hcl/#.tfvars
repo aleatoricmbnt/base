@@ -1,4 +1,4 @@
-dsfd = <<EOT
+dsfd = <<-EOT
 fsd
 sdfjksdflks
 dfjksdlflskdf
