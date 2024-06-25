@@ -1,4 +1,29 @@
+terraform {
+  required_providers {
+    scalr = {
+      source = "scalr/scalr"
+    }
+  }
+}
+
+data "scalr_current_run" "example" {}
+
+
+data "scalr_workspace" "current_ws" {
+  name           = data.scalr_current.run.example.workspace_name
+  environment_id = data.scalr_current_run.example.environment_id
+}
+
+resource "scalr_variable" "100vars" {
+  count = 104
+  key = "user_var${count.index}"
+  value = "${count.index}"
+  category = "terraform"
+  workspace_id = data.scalr_workspace.id
+}
+
 resource "random_pet" "test" {
+  depends_on = [ scalr_variable.100vars ]
   keepers = {
     keeper_1 = "${var.user_var1}"
     keeper_2 = "${var.user_var2}"
