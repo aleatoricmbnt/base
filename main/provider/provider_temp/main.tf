@@ -1,14 +1,13 @@
 terraform {
   required_providers {
     scalr = {
-      source  = "registry.scalr.io/scalr/scalr"
-      version = "~> 1.3.0"
+      source  = "scalr/scalr"
     }
   }
 }
 
 data "scalr_vcs_provider" "vcs_github" {
-  name = "alea_github"
+  name = "test"
 }
 
 resource "scalr_workspace" "vcs-driven" {
