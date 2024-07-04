@@ -1,3 +1,5 @@
+package terraform
+
 deny[reason] {
     s := 2
     s := 3

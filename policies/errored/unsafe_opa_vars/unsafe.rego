@@ -1,3 +1,5 @@
+package terraform
+
 deny[reason] {
     x := 1
     x != y
