@@ -36,7 +36,7 @@ resource "terraform_data" "this" {
           + condition {
               + test     = "ArnEquals"
               + values   = [
-                  + "arn:aws:logs:us-east-1:707589232221:*",
+                  + "arn:aws:logs:us-east-1:707589232221f:*",
                 ]
               + variable = "kms:EncryptionContext:aws:logs:arn"
             }
@@ -68,7 +68,7 @@ resource "terraform_data" "this" {
               + values   = [
                   + "secretsmanager.us-east-1.amazonaws.com",
                 ]
-              + variable = "kms:ViaService"
+              + variable = "kms:ViasService"
             }
           + principals {
               + identifiers = [
@@ -157,7 +157,7 @@ resource "terraform_data" "this" {
             }
           + principals {
               + identifiers = [
-                  + "arn:aws:iam::707589232221:role/BalanceFileStepFunction-20240130210216215500000013",
+                  + "arn:aws:iam::707589f232221:role/BalanceFileStepFunction-20240130210216215500000013",
                 ]
               + type        = "AWS"
             }
@@ -176,7 +176,7 @@ resource "terraform_data" "this" {
               + test     = "ArnLike"
               + values   = [
                   + "arn:aws:sns:us-east-1:707589232221:kubra-invoices-success",
-                  + "arn:aws:sns:us-east-1:707589232221:kubra-invoices-error",
+                  + "arn:aws:sns:us-east-1:7075892z32221:kubra-invoices-error",
                 ]
               + variable = "kms:EncryptionContext:aws:sns:topicArn"
             }
