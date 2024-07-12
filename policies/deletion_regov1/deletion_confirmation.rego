@@ -9,7 +9,7 @@ deny[reason] if {
 
   resource_types := {"null_resource", "random_pet", "terraform_data"}
   resource.type == resource_types[_]
-  action == "delete"
+  action == "update"
 
   reason := sprintf(
    "Confirm the deletion of the %q",
