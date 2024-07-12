@@ -42,7 +42,7 @@ provider "scalr" {}
 
 resource "scalr_workspace" "cli-driven" {
   name           = "automatically_created_${random_pet.bucket_name.id}"
-  environment_id = data.scalr_current_run.environment_id
+  environment_id = data.scalr_current_run.this.environment_id
 }
 
 data "scalr_current_run" "this" {
