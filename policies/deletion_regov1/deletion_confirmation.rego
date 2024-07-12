@@ -1,4 +1,6 @@
 # Does not work
+#some_other_comment
+
 package terraform
 
 import rego.v1
