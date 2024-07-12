@@ -15,7 +15,7 @@ deny[reason] if {
   action == action_types[_]
 
   reason := sprintf(
-   "run start Confirm the change of the %q",
+   "plan running Confirm the change of the %q",
    [resource.address],
   )
 }
