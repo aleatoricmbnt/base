@@ -10,11 +10,12 @@ deny[reason] if {
   action := resource.change.actions[count(resource.change.actions) - 1]
 
   resource_types := {"null_resource", "random_pet", "terraform_data", "scalr_workspace"}
+  action_types := {"delete", "update"}
   resource.type == resource_types[_]
-  action == "update"
+  action == action_types[_]
 
   reason := sprintf(
-   "UPD Confirm the deletion of the %q",
+   "run start Confirm the change of the %q",
    [resource.address],
   )
 }
