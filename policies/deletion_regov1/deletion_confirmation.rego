@@ -18,4 +18,3 @@ deny[reason] if {
    "end of the plan Confirm the change of the %q",
    [resource.address],
   )
-}
