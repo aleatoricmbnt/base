@@ -14,7 +14,7 @@ deny[reason] if {
   action == "update"
 
   reason := sprintf(
-   "Confirm the deletion of the %q",
+   "UPD Confirm the deletion of the %q",
    [resource.address],
   )
 }
