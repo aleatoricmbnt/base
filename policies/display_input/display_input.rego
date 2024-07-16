@@ -9,5 +9,5 @@ deny[reason] {
     check := bool_value
     check == true
 
-    reason := sprintf("Input tfplan: %v, \n Input tfrun: %v ",[tfplan, tfrun])
+    reason := sprintf("PR _CHECK Input tfplan: %v, \n Input tfrun: %v ",[tfplan, tfrun])
 }
