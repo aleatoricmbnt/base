@@ -16,8 +16,44 @@ deny[reason] {
     a := 123456
     b := 654321
     product := a * b
-    product > 100000000000
-    reason := sprintf("The product of %d and %d is %d, which is greater than 100000000000", [a, b, product])
+    product < 100000000000
+    reason := sprintf("The product of %d and %d is %d, which is less than 100000000000", [a, b, product])
+}
+
+# Arithmetic operation to trigger a deny rule
+deny[reason] {
+    a := 123456
+    b := 654321
+    product := a * b
+    product < 100000000000
+    reason := sprintf("The product of %d and %d is %d, which is less than 100000000000", [a, b, product])
+}
+
+# Arithmetic operation to trigger a deny rule
+deny[reason] {
+    a := 123456
+    b := 654321
+    product := a * b
+    product < 100000000000
+    reason := sprintf("The product of %d and %d is %d, which is less than 100000000000", [a, b, product])
+}
+
+# Arithmetic operation to trigger a deny rule
+deny[reason] {
+    a := 123456
+    b := 654321
+    product := a * b
+    product < 100000000000
+    reason := sprintf("The product of %d and %d is %d, which is less than 100000000000", [a, b, product])
+}
+
+# Arithmetic operation to trigger a deny rule
+deny[reason] {
+    a := 123456
+    b := 654321
+    product := a * b
+    product < 100000000000
+    reason := sprintf("The product of %d and %d is %d, which is less than 100000000000", [a, b, product])
 }
 
 deny[reason] {
