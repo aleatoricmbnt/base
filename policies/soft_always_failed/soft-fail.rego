@@ -11,6 +11,15 @@ deny[reason] {
 }
 
 
+# Arithmetic operation to trigger a deny rule
+deny[reason] {
+    a := 123456
+    b := 654321
+    product := a * b
+    product > 100000000000
+    reason := sprintf("The product of %d and %d is %d, which is greater than 100000000000", [a, b, product])
+}
+
 deny[reason] {
     required_vars := {"check": 2, "replacing": "other"}
     not all_vars_match(required_vars)
