@@ -7,6 +7,14 @@ variable "sleep_time" {
   default = 1
 }
 
+variable "some_var" {}
+
+variable "some_var3" {}
+
+variable "some_var4" {}
+
+variable "some_var5" {}
+
 resource "null_resource" "nr" {
   triggers = {
     trigger = timestamp()
