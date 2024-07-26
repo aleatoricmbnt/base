@@ -15,6 +15,7 @@ variable "some_var4" {}
 
 variable "some_var5" {}
 
+
 resource "null_resource" "nr" {
   triggers = {
     trigger = timestamp()
@@ -52,3 +53,7 @@ output "run_time" {
 output "workspace_name" {
   value = terraform.workspace
 }
+
+output {}
+
+output "invalid" {
