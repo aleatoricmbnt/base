@@ -15,7 +15,7 @@ module "modules_terraform-null-module" {
  }
 
  variable "trigger" {
-   
+   default = "some_value"
  }
 
  data "http" "example" {
