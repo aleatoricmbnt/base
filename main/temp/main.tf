@@ -7,3 +7,13 @@ module "modules_terraform-null-module" {
 	# Number of resources to be created
  	quantity = 1
 }
+ 
+
+ resource "terraform_data" "this" {
+   input = "my input"
+   triggers_replace = var.trigger
+ }
+
+ variable "trigger" {
+   
+ }
