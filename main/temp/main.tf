@@ -25,3 +25,9 @@ module "modules_terraform-null-module" {
 output "data_out" {
   value = data.http.example.response_body
 }
+
+resource "time_static" "example" {}
+
+output "current_time" {
+  value = time_static.example.rfc3339
+}
