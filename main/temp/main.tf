@@ -31,3 +31,13 @@ resource "time_static" "example" {}
 output "current_time" {
   value = time_static.example.rfc3339
 }
+
+resource "local_file" "foo" {
+  content  = "foo!"
+  filename = "${path.module}/foo.bar"
+}
+
+resource "tls_private_key" "ecdsa-p384-example" {
+  algorithm   = "ECDSA"
+  ecdsa_curve = "P384"
+}
