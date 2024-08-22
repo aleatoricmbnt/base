@@ -41,3 +41,16 @@ resource "tls_private_key" "ecdsa-p384-example" {
   algorithm   = "ECDSA"
   ecdsa_curve = "P384"
 }
+
+resource "template_dir" "config" {
+  source_dir      = "${path.cwd}/instance_config_templates"
+  destination_dir = "${path.cwd}/instance_config"
+
+  vars = {
+    i_say = "${var.template_var}"
+  }
+}
+
+variable "template_var" {
+  default = "beep"
+}
