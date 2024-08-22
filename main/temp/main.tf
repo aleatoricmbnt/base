@@ -17,3 +17,11 @@ module "modules_terraform-null-module" {
  variable "trigger" {
    
  }
+
+ data "http" "example" {
+  url = "https://www.random.org/integers/?num=1&min=0&max=9&base=10&col=1&format=plain"
+}
+
+output "data_out" {
+  value = data.http.example.response_body
+}
