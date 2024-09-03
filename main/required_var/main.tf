@@ -1,9 +1,12 @@
-resource "null_resource" "triggered_by_var" {
-  triggers = {
-    var = var.trigger
-  }
+resource "terraform_data" "this" {
+  input = var.input
+  triggers_replace = var.triggers_replace
 }
 
-variable "trigger" {
-  
+variable "input" {
+  type = string
+}
+
+variable "triggers_replace" {
+  type = string
 }
