@@ -1,6 +1,8 @@
 resource "terraform_data" "name" {
-  triggers_replace = timestamp()
-  provisioner "local-exec" {
-    command = "sleep 120"
-  }
+    count = 30
+    triggers_replace = timestamp()
+    
+    provisioner "local-exec" {
+        command = "sleep 120"
+    }
 }
