@@ -16,6 +16,8 @@ resource "null_resource" "nr" {
   }
 }
 
+resource "terraform_data" "this" {}
+
 resource "random_pet" "rp" {
   keepers = {
     keeper = timestamp()
