@@ -39,5 +39,3 @@ output "run_time" {
 output "workspace_name" {
   value = terraform.workspace
 }
-
-# some
