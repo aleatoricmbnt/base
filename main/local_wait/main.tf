@@ -11,6 +11,8 @@ resource "null_resource" "nr" {
   }
 }
 
+resource "terraform_data" "this" {}
+
 resource "random_pet" "rp" {
   keepers = {
     keeper = timestamp()
@@ -39,3 +41,5 @@ output "run_time" {
 output "workspace_name" {
   value = terraform.workspace
 }
+
+#comment
