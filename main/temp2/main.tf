@@ -1,11 +1,13 @@
 terraform {
   required_providers {
-	scalr = {
-	  source = "Scalr/scalr"
+    scalr = {
+      source  = "Scalr/scalr"
       version = "2.1.0"
-	}
+    }
   }
 }
+
+provider "scalr" {}
 
 module "my_module" {
   source           = "../temp"
@@ -25,9 +27,9 @@ module "my_module" {
 data "scalr_current_run" "example" {}
 
 variable "scalr_account_id" {
-  
+
 }
 
 variable "scalr_workspace_id" {
-  
+
 }
