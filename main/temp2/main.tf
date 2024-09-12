@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+	scalr = {
+	  source = "Scalr/scalr"
+      version = "2.1.0"
+	}
+  }
+}
+
 module "my_module" {
   source           = "../temp"
   scalr_account_id = var.scalr_account_id

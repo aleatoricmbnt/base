@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-	scalr = {
-	  source = "Scalr/scalr"
-      version = "2.1.0"
-	}
-  }
-}
-
 variable "scalr_account_id" {
   type        = string
   description = "Account ID to use"
