@@ -24,8 +24,6 @@ module "my_module" {
   }
 }
 
-data "scalr_current_run" "example" {}
-
 variable "scalr_account_id" {
 
 }
