@@ -10,3 +10,4 @@ variable "custom_string" {
 }
 
 #comment1
+#comment2
