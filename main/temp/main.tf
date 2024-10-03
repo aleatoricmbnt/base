@@ -46,10 +46,10 @@ data "terraform_remote_state" "wait" {
   backend = "remote"
 
   config = {
-    hostname = "aleatoric.main.scalr.dev"
-    organization = "env-v0od4sfanb18tjhh8"
+    hostname = "m-moh.scalr.io"
+    organization = "env-v0ntmf5r4hmcrp90l"
     workspaces = {
-      name = "lw"
+      name = "cloudposse_label_null"
     }
   }
 
