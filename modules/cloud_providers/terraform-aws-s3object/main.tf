@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "us-east-1"
+}
+
 resource "aws_s3_object" "example" {
   key                    = random_pet.object_key.id
   bucket                 = var.bucket_id
