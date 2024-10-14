@@ -6,8 +6,13 @@ resource "terraform_data" "with_updatable_trigger" {
   triggers_replace = var.update_trigger
 }
 
-resource "terraform_data" "depends_on_updatable_trigger_resource" {
+resource "terraform_data" "new_depends_on_updatable_trigger_resource" {
   triggers_replace = [terraform_data.with_updatable_trigger]
+}
+
+moved {
+  from = terraform_data.depends_on_updatable_trigger_resource
+  to = terraform_data.new_depends_on_updatable_trigger_resource1
 }
 
 resource "terraform_data" "updatable_map_keys_with_for_each_expression" {
