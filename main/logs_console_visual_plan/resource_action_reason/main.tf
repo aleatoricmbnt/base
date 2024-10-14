@@ -37,7 +37,7 @@ resource "terraform_data" "deletable_count" {
 }
 
 module "to_be_commented_module" {
-  count = 2
+  count = 1
   source = "./subdir" # comment me IN THE MODULE REPO when needed
 }
 
