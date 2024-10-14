@@ -1,5 +1,5 @@
 resource "random_pet" "module_pet" {
-  count = 2
+  count = 1
 }
 
 module "nested" {

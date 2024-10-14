@@ -1,3 +1,3 @@
-resource "random_string" "name" {
-  length = 12
-}
+# resource "random_string" "name" {
+#   length = 12
+# }
