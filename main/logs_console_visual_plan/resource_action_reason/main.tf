@@ -35,9 +35,9 @@ resource "terraform_data" "deletable_count" {
 #   source = "./subdir" # comment me IN THE MODULE REPO when needed
 # }
 
-resource "random_string" "name" {
-  length = 12
-}
+# resource "random_string" "name" {
+#   length = 12
+# }
 
 resource "terraform_data" "to_be_tainted" {
   # taint me when needed
