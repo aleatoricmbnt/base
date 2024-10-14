@@ -10,9 +10,9 @@ resource "null_resource" "depends_on_updatable_trigger_resource" {
   depends_on = [ terraform_data.with_updatable_trigger ]
 }
 
-resource "random_password" "updatable_map_keys_with_for_each_expression" {
+resource "terraform_data" "updatable_map_keys_with_for_each_expression" {
   for_each = var.update_map
-  length = each.value
+  input = each.value
 }
 
 resource "null_resource" "to_be_replaced_manually" {
