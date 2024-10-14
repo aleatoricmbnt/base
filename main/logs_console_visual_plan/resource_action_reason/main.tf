@@ -31,8 +31,12 @@ resource "terraform_data" "deletable_count" {
   # count = var.update_count # delete me when needed
 }
 
-module "to_be_commented_module" {
-  source = "./subdir" # comment me IN THE MODULE REPO when needed
+# module "to_be_commented_module" {
+#   source = "./subdir" # comment me IN THE MODULE REPO when needed
+# }
+
+resource "random_string" "name" {
+  length = 12
 }
 
 resource "terraform_data" "to_be_tainted" {
