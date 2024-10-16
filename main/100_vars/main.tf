@@ -8,6 +8,7 @@ terraform {
 
 data "scalr_current_run" "example" {}
 
+resource "terraform_data" "this" {}
 
 data "scalr_workspace" "current_ws" {
   name           = data.scalr_current_run.example.workspace_name
