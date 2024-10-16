@@ -17,3 +17,5 @@ output "scalr_ip" {
 resource "terraform_data" "res1" {}
 
 resource "terraform_data" "res2" {}
+
+resource "terraform_data" "res1" {}
