@@ -11,6 +11,9 @@ data "scalr_current_run" "example" {}
 resource "terraform_data" "this" {}
 resource "terraform_data" "this2" {}
 resource "terraform_data" "this3" {}
+
+resource "terraform_data" "this4" {}
+
 data "scalr_workspace" "current_ws" {
   name           = data.scalr_current_run.example.workspace_name
   environment_id = data.scalr_current_run.example.environment_id
