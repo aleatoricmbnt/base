@@ -7,7 +7,3 @@ greater_than_zero(x) {
 is_false(x) {
   x == false
 }
-
-always_true() {
-  true
-}
