@@ -1,5 +1,7 @@
+package terraform
+
 deny[reason] {
     number == true
 
-    reason := "According to this policy, undeclared variable 'number' is not equal to true"
+    reason := "Some reason that shouldn't be shown due to OPA error"
 }
