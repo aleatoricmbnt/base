@@ -49,7 +49,7 @@ data "terraform_remote_state" "wait" {
     hostname = "aleatoric.main.scalr.dev"
     organization = "env-v0ns0m539r05815rg"
     workspaces = {
-      name = "local_wait_renamed"
+      name = "local_wait"
     }
   }
 
