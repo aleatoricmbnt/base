@@ -1,7 +1,7 @@
 package simple_rules
 
 greater_than_zero(x) {
-  x > 0
+  x > 2
 }
 
 is_false(x) {
