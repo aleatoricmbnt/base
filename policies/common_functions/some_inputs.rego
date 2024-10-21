@@ -1,8 +1,9 @@
 package some_inputs
 
-always_true_new {
-  bool_value := true
-  bool_value == true
+always_false {
+  x := 1
+  y := 2
+  x > y
 }
 
 always_true_2(x) {

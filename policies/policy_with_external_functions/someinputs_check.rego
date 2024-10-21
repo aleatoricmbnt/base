@@ -3,9 +3,9 @@ package terraform
 import data.some_inputs
 
 deny[reason] {
-    some_inputs.always_true_new
+    some_inputs.always_false
 
-    reason := "always_true_new() function returned true (hooray!)"
+    reason := "always_false function returned true for some reason"
 }
 
 deny[reason] {
