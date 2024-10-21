@@ -1,9 +1,15 @@
 package terraform
 
 deny[reason] {
-    rule_a := rule_b
+  recursive_check(input.tfplan)
 
-    rule_b := rule_a
+  reason := "Some reason that shouldn't be shown due to OPA error"
+}
 
-    reason := "Some reason that shouldn't be shown due to OPA error"
+recursive_check(x) {
+  x == "some_value"
+}
+
+recursive_check(x) {
+  recursive_check(x)
 }
