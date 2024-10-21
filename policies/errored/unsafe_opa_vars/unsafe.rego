@@ -1,8 +1,8 @@
 package terraform
 
 deny[reason] {
-    x := 1
-    x != y
+    var_x := 1
+    var_y != 1
 
-    reason := "In this policy variable 'x' is compared with non-assigned 'y' variable"
+    reason := "Some reason that shouldn't be shown due to OPA error"
 }
