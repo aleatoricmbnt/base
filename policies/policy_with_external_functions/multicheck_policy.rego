@@ -13,9 +13,3 @@ deny[reason] {
 
     reason := "Auto-apply option is false"
 }
-
-deny[reason] {
-    simple_rules.always_true()
-
-    reason := "Always denied"
-}
