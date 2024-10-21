@@ -1,3 +1,5 @@
+package example
+
 greater_than_zero(x) {
   x > 0
 }
