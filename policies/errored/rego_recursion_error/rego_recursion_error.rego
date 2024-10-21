@@ -1,7 +1,9 @@
 package terraform
 
 deny[reason] {
-    var_x := var_x
+    rule_a := rule_b
+
+    rule_b := rule_a
 
     reason := "Some reason that shouldn't be shown due to OPA error"
 }
