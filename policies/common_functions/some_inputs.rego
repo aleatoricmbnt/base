@@ -1,6 +1,6 @@
 package some_inputs
 
-always_true_new() {
+always_true_new {
   bool_value := true
   bool_value == true
 }
