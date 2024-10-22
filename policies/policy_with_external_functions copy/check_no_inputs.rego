@@ -5,7 +5,7 @@ import data.no_inputs
 deny[reason] {
     no_inputs.always_false
 
-    reason := "always_false function returned true for some reason"
+    reason := "always_false function returned #test true for some reason"
 }
 
 deny[reason] {
