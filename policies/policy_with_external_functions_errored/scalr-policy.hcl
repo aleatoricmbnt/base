@@ -10,3 +10,7 @@ policy "check_no_inputs" {
   enforcement_level = "soft-mandatory"
 }
 
+policy "check_errored_rules" {
+  enabled           = true
+  enforcement_level = "soft-mandatory"
+}
