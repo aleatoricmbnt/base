@@ -1,6 +1,6 @@
 ## Workspace settings
 
-#### Set Trigger strategy > Patterns
+Set Trigger strategy > Patterns
 
 ```
 **/trigger_strategy/**/*
