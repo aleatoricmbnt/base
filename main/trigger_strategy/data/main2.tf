@@ -3,3 +3,4 @@ resource "terraform_data" "data_main2" {
 }
 
 #comment1
+#comment2
