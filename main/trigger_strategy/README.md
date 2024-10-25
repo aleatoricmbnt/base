@@ -5,7 +5,7 @@ Set Trigger strategy > Patterns
 ```
 **/trigger_strategy/**/*
 *
-!**/main[1-9].tf
+!*main[1-9].tf
 ```
 
 ## Change / Run:
