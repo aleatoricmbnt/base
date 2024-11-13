@@ -62,7 +62,3 @@ resource "terraform_data" "example_bool" {
 resource "terraform_data" "example_list" {
   input = var.list_of_strings
 }
-
-resource "terraform_data" "example_map" {
-  input = var.map_variable
-}
