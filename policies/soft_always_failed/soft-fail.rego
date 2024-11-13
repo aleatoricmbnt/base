@@ -1,5 +1,4 @@
 package terraform
-import input.tfrun as tfrun
 
 bool_value = true
 
