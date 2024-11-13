@@ -1,7 +1,7 @@
-# Define variables with diverse validation rules
+# Define variables with diverse validation rules, using only supported functions
 
 variable "string_variable" {
-  description = "A string that must match a specific pattern."
+  description = "A string that must start with the word 'hello'."
   type        = string
   validation {
     condition     = can(regex("^hello", var.string_variable))
@@ -18,34 +18,35 @@ variable "number_variable" {
   }
 }
 
-variable "bool_variable" {
-  description = "A boolean variable that must be set to true."
-  type        = bool
-  validation {
-    condition     = var.bool_variable == true
-    error_message = "The bool_variable must be set to true to proceed. Please set it to true."
-  }
-}
-
 variable "list_of_strings" {
-  description = "A list of strings, each of which must have a minimum length."
+  description = "A list of strings, each of which must have a minimum length of 3 characters."
   type        = list(string)
   validation {
-    condition     = alltrue([for s in var.list_of_strings : length(s) >= 3])
+    condition     = alltrue([for s in var.list_of_strings : length(trimspace(s)) >= 3])
     error_message = "Each item in list_of_strings must have at least 3 characters. Ensure all strings meet this requirement."
   }
 }
 
+variable "list_with_unique_elements" {
+  description = "A list of strings where all elements must be unique."
+  type        = list(string)
+  validation {
+    condition     = length(distinct(var.list_with_unique_elements)) == length(var.list_with_unique_elements)
+    error_message = "All elements in list_with_unique_elements must be unique. Ensure no duplicates are present."
+  }
+}
+
 variable "map_variable" {
-  description = "A map with specific required keys."
+  description = "A map that must contain the required key 'required_key'."
   type        = map(string)
   validation {
     condition     = contains(keys(var.map_variable), "required_key")
-    error_message = "The map_variable must contain the key 'required_key'. Ensure that this key is present."
+    error_message = "The map_variable must contain the key 'required_key'. Ensure that this key is present in the map."
   }
 }
 
 # Use terraform_data resources with the validated variables as inputs
+
 
 resource "terraform_data" "example_string" {
   input = var.string_variable
@@ -55,10 +56,14 @@ resource "terraform_data" "example_number" {
   input = var.number_variable
 }
 
-resource "terraform_data" "example_bool" {
-  input = var.bool_variable
-}
-
 resource "terraform_data" "example_list" {
   input = var.list_of_strings
+}
+
+resource "terraform_data" "example_unique_list" {
+  input = var.list_with_unique_elements
+}
+
+resource "terraform_data" "example_map" {
+  input = var.map_variable
 }
