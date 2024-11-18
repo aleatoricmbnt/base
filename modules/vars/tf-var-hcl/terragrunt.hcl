@@ -1,5 +1,5 @@
 terraform {
-  source = "./" # Path to your Terraform module
+  source = "./" 
 }
 
 inputs = {
