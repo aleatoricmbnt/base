@@ -31,6 +31,11 @@ resource "terraform_data" "test" {
   input = "blah-blah-blah"
 }
 
+resource "terraform_data" "test_string" {
+  for_each = local.triggers
+  input = each.value
+}
+
 resource "terraform_data" "triggered_by_test" {
   input = "my input"
   triggers_replace = terraform_data.test
