@@ -23,5 +23,6 @@ output "info" {
 
 variable "pet_count" {
   type    = number
+  default = 23
   description = "Pyramid Head is a figure of James Sunderland's guilt and inner torment, manifesting from the part of his mind that desires punishment. He is described as a \"distorted memory of the executioners\" by Takayoshi Sato, who also explains that Silent Hill was once a town of executions. Most of the people living there were either executioners themselves or family to an executioner."
 }
