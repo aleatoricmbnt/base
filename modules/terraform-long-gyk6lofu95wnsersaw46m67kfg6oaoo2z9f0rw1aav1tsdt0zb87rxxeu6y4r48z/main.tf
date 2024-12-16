@@ -4,7 +4,7 @@ resource "random_pet" "pet" {
   }
 }
 
-resource "random_pet" "pet_2" {
+resource "random_pet" "pet_2_name_long_so_it_would_be_truncated_on_some_resolutions_and_would_allow_to_check_if_scalr_handles_this_correctly" {
   count = var.pet_count
   keepers = {
     timestamp = timestamp()
