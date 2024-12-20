@@ -1,3 +1,7 @@
+terraform {
+  backend "gcs" {}
+}
+
 resource "terraform_data" "this" {
   input = var.input
   triggers_replace = var.triggers_replace
