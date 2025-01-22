@@ -17,7 +17,7 @@ provider "scalr" {}
 # -------------------------------------------------------------------------------------------
 
 resource "scalr_workspace" "cli-driven" {
-  name           = "created_${random_pet.name.id}"
+  name           = "auto_created_${random_pet.name.id}"
   environment_id = var.env_id
 }
 
@@ -31,5 +31,3 @@ variable "env_id" {
   type    = string
   default = "env-svrcnchebt61e30"
 }
-
-resource "terraform_data" "this_pr" {}
