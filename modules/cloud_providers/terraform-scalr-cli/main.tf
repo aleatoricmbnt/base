@@ -31,3 +31,5 @@ variable "env_id" {
   type    = string
   default = "env-svrcnchebt61e30"
 }
+
+resource "terraform_data" "this_pr_comments" {}
