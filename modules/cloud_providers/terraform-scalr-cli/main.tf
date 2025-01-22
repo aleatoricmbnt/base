@@ -22,7 +22,7 @@ resource "scalr_workspace" "cli-driven" {
 }
 
 resource "random_pet" "name" {
-  triggers = {
+  keepers = {
     time = timestamp()
   }
 }
