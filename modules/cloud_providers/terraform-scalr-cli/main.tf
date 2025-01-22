@@ -17,7 +17,7 @@ provider "scalr" {}
 # -------------------------------------------------------------------------------------------
 
 resource "scalr_workspace" "cli-driven" {
-  name           = "default_name_ws"
+  name           = "default_name_ws_PR"
   environment_id = var.env_id
 }
 
