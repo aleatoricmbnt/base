@@ -22,7 +22,9 @@ resource "scalr_workspace" "cli-driven" {
 }
 
 resource "random_pet" "name" {
-  
+  triggers = {
+    time = timestamp()
+  }
 }
 
 variable "env_id" {
