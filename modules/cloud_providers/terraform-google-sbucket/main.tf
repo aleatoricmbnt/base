@@ -3,7 +3,7 @@ provider "google" {
 }
 
 resource "random_pet" "bucket_name" {
-  length = var.length
+  length = 3
 }
 
 resource "google_storage_bucket" "example_bucket" {
@@ -14,8 +14,4 @@ resource "google_storage_bucket" "example_bucket" {
   versioning {
     enabled = false
   }
-}
-
-variable "length" {
-  default = 3
 }
