@@ -1,5 +1,5 @@
 provider "google" {
-  project = "development-156220"
+  project = "scalr-dev"
 }
 
 resource "random_pet" "bucket_name" {
