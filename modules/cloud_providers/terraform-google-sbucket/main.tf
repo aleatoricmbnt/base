@@ -8,7 +8,7 @@ resource "random_pet" "bucket_name" {
 
 resource "google_storage_bucket" "example_bucket" {
   name          = random_pet.bucket_name.id
-  location      = "us-central1"
+  location      = "europe-west1"
   storage_class = "STANDARD"
 
   versioning {
