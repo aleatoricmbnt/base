@@ -22,6 +22,7 @@ if ! command -v jq &> /dev/null; then
     fi
 fi
 
+
 # Define API URL
 API_URL="https://${SCALR_HOSTNAME}/api/iacp/v3/workspaces/${SCALR_WORKSPACE_ID}"
 
@@ -29,14 +30,15 @@ API_URL="https://${SCALR_HOSTNAME}/api/iacp/v3/workspaces/${SCALR_WORKSPACE_ID}"
 echo "Fetching workspace details from $API_URL..."
 RESPONSE=$(curl -s -H "Authorization: Bearer $SCALR_TOKEN" "$API_URL")
 
-# Extract "updated-by-email" field
-UPDATED_BY_EMAIL=$(echo "$RESPONSE" | jq -r '.data.attributes."updated-by-email"')
+# Extract "name" field
+WORKSPACE_NAME=$(echo "$RESPONSE" | jq -r '.data.attributes.name')
 
-# Check if field exists
-if [[ "$UPDATED_BY_EMAIL" == "null" || -z "$CREATED_BY_EMAIL" ]]; then
-    echo "Error: 'updated-by-email' field not found in response."
+# Check if "name" field exists
+if [[ "$WORKSPACE_NAME" == "null" || -z "$WORKSPACE_NAME" ]]; then
+    echo "Error: 'name' field not found in response."
     exit 1
 fi
 
-# Output result
-echo "Workspace updated by: $UPDATED_BY_EMAIL"
+# Output the name
+echo "Workspace name: $WORKSPACE_NAME"
+
