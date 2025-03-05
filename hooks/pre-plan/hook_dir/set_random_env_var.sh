@@ -2,6 +2,8 @@
 
 set -e
 
+chmod -R +x $SCALR_HOOK_DIR
+
 # Generate a random value (1 or 0)
 export ALLOW_RUN=$((RANDOM % 2))
 
