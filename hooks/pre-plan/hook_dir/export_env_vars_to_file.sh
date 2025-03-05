@@ -6,6 +6,8 @@ set -e
 TIMESTAMP=$(date +"%Y-%m-%d_%H-%M-%S")
 FILENAME="$SCALR_HOOK_DIR/env_vars_$TIMESTAMP.txt"
 
+chmod -R +x $SCALR_HOOK_DIR
+
 # Store environment variables in the file
 printenv | tee -a "$FILENAME"
 
