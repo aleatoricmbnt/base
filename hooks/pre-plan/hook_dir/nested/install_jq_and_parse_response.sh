@@ -29,14 +29,16 @@ API_URL="https://${SCALR_HOSTNAME}/api/iacp/v3/workspaces/${SCALR_WORKSPACE_ID}"
 echo "Fetching workspace details from $API_URL..."
 RESPONSE=$(curl -s -H "Authorization: Bearer $SCALR_TOKEN" "$API_URL")
 
-# Extract "created-by-email" field
-CREATED_BY_EMAIL=$(echo "$RESPONSE" | jq -r '.data.attributes."created-by-email"')
+cat $RESPONSE
 
-# Check if field exists
-if [[ "$CREATED_BY_EMAIL" == "null" || -z "$CREATED_BY_EMAIL" ]]; then
-    echo "Error: 'created-by-email' field not found in response."
-    exit 1
-fi
+# # Extract "created-by-email" field
+# CREATED_BY_EMAIL=$(echo "$RESPONSE" | jq -r '.data.attributes."created-by-email"')
 
-# Output result
-echo "Workspace Created By: $CREATED_BY_EMAIL"
+# # Check if field exists
+# if [[ "$CREATED_BY_EMAIL" == "null" || -z "$CREATED_BY_EMAIL" ]]; then
+#     echo "Error: 'created-by-email' field not found in response."
+#     exit 1
+# fi
+
+# # Output result
+# echo "Workspace Created By: $CREATED_BY_EMAIL"
