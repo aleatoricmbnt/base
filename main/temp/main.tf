@@ -3,3 +3,5 @@ resource "random_pet" "run_from_vcs" {
     timestamp = timestamp()
   }
 }
+
+# my comment
