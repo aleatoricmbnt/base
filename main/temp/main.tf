@@ -21,3 +21,5 @@ variable "nested_object" {
     }
   }
 }
+
+# PR comment
