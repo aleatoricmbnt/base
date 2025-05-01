@@ -7,6 +7,10 @@ terraform {
   }
 }
 
+provider "aws" {
+  
+}
+
 resource "aws_iam_policy" "safe_policy" {
   name        = "safe-policy"
   description = "A policy that passes all Checkov checks"
