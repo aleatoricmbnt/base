@@ -1,10 +1,10 @@
 terraform {
-  required_providers {
-    scalr = {
-      source  = "registry.scalr.io/scalr/scalr"
-      version = "~> 2.0"
+    required_providers {
+        scalr = {
+            source = "registry.scalr.dev/scalr/scalr"
+            version= "1.0.0-rc-master"
+        }
     }
-  }
 }
 
 resource "scalr_provider_configuration" "custom" {
