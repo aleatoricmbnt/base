@@ -1,23 +1,35 @@
-module "smth_from_git" {
-  source = "github.com/aleatoricmbnt/flat/"
-}
-
-
-resource "terraform_data" "multiple_triggers" {
-  triggers_replace  = [ var.list_of_tags, var.nested_object ]
-}
-
-variable "list_of_tags" {
-  default = {
-    "tag.with.dot" = "s:://"
-    "slash/suffix" = "f"
-  }
-}
-
-variable "nested_object" {
-  default = {
-    upper_level = {
-      "smth.w.dot.and.hash#" = 123
+resource "scalr_provider_configuration" "custom" {
+  environments = ["*"]
+  name         = "k8s-smth"
+  account_id   = var.account_id
+  custom {
+    provider_name = "kubernetes"
+    argument {
+      name        = "host"
+      value       = "my-host"
+      description = "The hostname (in form of URI) of the Kubernetes API."
+    }
+    argument {
+      name  = "username"
+      value = "my-username"
+    }
+    argument {
+      name      = "password"
+      value     = "my-password"
+      sensitive = true
     }
   }
+}
+
+resource "scalr_environment" "test" {
+  name                    = "Env with whitespaces"
+  account_id              = scalr_provider_configuration.custom.account_id
+}
+
+data "scalr_environments" "all" {
+  account_id = scalr_environment.test.account_id
+}
+
+variable "account_id" {
+  default = "acc-v0oq24ragovfniaic"
 }
