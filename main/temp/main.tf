@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    scalr = {
+      source  = "registry.scalr.io/scalr/scalr"
+      version = "~> 2.0"
+    }
+  }
+}
+
 resource "scalr_provider_configuration" "custom" {
   environments = ["*"]
   name         = "k8s-smth"
