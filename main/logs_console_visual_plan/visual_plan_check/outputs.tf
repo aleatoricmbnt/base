@@ -43,13 +43,17 @@ output "null_example" {
   description = "Explicitly null output."
 }
 
-output "precondition_output" {
-  value     = timestamp()
-  sensitive = true
+output "public_ip" {
+  value = var.public_ip
+
   precondition {
-    condition     = can(timestamp())
-    error_message = "Failed to evaluate timestamp."
+    condition     = var.public_ip != ""
+    error_message = "It does not have a public IP address."
   }
+}
+
+variable "public_ip" {
+  default = "255.255.255.255"
 }
 
 output "long_text_block" {
