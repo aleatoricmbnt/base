@@ -127,10 +127,10 @@ output "nested_map_list" {
 }
 
 output "optional_output" {
-  value       = try(var.optional_value, "default-value")
-  description = "Fallback to default if optional_value is not set."
+  value       = var.optional_value ? "Optional value is true" : "default-value"
+  description = "Fallback to default if optional_value is false."
 }
 
 variable "optional_value" {
-  default = null
+  default = true
 }
