@@ -132,5 +132,5 @@ output "optional_output" {
 }
 
 variable "optional_value" {
-  default = ""
+  default = null
 }
