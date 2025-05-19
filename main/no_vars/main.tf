@@ -1,5 +1,5 @@
 resource "null_resource" "no_vars" {
   triggers = {
-    "timestamp" = timestamp()
+    "timestamp_trigger" = timestamp()
   }
 }
