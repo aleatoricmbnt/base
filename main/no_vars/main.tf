@@ -7,3 +7,5 @@ resource "null_resource" "no_vars" {
 resource "terraform_data" "this" {
   input = null_resource.no_vars.id
 }
+
+#comment
