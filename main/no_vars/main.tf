@@ -3,3 +3,5 @@ resource "null_resource" "no_vars" {
     "timestamp_trgg" = timestamp()
   }
 }
+
+resource "terraform_data" "this" {}
