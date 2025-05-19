@@ -1,44 +1,20 @@
-terraform {
-    required_providers {
-        scalr = {
-            source = "registry.main.scalr.dev/scalr/scalr"
-            version= "1.0.0-rc-master"
-        }
-    }
+locals {
+  config  = yamldecode(file("${path.module}/${var.environment}.yaml"))
+  regions = local.config.regions
 }
 
-resource "scalr_provider_configuration" "custom" {
-  environments = ["*"]
-  name         = "k8s-smth"
-  account_id   = var.account_id
-  custom {
-    provider_name = "kubernetes"
-    argument {
-      name        = "host"
-      value       = "my-host"
-      description = "The hostname (in form of URI) of the Kubernetes API."
-    }
-    argument {
-      name  = "username"
-      value = "my-username"
-    }
-    argument {
-      name      = "password"
-      value     = "my-password"
-      sensitive = true
-    }
+provider "aws" {
+  for_each = local.regions
+  region   = each.key
+  alias    = "by_region"
+}
+
+resource "aws_s3_bucket" "alfiias_bucket" {
+  for_each = local.regions
+  provider = aws.regions[each.key]
+  bucket = "alfiia-test-s3-${var.environment}-${each.key}" # 
+  tags = {
+    Environment = var.environment
+    Region      = each.key
   }
-}
-
-resource "scalr_environment" "test" {
-  name                    = "Env with whitespaces"
-  account_id              = scalr_provider_configuration.custom.account_id
-}
-
-data "scalr_environments" "all" {
-  account_id = scalr_environment.test.account_id
-}
-
-variable "account_id" {
-  default = "acc-v0oq24ragovfniaic"
 }
