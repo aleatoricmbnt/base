@@ -28,7 +28,7 @@ terraform {
 }
 
 resource "scalr_workspace" "vcs-driven" {
-  name            = replace(var.workdir, "/", "_")
+  name            = replace(var.workdir, "/", "---")
   environment_id  = var.env_id
 
   auto_apply  = var.auto_apply
