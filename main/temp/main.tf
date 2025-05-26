@@ -45,24 +45,30 @@ resource "scalr_workspace" "vcs-driven" {
 
 variable "env_id" {
   description = "ID  opf the env to create workspace in"
+  type = string
 }
 
 variable "vcs_id" {
   description = "ID of the VCS provider to create workspace from"
+  type = string
 }
 
 variable "workdir" {
   description = "Working directory of the workspace"
+  type = string
 }
 
 variable "vcs_identifier" {
   description = "`org/repo` used as a source for workspace"
+  type = string
 }
 
 variable "auto_apply" {
   description = "Boolean value for the Auto-apply setting of the workspace"
+  type = bool
 }
 
 variable "auto_queue_runs" {
-  description = "Vvalue for the Auto-queue runs setting of the workspace"
+  description = "Value for the Auto-queue runs setting of the workspace"
+  type = string
 }
