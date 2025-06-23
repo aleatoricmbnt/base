@@ -1,5 +1,5 @@
 provider "google" {
-  project = "personal-playground-437910"
+  project = var.project_id
 }
 
 resource "google_service_account" "service_acc" {
@@ -11,9 +11,9 @@ resource "random_pet" "service_acc_name" {
   length = 3
 }
 
-# variable "google_project_id" {
-#   default = null
-# }
+variable "google_project_id" {
+  default = null
+}
 
 # output "service_account_name" {
 #   value = provider::google::name_from_id(google_service_account.service_acc.id)
