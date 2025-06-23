@@ -1,5 +1,5 @@
 provider "google" {
-  project = var.project_id
+  project = var.google_project_id
 }
 
 resource "google_service_account" "service_acc" {
