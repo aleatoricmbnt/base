@@ -1,5 +1,5 @@
 provider "google" {
-  project = "scalr-dev"
+  project = var.project_id
 }
 
 resource "random_pet" "bucket_name" {
@@ -7,11 +7,21 @@ resource "random_pet" "bucket_name" {
 }
 
 resource "google_storage_bucket" "example_bucket" {
-  name          = random_pet.bucket_name.id
-  location      = "europe-west1"
+  name          = "mshytse-${random_pet.bucket_name.id}"
+  location      = var.location
   storage_class = "STANDARD"
 
   versioning {
     enabled = false
   }
+}
+
+variable "location" {
+  type = string
+  default = "europe-west1"
+}
+
+variable "project_id" {
+  type = string
+  default = "scalr-dev"
 }
