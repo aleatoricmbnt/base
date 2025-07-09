@@ -1,19 +1,9 @@
-terraform {
-  required_version = ">= 1.0"
-  required_providers {
-    local = {
-      source  = "hashicorp/local"
-      version = "~> 2.0"
-    }
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.0"
-    }
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.0"
-    }
-  }
+# Terraform and provider requirements are defined in versions.tf
+
+# Input validation for cross-variable constraints
+locals {
+  # Validate that max_value > min_value
+  _validate_integer_range = var.max_value > var.min_value ? null : tobool("max_value (${var.max_value}) must be greater than min_value (${var.min_value})")
 }
 
 # Generate random values for testing

@@ -48,6 +48,11 @@ variable "min_value" {
   description = "Minimum value for random integer generation"
   type        = number
   default     = 1
+  
+  validation {
+    condition     = var.min_value >= 0
+    error_message = "Minimum value must be greater than or equal to 0."
+  }
 }
 
 variable "max_value" {
@@ -56,8 +61,8 @@ variable "max_value" {
   default     = 100
   
   validation {
-    condition     = var.max_value > var.min_value
-    error_message = "Maximum value must be greater than minimum value."
+    condition     = var.max_value > 0
+    error_message = "Maximum value must be greater than 0."
   }
 }
 

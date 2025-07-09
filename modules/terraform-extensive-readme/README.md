@@ -223,7 +223,7 @@ ls -la /tmp/terraform-test/
 | `include_lowercase` | `bool` | `true` | Include lowercase letters |
 | `include_numbers` | `bool` | `true` | Include numeric characters |
 | `min_value` | `number` | `1` | Minimum integer value |
-| `max_value` | `number` | `100` | Maximum integer value |
+| `max_value` | `number` | `100` | Maximum integer value ⚠️ Must be > min_value |
 | `uuid_count` | `number` | `3` | Number of UUIDs to generate |
 
 ##### 📁 File Management Variables
@@ -492,6 +492,23 @@ variable "min_value" {
 
 variable "max_value" {
   default = 100  # Must be > min_value
+}
+```
+
+#### Issue: Integer Range Validation
+
+```bash
+Error: max_value (5) must be greater than min_value (10)
+```
+
+**Solution:**
+```hcl
+# Correct configuration
+module "test_module" {
+  source = "./modules/terraform-extensive-readme"
+  
+  min_value = 1
+  max_value = 100  # Must be greater than min_value
 }
 ```
 
