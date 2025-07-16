@@ -33,7 +33,6 @@ resource "scalr_variable" "account_shell" {
   key        = "TF_VAR_test_var"
   value      = "account-shell-value"
   category   = "shell"
-  account_id = data.scalr_current_run.this.account_id
 }
 
 resource "scalr_variable" "environment_shell" {
