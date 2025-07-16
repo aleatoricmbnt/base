@@ -30,12 +30,15 @@ resource "scalr_workspace" "var_precedence_test" {
 
 # Create variables at different precedence levels
 resource "scalr_variable" "account_shell" {
+  count      = var.create_account_shell_variable
   key        = "TF_VAR_test_var"
   value      = "account-shell-value"
   category   = "shell"
+  account_id = data.scalr_current_run.this.account_id
 }
 
 resource "scalr_variable" "environment_shell" {
+  count          = var.create_environment_shell_variable
   key            = "TF_VAR_test_var"
   value          = "environment-shell-value"
   category       = "shell"
@@ -43,6 +46,7 @@ resource "scalr_variable" "environment_shell" {
 }
 
 resource "scalr_variable" "workspace_shell" {
+  count        = var.create_workspace_shell_variable
   key          = "TF_VAR_test_var"
   value        = "workspace-shell-value"
   category     = "shell"
@@ -50,6 +54,7 @@ resource "scalr_variable" "workspace_shell" {
 }
 
 resource "scalr_variable" "workspace_terraform" {
+  count        = var.create_workspace_terraform_variable
   key          = "test_var"
   value        = "workspace-terraform-value"
   category     = "terraform"
