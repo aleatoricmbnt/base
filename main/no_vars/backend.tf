@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "state_storage_mshytse"
+    bucket  = "blob_tests"
     prefix  = "github/no_vars"
   }
 }
