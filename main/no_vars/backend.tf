@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = "blob_tests"
+    bucket  = "blob-tests"
     prefix  = "github/no_vars"
   }
 }
