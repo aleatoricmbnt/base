@@ -24,6 +24,6 @@ output "file_4mb" {
   value = data.local_file.file_4mb.content
 }
 
-output "5mb" {
+output "file_5mb" {
   value = data.local_file.file_5mb.content
 }
