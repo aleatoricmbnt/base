@@ -3,3 +3,27 @@ resource "terraform_data" "recreate_trigger" {
     timestamp = timestamp()
   }
 }
+
+data "local_file" "file_3mb" {
+  filename = "${path.module}/file_3mb.txt"
+}
+
+data "local_file" "file_4mb" {
+  filename = "${path.module}/file_4mb.txt"
+}
+
+data "local_file" "file_5mb" {
+  filename = "${path.module}/file_5mb.txt"
+}
+
+output "3mb" {
+  value = data.local_file.file_3mb.content
+}
+
+output "4mb" {
+  value = data.local_file.file_4mb.content
+}
+
+output "5mb" {
+  value = data.local_file.file_5mb.content
+}
