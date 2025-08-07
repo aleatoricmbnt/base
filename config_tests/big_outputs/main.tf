@@ -16,11 +16,11 @@ data "local_file" "file_5mb" {
   filename = "${path.module}/file_5mb.txt"
 }
 
-output "3mb" {
+output "file_3mb" {
   value = data.local_file.file_3mb.content
 }
 
-output "4mb" {
+output "file_4mb" {
   value = data.local_file.file_4mb.content
 }
 
