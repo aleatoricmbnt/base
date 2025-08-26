@@ -9,4 +9,10 @@ variable "input" {
 
 variable "replace" {
   
+
+}
+
+variable "copilot" {
+  
+
 }
