@@ -4,9 +4,9 @@ resource "terraform_data" "this" {
 }
 
 variable "input" {
-  
+  default = "123"
 }
 
 variable "replace" {
-  
+  default = "123"
 }
