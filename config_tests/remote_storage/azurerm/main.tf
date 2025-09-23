@@ -46,3 +46,25 @@ resource "terraform_data" "diff_attributes" {
   for_each = var.attributes
   input = each.value
 }
+
+# Output blocks to generate various plan outputs
+output "single_resource_id" {
+  description = "ID of the single terraform_data resource"
+  value       = terraform_data.single.id
+}
+
+output "single_resource_output" {
+  description = "Output value from the single terraform_data resource"
+  value       = terraform_data.single.output
+}
+
+output "input_variable_value" {
+  description = "Value of the input variable"
+  value       = var.input
+  sensitive   = false
+}
+
+output "long_string_attribute" {
+  description = "The longest string attribute for testing output formatting"
+  value       = var.attributes.random_value_random_value_value_test_value_random_function_underscore_function_random_generator_test_python_string_function
+}
