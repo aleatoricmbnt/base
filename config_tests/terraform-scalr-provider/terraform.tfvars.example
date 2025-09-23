@@ -1,0 +1,32 @@
+# Example Terraform variables for Scalr Provider Account ID Deprecation Testing
+# Copy this file to terraform.tfvars and update with your actual values
+
+# Scalr Configuration
+scalr_hostname = "your-account.scalr.io"
+scalr_token    = "your-scalr-api-token-here"
+
+# Testing Configuration
+test_user_email = "test-user@your-domain.com"
+
+# AWS Configuration (for provider configuration testing)
+aws_access_key = "your-aws-access-key"
+aws_secret_key = "your-aws-secret-key"
+
+# VCS Configuration
+vcs_token       = "your-github-token"
+test_repository = "your-org/your-test-repo"
+
+# SSH Key for Testing
+test_ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC... your-ssh-key-here"
+
+# Storage Configuration
+terraform_state_bucket = "your-terraform-state-bucket"
+
+# Webhook Configuration
+webhook_url = "https://your-webhook-endpoint.com/scalr"
+
+# API Endpoint Configuration  
+endpoint_url = "https://your-api-endpoint.com"
+
+# AWS IAM Role for Workload Identity Provider
+aws_role_arn = "arn:aws:iam::123456789012:role/YourScalrRole"
