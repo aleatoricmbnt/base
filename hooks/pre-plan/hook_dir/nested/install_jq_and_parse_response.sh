@@ -13,7 +13,7 @@ if ! command -v jq &> /dev/null; then
     echo "jq not found. Installing..."
     
     if [[ "$(uname -s)" == "Linux" ]]; then
-        sudo apt-get update && sudo apt-get install -y jq
+        apt-get update && apt-get install -y jq
     elif [[ "$(uname -s)" == "Darwin" ]]; then
         brew install jq
     else
@@ -22,6 +22,7 @@ if ! command -v jq &> /dev/null; then
     fi
 fi
 
+apt install -y curl
 
 # Define API URL
 API_URL="https://${SCALR_HOSTNAME}/api/iacp/v3/workspaces/${SCALR_WORKSPACE_ID}"
