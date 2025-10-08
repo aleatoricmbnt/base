@@ -5,5 +5,6 @@ resource "null_resource" "no_vars" {
 }
 
 resource "terraform_data" "new" {
+  count = 2
   input = "static"
 }
