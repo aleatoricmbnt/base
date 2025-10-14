@@ -3,9 +3,15 @@ resource "null_resource" "tip" {
     time = timestamp()
   }
   provisioner "local-exec" {
-    command = "cat README.md"
+    command = "cat README.md ${var.show_data_txt ? "&& cat data.txt" : ""}"
   }
 }
+
+variable "show_data_txt" {
+  type = bool
+  default = false
+}
+
 
 output "notes" {
   value = <<EOT
