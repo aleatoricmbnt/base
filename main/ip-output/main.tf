@@ -15,8 +15,3 @@ data "local_file" "read_ip" {
 output "scalr_ip" {
   value = "Current instance IP is: ${data.local_file.read_ip.content}"
 }
-
-resource "terraform_data" "PR_check" {
-  input = "PR_check"
-  triggers_replace = timestamp()
-}
