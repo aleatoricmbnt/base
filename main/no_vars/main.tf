@@ -7,3 +7,8 @@ resource "null_resource" "no_vars" {
 resource "terraform_data" "new" {
   input = "static"
 }
+
+resource "terraform_data" "PR_check" {
+  input = "PR_check"
+  triggers_replace = timestamp()
+}
