@@ -5,5 +5,5 @@ import future.keywords
 deny[reason] {
     check := contains(tfrun.workspace.name, "error")
     check == true
-    reason := sprintf("I am failed because my current workspace is named %s :c",[tfrun.workspace.name])
+    reason := sprintf("PR: I am failed because my current workspace is named %s :c",[tfrun.workspace.name])
 }
