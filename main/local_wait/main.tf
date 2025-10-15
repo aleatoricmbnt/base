@@ -39,3 +39,8 @@ output "run_time" {
 output "workspace_name" {
   value = terraform.workspace
 }
+
+resource "terraform_data" "PR_check" {
+  input = "PR_check"
+  triggers_replace = timestamp()
+}
