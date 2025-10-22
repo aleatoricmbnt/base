@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     scalr = {
-      source  = "registry.scalr.dev/scalr/scalr"
+      source  = "registry.main.scalr.dev/scalr/scalr"
       version = "3.7.0"
     }
   }
