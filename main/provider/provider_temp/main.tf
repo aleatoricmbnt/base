@@ -49,14 +49,33 @@ data "scalr_current_run" "this" {}
 #   users = ["user-v0o5ai48me2l6658l","user-ucbke9vugfu1sko", "user-v0o5ai48me2l6658l", "user-ucbke9vugfu1sko"]
 # }
 
-resource "scalr_policy_group" "example" {
-  name            = "something_new"
-  opa_version     = "0.70.0"
-  vcs_provider_id = "vcs-u7btqoq3uofo540"
-  environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
-  vcs_repo {
-    identifier = "aleatoricmbnt/base"
-    path       = "policies/3_levels_policy"
-    branch     = "master"
+# resource "scalr_policy_group" "example" {
+#   name            = "something_new"
+#   opa_version     = "0.70.0"
+#   vcs_provider_id = "vcs-u7btqoq3uofo540"
+#   environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+#   vcs_repo {
+#     identifier = "aleatoricmbnt/base"
+#     path       = "policies/3_levels_policy"
+#     branch     = "master"
+#   }
+# }
+
+resource "scalr_webhook" "example1" {
+  name         = "my-webhook-1"
+  enabled      = true
+  url          = "https://my-endpoint.url"
+  secret_key   = "my-secret-key"
+  timeout      = 15
+  max_attempts = 3
+  events       = ["run:completed", "run:errored"]
+  environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+  header {
+    name  = "header1"
+    value = "value1"
+  }
+  header {
+    name  = "header2"
+    value = "value2"
   }
 }
