@@ -2,8 +2,8 @@ terraform {
   required_providers {
     scalr = {
       source  = "registry.main.scalr.dev/scalr/scalr"
-      # version = "1.0.0-rc-SCALRCORE-36057"
-      version = "3.7.0"
+      version = "1.0.0-rc-SCALRCORE-36057"
+      # version = "3.7.0"
     }
   }
 }
@@ -69,7 +69,7 @@ resource "scalr_webhook" "example1" {
   secret_key   = "my-secret-key3427895439fGHSDH_"
   timeout      = 15
   max_attempts = 3
-  events       = ["run:errored", "run:completed", "run:errored"]
+  events       = ["run:errored", "run:completed", "run:errored", "run:completed"]
   environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
   header {
     name  = "header1"
