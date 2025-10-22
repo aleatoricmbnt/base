@@ -42,9 +42,21 @@ data "scalr_current_run" "this" {}
 #   ]
 # }
 
-resource "scalr_iam_team" "dev" {
-  name        = "dev"
-  description = "Developers"
+# resource "scalr_iam_team" "dev" {
+#   name        = "dev"
+#   description = "Developers"
 
-  users = ["user-v0o5ai48me2l6658l","user-ucbke9vugfu1sko", "user-v0o5ai48me2l6658l", "user-ucbke9vugfu1sko"]
+#   users = ["user-v0o5ai48me2l6658l","user-ucbke9vugfu1sko", "user-v0o5ai48me2l6658l", "user-ucbke9vugfu1sko"]
+# }
+
+resource "scalr_policy_group" "example" {
+  name            = "something_new"
+  opa_version     = "0.70.0"
+  vcs_provider_id = "vcs-u7btqoq3uofo540"
+  environments    = ["*"]
+  vcs_repo {
+    identifier = "aleatoricmbnt/base"
+    path       = "policies/3_levels_policy"
+    branch     = "master"
+  }
 }
