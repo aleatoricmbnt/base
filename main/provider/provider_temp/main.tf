@@ -1,40 +1,24 @@
 terraform {
   required_providers {
     scalr = {
-      source  = "scalr/scalr"
+      source  = "registry.scalr.dev/scalr/scalr"
+      version = "3.7.0"
     }
   }
 }
 
-data "scalr_vcs_provider" "vcs_github" {
-  name = "test"
-}
+data "scalr_current_account" "aleatoric" {}
 
-resource "scalr_workspace" "vcs-driven" {
-  name            = "provider_temp_${formatdate("DD-MMM-YYYY_hh-mm", timestamp())}"
-  environment_id  = data.scalr_current_run.run.environment_id
-  vcs_provider_id = data.scalr_vcs_provider.vcs_github.id
+data "scalr_current_run" "this" {}
 
-  working_directory = "main/local_wait"
+resource "scalr_role" "random_list_of_permissions" {
+  name        = "random_list_of_permissions_${formatdate("DDMMYYYY", timestamp())}"
+  description = "Random list of permissions"
 
-  vcs_repo {
-    identifier = "aleatoricmbnt/base"
-    branch     = "master"
-  }
-}
+  account_id  = data.scalr_current_account.aleatoric.id
 
-data "scalr_current_account" "acc" {
-
-}
-
-data "scalr_current_run" "run" {
-
-}
-
-output "acc" {
-  value = yamlencode(data.scalr_current_account.acc)
-}
-
-output "run" {
-  value = yamlencode(data.scalr_current_run.run)
+  permissions = [
+    "environments:*",
+    "*:read"
+  ]
 }
