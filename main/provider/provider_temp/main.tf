@@ -19,7 +19,7 @@ resource "scalr_role" "random_list_of_permissions" {
   account_id  = data.scalr_current_account.aleatoric.id
 
   permissions = [
-    # "*:read",
+    "*:read",
     "environments:*",
     "*:read"
   ]
