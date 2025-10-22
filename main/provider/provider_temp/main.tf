@@ -46,5 +46,5 @@ resource "scalr_iam_team" "dev" {
   name        = "dev"
   description = "Developers"
 
-  users = ["user-ucbke9vugfu1sko", "user-v0o5ai48me2l6658l", "user-ucbke9vugfu1sko"]
+  users = ["user-v0o5ai48me2l6658l","user-ucbke9vugfu1sko", "user-v0o5ai48me2l6658l", "user-ucbke9vugfu1sko"]
 }
