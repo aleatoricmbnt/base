@@ -68,7 +68,7 @@ resource "scalr_webhook" "example1" {
   secret_key   = "my-secret-key3427895439fGHSDH_"
   timeout      = 15
   max_attempts = 3
-  events       = ["run:completed", "run:errored"]
+  events       = ["run:errored", "run:completed", "run:errored"]
   environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
   header {
     name  = "header1"
