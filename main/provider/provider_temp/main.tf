@@ -13,13 +13,13 @@ data "scalr_current_account" "aleatoric" {}
 data "scalr_current_run" "this" {}
 
 resource "scalr_role" "random_list_of_permissions" {
-  name        = "random_list_of_permissions_${formatdate("DDMMYYYY", timestamp())}"
+  name        = "random_list_of_permissions"
   description = "Random list of permissions"
 
   account_id  = data.scalr_current_account.aleatoric.id
 
   permissions = [
-    "*:read",
+    # "*:read",
     "environments:*",
     "*:read"
   ]
