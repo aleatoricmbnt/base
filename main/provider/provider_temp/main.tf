@@ -2,7 +2,7 @@ terraform {
   required_providers {
     scalr = {
       source  = "registry.main.scalr.dev/scalr/scalr"
-      version = "3.7.0"
+      version = "1.0.0-rc-SCALRCORE-36057"
     }
   }
 }
@@ -18,6 +18,7 @@ resource "scalr_role" "random_list_of_permissions" {
   account_id  = data.scalr_current_account.aleatoric.id
 
   permissions = [
+    "*:read",
     "environments:*",
     "*:read"
   ]
