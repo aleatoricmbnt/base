@@ -24,3 +24,19 @@ resource "scalr_role" "random_list_of_permissions" {
     # "*:read"
   ]
 }
+
+resource "scalr_access_policy" "team_read_all_on_acc_scope" {
+  subject {
+    type = "user"
+    id   = "user-v0oqqb8a72cc18s8h"
+  }
+  scope {
+    type = "account"
+    id   = data.scalr_current_account.aleatoric.id
+  }
+
+  role_ids = [
+    scalr_role.random_list_of_permissions.id,
+    "role-v0oaqnip1t4bvkium"
+  ]
+}
