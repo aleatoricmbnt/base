@@ -53,7 +53,7 @@ resource "scalr_policy_group" "example" {
   name            = "something_new"
   opa_version     = "0.70.0"
   vcs_provider_id = "vcs-u7btqoq3uofo540"
-  environments    = ["*", "env-v0ns0m539r05815rg"]
+  environments    = [""]
   vcs_repo {
     identifier = "aleatoricmbnt/base"
     path       = "policies/3_levels_policy"
