@@ -36,7 +36,8 @@ resource "scalr_access_policy" "team_read_all_on_acc_scope" {
   }
 
   role_ids = [
+    "role-v0oaqnip1t4bvkium",
     scalr_role.random_list_of_permissions.id,
-    "role-v0oaqnip1t4bvkium"
+    scalr_role.random_list_of_permissions.id
   ]
 }
