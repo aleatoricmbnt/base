@@ -20,7 +20,7 @@ resource "scalr_role" "random_list_of_permissions" {
 
   permissions = [
     "*:read",
-    "environments:*",
-    "*:read"
+    "environments:*"
+    # "*:read"
   ]
 }
