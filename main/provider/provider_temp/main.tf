@@ -12,9 +12,39 @@ data "scalr_current_account" "aleatoric" {}
 
 data "scalr_current_run" "this" {}
 
+# resource "scalr_role" "random_list_of_permissions" {
+#   name        = "random_list_of_permissions"
+#   description = "Random list of permissions"
+
+#   account_id  = data.scalr_current_account.aleatoric.id
+
+#   permissions = [
+#     "*:read",
+#     "environments:*"
+#     # "*:read"
+#   ]
+# }
+
+# resource "scalr_access_policy" "team_read_all_on_acc_scope" {
+#   subject {
+#     type = "user"
+#     id   = "user-v0oqqb8a72cc18s8h"
+#   }
+#   scope {
+#     type = "account"
+#     id   = data.scalr_current_account.aleatoric.id
+#   }
+
+#   role_ids = [
+#     "role-v0oaqnip1t4bvkium",
+#     scalr_role.random_list_of_permissions.id,
+#     scalr_role.random_list_of_permissions.id
+#   ]
+# }
+
 resource "scalr_iam_team" "dev" {
   name        = "dev"
   description = "Developers"
 
-  users = ["user-ucbke9vugfu1sko", "user-v0o5ai48me2l6658l"]
+  users = ["user-ucbke9vugfu1sko", "user-v0o5ai48me2l6658l", "user-ucbke9vugfu1sko"]
 }
