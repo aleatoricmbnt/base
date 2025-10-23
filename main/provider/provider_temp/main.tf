@@ -79,3 +79,16 @@ resource "scalr_policy_group" "example" {
 #     value = "value2"
 #   }
 # }
+
+resource "scalr_provider_configuration" "kubernetes" {
+  name            = "k8s"
+  environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+  custom {
+    provider_name = "my-provider-name"
+    argument {
+      name        = "host"
+      value       = "my-host"
+      description = "The hostname (in form of URI) of the Kubernetes API."
+    }
+  }
+}
