@@ -62,21 +62,21 @@ resource "scalr_policy_group" "example" {
   }
 }
 
-resource "scalr_webhook" "example1" {
-  name         = "my-webhook-1"
-  enabled      = true
-  url          = "https://my-endpoint.url"
-  secret_key   = "my-secret-key3427895439fGHSDH_"
-  timeout      = 15
-  max_attempts = 3
-  events       = ["run:errored", "run:completed", "run:errored", "run:completed"]
-  environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
-  header {
-    name  = "header1"
-    value = "value1"
-  }
-  header {
-    name  = "header2"
-    value = "value2"
-  }
-}
+# resource "scalr_webhook" "example1" {
+#   name         = "my-webhook-1"
+#   enabled      = true
+#   url          = "https://my-endpoint.url"
+#   secret_key   = "my-secret-key3427895439fGHSDH_"
+#   timeout      = 15
+#   max_attempts = 3
+#   events       = ["run:errored", "run:completed", "run:errored", "run:completed"]
+#   environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+#   header {
+#     name  = "header1"
+#     value = "value1"
+#   }
+#   header {
+#     name  = "header2"
+#     value = "value2"
+#   }
+# }
