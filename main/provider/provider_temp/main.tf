@@ -81,7 +81,7 @@ resource "scalr_policy_group" "example" {
 # }
 
 resource "scalr_provider_configuration" "kubernetes" {
-  name            = "k8s"
+  name            = "my-pcfg-name"
   environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
   custom {
     provider_name = "my-provider-name"
