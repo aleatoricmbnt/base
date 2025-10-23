@@ -2,8 +2,8 @@ terraform {
   required_providers {
     scalr = {
       source  = "registry.main.scalr.dev/scalr/scalr"
-      version = "1.0.0-rc-SCALRCORE-36057"
-      # version = "3.7.0"
+      # version = "1.0.0-rc-SCALRCORE-36057"
+      version = "3.7.0"
     }
   }
 }
@@ -53,8 +53,8 @@ resource "scalr_policy_group" "example" {
   name            = "something_new"
   opa_version     = "0.70.0"
   vcs_provider_id = "vcs-u7btqoq3uofo540"
-  # environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
-  environments    = []
+  environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+  # environments    = []
   vcs_repo {
     identifier = "aleatoricmbnt/base"
     path       = "policies/3_levels_policy"
