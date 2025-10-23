@@ -80,15 +80,7 @@ resource "scalr_policy_group" "example" {
 #   }
 # }
 
-resource "scalr_provider_configuration" "kubernetes" {
-  name            = "my-pcfg-name"
-  # environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
-  custom {
-    provider_name = "my-provider-name"
-    argument {
-      name        = "host"
-      value       = "my-host"
-      description = "The hostname (in form of URI) of the Kubernetes API."
-    }
-  }
+resource "scalr_agent_pool" "default" {
+  name       = "some-pool"
+  environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
 }
