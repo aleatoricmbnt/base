@@ -50,5 +50,5 @@ resource "scalr_agent_pool" "default" {
 }
 
 resource "scalr_account_allowed_ips" "default" {
-  allowed_ips = ["127.0.0.1", "192.168.0.0/24", "77.83.191.29", "35.193.147.59"]
+  allowed_ips = ["127.0.0.1", "192.168.0.0/24", "77.83.191.29", "35.193.147.59", "77.83.191.29"]
 }
