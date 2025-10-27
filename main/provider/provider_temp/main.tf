@@ -48,3 +48,7 @@ resource "scalr_agent_pool" "default" {
   name       = "some-pool"
   environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
 }
+
+resource "scalr_account_allowed_ips" "default" {
+  allowed_ips = ["127.0.0.1", "192.168.0.0/24", "77.83.191.29/32"]
+}
