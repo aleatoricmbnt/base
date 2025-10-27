@@ -48,3 +48,8 @@ resource "scalr_agent_pool" "default" {
   name       = "some-pool"
   environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
 }
+
+resource "scalr_checkov_integration" "default" {
+  name = "some-integration"
+  environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+}
