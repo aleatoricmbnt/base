@@ -33,7 +33,7 @@ resource "scalr_webhook" "example1" {
   timeout      = 15
   max_attempts = 3
   events       = ["run:errored", "run:completed", "run:errored", "run:completed"]
-  environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+  environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
   header {
     name  = "header1"
     value = "value1"
@@ -46,5 +46,5 @@ resource "scalr_webhook" "example1" {
 
 resource "scalr_agent_pool" "default" {
   name       = "some-pool"
-  environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb"]
+  environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
 }
