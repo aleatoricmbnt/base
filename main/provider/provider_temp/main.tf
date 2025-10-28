@@ -68,5 +68,5 @@ resource "scalr_environment" "test" {
 resource "scalr_integration_infracost" "example" {
   name         = "infracost"
   api_key      = "ico-yFfkLVpHrGtTcoO2XRExT9rIbmUhzdaX"
-  environments = ["env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
+  environments = ["env-v0oqnl6qi3ue7c0lg","env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
 }
