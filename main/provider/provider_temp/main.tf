@@ -75,5 +75,5 @@ resource "scalr_provider_configuration" "kubernetes" {
       description = "The hostname (in form of URI) of the Kubernetes API."
     }
   }
-  owners = ["team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
+  owners = ["team-v0ns6n9lp1e87g7ri", "team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
 }
