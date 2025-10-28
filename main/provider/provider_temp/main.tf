@@ -65,15 +65,9 @@ resource "scalr_environment" "test" {
   tag_ids                         = [scalr_tag.example2.id, scalr_tag.example1.id]
 }
 
-resource "scalr_provider_configuration" "kubernetes" {
-  name       = "k8s-325"
-  custom {
-    provider_name = "kubernetes234"
-    argument {
-      name        = "host"
-      value       = "my-host"
-      description = "The hostname (in form of URI) of the Kubernetes API."
-    }
-  }
-  owners = ["team-v0ns6n9lp1e87g7ri", "team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
+resource "scalr_service_account" "example" {
+  name        = "sa-name-sdkfjlsd"
+  description = "Lorem ipsum"
+  status      = "Active"
+  owners = ["team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
 }
