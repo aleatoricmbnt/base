@@ -71,3 +71,12 @@ resource "scalr_service_account" "example" {
   status      = "Active"
   owners = ["team-v0ns6n9lp1e87g7ri","team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
 }
+
+resource "scalr_slack_integration" "test" {
+  name         = "my-channel"
+  events       = ["run_approval_required", "run_success", "run_errored"]
+  run_mode     = "apply"
+  channel_id   = "C04US2BVBLP" 
+  environments = ["env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
+  workspaces   = ["ws-v0p0pv1c5hg0or2hv", "ws-v0ooq3det41vc1oap"]
+}
