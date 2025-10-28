@@ -65,8 +65,8 @@ resource "scalr_environment" "test" {
   tag_ids                         = [scalr_tag.example2.id, scalr_tag.example1.id]
 }
 
-resource "scalr_environment_hook" "test_link" {
-  hook_id        = "hook-v0p13hqh0fehaoob9"
-  environment_id = scalr_environment.test.id
-  events         = ["post-apply", "pre-init"]
+resource "scalr_integration_infracost" "example" {
+  name         = "infracost"
+  api_key      = "ico-yFfkLVpHrGtTcoO2XRExT9rIbmUhzdaX"
+  environments = ["env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
 }
