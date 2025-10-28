@@ -67,6 +67,6 @@ resource "scalr_environment" "test" {
 
 resource "scalr_module_namespace" "example" {
   name      = "example-namespace"
-  environments = ["env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
+  environments = ["env-v0oqnl6qi3ue7c0lg","env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
   owners = ["team-v0ns6n9lp1e87g7ri", "team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
 }
