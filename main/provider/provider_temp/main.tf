@@ -78,5 +78,5 @@ resource "scalr_slack_integration" "test" {
   run_mode     = "apply"
   channel_id   = "C04US2BVBLP" 
   environments = ["env-v0ohtvdn9bjltg2fb"] #"env-v0oqnl6qi3ue7c0lg"
-  workspaces   = ["ws-v0ooq3det41vc1oap"] #,  ws-v0p0pv1c5hg0or2hv"
+  workspaces   = ["ws-v0p0pv1c5hg0or2hv"] #,  ws-v0p0pv1c5hg0or2hv" ws-v0ooq3det41vc1oap
 }
