@@ -65,8 +65,8 @@ resource "scalr_environment" "test" {
   tag_ids                         = [scalr_tag.example2.id, scalr_tag.example1.id]
 }
 
-resource "scalr_integration_infracost" "example" {
-  name         = "infracost"
-  api_key      = "ico-yFfkLVpHrGtTcoO2XRExT9rIbmUhzdaX"
-  environments = ["env-v0oqnl6qi3ue7c0lg","env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
+resource "scalr_module_namespace" "example" {
+  name      = "example-namespace"
+  environments = ["env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
+  owners = ["team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
 }
