@@ -49,7 +49,7 @@ resource "scalr_agent_pool" "default" {
   environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
 }
 
-resource "scalr_checkov_integration" "default" {
-  name = "some-integration"
-  environments = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
+resource "scalr_environment" "test" {
+  name                            = "test-env"
+  default_provider_configurations = ["pcfg-v0o0r9ich8jctspor", "pcfg-v0os3uoof0dnfid2t"]
 }
