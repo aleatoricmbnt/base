@@ -65,3 +65,8 @@ resource "scalr_environment" "test" {
   tag_ids                         = [scalr_tag.example2.id, scalr_tag.example1.id]
 }
 
+resource "scalr_environment_hook" "test_link" {
+  hook_id        = "hook-v0p13hqh0fehaoob9"
+  environment_id = scalr_environment.test.id
+  events         = ["pre-init", "post-apply"]
+}
