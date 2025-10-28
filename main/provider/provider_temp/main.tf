@@ -49,8 +49,19 @@ resource "scalr_agent_pool" "default" {
   environments    = ["env-v0oqnl6qi3ue7c0lg", "env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
 }
 
+resource "scalr_tag" "example1" {
+  name       = "tag-name1"
+}
+
+resource "scalr_tag" "example2" {
+  name       = "tag-name2"
+}
+
+
 resource "scalr_environment" "test" {
   name                            = "test-env"
   default_provider_configurations = ["pcfg-v0ob60mb1khb198qg", "pcfg-v0okd9va67cccbv11"]
   federated_environments          = ["env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
+  tag_ids                         = [scalr_tag.example1.id, scalr_tag.example2.id]
 }
+
