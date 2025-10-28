@@ -51,5 +51,5 @@ resource "scalr_agent_pool" "default" {
 
 resource "scalr_environment" "test" {
   name                            = "test-env"
-  default_provider_configurations = ["pcfg-v0o0r9ich8jctspor", "pcfg-v0os3uoof0dnfid2t", "pcfg-v0o0r9ich8jctspor"]
+  default_provider_configurations = ["pcfg-v0okd9va67cccbv11", "pcfg-v0okd9vafpu0pdgtt"]
 }
