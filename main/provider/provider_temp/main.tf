@@ -69,5 +69,5 @@ resource "scalr_service_account" "example" {
   name        = "sa-name-sdkfjlsd"
   description = "Lorem ipsum"
   status      = "Active"
-  owners = ["team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
+  owners = ["team-v0ns6n9lp1e87g7ri","team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
 }
