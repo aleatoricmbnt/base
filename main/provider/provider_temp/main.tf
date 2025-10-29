@@ -74,6 +74,11 @@ resource "scalr_workspace" "example" {
   environment_id    = data.scalr_current_run.this.environment_id
   remote_state_consumers = ["ws-v0o1oashjvv3t04a3", "ws-v0o2200vvjlj3qna7", "ws-v0o1oashjvv3t04a3"]
   tag_ids = [scalr_tag.example23.id, scalr_tag.example.id, scalr_tag.example23.id]
-  var_files = ["test_source/var-precedence/test2.tfvars", "test_source/var-precedence/test.tfvars", "test_source/var-precedence/test2.tfvars"]
-  # trigger_prefixes = ["test_source/var-precedence/", "test_source/var-precedence2/"]
+  var_files = ["test_source/var-precedence/test.tfvars", "test_source/var-precedence/test2.tfvars"]
+  vcs_repo {
+    identifier = "aleatoricmbnt/base"
+    branch     = "master"
+  }
+  working_directory = "main/local_wait"
+  trigger_prefixes = ["test_source/var-precedence/", "test_source/var-precedence2/"]
 }
