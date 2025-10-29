@@ -3,7 +3,31 @@ terraform {
     random = {
       source = "hashicorp/random"
     }
+    scalr = {
+      source  = "registry.main.scalr.dev/scalr/scalr"
+      version= "1.0.0-rc-master"
+      # version = "3.7.0"
+    }
   }
+}
+
+data "scalr_current_run" "this" {}
+
+resource "scalr_workspace" "system_workspace_env" {
+  for_each = {
+    "SnowflakeIAM.dev" = {
+      name           = "snowflake-iam-dev"
+      environment_id = data.scalr_current_run.this.environment_id
+    }
+    "Dataprodukter.prod" = {
+      name           = "snowflake-iam-prod" 
+      environment_id = data.scalr_current_run.this.environment_id
+    }
+  }
+  
+  name           = each.value.name
+  environment_id = each.value.environment_id
+  # Add other required attributes
 }
 
 # Indexed terraform_data resources
