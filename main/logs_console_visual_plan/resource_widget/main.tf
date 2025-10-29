@@ -22,6 +22,11 @@ resource "terraform_data" "for_each_map" {
   input = each.value
 }
 
+resource "terraform_data" "for_each_map" {
+  for_each = ["meep;meep;meep", "backslash\\backslash\\backslash"]
+  input = each.value
+}
+
 # module "infrastructure" {
 #   source = "./modules/infra"
 # }
