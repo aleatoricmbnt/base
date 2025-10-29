@@ -72,7 +72,7 @@ resource "scalr_tag" "example23" {
 resource "scalr_workspace" "example" {
   name              = "my-workspace-name234"
   environment_id    = data.scalr_current_run.this.environment_id
-  remote_state_consumers = ["ws-v0p0ad5gh361d4n0c", "ws-v0oqnhr4l6j2177kb"]
+  remote_state_consumers = ["ws-v0o2200vvjlj3qna7", "ws-v0o1oashjvv3t04a3"]
   tag_ids = [scalr_tag.example.id, scalr_tag.example23.id]
   var_files = ["test_source/var-precedence/test.tfvars", "test_source/var-precedence/test2.tfvars"]
   # trigger_prefixes = ["test_source/var-precedence/", "test_source/var-precedence2/"]
