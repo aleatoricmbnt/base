@@ -15,9 +15,9 @@ terraform {
 
 resource "terraform_data" "for_each_map" {
   for_each = {
-    "prod"    = "production.env"
-    "dev"     = "development.env"
-    "staging" = "staging.env"
+    "prod.env"    = "production.env"
+    "dev.env"     = "development.env"
+    "staging.env" = "staging.env"
   }
   input = each.value
 }
