@@ -75,5 +75,5 @@ resource "scalr_workspace" "example" {
   remote_state_consumers = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
   tag_ids = [scalr_tag.example.id, scalr_tag.example23.id]
   var_files = ["test_source/var-precedence/test.tfvars", "test_source/var-precedence/test2.tfvars"]
-  trigger_prefixes = ["test_source/var-precedence/", "test_source/var-precedence2/"]
+  # trigger_prefixes = ["test_source/var-precedence/", "test_source/var-precedence2/"]
 }
