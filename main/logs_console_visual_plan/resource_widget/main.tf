@@ -8,10 +8,8 @@ terraform {
   }
 }
 
-data "scalr_current_run" "this" {}
-
 resource "terraform_data" "this" {
-  for_each = toset(["first.second.third", "bang/bang/bang", "meep;meep;meep"])
+  for_each = toset(["first.second.third"])
   input = each.value
 }
 
