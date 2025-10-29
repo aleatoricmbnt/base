@@ -78,7 +78,7 @@ resource "scalr_workspace" "example" {
   vcs_repo {
     identifier = "aleatoricmbnt/base"
     branch     = "master"
-    trigger_prefixes = ["main/local_wait", "stage", "prod"]
+    trigger_prefixes = ["prod", "main/local_wait", "stage", "prod"]
   }
   vcs_provider_id = "vcs-u7btqoq3uofo540"
   working_directory = "main/local_wait"
