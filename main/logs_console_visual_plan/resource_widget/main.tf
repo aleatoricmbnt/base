@@ -10,38 +10,9 @@ terraform {
 
 data "scalr_current_run" "this" {}
 
-resource "scalr_workspace" "system_workspace_env" {
-  for_each = {
-    "first.second.third" = {
-      name           = "snowflake-iam-dev"
-    }
-    "one.two.three" = {
-      name           = "snowflake-iam-prod" 
-    }
-  }
-  
-  name           = each.value.name
-  environment_id = data.scalr_current_run.this.environment_id
-}
-
-resource "scalr_workspace" "system_workspace_env2" {
-  for_each = {
-    "first.second" = {
-      name           = "snowflake-iam-dev1"
-    }
-    "one.two" = {
-      name           = "snowflake-iam-prod2" 
-    }
-  }
-  
-  name           = each.value.name
-  environment_id = data.scalr_current_run.this.environment_id
-}
-
-# Indexed terraform_data resources
-resource "terraform_data" "example" {
-  count = 3
-  input = "data-${count.index}"
+resource "terraform_data" "this" {
+  for_each = toset(["first.second.third", "bang/bang/bang", "meep;meep;meep"])
+  input = each.value
 }
 
 # resource "terraform_data" "keyed" {
