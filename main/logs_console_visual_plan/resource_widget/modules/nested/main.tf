@@ -1,23 +1,12 @@
-variable "parent_name" {
-  description = "Name from parent module"
-  type        = string
-}
-
-variable "env" {
-  description = "Environment"
-  type        = string
-}
-
-# Deeply nested resources
-resource "terraform_data" "nested_data" {
+resource "terraform_data" "nested_for_each_map" {
   for_each = {
     "service.auth"    = "auth-service"
     "service.storage" = "storage-service"
   }
-  input = "${var.parent_name}-${each.value}-${var.env}"
+  input = each.value
 }
 
-resource "random_string" "nested_ids" {
+resource "random_string" "nested_count" {
   count   = 2
   length  = 6
   special = false
