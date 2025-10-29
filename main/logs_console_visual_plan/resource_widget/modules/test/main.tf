@@ -3,5 +3,9 @@
 # }
 
 module "nested" {
+  for_each = {
+    "service.auth"    = "auth-service"
+    "service.storage" = "storage-service"
+  }
   source = "../nested"
 }
