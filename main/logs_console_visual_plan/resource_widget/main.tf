@@ -23,7 +23,7 @@ resource "terraform_data" "for_each_map" {
 }
 
 resource "terraform_data" "for_each_set" {
-  for_each = ["meep;meep;meep", "backslash\\backslash\\backslash", "one.two.three"]
+  for_each = toset(["meep;meep;meep", "backslash\\backslash\\backslash", "one.two.three"])
   input = each.value
 }
 
