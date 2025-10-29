@@ -61,8 +61,19 @@ resource "scalr_tag" "example2" {
   # environments = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
 
 
-resource "scalr_workload_identity_provider" "github" {
-  name              = "github-actions"
-  url               = "https://token3.actions.githubusercontent.com"
-  allowed_audiences = ["my-app","scalr-github-actions", "my-app"]
+resource "scalr_tag" "example" {
+  name       = "tag-name234"
+}
+
+resource "scalr_tag" "example23" {
+  name       = "tag-name34"
+}
+
+resource "scalr_workspace" "example" {
+  name              = "my-workspace-name234"
+  environment_id    = data.scalr_current_run.this.environment_id
+  remote_state_consumers = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
+  tag_ids = [scalr_tag.example.id, scalr_tag.example23.id]
+  var_files = ["test_source/var-precedence/test.tfvars", "test_source/var-precedence/test2.tfvars"]
+  trigger_prefixes = ["test_source/var-precedence/", "test_source/var-precedence2/"]
 }
