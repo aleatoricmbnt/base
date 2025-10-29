@@ -1,8 +1,5 @@
 terraform {
   required_providers {
-    random = {
-      source = "hashicorp/random"
-    }
     scalr = {
       source  = "registry.main.scalr.dev/scalr/scalr"
       version= "1.0.0-rc-master"
@@ -20,6 +17,20 @@ resource "scalr_workspace" "system_workspace_env" {
     }
     "one.two.three" = {
       name           = "snowflake-iam-prod" 
+    }
+  }
+  
+  name           = each.value.name
+  environment_id = data.scalr_current_run.this.environment_id
+}
+
+resource "scalr_workspace" "system_workspace_env" {
+  for_each = {
+    "first.second" = {
+      name           = "snowflake-iam-dev1"
+    }
+    "one.two" = {
+      name           = "snowflake-iam-prod2" 
     }
   }
   
