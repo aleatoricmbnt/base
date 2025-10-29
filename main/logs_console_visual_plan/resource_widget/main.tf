@@ -1,0 +1,94 @@
+terraform {
+  required_providers {
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+}
+
+# Indexed terraform_data resources
+resource "terraform_data" "example" {
+  count = 3
+  input = "data-${count.index}"
+}
+
+resource "terraform_data" "keyed" {
+  for_each = {
+    "prod"    = "production"
+    "dev"     = "development"
+    "staging" = "staging"
+  }
+  input = each.value
+}
+
+# Indexed null resources
+resource "null_resource" "simple" {
+  count = 2
+  
+  provisioner "local-exec" {
+    command = "echo 'Resource ${count.index}'"
+  }
+}
+
+resource "null_resource" "complex" {
+  for_each = {
+    "app.frontend" = "frontend-config"
+    "app.backend"  = "backend-config"
+    "db.primary"   = "primary-db"
+  }
+  
+  provisioner "local-exec" {
+    command = "echo '${each.key}: ${each.value}'"
+  }
+}
+
+# Indexed random resources
+resource "random_string" "ids" {
+  count   = 4
+  length  = 8
+  special = false
+}
+
+resource "random_password" "secrets" {
+  for_each = {
+    "user.admin"     = 16
+    "service.api"    = 32
+    "db.connection"  = 24
+  }
+  length  = each.value
+  special = true
+}
+
+# Module calls with different names and indexes
+module "test_module" {
+  count  = 2
+  source = "./modules/test"
+  
+  name_prefix = "test-${count.index}"
+  environment = count.index == 0 ? "prod" : "dev"
+}
+
+module "app_components" {
+  for_each = {
+    "frontend.web"    = "web-frontend"
+    "backend.api"     = "api-backend"
+    "worker.queue"    = "queue-worker"
+  }
+  source = "./modules/test"
+  
+  name_prefix = each.value
+  environment = "production"
+}
+
+module "infrastructure" {
+  source = "./modules/infra"
+  
+  project_name = "scalr-test"
+}
+
+module "indexed_infra" {
+  count  = 2
+  source = "./modules/infra"
+  
+  project_name = "scalr-indexed-${count.index}"
+}
