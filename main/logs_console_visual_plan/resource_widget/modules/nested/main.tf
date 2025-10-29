@@ -6,8 +6,8 @@ resource "terraform_data" "nested_for_each_map" {
   input = each.value
 }
 
-resource "random_string" "nested_count" {
-  count   = 2
-  length  = 6
-  special = false
-}
+# resource "random_string" "nested_count" {
+#   count   = 2
+#   length  = 6
+#   special = false
+# }
