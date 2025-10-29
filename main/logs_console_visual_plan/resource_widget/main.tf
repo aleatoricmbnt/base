@@ -81,11 +81,11 @@ resource "terraform_data" "this" {
 #   environment = "production"
 # }
 
-# module "infrastructure" {
-#   source = "./modules/infra"
+module "infrastructure" {
+  source = "./modules/infra"
   
-#   project_name = "scalr-test"
-# }
+  project_name = "scalr-test"
+}
 
 # module "indexed_infra" {
 #   count  = 2
