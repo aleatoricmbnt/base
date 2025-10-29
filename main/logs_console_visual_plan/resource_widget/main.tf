@@ -23,19 +23,19 @@ resource "terraform_data" "for_each_map" {
 }
 
 resource "terraform_data" "for_each_set" {
-  for_each = toset(["meep;meep;meep", "backslash\backslash\backslash", "one.two.three"])
+  for_each = toset(["meep;meep;meep", "backslash\\backslash\\backslash", "one.two.three"])
   input = each.value
 }
 
-# module "infrastructure" {
-#   source = "./modules/infra"
-# }
+module "infrastructure" {
+  source = "./modules/infra"
+}
 
 # Call test -> nested with count
-# module "test_module" {
-#   count  = 2
-#   source = "./modules/test"
-# }
+module "test_module" {
+  count  = 2
+  source = "./modules/test"
+}
 
 # Call test -> nested with for_each_map
 module "app_components" {

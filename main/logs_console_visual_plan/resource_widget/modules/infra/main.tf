@@ -6,8 +6,8 @@ resource "null_resource" "setup" {
   }
 }
 
-# resource "random_password" "infra_secrets" {
-#   count   = 3
-#   length  = 16
-#   special = true
-# }
+resource "random_password" "infra_secrets" {
+  count   = 3
+  length  = 16
+  special = true
+}

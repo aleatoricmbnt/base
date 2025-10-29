@@ -1,6 +1,6 @@
-# resource "null_resource" "count_2" {
-#   count = 2
-# }
+resource "null_resource" "count_2" {
+  count = 2
+}
 
 module "nested" {
   for_each = {
