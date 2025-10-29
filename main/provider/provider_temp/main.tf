@@ -65,7 +65,7 @@ resource "scalr_vcs_provider" "example" {
   name       = "example-github"
   vcs_type   = "github"
   token      = var.private_key
-  environments = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
+  environments = ["env-v0oti3rh5fva3mq1r", "env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
 }
 
 variable "private_key" {
