@@ -57,26 +57,11 @@ resource "scalr_tag" "example2" {
   name       = "tag-name2"
 }
 
-
-resource "scalr_environment" "test" {
-  name                            = "test-env"
-  default_provider_configurations = ["pcfg-v0ob60mb1khb198qg", "pcfg-v0okd9va67cccbv11"]
-  federated_environments          = ["env-v0ohtvdn9bjltg2fb", "env-v0oqnl6qi3ue7c0lg"]
-  tag_ids                         = [scalr_tag.example2.id, scalr_tag.example1.id]
-}
-
-resource "scalr_service_account" "example" {
-  name        = "sa-name-sdkfjlsd"
-  description = "Lorem ipsum"
-  status      = "Active"
-  owners = ["team-v0ns6n9lp1e87g7ri","team-v0ns6n9ku96ru35uj", "team-v0ns6n9lp1e87g7ri"]
-}
-
 resource "scalr_slack_integration" "test" {
   name         = "my-channel"
   events       = ["run_approval_required", "run_success", "run_errored"]
   run_mode     = "apply"
   channel_id   = "C04US2BVBLP" 
-  environments = ["env-v0ohtvdn9bjltg2fb"] #"env-v0oqnl6qi3ue7c0lg"
-  workspaces   = ["ws-v0p0pv1c5hg0or2hv"] #,  ws-v0p0pv1c5hg0or2hv" ws-v0ooq3det41vc1oap
+  environments = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
+  workspaces   = ["ws-v0od13bjlfrtccbhj", "ws-v0oticn5036gjun4o"]
 }
