@@ -70,7 +70,7 @@ resource "scalr_tag" "example23" {
 }
 
 resource "scalr_workspace" "example" {
-  name              = "my-workspace-name234"
+  name              = "my-workspace-name2345"
   environment_id    = data.scalr_current_run.this.environment_id
   remote_state_consumers = ["ws-v0o2200vvjlj3qna7", "ws-v0o1oashjvv3t04a3"]
   tag_ids = [scalr_tag.example.id, scalr_tag.example23.id]
