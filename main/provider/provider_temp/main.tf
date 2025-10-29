@@ -59,7 +59,7 @@ resource "scalr_tag" "example2" {
 
 resource "scalr_slack_integration" "test" {
   name         = "my-channel"
-  events       = ["run_approval_required", "run_success", "run_errored"]
+  events       = ["run_success", "run_approval_required", "run_success", "run_errored"]
   run_mode     = "apply"
   channel_id   = "C04US2BVBLP" 
   environments = ["env-v0oti3rh5fva3mq1r", "env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
