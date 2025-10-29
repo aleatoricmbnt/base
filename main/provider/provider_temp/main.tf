@@ -61,16 +61,8 @@ resource "scalr_tag" "example2" {
   # environments = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
 
 
-resource "scalr_vcs_provider" "example" {
-  name       = "example-github"
-  vcs_type   = "github"
-  token      = var.private_key
-  environments = ["env-v0oti3rh5fva3mq1r", 
-    "env-v0od131sj50cpus77", 
-    "env-v0oti3rh5fva3mq1r"]
-}
-
-variable "private_key" {
-  type = string
-  sensitive = true
+resource "scalr_workload_identity_provider" "github" {
+  name              = "github-actions"
+  url               = "https://token.actions.githubusercontent.com"
+  allowed_audiences = ["scalr-github-actions", "my-app"]
 }
