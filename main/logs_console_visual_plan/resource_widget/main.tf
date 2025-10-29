@@ -24,7 +24,7 @@ resource "scalr_workspace" "system_workspace_env" {
   environment_id = data.scalr_current_run.this.environment_id
 }
 
-resource "scalr_workspace" "system_workspace_env" {
+resource "scalr_workspace" "system_workspace_env2" {
   for_each = {
     "first.second" = {
       name           = "snowflake-iam-dev1"
