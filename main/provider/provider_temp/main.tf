@@ -64,5 +64,5 @@ resource "scalr_tag" "example2" {
 resource "scalr_workload_identity_provider" "github" {
   name              = "github-actions"
   url               = "https://token3.actions.githubusercontent.com"
-  allowed_audiences = ["scalr-github-actions", "my-app"]
+  allowed_audiences = ["my-app","scalr-github-actions", "my-app"]
 }
