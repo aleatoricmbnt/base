@@ -61,11 +61,11 @@ resource "scalr_tag" "example2" {
   # environments = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
 
 
-resource "scalr_ssh_key" "example" {
-  name        = "example-ssh-key"
-  private_key = var.private_key
-
-  environments = ["env-v0oti3rh5fva3mq1r","env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
+resource "scalr_vcs_provider" "example" {
+  name       = "example-github"
+  vcs_type   = "github"
+  token      = var.private_key
+  environments = ["env-v0od131sj50cpus77", "env-v0oti3rh5fva3mq1r"]
 }
 
 variable "private_key" {
