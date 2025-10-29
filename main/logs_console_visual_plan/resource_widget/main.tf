@@ -14,22 +14,16 @@ terraform {
 data "scalr_current_run" "this" {}
 
 resource "scalr_workspace" "system_workspace_env" {
-  # for_each = {
-  #   "SnowflakeIAM.dev" = {
-  #     name           = "snowflake-iam-dev"
-  #     environment_id = data.scalr_current_run.this.environment_id
-  #   }
-  #   "Dataprodukter.prod" = {
-  #     name           = "snowflake-iam-prod" 
-  #     environment_id = data.scalr_current_run.this.environment_id
-  #   }
-  # }
+  for_each = {
+    "first.second.third" = {
+      name           = "snowflake-iam-dev"
+    }
+    "one.two.three" = {
+      name           = "snowflake-iam-prod" 
+    }
+  }
   
-  # name           = each.value.name
-  # environment_id = each.value.environment_id
-  for_each = toset(["first.second.third", "one.two.three"])
-  
-  name           = each.value
+  name           = each.value.name
   environment_id = data.scalr_current_run.this.environment_id
 }
 
