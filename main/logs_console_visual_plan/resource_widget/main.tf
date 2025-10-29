@@ -27,10 +27,9 @@ resource "scalr_workspace" "system_workspace_env" {
   
   # name           = each.value.name
   # environment_id = each.value.environment_id
-  count = 2
-  for_each = toset(["SnowflakeIAM.dev", "Dataprodukter.prod"])
+  for_each = toset(["first.second.third", "one.two.three"])
   
-  name           = "snowflake-iam-dev"
+  name           = each.value
   environment_id = data.scalr_current_run.this.environment_id
 }
 
