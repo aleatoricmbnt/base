@@ -80,5 +80,6 @@ resource "scalr_workspace" "example" {
     branch     = "master"
     trigger_prefixes = ["stage", "prod"]
   }
+  vcs_provider_id = "vcs-u7btqoq3uofo540"
   working_directory = "main/local_wait"
 }
