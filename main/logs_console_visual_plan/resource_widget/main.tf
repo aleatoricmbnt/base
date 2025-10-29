@@ -38,11 +38,11 @@ resource "scalr_workspace" "system_workspace_env2" {
   environment_id = data.scalr_current_run.this.environment_id
 }
 
-# # Indexed terraform_data resources
-# resource "terraform_data" "example" {
-#   count = 3
-#   input = "data-${count.index}"
-# }
+# Indexed terraform_data resources
+resource "terraform_data" "example" {
+  count = 3
+  input = "data-${count.index}"
+}
 
 # resource "terraform_data" "keyed" {
 #   for_each = {
