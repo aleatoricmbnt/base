@@ -13,7 +13,7 @@ terraform {
 
 data "scalr_current_run" "this" {}
 
-resource "scalr_workspace" "system_workspace_env" {
+resource "scalr_workspace." "system_workspace_env" {
   for_each = {
     "SnowflakeIAM.dev" = {
       name           = "snowflake-iam-dev"
