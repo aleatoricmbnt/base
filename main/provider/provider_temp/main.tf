@@ -18,8 +18,8 @@ resource "scalr_role" "random_list_of_permissions" {
   account_id  = data.scalr_current_account.aleatoric.id
 
   permissions = [
-    "*:read",
-    "environments:*"
+    "environments:*",
+    "*:read"
   ]
 }
 
@@ -29,12 +29,12 @@ resource "scalr_workspace" "example" {
   vcs_repo {
     identifier = "aleatoricmbnt/base"
     branch     = "master"
-    trigger_prefixes = ["stage", "prod", "main/local_wait"]
+    trigger_prefixes = ["main/local_wait", "stage", "prod"]
   }
   vcs_provider_id = "vcs-u7btqoq3uofo540"
   working_directory = "main/local_wait"
 }
 
 resource "scalr_account_allowed_ips" "default" {
-  allowed_ips = ["127.0.0.1", "192.168.0.0/24", "77.83.191.29", "34.0.0.0/8"]
+  allowed_ips = ["34.0.0.0/8", "127.0.0.1", "192.168.0.0/24", "77.83.191.29"]
 }
