@@ -36,5 +36,5 @@ resource "scalr_workspace" "example" {
 }
 
 resource "scalr_account_allowed_ips" "default" {
-  allowed_ips = ["127.0.0.1", "192.168.0.0/24", "77.83.191.29", "34.56.55.49"]
+  allowed_ips = ["127.0.0.1", "192.168.0.0/24", "77.83.191.29", "34.56.55.49", "34.30.27.131"]
 }
