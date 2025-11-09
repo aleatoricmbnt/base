@@ -10,6 +10,6 @@ terraform {
 data "scalr_current_run" "example" {}
 
 resource "scalr_drift_detection" "example" {
-  environment_id = data.scalr_current_run.example.environment_id
-  check_period   = "weekly" # or weekly
+  environment_id = [data.scalr_current_run.example.environment_id]
+  check_period   = ["weekly"] # or weekly
 }
