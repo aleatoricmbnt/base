@@ -8,6 +8,6 @@ terraform {
 }
 
 resource "scalr_drift_detection" "prod" {
-  # environment_id = "env-123456789"
-  check_period   = "daily" # or weekly
+  environment_id = "env-123456789"
+  # check_period   = "daily" # or weekly
 }
