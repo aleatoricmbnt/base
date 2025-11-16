@@ -12,8 +12,7 @@ resource "terraform_data" "oom_test" {
 }
 
 resource "random_string" "memory_eater" {
-  count   = 1000
-  length  = 100
+  count   = 100000
+  length  = 10000  # 10KB per resource
   special = false
 }
-
