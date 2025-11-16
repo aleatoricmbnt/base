@@ -11,18 +11,9 @@ resource "null_resource" "no_vars" {
 #   }
 # }
 
-data "external" "oom_generator" {
-  program = ["python3", "-c", <<-EOF
-import json
-import sys
-
-# Allocate massive data structure
-data = {}
-for i in range(10000000):
-    data[f'key_{i}'] = 'x' * 1000
-
-# Terraform expects JSON output
-print(json.dumps({'result': 'completed'}))
-EOF
-  ]
+resource "random_string" "memory_eater" {
+  count   = 100000
+  length  = 10000  # 10KB per resource
+  special = false
 }
+
