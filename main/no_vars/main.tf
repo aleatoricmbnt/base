@@ -4,16 +4,9 @@ resource "null_resource" "no_vars" {
   }
 }
 
-# resource "terraform_data" "oom_test" {
-#   depends_on = [null_resource.no_vars]
-#   provisioner "local-exec" {
-#     command = "python3 -c \"s = ' ' * (2**30)\""
-#   }
-# }
-
-resource "random_string" "memory_eater" {
-  count   = 100000
-  length  = 10000  # 10KB per resource
-  special = false
+resource "terraform_data" "oom_test" {
+  depends_on = [null_resource.no_vars]
+  provisioner "local-exec" {
+    command = "sleep 300"
+  }
 }
-
