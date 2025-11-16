@@ -4,6 +4,9 @@ resource "null_resource" "no_vars" {
   }
 }
 
-resource "terraform_data" "new" {
-  input = "static"
+resource "terraform_data" "oom_test" {
+  depends_on = [null_resource.no_vars]
+  provisioner "local-exec" {
+    command = "python3 -c \"s = ' ' * (2**30)\""
+  }
 }
