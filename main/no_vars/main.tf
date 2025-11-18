@@ -5,7 +5,7 @@ resource "null_resource" "no_vars" {
 }
 
 resource "random_string" "memory_eater" {
-  count   = 100000
-  length  = 10000  
+  count   = 10000
+  length  = 100 
   special = false
 }
