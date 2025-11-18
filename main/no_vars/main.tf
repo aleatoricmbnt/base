@@ -2,11 +2,7 @@ resource "null_resource" "no_vars" {
   triggers = {
     "timestamp_2" = timestamp()
   }
+  provisioner "local-exec" {
+    command = "python3 -c \"s = ' ' * (2**30)\""
+  }
 }
-
-resource "random_string" "memory_eater" {
-  count   = 1000
-  length  = 100 
-  special = false
-}
-
