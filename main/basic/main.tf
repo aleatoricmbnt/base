@@ -1,5 +1,9 @@
 variable "resource_count" {
-  default = 5000
+  default = 1
+}
+
+variable "input" {
+  default = "default_value"
 }
 
 resource "terraform_data" "test" {
@@ -25,4 +29,10 @@ output "resource_summary" {
       for r in resource.terraform_data.test : r.input
     ], 0, 10)
   }
+
+}
+
+resource "terraform_data" "test" {
+  input = var.input
+  triggers_replace = timestamp()
 }
