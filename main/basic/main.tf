@@ -22,18 +22,9 @@ resource "terraform_data" "test" {
   ]
 }
 
-output "resource_summary" {
-  value = {
-    total_resources = length(resource.terraform_data.test)
-    sample_outputs = slice([
-      for r in resource.terraform_data.test : r.input
-    ], 0, 10)
-  }
-
-}
-
 resource "terraform_data" "test2" {
   input = var.input
   triggers_replace = timestamp()
 }
+
 
