@@ -726,6 +726,58 @@ resource "terraform_data" "chunk_one" {
         ]
       }
     }
+    # New section added for enhanced functionality
+    edge_computing = {
+      cdn_configuration = {
+        provider = "AWS CloudFront"
+        distribution_id = "E1ABCDEFGHIJKL${count.index}"
+        origins = [
+          {
+            domain_name = "api-${count.index}.example.com"
+            origin_path = "/v1"
+            custom_headers = {
+              "X-Forwarded-Proto" = "https"
+              "X-Custom-Header" = "edge-cache-${count.index}"
+            }
+          }
+        ]
+        cache_behaviors = [
+          {
+            path_pattern = "/api/*"
+            target_origin_id = "api-origin-${count.index}"
+            viewer_protocol_policy = "redirect-to-https"
+            cache_policy = {
+              ttl_min = 0
+              ttl_default = 86400
+              ttl_max = 31536000
+            }
+          }
+        ]
+      }
+      edge_functions = [
+        {
+          name = "request-router-${count.index}"
+          runtime = "nodejs18.x"
+          code_location = "s3://edge-functions-${count.index}/request-router.zip"
+          triggers = ["viewer-request", "origin-request"]
+          environment_variables = {
+            LOG_LEVEL = "INFO"
+            REGION = "us-east-1"
+            CACHE_STRATEGY = "aggressive"
+          }
+        },
+        {
+          name = "security-headers-${count.index}"
+          runtime = "python3.9"
+          code_location = "s3://edge-functions-${count.index}/security-headers.zip"
+          triggers = ["viewer-response"]
+          environment_variables = {
+            HSTS_MAX_AGE = "31536000"
+            CSP_POLICY = "default-src 'self'"
+          }
+        }
+      ]
+    }
   }
 }
 
@@ -747,23 +799,23 @@ resource "terraform_data" "chunk_two" {
           name = "user-management-service-${count.index}"
           version = "v1.5.${count.index}"
           deployment = {
-            replicas = 3
+            replicas = 5
             strategy = "RollingUpdate"
             resources = {
               requests = {
-                cpu = "100m"
-                memory = "128Mi"
+                cpu = "250m"
+                memory = "256Mi"
               }
               limits = {
-                cpu = "500m"
-                memory = "512Mi"
+                cpu = "750m"
+                memory = "1Gi"
               }
             }
           }
           configuration = {
             database = {
               host = "user-db-${count.index}.internal"
-              port = 5432
+              port = 5433
               name = "users"
               ssl_mode = "require"
             }
@@ -771,7 +823,7 @@ resource "terraform_data" "chunk_two" {
               type = "Redis"
               host = "redis-cluster-${count.index}.internal"
               port = 6379
-              ttl = 3600
+              ttl = 7200
             }
           }
         }
@@ -780,7 +832,7 @@ resource "terraform_data" "chunk_two" {
           version = "v2.3.${count.index}"
           deployment = {
             replicas = 5
-            strategy = "BlueGreen"
+            strategy = "Canary"
             resources = {
               requests = {
                 cpu = "200m"
@@ -817,8 +869,8 @@ resource "terraform_data" "chunk_two" {
             method = "GET"
             backend_service = "user-management-service-${count.index}"
             rate_limit = {
-              requests_per_minute = 1000
-              burst_limit = 100
+              requests_per_minute = 1500
+              burst_limit = 150
             }
           },
           {
@@ -1085,6 +1137,91 @@ resource "terraform_data" "chunk_three" {
         }
       }
     }
+    # New section for advanced security and governance
+    zero_trust_architecture = {
+      identity_verification = {
+        multi_factor_authentication = {
+          enabled = true
+          methods = ["TOTP", "SMS", "Hardware Token"]
+          backup_codes = {
+            enabled = true
+            count = 10
+            expiry_days = 90
+          }
+        }
+        device_trust = {
+          certificate_based = true
+          device_registration_required = true
+          compliance_checks = [
+            {
+              check_name = "os_version_compliance"
+              minimum_versions = {
+                windows = "10.0.19041"
+                macos = "12.0"
+                linux = "ubuntu-20.04"
+              }
+            },
+            {
+              check_name = "antivirus_status"
+              required = true
+              approved_vendors = ["CrowdStrike", "Microsoft Defender", "Symantec"]
+            }
+          ]
+        }
+      }
+      network_segmentation = {
+        micro_segmentation = {
+          enabled = true
+          policy_engine = "Cisco Tetration"
+          default_policy = "deny-all"
+          application_policies = [
+            {
+              name = "web-tier-${count.index}"
+              source_groups = ["web-servers"]
+              destination_groups = ["app-servers"]
+              allowed_ports = [80, 443]
+              protocol = "TCP"
+            },
+            {
+              name = "database-access-${count.index}"
+              source_groups = ["app-servers"]
+              destination_groups = ["database-servers"]
+              allowed_ports = [5432, 3306]
+              protocol = "TCP"
+              time_restrictions = {
+                business_hours_only = true
+                timezone = "UTC"
+              }
+            }
+          ]
+        }
+        network_access_control = {
+          nac_solution = "Cisco ISE"
+          posture_assessment = true
+          guest_network = {
+            enabled = true
+            isolation = "complete"
+            bandwidth_limit_mbps = 10
+            session_timeout_hours = 4
+          }
+        }
+      }
+      privileged_access_management = {
+        pam_solution = "CyberArk"
+        session_recording = true
+        just_in_time_access = {
+          enabled = true
+          approval_workflow = true
+          maximum_session_duration_hours = 8
+          automatic_revocation = true
+        }
+        credential_rotation = {
+          enabled = true
+          rotation_frequency_days = 30
+          emergency_rotation_capability = true
+        }
+      }
+    }
   }
 }
 
@@ -1110,12 +1247,12 @@ resource "terraform_data" "chunk_four" {
               name = "customer-churn-prediction"
               version = "v1.3.${count.index}"
               algorithm = "Random Forest"
-              accuracy = 0.94
+              accuracy = 0.96
               training_data = {
                 source = "s3://ml-data-${count.index}/customer-features/"
-                size_gb = 15.7
-                features = 47
-                samples = 125000
+                size_gb = 22.3
+                features = 63
+                samples = 180000
               }
               deployment = {
                 endpoint = "https://ml-api-${count.index}.internal/predict/churn"
@@ -1131,11 +1268,11 @@ resource "terraform_data" "chunk_four" {
               name = "product-recommendation-engine"
               version = "v2.1.${count.index}"
               algorithm = "Collaborative Filtering"
-              precision_at_10 = 0.87
+              precision_at_10 = 0.91
               training_data = {
                 source = "s3://ml-data-${count.index}/user-interactions/"
-                size_gb = 42.3
-                interactions = 5000000
+                size_gb = 58.7
+                interactions = 7500000
                 users = 250000
                 items = 50000
               }
@@ -1173,8 +1310,8 @@ resource "terraform_data" "chunk_four" {
       real_time_analytics = {
         stream_processing = {
           framework = "Apache Flink"
-          cluster_size = 6
-          parallelism = 24
+          cluster_size = 8
+          parallelism = 32
           jobs = [
             {
               name = "real-time-personalization-${count.index}"
@@ -1194,7 +1331,7 @@ resource "terraform_data" "chunk_four" {
               ml_model = {
                 name = "fraud-detection-model"
                 version = "v1.2.${count.index}"
-                threshold = 0.85
+                threshold = 0.92
               }
             }
           ]
