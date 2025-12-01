@@ -492,3 +492,896 @@ variable "question" {
   description = "What variable to use as a trigger for the null_resource.long_triggers_replacement? Options: initial, replacement."
   default     = "initial"
 }
+
+# ----------------------------------------------------------------------------------------- #
+# 150 Random String Resources
+# ----------------------------------------------------------------------------------------- #
+
+resource "random_string" "bulk_strings" {
+  count   = 150
+  length  = 32
+  special = true
+  upper   = true
+  lower   = true
+  numeric = true
+}
+
+# ----------------------------------------------------------------------------------------- #
+# Terraform Data Resources - Chunk 1 (200 resources)
+# ----------------------------------------------------------------------------------------- #
+
+resource "terraform_data" "chunk_one" {
+  count = 200
+  input = {
+    metadata = {
+      chunk_info = {
+        chunk_number = 1
+        total_chunks = 4
+        resource_count = 200
+        description = "First chunk of terraform_data resources"
+      }
+      configuration = {
+        environment = {
+          name = "production-${count.index}"
+          region = "us-west-2"
+          availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+        }
+        application = {
+          name = "web-application-${count.index}"
+          version = "v2.1.${count.index}"
+          components = {
+            frontend = {
+              technology = "React"
+              version = "18.2.0"
+              build_config = {
+                optimization = true
+                minification = true
+                source_maps = false
+              }
+            }
+            backend = {
+              technology = "Node.js"
+              version = "18.17.0"
+              framework = "Express"
+              database = {
+                type = "PostgreSQL"
+                version = "15.3"
+                connection_pool = {
+                  min_connections = 5
+                  max_connections = 100
+                  idle_timeout = 30000
+                }
+              }
+            }
+          }
+        }
+      }
+      security = {
+        encryption = {
+          at_rest = true
+          in_transit = true
+          key_management = {
+            provider = "AWS KMS"
+            rotation_enabled = true
+            rotation_period = "90d"
+          }
+        }
+        access_control = {
+          authentication = {
+            method = "OAuth2"
+            provider = "Auth0"
+            multi_factor = true
+          }
+          authorization = {
+            rbac_enabled = true
+            policies = [
+              {
+                name = "admin-policy-${count.index}"
+                permissions = ["read", "write", "delete", "admin"]
+                resources = ["*"]
+              },
+              {
+                name = "user-policy-${count.index}"
+                permissions = ["read", "write"]
+                resources = ["user-data", "application-data"]
+              }
+            ]
+          }
+        }
+      }
+    }
+    infrastructure = {
+      compute = {
+        instances = {
+          web_servers = {
+            count = 3
+            instance_type = "t3.medium"
+            ami = "ami-0c02fb55956c7d316"
+            storage = {
+              root_volume = {
+                size = 20
+                type = "gp3"
+                encrypted = true
+              }
+              data_volumes = [
+                {
+                  size = 100
+                  type = "gp3"
+                  mount_point = "/data"
+                  encrypted = true
+                }
+              ]
+            }
+          }
+          database_servers = {
+            count = 2
+            instance_type = "r5.large"
+            ami = "ami-0c02fb55956c7d316"
+            storage = {
+              root_volume = {
+                size = 50
+                type = "gp3"
+                encrypted = true
+              }
+              data_volumes = [
+                {
+                  size = 500
+                  type = "io2"
+                  iops = 3000
+                  mount_point = "/var/lib/postgresql"
+                  encrypted = true
+                }
+              ]
+            }
+          }
+        }
+      }
+      networking = {
+        vpc = {
+          cidr_block = "10.0.0.0/16"
+          enable_dns_hostnames = true
+          enable_dns_support = true
+          subnets = {
+            public = [
+              {
+                cidr_block = "10.0.1.0/24"
+                availability_zone = "us-west-2a"
+                map_public_ip = true
+              },
+              {
+                cidr_block = "10.0.2.0/24"
+                availability_zone = "us-west-2b"
+                map_public_ip = true
+              }
+            ]
+            private = [
+              {
+                cidr_block = "10.0.10.0/24"
+                availability_zone = "us-west-2a"
+                map_public_ip = false
+              },
+              {
+                cidr_block = "10.0.20.0/24"
+                availability_zone = "us-west-2b"
+                map_public_ip = false
+              }
+            ]
+          }
+        }
+        load_balancer = {
+          type = "application"
+          scheme = "internet-facing"
+          listeners = [
+            {
+              port = 80
+              protocol = "HTTP"
+              redirect_to_https = true
+            },
+            {
+              port = 443
+              protocol = "HTTPS"
+              ssl_certificate_arn = "arn:aws:acm:us-west-2:123456789012:certificate/12345678-1234-1234-1234-123456789012"
+            }
+          ]
+        }
+      }
+    }
+    monitoring = {
+      logging = {
+        centralized = true
+        retention_days = 30
+        log_groups = [
+          {
+            name = "/aws/lambda/application-${count.index}"
+            retention_in_days = 14
+          },
+          {
+            name = "/aws/apigateway/access-logs-${count.index}"
+            retention_in_days = 7
+          }
+        ]
+      }
+      metrics = {
+        cloudwatch = {
+          enabled = true
+          custom_metrics = [
+            {
+              name = "application.response_time"
+              unit = "Milliseconds"
+              dimensions = {
+                Environment = "production"
+                Service = "web-app-${count.index}"
+              }
+            }
+          ]
+        }
+        alerts = [
+          {
+            name = "high-cpu-utilization-${count.index}"
+            metric = "CPUUtilization"
+            threshold = 80
+            comparison = "GreaterThanThreshold"
+            evaluation_periods = 2
+          }
+        ]
+      }
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------------------- #
+# Terraform Data Resources - Chunk 2 (100 resources)
+# ----------------------------------------------------------------------------------------- #
+
+resource "terraform_data" "chunk_two" {
+  count = 100
+  input = {
+    service_configuration = {
+      chunk_metadata = {
+        chunk_number = 2
+        total_resources = 100
+        purpose = "Microservices architecture configuration"
+      }
+      microservices = {
+        user_service = {
+          name = "user-management-service-${count.index}"
+          version = "v1.5.${count.index}"
+          deployment = {
+            replicas = 3
+            strategy = "RollingUpdate"
+            resources = {
+              requests = {
+                cpu = "100m"
+                memory = "128Mi"
+              }
+              limits = {
+                cpu = "500m"
+                memory = "512Mi"
+              }
+            }
+          }
+          configuration = {
+            database = {
+              host = "user-db-${count.index}.internal"
+              port = 5432
+              name = "users"
+              ssl_mode = "require"
+            }
+            cache = {
+              type = "Redis"
+              host = "redis-cluster-${count.index}.internal"
+              port = 6379
+              ttl = 3600
+            }
+          }
+        }
+        order_service = {
+          name = "order-processing-service-${count.index}"
+          version = "v2.3.${count.index}"
+          deployment = {
+            replicas = 5
+            strategy = "BlueGreen"
+            resources = {
+              requests = {
+                cpu = "200m"
+                memory = "256Mi"
+              }
+              limits = {
+                cpu = "1000m"
+                memory = "1Gi"
+              }
+            }
+          }
+          configuration = {
+            message_queue = {
+              type = "RabbitMQ"
+              host = "rabbitmq-cluster-${count.index}.internal"
+              port = 5672
+              virtual_host = "/orders"
+              exchange = "order.events"
+            }
+            payment_gateway = {
+              provider = "Stripe"
+              webhook_endpoint = "https://api.example.com/webhooks/stripe-${count.index}"
+              timeout = 30
+            }
+          }
+        }
+      }
+      api_gateway = {
+        name = "main-api-gateway-${count.index}"
+        version = "v1.0.0"
+        endpoints = [
+          {
+            path = "/api/v1/users"
+            method = "GET"
+            backend_service = "user-management-service-${count.index}"
+            rate_limit = {
+              requests_per_minute = 1000
+              burst_limit = 100
+            }
+          },
+          {
+            path = "/api/v1/orders"
+            method = "POST"
+            backend_service = "order-processing-service-${count.index}"
+            rate_limit = {
+              requests_per_minute = 500
+              burst_limit = 50
+            }
+          }
+        ]
+        middleware = {
+          authentication = {
+            enabled = true
+            jwt_secret = "super-secret-key-${count.index}"
+            token_expiry = "24h"
+          }
+          cors = {
+            enabled = true
+            allowed_origins = ["https://app.example.com", "https://admin.example.com"]
+            allowed_methods = ["GET", "POST", "PUT", "DELETE"]
+          }
+        }
+      }
+    }
+    data_pipeline = {
+      etl_jobs = [
+        {
+          name = "user-analytics-etl-${count.index}"
+          schedule = "0 2 * * *"
+          source = {
+            type = "PostgreSQL"
+            connection_string = "postgresql://user:pass@db-${count.index}.internal:5432/analytics"
+          }
+          transformations = [
+            {
+              type = "aggregate"
+              operation = "sum"
+              group_by = ["user_id", "date"]
+              fields = ["page_views", "session_duration"]
+            },
+            {
+              type = "filter"
+              condition = "page_views > 0"
+            }
+          ]
+          destination = {
+            type = "S3"
+            bucket = "analytics-data-lake-${count.index}"
+            prefix = "user-metrics/"
+            format = "parquet"
+          }
+        }
+      ]
+      streaming = {
+        kafka_cluster = {
+          name = "events-cluster-${count.index}"
+          brokers = 3
+          replication_factor = 2
+          topics = [
+            {
+              name = "user.events"
+              partitions = 12
+              retention_ms = 604800000
+            },
+            {
+              name = "order.events"
+              partitions = 24
+              retention_ms = 2592000000
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------------------- #
+# Terraform Data Resources - Chunk 3 (500 resources)
+# ----------------------------------------------------------------------------------------- #
+
+resource "terraform_data" "chunk_three" {
+  count = 500
+  input = {
+    enterprise_configuration = {
+      chunk_info = {
+        chunk_number = 3
+        resource_count = 500
+        category = "Enterprise infrastructure and compliance"
+      }
+      compliance_framework = {
+        standards = {
+          iso_27001 = {
+            enabled = true
+            certification_date = "2023-06-15"
+            next_audit = "2024-06-15"
+            controls = [
+              {
+                id = "A.8.1.1"
+                name = "Inventory of assets"
+                status = "implemented"
+                evidence_location = "s3://compliance-evidence-${count.index}/iso27001/"
+              },
+              {
+                id = "A.9.1.1"
+                name = "Access control policy"
+                status = "implemented"
+                evidence_location = "s3://compliance-evidence-${count.index}/access-control/"
+              }
+            ]
+          }
+          soc2_type2 = {
+            enabled = true
+            report_date = "2023-12-31"
+            auditor = "Big Four Auditing Firm"
+            trust_services_criteria = [
+              {
+                category = "Security"
+                status = "passed"
+                findings = 0
+              },
+              {
+                category = "Availability"
+                status = "passed"
+                findings = 1
+              }
+            ]
+          }
+        }
+        data_governance = {
+          classification = {
+            levels = ["public", "internal", "confidential", "restricted"]
+            default_level = "internal"
+            retention_policies = {
+              public = "7 years"
+              internal = "5 years"
+              confidential = "10 years"
+              restricted = "25 years"
+            }
+          }
+          privacy = {
+            gdpr_compliance = true
+            ccpa_compliance = true
+            data_subject_rights = [
+              "right_to_access",
+              "right_to_rectification",
+              "right_to_erasure",
+              "right_to_portability"
+            ]
+          }
+        }
+      }
+      disaster_recovery = {
+        strategy = "multi-region-active-passive"
+        rto_minutes = 60
+        rpo_minutes = 15
+        regions = {
+          primary = {
+            name = "us-east-1"
+            availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
+            backup_schedule = "continuous"
+          }
+          secondary = {
+            name = "us-west-2"
+            availability_zones = ["us-west-2a", "us-west-2b"]
+            sync_method = "cross-region-replication"
+          }
+        }
+        testing = {
+          frequency = "quarterly"
+          last_test_date = "2023-09-15"
+          next_test_date = "2023-12-15"
+          success_criteria = {
+            failover_time_minutes = 45
+            data_loss_tolerance_minutes = 10
+          }
+        }
+      }
+      enterprise_integrations = {
+        identity_providers = [
+          {
+            name = "Active Directory"
+            type = "LDAP"
+            server = "ldap://ad-${count.index}.corp.internal"
+            base_dn = "DC=corp,DC=internal"
+            user_search_filter = "(sAMAccountName={username})"
+          },
+          {
+            name = "Okta"
+            type = "SAML"
+            entity_id = "https://okta-${count.index}.corp.com"
+            sso_url = "https://okta-${count.index}.corp.com/app/saml/sso"
+          }
+        ]
+        erp_systems = [
+          {
+            name = "SAP ERP"
+            version = "S/4HANA 2022"
+            modules = ["FI", "CO", "MM", "SD", "HR"]
+            integration_method = "REST API"
+            endpoint = "https://sap-${count.index}.corp.internal/api/v1"
+          }
+        ]
+        business_intelligence = {
+          platform = "Tableau Server"
+          version = "2023.2"
+          data_sources = [
+            {
+              name = "Sales Data Warehouse"
+              type = "PostgreSQL"
+              connection = "postgresql://bi-user@dwh-${count.index}.internal:5432/sales"
+            },
+            {
+              name = "Customer Analytics"
+              type = "Snowflake"
+              connection = "snowflake://analytics-${count.index}.snowflakecomputing.com/ANALYTICS_DB"
+            }
+          ]
+        }
+      }
+      performance_optimization = {
+        caching_strategy = {
+          levels = [
+            {
+              name = "CDN"
+              provider = "CloudFlare"
+              ttl_seconds = 86400
+              cache_rules = [
+                {
+                  pattern = "*.css"
+                  ttl = 604800
+                },
+                {
+                  pattern = "*.js"
+                  ttl = 604800
+                }
+              ]
+            },
+            {
+              name = "Application Cache"
+              provider = "Redis Cluster"
+              ttl_seconds = 3600
+              eviction_policy = "allkeys-lru"
+            }
+          ]
+        }
+        database_optimization = {
+          read_replicas = {
+            count = 3
+            instance_class = "db.r5.2xlarge"
+            cross_az = true
+          }
+          connection_pooling = {
+            enabled = true
+            max_connections = 200
+            pool_size = 20
+          }
+          query_optimization = {
+            slow_query_log = true
+            explain_analyze = true
+            index_recommendations = true
+          }
+        }
+      }
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------------------- #
+# Terraform Data Resources - Chunk 4 (50 resources)
+# ----------------------------------------------------------------------------------------- #
+
+resource "terraform_data" "chunk_four" {
+  count = 50
+  input = {
+    advanced_analytics = {
+      chunk_metadata = {
+        chunk_number = 4
+        resource_count = 50
+        specialization = "Machine learning and advanced analytics"
+      }
+      machine_learning = {
+        model_registry = {
+          name = "ml-model-registry-${count.index}"
+          version = "v2.1.0"
+          models = [
+            {
+              name = "customer-churn-prediction"
+              version = "v1.3.${count.index}"
+              algorithm = "Random Forest"
+              accuracy = 0.94
+              training_data = {
+                source = "s3://ml-data-${count.index}/customer-features/"
+                size_gb = 15.7
+                features = 47
+                samples = 125000
+              }
+              deployment = {
+                endpoint = "https://ml-api-${count.index}.internal/predict/churn"
+                instance_type = "ml.m5.large"
+                auto_scaling = {
+                  min_instances = 1
+                  max_instances = 10
+                  target_invocations_per_instance = 1000
+                }
+              }
+            },
+            {
+              name = "product-recommendation-engine"
+              version = "v2.1.${count.index}"
+              algorithm = "Collaborative Filtering"
+              precision_at_10 = 0.87
+              training_data = {
+                source = "s3://ml-data-${count.index}/user-interactions/"
+                size_gb = 42.3
+                interactions = 5000000
+                users = 250000
+                items = 50000
+              }
+              deployment = {
+                endpoint = "https://ml-api-${count.index}.internal/recommend"
+                instance_type = "ml.c5.2xlarge"
+                batch_transform = {
+                  enabled = true
+                  schedule = "0 3 * * *"
+                  output_location = "s3://recommendations-${count.index}/"
+                }
+              }
+            }
+          ]
+        }
+        feature_store = {
+          name = "central-feature-store-${count.index}"
+          storage_backend = "Apache Iceberg"
+          feature_groups = [
+            {
+              name = "user-demographics"
+              features = ["age", "gender", "location", "income_bracket", "education_level"]
+              update_frequency = "daily"
+              data_source = "postgresql://analytics-${count.index}.internal/user_profiles"
+            },
+            {
+              name = "user-behavior"
+              features = ["page_views_7d", "purchases_30d", "avg_session_duration", "bounce_rate"]
+              update_frequency = "hourly"
+              data_source = "kafka://events-${count.index}.internal/user-events"
+            }
+          ]
+        }
+      }
+      real_time_analytics = {
+        stream_processing = {
+          framework = "Apache Flink"
+          cluster_size = 6
+          parallelism = 24
+          jobs = [
+            {
+              name = "real-time-personalization-${count.index}"
+              input_topics = ["user.clicks", "user.purchases", "product.views"]
+              output_topic = "personalization.recommendations"
+              windowing = {
+                type = "sliding"
+                size_minutes = 15
+                slide_minutes = 5
+              }
+              state_backend = "RocksDB"
+            },
+            {
+              name = "fraud-detection-${count.index}"
+              input_topics = ["payment.transactions", "user.sessions"]
+              output_topic = "fraud.alerts"
+              ml_model = {
+                name = "fraud-detection-model"
+                version = "v1.2.${count.index}"
+                threshold = 0.85
+              }
+            }
+          ]
+        }
+        time_series_database = {
+          engine = "InfluxDB"
+          version = "2.7"
+          retention_policies = [
+            {
+              name = "high_frequency"
+              duration = "7d"
+              shard_duration = "1h"
+              replication_factor = 2
+            },
+            {
+              name = "medium_frequency"
+              duration = "90d"
+              shard_duration = "1d"
+              replication_factor = 1
+            }
+          ]
+          continuous_queries = [
+            {
+              name = "downsample_metrics"
+              query = "SELECT mean(*) INTO \"medium_frequency\".\"downsampled_metrics\" FROM \"high_frequency\".\"raw_metrics\" GROUP BY time(5m), *"
+              run_interval = "5m"
+            }
+          ]
+        }
+      }
+      data_science_platform = {
+        jupyter_hub = {
+          version = "3.1.1"
+          user_environments = [
+            {
+              name = "python-data-science"
+              image = "jupyter/datascience-notebook:python-3.11"
+              resources = {
+                cpu = "2"
+                memory = "8Gi"
+                storage = "50Gi"
+              }
+              packages = ["pandas", "numpy", "scikit-learn", "matplotlib", "seaborn"]
+            },
+            {
+              name = "r-statistics"
+              image = "jupyter/r-notebook:r-4.3"
+              resources = {
+                cpu = "4"
+                memory = "16Gi"
+                storage = "100Gi"
+              }
+              packages = ["tidyverse", "caret", "randomForest", "ggplot2"]
+            }
+          ]
+        }
+        experiment_tracking = {
+          platform = "MLflow"
+          version = "2.7.1"
+          backend_store = "postgresql://mlflow-${count.index}.internal/mlflow"
+          artifact_store = "s3://mlflow-artifacts-${count.index}/"
+          experiments = [
+            {
+              name = "customer-segmentation-${count.index}"
+              tags = {
+                team = "data-science"
+                project = "customer-analytics"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+
+# ----------------------------------------------------------------------------------------- #
+# Terraform Data Resources with Random String Integration (150 resources)
+# ----------------------------------------------------------------------------------------- #
+
+resource "terraform_data" "with_random_strings" {
+  count = 150
+  input = {
+    generated_content = {
+      random_identifier = random_string.bulk_strings[count.index].result
+      metadata = {
+        resource_index = count.index
+        generation_timestamp = timestamp()
+        configuration_hash = random_string.bulk_strings[count.index].id
+      }
+      nested_structure = {
+        level_one = {
+          random_key = random_string.bulk_strings[count.index].result
+          static_data = {
+            application_name = "dynamic-app-${count.index}"
+            environment = count.index < 50 ? "development" : count.index < 100 ? "staging" : "production"
+            region = count.index % 3 == 0 ? "us-east-1" : count.index % 3 == 1 ? "us-west-2" : "eu-west-1"
+          }
+          level_two = {
+            security_token = random_string.bulk_strings[count.index].result
+            encryption_settings = {
+              algorithm = "AES-256-GCM"
+              key_rotation = true
+              rotation_period_days = 90
+              level_three = {
+                access_patterns = {
+                  read_operations = {
+                    cache_enabled = true
+                    cache_ttl_seconds = 300
+                    random_cache_key = random_string.bulk_strings[count.index].result
+                  }
+                  write_operations = {
+                    batch_size = 100
+                    flush_interval_ms = 1000
+                    random_batch_id = random_string.bulk_strings[count.index].result
+                    level_four = {
+                      audit_trail = {
+                        enabled = true
+                        retention_days = 365
+                        compression = "gzip"
+                        random_audit_id = random_string.bulk_strings[count.index].result
+                        detailed_logging = {
+                          user_actions = true
+                          system_events = true
+                          performance_metrics = true
+                          random_session_id = random_string.bulk_strings[count.index].result
+                          level_five = {
+                            compliance_data = {
+                              gdpr_consent = true
+                              data_classification = "sensitive"
+                              retention_policy = "7_years"
+                              random_compliance_token = random_string.bulk_strings[count.index].result
+                              processing_activities = [
+                                {
+                                  activity_name = "user_data_processing_${count.index}"
+                                  legal_basis = "consent"
+                                  data_categories = ["personal", "behavioral"]
+                                  random_activity_id = random_string.bulk_strings[count.index].result
+                                },
+                                {
+                                  activity_name = "analytics_processing_${count.index}"
+                                  legal_basis = "legitimate_interest"
+                                  data_categories = ["usage", "performance"]
+                                  random_analytics_token = random_string.bulk_strings[count.index].result
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        performance_configuration = {
+          caching_strategy = {
+            redis_config = {
+              cluster_mode = true
+              node_count = 6
+              instance_type = "cache.r6g.large"
+              random_cluster_id = random_string.bulk_strings[count.index].result
+            }
+            memcached_config = {
+              node_count = 3
+              instance_type = "cache.t3.medium"
+              random_memcached_key = random_string.bulk_strings[count.index].result
+            }
+          }
+          database_optimization = {
+            connection_pooling = {
+              max_connections = 200
+              min_connections = 10
+              connection_timeout_ms = 30000
+              random_pool_id = random_string.bulk_strings[count.index].result
+            }
+            query_optimization = {
+              enable_query_cache = true
+              cache_size_mb = 512
+              slow_query_threshold_ms = 1000
+              random_optimizer_token = random_string.bulk_strings[count.index].result
+            }
+          }
+        }
+      }
+    }
+  }
+}
