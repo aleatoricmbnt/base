@@ -513,328 +513,208 @@ resource "random_string" "bulk_strings" {
 resource "terraform_data" "chunk_one" {
   count = 200
   input = {
-    metadata = {
-      chunk_info = {
-        chunk_number = 1
-        total_chunks = 4
-        resource_count = 200
-        description = "First chunk of terraform_data resources"
-      }
-      configuration = {
-        environment = {
-          name = "production-${count.index}"
-          region = "us-east-1"
-          availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
-        }
-        application = {
-          name = "web-application-${count.index}"
-          version = "v2.1.${count.index}"
-          components = {
-            frontend = {
-              technology = "Vue.js"
-              version = "3.3.4"
-              build_config = {
-                optimization = true
-                minification = true
-                source_maps = false
+    organization = {
+      department = {
+        team = {
+          project = {
+            environment = {
+              region = {
+                zone = {
+                  cluster = {
+                    node = {
+                      service = {
+                        component = {
+                          module = {
+                            function = {
+                              method = {
+                                parameter = {
+                                  attribute = {
+                                    property = {
+                                      field = {
+                                        value = "chunk1_${count.index}"
+                                        metadata = "info_${count.index}"
+                                      }
+                                      config = {
+                                        setting = "enabled"
+                                        option = "default"
+                                      }
+                                    }
+                                    data = {
+                                      primary = {
+                                        key = "main_${count.index}"
+                                        type = "string"
+                                      }
+                                      secondary = {
+                                        key = "backup_${count.index}"
+                                        type = "object"
+                                      }
+                                    }
+                                  }
+                                  validation = {
+                                    rules = {
+                                      required = true
+                                      format = "json"
+                                    }
+                                    constraints = {
+                                      min_length = 1
+                                      max_length = 100
+                                    }
+                                  }
+                                }
+                                execution = {
+                                  runtime = {
+                                    engine = "v8"
+                                    version = "18.x"
+                                  }
+                                  memory = {
+                                    limit = "512MB"
+                                    usage = "dynamic"
+                                  }
+                                }
+                              }
+                              lifecycle = {
+                                creation = {
+                                  timestamp = "auto"
+                                  user = "system"
+                                }
+                                modification = {
+                                  timestamp = "auto"
+                                  user = "admin"
+                                }
+                              }
+                            }
+                            dependencies = {
+                              internal = {
+                                modules = ["auth", "logging"]
+                                version = "latest"
+                              }
+                              external = {
+                                libraries = ["lodash", "moment"]
+                                version = "stable"
+                              }
+                            }
+                          }
+                          configuration = {
+                            settings = {
+                              debug = false
+                              verbose = true
+                            }
+                            features = {
+                              caching = true
+                              monitoring = true
+                            }
+                          }
+                        }
+                        networking = {
+                          protocols = {
+                            http = "enabled"
+                            https = "required"
+                          }
+                          ports = {
+                            primary = 8080
+                            secondary = 8443
+                          }
+                        }
+                      }
+                      resources = {
+                        compute = {
+                          cpu = "2 cores"
+                          memory = "4GB"
+                        }
+                        storage = {
+                          disk = "50GB"
+                          type = "SSD"
+                        }
+                      }
+                    }
+                    scaling = {
+                      horizontal = {
+                        min_instances = 2
+                        max_instances = 10
+                      }
+                      vertical = {
+                        cpu_threshold = 80
+                        memory_threshold = 85
+                      }
+                    }
+                  }
+                  security = {
+                    authentication = {
+                      method = "oauth2"
+                      provider = "auth0"
+                    }
+                    authorization = {
+                      rbac = true
+                      policies = ["read", "write"]
+                    }
+                  }
+                }
+                monitoring = {
+                  metrics = {
+                    collection = "enabled"
+                    interval = "30s"
+                  }
+                  alerts = {
+                    email = true
+                    slack = false
+                  }
+                }
               }
-            }
-            backend = {
-              technology = "Python"
-              version = "3.11.5"
-              framework = "FastAPI"
-              database = {
-                type = "MongoDB"
-                version = "7.0.2"
-                connection_pool = {
-                  min_connections = 10
-                  max_connections = 200
-      idle_timeout = 45000
+              compliance = {
+                standards = {
+                  iso27001 = true
+                  soc2 = true
+                }
+                auditing = {
+                  enabled = true
+                  retention = "7 years"
                 }
               }
             }
-          }
-        }
-      }
-      security = {
-        encryption = {
-          at_rest = true
-          in_transit = true
-          key_management = {
-            provider = "AWS KMS"
-            rotation_enabled = true
-            rotation_period = "90d"
-          }
-        }
-        access_control = {
-          authentication = {
-            method = "SAML2.0"
-            provider = "Okta"
-            multi_factor = true
-          }
-          authorization = {
-            rbac_enabled = true
-            policies = [
-              {
-                name = "admin-policy-${count.index}"
-                permissions = ["read", "write", "delete", "admin"]
-                resources = ["*"]
-              },
-              {
-                name = "user-policy-${count.index}"
-                permissions = ["read", "write"]
-                resources = ["user-data", "application-data"]
+            deployment = {
+              strategy = {
+                type = "blue-green"
+                rollback = "automatic"
               }
-            ]
-          }
-        }
-      }
-    }
-    infrastructure = {
-      compute = {
-        instances = {
-          web_servers = {
-            count = 3
-            instance_type = "t3.medium"
-            ami = "ami-0c02fb55956c7d316"
-            storage = {
-              root_volume = {
-                size = 20
-                type = "gp3"
-                encrypted = true
-              }
-              data_volumes = [
-                {
-                  size = 100
-                  type = "gp3"
-                  mount_point = "/data"
-                  encrypted = true
-                }
-              ]
-            }
-          }
-          database_servers = {
-            count = 2
-            instance_type = "r5.large"
-            ami = "ami-0c02fb55956c7d316"
-            storage = {
-              root_volume = {
-                size = 50
-                type = "gp3"
-                encrypted = true
-              }
-              data_volumes = [
-                {
-                  size = 500
-                  type = "io2"
-                  iops = 3000
-                  mount_point = "/var/lib/postgresql"
-                  encrypted = true
-                }
-              ]
-            }
-          }
-        }
-      }
-      networking = {
-        vpc = {
-          cidr_block = "10.0.0.0/16"
-          enable_dns_hostnames = true
-          enable_dns_support = true
-          subnets = {
-            public = [
-              {
-                cidr_block = "10.0.1.0/24"
-                availability_zone = "us-west-2a"
-                map_public_ip = true
-              },
-              {
-                cidr_block = "10.0.2.0/24"
-                availability_zone = "us-west-2b"
-                map_public_ip = true
-              }
-            ]
-            private = [
-              {
-                cidr_block = "10.0.10.0/24"
-                availability_zone = "us-west-2a"
-                map_public_ip = false
-              },
-              {
-                cidr_block = "10.0.20.0/24"
-                availability_zone = "us-west-2b"
-                map_public_ip = false
-              }
-            ]
-          }
-        }
-        load_balancer = {
-          type = "application"
-          scheme = "internet-facing"
-          listeners = [
-            {
-              port = 80
-              protocol = "HTTP"
-              redirect_to_https = true
-            },
-            {
-              port = 443
-              protocol = "HTTPS"
-              ssl_certificate_arn = "arn:aws:acm:us-west-2:123456789012:certificate/12345678-1234-1234-1234-123456789012"
-            }
-          ]
-        }
-      }
-    }
-    monitoring = {
-      logging = {
-        centralized = true
-        retention_days = 30
-        log_groups = [
-          {
-            name = "/aws/lambda/application-${count.index}"
-            retention_in_days = 14
-          },
-          {
-            name = "/aws/apigateway/access-logs-${count.index}"
-            retention_in_days = 7
-          }
-        ]
-      }
-      metrics = {
-        cloudwatch = {
-          enabled = true
-          custom_metrics = [
-            {
-              name = "application.response_time"
-              unit = "Milliseconds"
-              dimensions = {
-                Environment = "production"
-                Service = "web-app-${count.index}"
+              pipeline = {
+                stages = ["build", "test", "deploy"]
+                approval = "manual"
               }
             }
-          ]
-        }
-        alerts = [
-          {
-            name = "high-cpu-utilization-${count.index}"
-            metric = "CPUUtilization"
-            threshold = 80
-            comparison = "GreaterThanThreshold"
-            evaluation_periods = 2
           }
-        ]
+          governance = {
+            policies = {
+              data_retention = "5 years"
+              backup_frequency = "daily"
+            }
+            procedures = {
+              incident_response = "documented"
+              change_management = "required"
+            }
+          }
+        }
+        budget = {
+          allocation = {
+            compute = "60%"
+            storage = "25%"
+            networking = "15%"
+          }
+          limits = {
+            monthly = "$10000"
+            annual = "$120000"
+          }
+        }
       }
-    }
-    # New section added for enhanced functionality
-    edge_computing = {
-      cdn_configuration = {
-        provider = "AWS CloudFront"
-        distribution_id = "E1ABCDEFGHIJKL${count.index}"
-        origins = [
-          {
-            domain_name = "api-${count.index}.example.com"
-            origin_path = "/v1"
-            custom_headers = {
-              "X-Forwarded-Proto" = "https"
-              "X-Custom-Header" = "edge-cache-${count.index}"
-            }
-          }
-        ]
-        cache_behaviors = [
-          {
-            path_pattern = "/api/*"
-            target_origin_id = "api-origin-${count.index}"
-            viewer_protocol_policy = "redirect-to-https"
-            cache_policy = {
-              ttl_min = 0
-              ttl_default = 86400
-              ttl_max = 31536000
-            }
-          }
-        ]
-      }
-      edge_functions = [
-        {
-          name = "request-router-${count.index}"
-          runtime = "nodejs18.x"
-          code_location = "s3://edge-functions-${count.index}/request-router.zip"
-          triggers = ["viewer-request", "origin-request"]
-          environment_variables = {
-            LOG_LEVEL = "INFO"
-            REGION = "us-east-1"
-            CACHE_STRATEGY = "aggressive"
-          }
-        },
-        {
-          name = "security-headers-${count.index}"
-          runtime = "python3.9"
-          code_location = "s3://edge-functions-${count.index}/security-headers.zip"
-          triggers = ["viewer-response"]
-          environment_variables = {
-            HSTS_MAX_AGE = "31536000"
-            CSP_POLICY = "default-src 'self'"
-          }
+      structure = {
+        hierarchy = {
+          ceo = "executive"
+          cto = "technology"
+          engineering = "development"
         }
-      ]
-    }
-    # New nested block for backup and recovery
-    backup_recovery = {
-      automated_backups = {
-        enabled = true
-        schedule = "0 2 * * *"
-        retention_policy = {
-          daily_backups = 7
-          weekly_backups = 4
-          monthly_backups = 12
-          yearly_backups = 3
+        reporting = {
+          frequency = "weekly"
+          format = "dashboard"
         }
-        backup_destinations = [
-          {
-            type = "S3"
-            bucket = "backup-primary-${count.index}"
-            encryption = {
-              enabled = true
-              kms_key_id = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
-            }
-            lifecycle_policy = {
-              transition_to_ia_days = 30
-              transition_to_glacier_days = 90
-              expiration_days = 2555
-            }
-          },
-          {
-            type = "Cross-Region"
-            region = "us-west-2"
-            bucket = "backup-secondary-${count.index}"
-            replication_time = "15_minutes"
-          }
-        ]
-      }
-      disaster_recovery_testing = {
-        enabled = true
-        test_frequency = "monthly"
-        recovery_objectives = {
-          rto_minutes = 30
-          rpo_minutes = 5
-        }
-        test_scenarios = [
-          {
-            name = "database_failure_${count.index}"
-            description = "Simulate primary database failure"
-            automated = true
-            success_criteria = {
-              failover_time_max_minutes = 25
-              data_consistency_check = true
-            }
-          },
-          {
-            name = "region_outage_${count.index}"
-            description = "Simulate entire region outage"
-            automated = false
-            manual_steps_required = true
-          }
-        ]
       }
     }
   }
