@@ -523,16 +523,16 @@ resource "terraform_data" "chunk_one" {
       configuration = {
         environment = {
           name = "production-${count.index}"
-          region = "us-west-2"
-          availability_zones = ["us-west-2a", "us-west-2b", "us-west-2c"]
+          region = "us-east-1"
+          availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
         }
         application = {
           name = "web-application-${count.index}"
           version = "v2.1.${count.index}"
           components = {
             frontend = {
-              technology = "React"
-              version = "18.2.0"
+              technology = "Vue.js"
+              version = "3.3.4"
               build_config = {
                 optimization = true
                 minification = true
@@ -540,16 +540,16 @@ resource "terraform_data" "chunk_one" {
               }
             }
             backend = {
-              technology = "Node.js"
-              version = "18.17.0"
-              framework = "Express"
+              technology = "Python"
+              version = "3.11.5"
+              framework = "FastAPI"
               database = {
-                type = "PostgreSQL"
-                version = "15.3"
+                type = "MongoDB"
+                version = "7.0.2"
                 connection_pool = {
-                  min_connections = 5
-                  max_connections = 100
-                  idle_timeout = 30000
+                  min_connections = 10
+                  max_connections = 200
+      idle_timeout = 45000
                 }
               }
             }
@@ -568,8 +568,8 @@ resource "terraform_data" "chunk_one" {
         }
         access_control = {
           authentication = {
-            method = "OAuth2"
-            provider = "Auth0"
+            method = "SAML2.0"
+            provider = "Okta"
             multi_factor = true
           }
           authorization = {
@@ -778,6 +778,65 @@ resource "terraform_data" "chunk_one" {
         }
       ]
     }
+    # New nested block for backup and recovery
+    backup_recovery = {
+      automated_backups = {
+        enabled = true
+        schedule = "0 2 * * *"
+        retention_policy = {
+          daily_backups = 7
+          weekly_backups = 4
+          monthly_backups = 12
+          yearly_backups = 3
+        }
+        backup_destinations = [
+          {
+            type = "S3"
+            bucket = "backup-primary-${count.index}"
+            encryption = {
+              enabled = true
+              kms_key_id = "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012"
+            }
+            lifecycle_policy = {
+              transition_to_ia_days = 30
+              transition_to_glacier_days = 90
+              expiration_days = 2555
+            }
+          },
+          {
+            type = "Cross-Region"
+            region = "us-west-2"
+            bucket = "backup-secondary-${count.index}"
+            replication_time = "15_minutes"
+          }
+        ]
+      }
+      disaster_recovery_testing = {
+        enabled = true
+        test_frequency = "monthly"
+        recovery_objectives = {
+          rto_minutes = 30
+          rpo_minutes = 5
+        }
+        test_scenarios = [
+          {
+            name = "database_failure_${count.index}"
+            description = "Simulate primary database failure"
+            automated = true
+            success_criteria = {
+              failover_time_max_minutes = 25
+              data_consistency_check = true
+            }
+          },
+          {
+            name = "region_outage_${count.index}"
+            description = "Simulate entire region outage"
+            automated = false
+            manual_steps_required = true
+          }
+        ]
+      }
+    }
   }
 }
 
@@ -800,7 +859,7 @@ resource "terraform_data" "chunk_two" {
           version = "v1.5.${count.index}"
           deployment = {
             replicas = 5
-            strategy = "RollingUpdate"
+            strategy = "BlueGreen"
             resources = {
               requests = {
                 cpu = "250m"
@@ -817,10 +876,10 @@ resource "terraform_data" "chunk_two" {
               host = "user-db-${count.index}.internal"
               port = 5433
               name = "users"
-              ssl_mode = "require"
+              ssl_mode = "verify-full"
             }
             cache = {
-              type = "Redis"
+              type = "Memcached"
               host = "redis-cluster-${count.index}.internal"
               port = 6379
               ttl = 7200
@@ -846,16 +905,11 @@ resource "terraform_data" "chunk_two" {
           }
           configuration = {
             message_queue = {
-              type = "RabbitMQ"
+              type = "Apache Kafka"
               host = "rabbitmq-cluster-${count.index}.internal"
               port = 5672
               virtual_host = "/orders"
               exchange = "order.events"
-            }
-            payment_gateway = {
-              provider = "Stripe"
-              webhook_endpoint = "https://api.example.com/webhooks/stripe-${count.index}"
-              timeout = 30
             }
           }
         }
@@ -929,17 +983,17 @@ resource "terraform_data" "chunk_two" {
       streaming = {
         kafka_cluster = {
           name = "events-cluster-${count.index}"
-          brokers = 3
+          brokers = 5
           replication_factor = 2
           topics = [
             {
               name = "user.events"
-              partitions = 12
+              partitions = 16
               retention_ms = 604800000
             },
             {
               name = "order.events"
-              partitions = 24
+              partitions = 32
               retention_ms = 2592000000
             }
           ]
@@ -986,7 +1040,7 @@ resource "terraform_data" "chunk_three" {
           soc2_type2 = {
             enabled = true
             report_date = "2023-12-31"
-            auditor = "Big Four Auditing Firm"
+            auditor = "Deloitte & Touche LLP"
             trust_services_criteria = [
               {
                 category = "Security"
@@ -1025,7 +1079,7 @@ resource "terraform_data" "chunk_three" {
         }
       }
       disaster_recovery = {
-        strategy = "multi-region-active-passive"
+        strategy = "multi-region-active-active"
         rto_minutes = 60
         rpo_minutes = 15
         regions = {
@@ -1172,7 +1226,7 @@ resource "terraform_data" "chunk_three" {
       network_segmentation = {
         micro_segmentation = {
           enabled = true
-          policy_engine = "Cisco Tetration"
+          policy_engine = "Illumio Core"
           default_policy = "deny-all"
           application_policies = [
             {
@@ -1207,7 +1261,7 @@ resource "terraform_data" "chunk_three" {
         }
       }
       privileged_access_management = {
-        pam_solution = "CyberArk"
+        pam_solution = "BeyondTrust"
         session_recording = true
         just_in_time_access = {
           enabled = true
@@ -1219,6 +1273,72 @@ resource "terraform_data" "chunk_three" {
           enabled = true
           rotation_frequency_days = 30
           emergency_rotation_capability = true
+        }
+      }
+    }
+    # New nested block for threat intelligence and security operations
+    security_operations_center = {
+      threat_intelligence = {
+        feeds = [
+          {
+            provider = "CrowdStrike Falcon Intelligence"
+            feed_type = "IOC"
+            update_frequency = "real-time"
+            confidence_threshold = 0.8
+            integration_method = "API"
+          },
+          {
+            provider = "MISP Threat Sharing"
+            feed_type = "TTPs"
+            update_frequency = "hourly"
+            community_sharing = true
+            anonymization = true
+          }
+        ]
+        correlation_engine = {
+          enabled = true
+          machine_learning = {
+            anomaly_detection = true
+            behavioral_analysis = true
+            model_training_frequency = "weekly"
+          }
+          rule_sets = [
+            {
+              name = "advanced_persistent_threats_${count.index}"
+              severity = "critical"
+              indicators = ["lateral_movement", "data_exfiltration", "persistence"]
+            },
+            {
+              name = "insider_threats_${count.index}"
+              severity = "high"
+              indicators = ["unusual_access_patterns", "privilege_escalation", "data_access_anomalies"]
+            }
+          ]
+        }
+      }
+      incident_response = {
+        playbooks = [
+          {
+            name = "malware_detection_${count.index}"
+            trigger_conditions = ["malware_signature_match", "suspicious_file_behavior"]
+            automated_actions = ["isolate_host", "collect_forensics", "notify_team"]
+            escalation_criteria = {
+              severity_threshold = "medium"
+              time_to_escalate_minutes = 15
+            }
+          },
+          {
+            name = "data_breach_response_${count.index}"
+            trigger_conditions = ["unauthorized_data_access", "data_exfiltration_detected"]
+            automated_actions = ["block_user_access", "preserve_evidence", "legal_notification"]
+            compliance_requirements = ["GDPR", "CCPA", "SOX"]
+          }
+        ]
+        forensics_tools = {
+          disk_imaging = "EnCase Enterprise"
+          memory_analysis = "Volatility Framework"
+          network_analysis = "Wireshark Enterprise"
+          timeline_analysis = "Plaso/Log2Timeline"
         }
       }
     }
@@ -1246,7 +1366,7 @@ resource "terraform_data" "chunk_four" {
             {
               name = "customer-churn-prediction"
               version = "v1.3.${count.index}"
-              algorithm = "Random Forest"
+              algorithm = "XGBoost"
               accuracy = 0.96
               training_data = {
                 source = "s3://ml-data-${count.index}/customer-features/"
@@ -1267,7 +1387,7 @@ resource "terraform_data" "chunk_four" {
             {
               name = "product-recommendation-engine"
               version = "v2.1.${count.index}"
-              algorithm = "Collaborative Filtering"
+              algorithm = "Deep Learning Neural Network"
               precision_at_10 = 0.91
               training_data = {
                 source = "s3://ml-data-${count.index}/user-interactions/"
@@ -1290,7 +1410,7 @@ resource "terraform_data" "chunk_four" {
         }
         feature_store = {
           name = "central-feature-store-${count.index}"
-          storage_backend = "Apache Iceberg"
+          storage_backend = "Delta Lake"
           feature_groups = [
             {
               name = "user-demographics"
@@ -1309,7 +1429,7 @@ resource "terraform_data" "chunk_four" {
       }
       real_time_analytics = {
         stream_processing = {
-          framework = "Apache Flink"
+          framework = "Apache Spark Streaming"
           cluster_size = 8
           parallelism = 32
           jobs = [
@@ -1337,7 +1457,7 @@ resource "terraform_data" "chunk_four" {
           ]
         }
         time_series_database = {
-          engine = "InfluxDB"
+          engine = "TimescaleDB"
           version = "2.7"
           retention_policies = [
             {
@@ -1351,13 +1471,6 @@ resource "terraform_data" "chunk_four" {
               duration = "90d"
               shard_duration = "1d"
               replication_factor = 1
-            }
-          ]
-          continuous_queries = [
-            {
-              name = "downsample_metrics"
-              query = "SELECT mean(*) INTO \"medium_frequency\".\"downsampled_metrics\" FROM \"high_frequency\".\"raw_metrics\" GROUP BY time(5m), *"
-              run_interval = "5m"
             }
           ]
         }
@@ -1433,7 +1546,7 @@ resource "terraform_data" "with_random_strings" {
           level_two = {
             security_token = random_string.bulk_strings[count.index].result
             encryption_settings = {
-              algorithm = "AES-256-GCM"
+              algorithm = "ChaCha20-Poly1305"
               key_rotation = true
               rotation_period_days = 90
               level_three = {
@@ -1451,7 +1564,7 @@ resource "terraform_data" "with_random_strings" {
                       audit_trail = {
                         enabled = true
                         retention_days = 365
-                        compression = "gzip"
+                        compression = "zstd"
                         random_audit_id = random_string.bulk_strings[count.index].result
                         detailed_logging = {
                           user_actions = true
@@ -1461,7 +1574,7 @@ resource "terraform_data" "with_random_strings" {
                           level_five = {
                             compliance_data = {
                               gdpr_consent = true
-                              data_classification = "sensitive"
+                              data_classification = "confidential"
                               retention_policy = "7_years"
                               random_compliance_token = random_string.bulk_strings[count.index].result
                               processing_activities = [
