@@ -38,7 +38,7 @@ resource "terraform_data" "long_sleep" {
   }
 }
 
-# Method 2: Using null_resource with trap-aware script
+# Method 2: Using null_resource with simple sleep commands
 resource "null_resource" "trap_aware_sleep" {
   count = 5
   
@@ -48,28 +48,7 @@ resource "null_resource" "trap_aware_sleep" {
   }
   
   provisioner "local-exec" {
-    command = <<-EOT
-      #!/bin/bash
-      
-      # Trap SIGTERM for graceful handling
-      cleanup() {
-        echo "Received SIGTERM, cleaning up resource ${count.index}..."
-        sleep 5
-        echo "Cleanup complete for resource ${count.index}"
-        exit 0
-      }
-      
-      trap cleanup SIGTERM
-      
-      echo "Starting long operation for resource ${count.index}"
-      for i in $(seq 1 ${var.sleep_duration}); do
-        echo "Resource ${count.index}: Step $i/${var.sleep_duration}"
-        sleep 1
-      done
-      echo "Completed long operation for resource ${count.index}"
-    EOT
-    
-    interpreter = ["bash", "-c"]
+    command = "echo 'Starting long operation for resource ${count.index}' && sleep ${var.sleep_duration / 5} && echo 'Completed long operation for resource ${count.index}'"
   }
 }
 
@@ -77,29 +56,7 @@ resource "null_resource" "trap_aware_sleep" {
 data "external" "long_running_script" {
   count = var.enable_external_data ? 1 : 0
   
-  program = ["bash", "-c", <<-EOT
-    #!/bin/bash
-    
-    # Function to handle SIGTERM gracefully
-    cleanup() {
-      echo '{"status": "interrupted", "duration": "'$SECONDS'"}' >&2
-      echo '{"result": "interrupted"}'
-      exit 0
-    }
-    
-    trap cleanup SIGTERM
-    
-    echo "Starting external data processing..." >&2
-    
-    # Simulate long-running data processing
-    for i in $(seq 1 ${var.sleep_duration}); do
-      echo "Processing step $i/${var.sleep_duration}..." >&2
-      sleep 1
-    done
-    
-    echo '{"result": "completed", "duration": "'${var.sleep_duration}'"}'
-  EOT
-  ]
+  program = ["sh", "-c", "echo 'Starting external data processing...' >&2; sleep ${var.sleep_duration}; echo '{\"result\": \"completed\", \"duration\": \"${var.sleep_duration}\"}'"]
 }
 
 # Method 4: Time-based resource for additional delay
