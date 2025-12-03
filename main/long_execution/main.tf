@@ -10,7 +10,7 @@ variable "sleep_duration" {
 variable "download_url" {
   description = "URL to download during plan phase (use large file for slow download)"
   type        = string
-  default     = "https://releases.ubuntu.com/22.04/ubuntu-22.04.3-desktop-amd64.iso"  # ~4GB file
+  default     = "https://httpbin.org/delay/180"  # Simple 3-minute delay endpoint
 }
 
 variable "enable_slow_download" {
@@ -23,7 +23,7 @@ variable "enable_slow_download" {
 data "external" "slow_download" {
   count = var.enable_slow_download ? 1 : 0
   
-  program = ["sh", "-c", "echo 'Starting slow download...' >&2; timeout ${var.sleep_duration} curl -L --limit-rate 10k --max-time ${var.sleep_duration} '${var.download_url}' -o /tmp/test_download.tmp >&2 || true; rm -f /tmp/test_download.tmp || true; echo '{\"result\": \"download_attempted\", \"duration\": \"${var.sleep_duration}\"}'"]
+  program = ["sh", "-c", "echo 'Starting slow download...' >&2; echo 'URL: ${var.download_url}' >&2; echo 'Testing curl availability...' >&2; which curl >&2 || echo 'curl not found' >&2; echo 'Starting download with verbose output...' >&2; curl -v -L --limit-rate 10k --max-time ${var.sleep_duration} '${var.download_url}' -o /tmp/test_download.tmp 2>&1 | head -20 >&2; echo 'Download command completed' >&2; rm -f /tmp/test_download.tmp 2>/dev/null; echo '{\"result\": \"download_attempted\", \"duration\": \"${var.sleep_duration}\"}'"]
 }
 
 # Data source 2: Multiple DNS lookups with delays
