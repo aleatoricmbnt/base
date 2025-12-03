@@ -1,14 +1,11 @@
-# Terraform variables for long-running execution testing
-# Adjust these values based on your grace shutdown timeout requirements
+# Terraform variables for long-running plan phase testing
+# Focused on data sources and network operations
 
 # Duration for sleep operations (in seconds)
-# Set this to be longer than your expected grace shutdown timeout
-sleep_duration = 900  # 15 minutes
+sleep_duration = 300  # 5 minutes
 
-# Number of resources to create
-# Higher numbers increase planning time and resource creation time
-resource_count = 100
+# URL for slow download test (use large files to extend download time)
+download_url = "https://releases.ubuntu.com/22.04/ubuntu-22.04.3-desktop-amd64.iso"  # ~4GB Ubuntu ISO
 
-# Enable external data source with long execution
-# This adds additional complexity and execution time
-enable_external_data = true
+# Enable slow download during plan phase
+enable_slow_download = true
