@@ -11,11 +11,19 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "us-east-1"
+}
 
 provider "aws" {
   alias  = "kek"
   region = "us-east-1"
 }
+
+provider "google" {
+  project = "password-project-375916"
+}
+
 
 provider "google" {
   alias  = "lol"
