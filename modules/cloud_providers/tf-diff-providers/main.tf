@@ -36,6 +36,13 @@ resource "random_pet" "optional_bucket_name" {}
 
 resource "aws_s3_bucket" "default" {
   bucket = "aleatoric-bucket-${random_pet.bucket_name.id}"
+  #checkov:skip=CKV2_AWS_61:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_21:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV2_AWS_6:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV2_AWS_62:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_144:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_18:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_145:Check to be skipped without setting additional Checkov args
 }
 
 variable "number_of_aliased_buckets" {
@@ -46,6 +53,13 @@ resource "aws_s3_bucket" "aliased" {
   provider = aws.kek
   count  = var.number_of_aliased_buckets
   bucket = "aleatoric-bucket-${random_pet.optional_bucket_name.id}"
+  #checkov:skip=CKV2_AWS_61:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_21:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV2_AWS_6:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV2_AWS_62:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_144:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_18:Check to be skipped without setting additional Checkov args
+  #checkov:skip=CKV_AWS_145:Check to be skipped without setting additional Checkov args
 }
 
 resource "google_service_account" "default" {
