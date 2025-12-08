@@ -27,4 +27,6 @@ resource "terraform_data" "test2" {
   triggers_replace = timestamp()
 }
 
-
+output "test2" {
+  value = terraform_data.test2.output
+}
