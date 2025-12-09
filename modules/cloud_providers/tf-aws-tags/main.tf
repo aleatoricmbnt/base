@@ -7,6 +7,14 @@ terraform {
   }
 }
 
+# provider "aws" {
+#   region = "us-east-1"
+  
+#   default_tags {
+#     tags = local.common_tags
+#   }
+# }
+
 provider "aws" {
   region = "us-east-1"
   
@@ -15,14 +23,30 @@ provider "aws" {
   }
 }
 
-# Simple locals with tag map
+# Second provider block - this could cause merge conflicts
+provider "aws" {
+  alias  = "secondary"
+  region = "us-west-2"
+  
+  default_tags = local.other_tags  # Note: different syntax - not in a block
+}
+
 locals {
   common_tags = {
     Environment = "development"
-    ManagedBy   = "terraform"
-    CostCenter  = "qa-team"
   }
+  
+  other_tags = "not-a-dict"  # This would cause issues when resolving
 }
+
+# # Simple locals with tag map
+# locals {
+#   common_tags = {
+#     Environment = "development"
+#     ManagedBy   = "terraform"
+#     CostCenter  = "qa-team"
+#   }
+# }
 
 variable "default_tags" {
   default     = {
