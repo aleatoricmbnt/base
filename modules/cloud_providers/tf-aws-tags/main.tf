@@ -7,14 +7,6 @@ terraform {
   }
 }
 
-# provider "aws" {
-#   region = "us-east-1"
-  
-#   default_tags {
-#     tags = local.common_tags
-#   }
-# }
-
 provider "aws" {
   region = "us-east-1"
   
@@ -28,7 +20,9 @@ provider "aws" {
   alias  = "secondary"
   region = "us-west-2"
   
-  default_tags = local.other_tags  # Note: different syntax - not in a block
+  default_tags {
+     tags = local.other_tags
+  }
 }
 
 locals {
@@ -36,15 +30,6 @@ locals {
     Environment = "development"
   }
 }
-
-# # Simple locals with tag map
-# locals {
-#   common_tags = {
-#     Environment = "development"
-#     ManagedBy   = "terraform"
-#     CostCenter  = "qa-team"
-#   }
-# }
 
 variable "default_tags" {
   default     = {
@@ -55,9 +40,16 @@ variable "default_tags" {
   type        = map(string)
 }
 
+# Should be: Environment
 resource "aws_s3_bucket" "simple_bucket" {
-  provider = aws.secondary
   bucket = "scalr-simple-tags-${random_id.bucket_suffix.hex}"
+}
+
+
+# Should be: Owner, Project, Name, Environment, ManagedBy, CostCenter
+resource "aws_s3_bucket" "secondary_bucket" {
+  provider = aws.secondary
+  bucket = "scalr-secondary-${random_id.bucket_suffix.hex}"
   tags = merge(
     var.default_tags,
     {
