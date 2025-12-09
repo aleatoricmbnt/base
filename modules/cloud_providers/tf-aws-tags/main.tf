@@ -35,10 +35,11 @@ locals {
   common_tags = {
     Environment = "development"
   }
-  
-  other_tags = "not-a-dict"  # This would cause issues when resolving
 }
 
+locals {
+  other_tags = "not-a-dict"  # This would cause issues when resolving
+}
 # # Simple locals with tag map
 # locals {
 #   common_tags = {
