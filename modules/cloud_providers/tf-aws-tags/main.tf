@@ -58,6 +58,7 @@ variable "default_tags" {
 }
 
 resource "aws_s3_bucket" "simple_bucket" {
+  provider = aws.secondary
   bucket = "scalr-simple-tags-${random_id.bucket_suffix.hex}"
   tags = merge(
     var.default_tags,
