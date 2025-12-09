@@ -27,7 +27,6 @@ locals {
 
 resource "aws_s3_bucket" "simple_bucket" {
   bucket = "scalr-simple-tags-${random_id.bucket_suffix.hex}"
-  tags = local.common_tags
 }
 
 resource "random_id" "bucket_suffix" {
