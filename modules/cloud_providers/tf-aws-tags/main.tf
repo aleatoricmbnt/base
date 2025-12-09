@@ -21,12 +21,26 @@ locals {
     Environment = "development"
     ManagedBy   = "terraform"
     CostCenter  = "qa-team"
-    Project     = "tag-override-test"
   }
+}
+
+variable "default_tags" {
+  default     = {
+     Owner       = "TFProviders"
+     Project     = "Test"
+}
+  description = "Default Tags for smth"
+  type        = map(string)
 }
 
 resource "aws_s3_bucket" "simple_bucket" {
   bucket = "scalr-simple-tags-${random_id.bucket_suffix.hex}"
+  tags = merge(
+    var.default_tags,
+    {
+     Name = "myBucket"
+    }
+  )
 }
 
 resource "random_id" "bucket_suffix" {
