@@ -33,6 +33,7 @@ locals {
     custom      = var.custom_tag
     email       = "some.PLACEHOLDER@example.com"
     slashes     = "some/value/with/slashes"
+    custom_ins  = "custom_inserted_here_${var.custom_tag}"
   }
   some_value = "some_value"
 }
