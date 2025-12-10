@@ -30,8 +30,13 @@ locals {
     Environment = "development"
     ManagedBy   = "terraform"
     CostCenter  = "qa-team"
+    custom      = var.custom_tag
   }
   some_value = "some_value"
+}
+
+variable "custom_tag" {
+  type = string
 }
 
 locals {
@@ -39,6 +44,8 @@ locals {
     Environment = "development"
   }
 }
+
+locals {}
 
 variable "default_tags" {
   default     = {
