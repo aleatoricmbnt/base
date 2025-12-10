@@ -23,6 +23,13 @@ variable "default_tags2" {
 }
 
 locals {
+  a = "1"
+}
+locals {
+  b = "2"
+}
+
+locals {
   # Merging with variable and inline map
   common_tags = merge(
     var.default_tags2,
