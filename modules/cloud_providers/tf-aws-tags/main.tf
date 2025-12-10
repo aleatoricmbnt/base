@@ -11,55 +11,9 @@ provider "aws" {
   region = "us-east-1"
   
   default_tags {
-    tags = local.common_tags
+    tags = merge(local.common_tags, local.other_tags)
   }
 }
-
-# Second provider block - this could cause merge conflicts
-provider "aws" {
-  alias  = "secondary"
-  region = "us-west-2"
-  
-  default_tags {
-     tags = local.other_tags
-  }
-}
-
-locals {
-  other_tags = {
-    ManagedBy   = "terraform"
-    custom      = var.custom_tag
-    email       = "some.PLACEHOLDER@example.com"
-    slashes     = "some/value/with/slashes"
-    custom_ins  = "custom_inserted_here_${var.custom_tag}"
-  }
-  some_value = "some_value"
-}
-
-locals {
-  tag_keys = ["Environment", "Team", "CostCenter"]
-  tag_values = ["dev", "platform", "engineering"]
-  
-  # For expression to create map
-  some_common_tags = {
-    for idx, key in local.tag_keys : key => local.tag_values[idx]
-  }
-}
-
-variable "custom_tag" {
-  type = string
-}
-
-locals {
-  numeric_value = 10
-  numberic_value_in_string = "10"
-}
-
-# locals {
-#   common_tags = {
-#     Environment = "development"
-#   }
-# }
 
 variable "default_tags2" {
   type = map(string)
@@ -81,7 +35,31 @@ locals {
   )
 }
 
-locals {}
+locals {
+  other_tags = {
+    ManagedBy   = "terraform"
+    custom      = var.custom_tag
+    email       = "some.PLACEHOLDER@example.com"
+    slashes     = "some/value/with/slashes"
+    custom_ins  = "custom_inserted_here_${var.custom_tag}"
+  }
+  some_value = "some_value"
+}
+
+variable "custom_tag" {
+  type = string
+}
+
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
+}
+
+resource "aws_s3_bucket" "simple_bucket" {
+  bucket = "scalr-simple-tags-${random_id.bucket_suffix.hex}"
+  tags   = local.other_tags
+}
+
+# Just locals and misc
 
 variable "default_tags" {
   default     = {
@@ -92,40 +70,40 @@ variable "default_tags" {
   type        = map(string)
 }
 
-# Should be: Environment
-resource "aws_s3_bucket" "simple_bucket" {
-  bucket = "scalr-simple-tags-${random_id.bucket_suffix.hex}"
+locals {
+  tag_keys = ["Environment", "Team", "CostCenter"]
+  tag_values = ["dev", "platform", "engineering"]
+  
+  # For expression to create map
+  some_common_tags = {
+    for idx, key in local.tag_keys : key => local.tag_values[idx]
+  }
 }
 
+locals {}
 
-# Should be: Owner, Project, Name, Environment, ManagedBy, CostCenter
-resource "aws_s3_bucket" "secondary_bucket" {
-  provider = aws.secondary
-  bucket = "scalr-secondary-${random_id.bucket_suffix.hex}"
-  tags = merge(
-    var.default_tags,
-    {
-     Name = "myBucket"
-    }
-  )
+locals {
+  numeric_value = 10
+  numberic_value_in_string = "10"
 }
 
-resource "random_id" "bucket_suffix" {
-  byte_length = 4
-}
+# Second provider block - this could cause merge conflicts
+# provider "aws" {
+#   alias  = "secondary"
+#   region = "us-west-2"
+  
+#   default_tags {
+#      tags = local.other_tags
+#   }
+# }
 
-
-output "simple_bucket_tags" {
-  description = "Tags applied to simple bucket"
-  value       = aws_s3_bucket.simple_bucket.tags
-}
-
-output "expected_merge_behavior" {
-  description = "Documentation of expected behavior based on strategy"
-  value = <<-EOT
-    SKIP strategy: User-defined tags from locals take precedence over provider default tags
-    UPDATE strategy: Provider default tags override user-defined tags from locals
-    
-    Test this configuration with both strategies to validate HCL parser handles locals correctly.
-  EOT
-}
+# resource "aws_s3_bucket" "secondary_bucket" {
+#   provider = aws.secondary
+#   bucket = "scalr-secondary-${random_id.bucket_suffix.hex}"
+#   tags = merge(
+#     var.default_tags,
+#     {
+#      Name = "myBucket"
+#     }
+#   )
+# }
