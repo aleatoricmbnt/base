@@ -38,6 +38,16 @@ locals {
   some_value = "some_value"
 }
 
+locals {
+  tag_keys = ["Environment", "Team", "CostCenter"]
+  tag_values = ["dev", "platform", "engineering"]
+  
+  # For expression to create map
+  common_tags = {
+    for idx, key in local.tag_keys : key => local.tag_values[idx]
+  }
+}
+
 variable "custom_tag" {
   type = string
 }
