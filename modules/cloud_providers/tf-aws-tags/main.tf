@@ -50,10 +50,30 @@ variable "custom_tag" {
   type = string
 }
 
-locals {
-  common_tags = {
-    Environment = "development"
+# locals {
+#   common_tags = {
+#     Environment = "development"
+#   }
+# }
+
+variable "default_tags2" {
+  type = map(string)
+  default = {
+    ManagedBy = "OpenTofu"
   }
+}
+
+locals {
+  # Merging with variable and inline map
+  common_tags = merge(
+    var.default_tags2,
+    {
+      for k, v in {
+        Environment = "dev"
+        Region      = "us-east-1"
+      } : k => lower(v)
+    }
+  )
 }
 
 locals {}
