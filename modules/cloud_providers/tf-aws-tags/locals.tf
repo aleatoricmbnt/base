@@ -1,3 +1,3 @@
 locals {
-  some_value1 = "some_value"
+
 }
