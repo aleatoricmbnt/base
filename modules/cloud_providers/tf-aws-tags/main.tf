@@ -27,9 +27,7 @@ provider "aws" {
 
 locals {
   other_tags = {
-    Environment = "development"
     ManagedBy   = "terraform"
-    CostCenter  = "qa-team"
     custom      = var.custom_tag
     email       = "some.PLACEHOLDER@example.com"
     slashes     = "some/value/with/slashes"
@@ -43,7 +41,7 @@ locals {
   tag_values = ["dev", "platform", "engineering"]
   
   # For expression to create map
-  common_tags = {
+  some_common_tags = {
     for idx, key in local.tag_keys : key => local.tag_values[idx]
   }
 }
