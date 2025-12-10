@@ -31,6 +31,8 @@ locals {
     ManagedBy   = "terraform"
     CostCenter  = "qa-team"
     custom      = var.custom_tag
+    email       = "some.PLACEHOLDER@example.com"
+    slashes     = "some/value/with/slashes"
   }
   some_value = "some_value"
 }
