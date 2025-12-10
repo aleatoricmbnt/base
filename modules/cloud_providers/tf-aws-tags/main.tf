@@ -50,6 +50,11 @@ variable "custom_tag" {
   type = string
 }
 
+locals {
+  numeric_value = 10
+  numberic_value_in_string = "10"
+}
+
 # locals {
 #   common_tags = {
 #     Environment = "development"
