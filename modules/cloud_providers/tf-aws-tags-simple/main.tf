@@ -11,7 +11,7 @@ provider "aws" {
   region = "us-east-1"
   
   default_tags {
-    tags = local.other_tags
+    tags = merge(local.other_tags, {})
   }
 }
 
