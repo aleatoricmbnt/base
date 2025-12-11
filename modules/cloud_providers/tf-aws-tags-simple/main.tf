@@ -20,15 +20,15 @@ locals {
   b = "2"
 }
 
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
+}
+
 locals {
   other_tags = {
     b = "string"
   }
   some_value = "some_value"
-}
-
-resource "random_id" "bucket_suffix" {
-  byte_length = 4
 }
 
 resource "aws_s3_bucket" "simple_bucket" {
