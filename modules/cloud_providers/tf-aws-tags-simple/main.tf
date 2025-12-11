@@ -11,7 +11,7 @@ locals {
   a = "1"
 }
 locals {
-  other_tags = {"b": "1"}
+  other_tags = {b = "2"}
 }
 
 
