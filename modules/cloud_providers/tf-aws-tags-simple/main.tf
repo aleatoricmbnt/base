@@ -11,7 +11,7 @@ provider "aws" {
   region = "us-east-1"
   
   default_tags {
-    tags = local.common_tags
+    tags = merge(local.common_tags, local.other_tags)
   }
 }
 
@@ -19,6 +19,16 @@ locals {
   common_tags = {
     a = "1"
     b = "2"
+  }
+}
+
+locals {
+  other_tags = {
+    first   = "first"
+    # custom      = var.custom_tag
+    email       = "some.PLACEHOLDER@example.com"
+    slashes     = "some/value/with/slashes"
+    # custom_ins  = "custom_inserted_here_${var.custom_tag}"
   }
 }
 
