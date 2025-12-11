@@ -7,6 +7,14 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "us-east-1"
+  
+  default_tags {
+    tags = local.other_tags
+  }
+}
+
 locals {
   a = "1"
   b = "2"
@@ -18,15 +26,6 @@ locals {
   }
   some_value = "some_value"
 }
-
-provider "aws" {
-  region = "us-east-1"
-  
-  default_tags {
-    tags = local.other_tags
-  }
-}
-
 
 resource "random_id" "bucket_suffix" {
   byte_length = 4
