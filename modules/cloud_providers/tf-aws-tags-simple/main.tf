@@ -31,7 +31,7 @@ resource "random_id" "bucket_suffix" {
 
 locals {
   other_tags = {
-    b = "string"
+    b = var.dummy
   }
   some_value = "some_value"
 }
