@@ -15,6 +15,11 @@ provider "aws" {
   }
 }
 
+variable "dummy" {
+  type = string
+  default = "test"
+}
+
 locals {
   a = "1"
   b = "2"
