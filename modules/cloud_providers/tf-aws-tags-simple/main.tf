@@ -12,7 +12,9 @@ locals {
 }
 
 locals {
-  other_tags = {b = "string"}
+  other_tags = {
+    b = "string"
+  }
 }
 
 
