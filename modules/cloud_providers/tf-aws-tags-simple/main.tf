@@ -22,13 +22,13 @@ variable "default_tags2" {
   }
 }
 
-locals {
-  a = "1"
-}
+# locals {
+#   a = "1"
+# }
 
-locals {
-  b = "2"
-}
+# locals {
+#   b = "2"
+# }
 
 locals {
   common_tags = merge(
