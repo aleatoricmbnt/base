@@ -10,6 +10,7 @@ terraform {
 locals {
   a = "1"
 }
+
 locals {
   other_tags = {b = "string"}
 }
