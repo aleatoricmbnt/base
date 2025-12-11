@@ -21,34 +21,16 @@ variable "dummy" {
 }
 
 locals {
-  a = "1"
-  b = "2"
+  armor = "1"
+  burst = "2"
 }
-
-locals {
-  c = "3"
-}
-
-locals {
-  d = "4"
-}
-
-locals {
-  e = "5"
-}
-
-locals {
-  f = "6"
-}
-
-
 resource "random_id" "bucket_suffix" {
   byte_length = 4
 }
 
 locals {
   other_tags = {
-    b = var.dummy
+    some_b = var.dummy
   }
   some_value = "some_value"
 }
