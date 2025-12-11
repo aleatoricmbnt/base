@@ -15,6 +15,7 @@ locals {
   other_tags = {
     b = "string"
   }
+  some_value = "some_value"
 }
 
 
