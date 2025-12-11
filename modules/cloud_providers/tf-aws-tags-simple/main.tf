@@ -18,7 +18,7 @@ provider "aws" {
 variable "default_tags2" {
   type = map(string)
   default = {
-    ManagedBy = "OpenTofu"
+    iacplatform = "OpenTofu"
   }
 }
 
