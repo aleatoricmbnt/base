@@ -11,28 +11,42 @@ provider "aws" {
   region = "us-east-1"
   
   default_tags {
-    tags = merge(local.other_tags, {})
+    tags = merge(local.common_tags, local.other_tags)
   }
 }
 
-variable "dummy" {
-  type = string
-  default = "test"
+variable "default_tags2" {
+  type = map(string)
+  default = {
+    ManagedBy = "OpenTofu"
+  }
 }
 
 locals {
-  armor = "1"
-  burst = "2"
+  a = "1"
 }
-resource "random_id" "bucket_suffix" {
-  byte_length = 4
+
+locals {
+  b = "2"
+}
+
+locals {
+  common_tags = merge(
+    var.default_tags2,
+    {
+      Environment = "dev"
+    }
+  )
 }
 
 locals {
   other_tags = {
-    some_b = var.dummy
+    ManagedBy = "terraform"
   }
-  some_value = "some_value"
+}
+
+resource "random_id" "bucket_suffix" {
+  byte_length = 4
 }
 
 resource "aws_s3_bucket" "simple_bucket" {
