@@ -11,38 +11,23 @@ provider "aws" {
   region = "us-east-1"
   
   default_tags {
-    tags = merge(local.common_tags, local.other_tags)
+    tags = local.common_tags
   }
-}
-
-variable "default_tags2" {
-  type = map(string)
-  default = {
-    iacplatform = "OpenTofu"
-  }
-}
-
-# locals {
-#   a = "1"
-# }
-
-# locals {
-#   b = "2"
-# }
-
-locals {
-  common_tags = merge(
-    var.default_tags2,
-    {
-      Environment = "dev"
-    }
-  )
 }
 
 locals {
-  other_tags = {
-    ManagedBy = "terraform"
+  common_tags = {
+    a = "1"
+    b = "2"
   }
+}
+
+locals {
+  c = "3"
+}
+
+locals {
+  d = 4
 }
 
 resource "random_id" "bucket_suffix" {
