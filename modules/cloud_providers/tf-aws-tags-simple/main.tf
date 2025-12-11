@@ -25,19 +25,9 @@ locals {
 locals {
   other_tags = {
     first   = "first"
-    # custom      = var.custom_tag
     email       = "some.PLACEHOLDER@example.com"
     slashes     = "some/value/with/slashes"
-    # custom_ins  = "custom_inserted_here_${var.custom_tag}"
   }
-}
-
-locals {
-  c = "3"
-}
-
-locals {
-  d = 4
 }
 
 resource "random_id" "bucket_suffix" {
