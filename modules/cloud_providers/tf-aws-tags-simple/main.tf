@@ -25,6 +25,23 @@ locals {
   b = "2"
 }
 
+locals {
+  c = "3"
+}
+
+locals {
+  d = "4"
+}
+
+locals {
+  e = "5"
+}
+
+locals {
+  f = "6"
+}
+
+
 resource "random_id" "bucket_suffix" {
   byte_length = 4
 }
