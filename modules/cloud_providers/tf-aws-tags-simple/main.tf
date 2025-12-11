@@ -9,6 +9,7 @@ terraform {
 
 locals {
   a = "1"
+  b = "2"
 }
 
 locals {
@@ -17,7 +18,6 @@ locals {
   }
   some_value = "some_value"
 }
-
 
 provider "aws" {
   region = "us-east-1"
