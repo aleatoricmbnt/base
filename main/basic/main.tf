@@ -3,7 +3,7 @@ variable "resource_count" {
 }
 
 variable "input" {
-  default = "3"
+  default = "batch4"
 }
 
 resource "terraform_data" "test2" {
