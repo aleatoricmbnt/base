@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"flat_from_git","Source":"git::https://github.com/aleatoricmbnt/flat?ref=v3.0.1","Dir":".terraform/modules/flat_from_git"},{"Key":"nested_from_git","Source":"git::https://github.com/aleatoricmbnt/base.git//main/git_https_target?ref=zerossl/0.0.1","Dir":".terraform/modules/nested_from_git/main/git_https_target"}]}
