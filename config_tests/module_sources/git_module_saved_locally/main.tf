@@ -11,6 +11,6 @@ variable "required" {
   default = "value"
 }
 
-# output "nested_from_git_module_id_from_output" {
-#   value = module.nested_from_git.pet_name
-# }
+output "nested_from_git_module_id_from_output" {
+  value = module.nested_from_git.pet_name
+}
