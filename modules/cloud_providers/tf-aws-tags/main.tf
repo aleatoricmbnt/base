@@ -94,23 +94,22 @@ locals {
   numberic_value_in_string = "10"
 }
 
-# Second provider block - this could cause merge conflicts
-# provider "aws" {
-#   alias  = "secondary"
-#   region = "us-west-2"
+provider "aws" {
+  alias  = "secondary"
+  region = "us-west-2"
   
-#   default_tags {
-#      tags = local.other_tags
-#   }
-# }
+  default_tags {
+     tags = local.other_tags
+  }
+}
 
-# resource "aws_s3_bucket" "secondary_bucket" {
-#   provider = aws.secondary
-#   bucket = "scalr-secondary-${random_id.bucket_suffix.hex}"
-#   tags = merge(
-#     var.default_tags,
-#     {
-#      Name = "myBucket"
-#     }
-#   )
-# }
+resource "aws_s3_bucket" "secondary_bucket" {
+  provider = aws.secondary
+  bucket = "scalr-secondary-${random_id.bucket_suffix.hex}"
+  tags = merge(
+    var.default_tags,
+    {
+     Name = "myBucket"
+    }
+  )
+}
