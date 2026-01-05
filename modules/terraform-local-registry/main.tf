@@ -27,5 +27,4 @@ variable "environment" {
 variable "token" {
   type      = string
   sensitive = true
-  default   = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJ1c2VyIiwianRpIjoiYXQtdTRnYXFqdmtvMjluamxnIn0.92m7PT7_z_SNomrKMfDBaXS50fX_owLzEpKlfu8JlBw"
 }
