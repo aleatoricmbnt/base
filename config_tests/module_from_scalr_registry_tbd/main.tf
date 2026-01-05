@@ -29,11 +29,6 @@ module "git" {
 	version = "2.0.0"
 }
 
-module "gyk6lofu95wnsersaw46m67kfg6oaoo2z9f0rw1aav1tsdt0zb87rxxeu6y4r48z" {
-	source  = "test.mshytse-tests.testenv.scalr.dev/base/gyk6lofu95wnsersaw46m67kfg6oaoo2z9f0rw1aav1tsdt0zb87rxxeu6y4r48z/long"
-	version = "2.0.0"
-}
-
 module "integer" {
 	source  = "test.mshytse-tests.testenv.scalr.dev/base/integer/random"
 	version = "2.0.0"
