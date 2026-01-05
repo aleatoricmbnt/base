@@ -3,7 +3,7 @@ module "aleatoric" {
 	version = "2.0.0"
 }
 
-module "data" {
+module "data1" {
 	source  = "test.mshytse-tests.testenv.scalr.dev/base/data/readme"
 	version = "2.0.0"
 
@@ -39,7 +39,7 @@ module "integer" {
 	version = "2.0.0"
 }
 
-module "module" {
+module "module1" {
 	source  = "test.mshytse-tests.testenv.scalr.dev/base/module/1ver"
 	version = "2.0.0"
 }
