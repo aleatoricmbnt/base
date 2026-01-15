@@ -1,16 +1,6 @@
-resource "null_resource" "wait" {
-  triggers = {
-    run_id = var.run_id
-  }
+resource "terraform_data" "this" {
+  count = 144
   provisioner "local-exec" {
-    command = "sleep ${var.sleep_time}"
+    command = "sleep 5" # if resources are created one by one - the plan itself will take 12 mins
   }
-}
-
-variable "run_id" {
-  default = "run_id_2"
-  sensitive = true
-}
-variable "sleep_time" {
-  default = 610
 }
