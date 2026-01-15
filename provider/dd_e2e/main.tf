@@ -72,6 +72,7 @@ resource "scalr_drift_detection" "weekly_dd_tag_filter_refresh_only" {
   #   tags = [scalr_tag.e2e_tag_1.id, scalr_tag.e2e_tag_2.id]
   # }
   # by default run_mode is refresh-only
+  run_mode = "refresh-only"
 }
 
 # # -------------------- ENV 3 SETUP --------------------
