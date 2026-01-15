@@ -68,9 +68,9 @@ resource "scalr_workspace" "tag_ws_1" {
 resource "scalr_drift_detection" "weekly_dd_tag_filter_refresh_only" {
   environment_id = scalr_environment.dd_tag_filter.id
   check_period   = "weekly"
-  workspace_filters {
-    tags = [scalr_tag.e2e_tag_1.id, scalr_tag.e2e_tag_2.id]
-  }
+  # workspace_filters {
+  #   tags = [scalr_tag.e2e_tag_1.id, scalr_tag.e2e_tag_2.id]
+  # }
   # by default run_mode is refresh-only
 }
 
