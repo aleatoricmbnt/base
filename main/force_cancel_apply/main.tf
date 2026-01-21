@@ -8,3 +8,5 @@ data "external" "example" {
   program = ["bash", "./script.sh"]
   depends_on = [ null_resource.name ]
 }
+
+#comment
