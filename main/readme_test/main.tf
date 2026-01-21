@@ -1,12 +1,4 @@
 resource "terraform_data" "this" {
-  input = var.input
-  triggers_replace = [ timestamp(), var.replace]
+  triggers_replace = timestamp()
 }
 
-variable "input" {
-  
-}
-
-variable "replace" {
-  
-}
