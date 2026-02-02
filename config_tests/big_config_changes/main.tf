@@ -29,11 +29,3 @@ module "root_07" {
 module "root_08" {
   source = "../.."
 }
-
-module "root_09" {
-  source = "../.."
-}
-
-module "root_10" {
-  source = "../.."
-}
