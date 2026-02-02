@@ -1,89 +1,54 @@
 terraform {
   required_providers {
-    external = {
-      source  = "hashicorp/external"
-      version = "~> 2.0"
+    null = {
+      source  = "hashicorp/null"
+      version = "~> 3.0"
     }
   }
 }
 
-resource "terraform_data" "force_recreate" {
-  input = timestamp()
+locals {
+  template_1 = templatefile("${path.module}/template_1.tpl", {})
+  template_2 = templatefile("${path.module}/template_2.tpl", {})
+  template_3 = templatefile("${path.module}/template_3.tpl", {})
+  template_4 = templatefile("${path.module}/template_4.tpl", {})
+  template_5 = templatefile("${path.module}/template_5.tpl", {})
+  
+  large_string = "LARGE_DATA_STRING_PLACEHOLDER_THAT_WILL_BE_REPEATED_MANY_TIMES_TO_CREATE_A_BIG_PLAN_SIZE"
 }
 
-data "external" "create_directories" {
-  program = ["bash", "-c", "mkdir -p ./data/logs ./data/config ./data/backups ./data/temp && echo '{\"status\":\"directories_created\"}'"]
+resource "terraform_data" "resource_001" {
+  input = { id = "001", name = "resource_001", template = local.template_1, data = local.large_string, description = "Resource 1 with template data", tags = {environment = "test", index = "1"} }
+}
+resource "terraform_data" "resource_002" {
+  input = { id = "002", name = "resource_002", template = local.template_2, data = local.large_string, description = "Resource 2 with template data", tags = {environment = "test", index = "2"} }
+}
+resource "terraform_data" "resource_003" {
+  input = { id = "003", name = "resource_003", template = local.template_3, data = local.large_string, description = "Resource 3 with template data", tags = {environment = "test", index = "3"} }
+}
+resource "terraform_data" "resource_004" {
+  input = { id = "004", name = "resource_004", template = local.template_4, data = local.large_string, description = "Resource 4 with template data", tags = {environment = "test", index = "4"} }
+}
+resource "terraform_data" "resource_005" {
+  input = { id = "005", name = "resource_005", template = local.template_5, data = local.large_string, description = "Resource 5 with template data", tags = {environment = "test", index = "5"} }
+}
+resource "terraform_data" "resource_006" {
+  input = { id = "006", name = "resource_006", template = local.template_1, data = local.large_string, description = "Resource 6 with template data", tags = {environment = "test", index = "6"} }
+}
+resource "terraform_data" "resource_007" {
+  input = { id = "007", name = "resource_007", template = local.template_2, data = local.large_string, description = "Resource 7 with template data", tags = {environment = "test", index = "7"} }
+}
+resource "terraform_data" "resource_008" {
+  input = { id = "008", name = "resource_008", template = local.template_3, data = local.large_string, description = "Resource 8 with template data", tags = {environment = "test", index = "8"} }
+}
+resource "terraform_data" "resource_009" {
+  input = { id = "009", name = "resource_009", template = local.template_4, data = local.large_string, description = "Resource 9 with template data", tags = {environment = "test", index = "9"} }
+}
+resource "terraform_data" "resource_010" {
+  input = { id = "010", name = "resource_010", template = local.template_5, data = local.large_string, description = "Resource 10 with template data", tags = {environment = "test", index = "10"} }
 }
 
-# CHANGED: Much larger files (200MB each)
-data "external" "create_backup_01" {
-  program = ["bash", "-c", "dd if=/dev/zero of=./data/backups/backup_01.tar bs=1M count=200 2>/dev/null && echo '{\"status\":\"backup_01_created\",\"size_mb\":\"200\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-data "external" "create_backup_02" {
-  program = ["bash", "-c", "dd if=/dev/zero of=./data/backups/backup_02.tar bs=1M count=200 2>/dev/null && echo '{\"status\":\"backup_02_created\",\"size_mb\":\"200\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-data "external" "create_backup_03" {
-  program = ["bash", "-c", "dd if=/dev/zero of=./data/backups/backup_03.tar bs=1M count=200 2>/dev/null && echo '{\"status\":\"backup_03_created\",\"size_mb\":\"200\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-# CHANGED: Larger log files (50MB each)
-data "external" "create_app_log" {
-  program = ["bash", "-c", "dd if=/dev/zero of=./data/logs/app.log bs=1M count=50 2>/dev/null && echo '{\"status\":\"app_log_created\",\"size_mb\":\"50\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-data "external" "create_system_log" {
-  program = ["bash", "-c", "dd if=/dev/zero of=./data/logs/system.log bs=1M count=50 2>/dev/null && echo '{\"status\":\"system_log_created\",\"size_mb\":\"50\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-# Keep the rest as-is or make them larger too
-data "external" "create_config_files" {
-  program = ["bash", "-c", "for i in {1..10}; do dd if=/dev/zero of=./data/config/config_$i.json bs=1M count=1 2>/dev/null; done && echo '{\"status\":\"config_files_created\",\"count\":\"10\",\"size_mb\":\"10\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-data "external" "create_temp_files" {
-  program = ["bash", "-c", "for i in {1..10}; do dd if=/dev/zero of=./data/temp/temp_$i.bin bs=1M count=1 2>/dev/null; done && echo '{\"status\":\"temp_files_created\",\"count\":\"10\",\"size_mb\":\"10\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-data "external" "create_debug_files" {
-  program = ["bash", "-c", "for i in {1..5}; do head -c 2M </dev/urandom | base64 > ./data/logs/debug_$i.txt; done && echo '{\"status\":\"debug_files_created\",\"count\":\"5\",\"size_mb\":\"10\"}'"]
-  depends_on = [data.external.create_directories]
-}
-
-data "external" "calculate_total" {
-  program = ["bash", "-c", "total_size=$(du -sb ./data 2>/dev/null | cut -f1) && total_mb=$((total_size / 1024 / 1024)) && file_count=$(find ./data -type f | wc -l) && echo \"{\\\"status\\\":\\\"calculated\\\",\\\"total_size_mb\\\":\\\"$total_mb\\\",\\\"file_count\\\":\\\"$file_count\\\"}\""]
-  depends_on = [
-    data.external.create_app_log,
-    data.external.create_system_log,
-    data.external.create_backup_01,
-    data.external.create_backup_02,
-    data.external.create_backup_03,
-    data.external.create_config_files,
-    data.external.create_temp_files,
-    data.external.create_debug_files
-  ]
-}
-
-output "files_created" {
-  value = {
-    directories    = data.external.create_directories.result.status
-    app_log        = data.external.create_app_log.result.status
-    system_log     = data.external.create_system_log.result.status
-    backup_01      = data.external.create_backup_01.result.status
-    backup_02      = data.external.create_backup_02.result.status
-    backup_03      = data.external.create_backup_03.result.status
-    config_files   = data.external.create_config_files.result.status
-    temp_files     = data.external.create_temp_files.result.status
-    debug_files    = data.external.create_debug_files.result.status
-    total_size_mb  = data.external.calculate_total.result.total_size_mb
-    file_count     = data.external.calculate_total.result.file_count
-  }
+output "total_resources" {
+  value       = 10
+  description = "Total number of terraform_data resources - expand to 500 by duplicating pattern"
 }
