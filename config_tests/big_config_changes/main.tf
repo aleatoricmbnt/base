@@ -69,7 +69,7 @@ terraform {
 
 # Data source that creates multiple files and folders (50-100MB total)
 data "external" "create_large_files" {
-  program = ["bash", "-c", <<-EOF
+  program = ["bash", "-c", <<-EOT
 # Create directory structure
 mkdir -p ./data/logs ./data/config ./data/backups ./data/temp
 
@@ -106,6 +106,6 @@ total_mb=$((total_size / 1024 / 1024))
 file_count=$(find ./data -type f | wc -l)
 
 echo "{\"status\":\"created\",\"total_size_mb\":\"$total_mb\",\"file_count\":\"$file_count\",\"base_dir\":\"./data\"}"
-EOF
+EOT
   ]
 }
