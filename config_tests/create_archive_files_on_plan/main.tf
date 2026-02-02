@@ -29,6 +29,8 @@ data "archive_file" "example_archive" {
     content  = "Hello from Terraform! This file will be archived."
     filename = "source_file.txt"
   }
+  
+  depends_on = [data.external.create_source_file]
 }
 
 # Another data source that creates a different file (runs during plan)
