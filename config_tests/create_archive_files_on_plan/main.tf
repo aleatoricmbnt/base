@@ -14,10 +14,6 @@ terraform {
 # Data source that creates a text file using external program (runs during plan)
 data "external" "create_source_file" {
   program = ["bash", "-c", "echo 'Hello from Terraform! This file will be archived.' > ./source_file.txt && echo '{\"status\":\"created\",\"filename\":\"source_file.txt\",\"pwd\":\"'$(pwd)'\"}'"]
-  
-  query = {
-    timestamp = timestamp()
-  }
 }
 
 # Archive the created file (runs during plan)
@@ -37,17 +33,13 @@ data "archive_file" "example_archive" {
 data "external" "create_metadata_file" {
   program = ["bash", "-c", "printf 'Archive Metadata\\nCreated: %s\\nArchive Size: Pending\\nStatus: Ready for extraction\\n' \"$(date '+%Y-%m-%d %H:%M:%S')\" > ./metadata.txt && echo '{\"status\":\"created\",\"filename\":\"metadata.txt\"}'"]
   
-  query = {
-    timestamp = timestamp()
-  }
-  
   depends_on = [data.external.create_source_file]
 }
 
 # Extract the archive during Apply stage
 resource "null_resource" "extract_archive" {
   triggers = {
-    timestamp = timestamp()
+    archive_hash = data.archive_file.example_archive.output_md5
   }
 
   provisioner "local-exec" {
