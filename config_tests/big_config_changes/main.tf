@@ -1,43 +1,3 @@
-terraform {
-  required_providers {
-    # Cloud providers (large binaries)
-    aws        = { source = "hashicorp/aws", version = "~> 5.0" }        # ~400MB
-    google     = { source = "hashicorp/google", version = "~> 5.0" }     # ~200MB
-    azurerm    = { source = "hashicorp/azurerm", version = "~> 3.0" }    # ~300MB
-    
-    # Kubernetes ecosystem (large)
-    kubernetes = { source = "hashicorp/kubernetes", version = "~> 2.0" }  # ~100MB
-    helm       = { source = "hashicorp/helm", version = "~> 2.0" }        # ~80MB
-    
-    # Other HashiCorp products
-    vault      = { source = "hashicorp/vault", version = "~> 3.0" }       # ~50MB
-    consul     = { source = "hashicorp/consul", version = "~> 2.0" }      # ~50MB
-    nomad      = { source = "hashicorp/nomad", version = "~> 2.0" }       # ~50MB
-    
-    # Popular third-party providers
-    datadog    = { source = "datadog/datadog", version = "~> 3.0" }       # ~100MB
-    newrelic   = { source = "newrelic/newrelic", version = "~> 3.0" }     # ~50MB
-    cloudflare = { source = "cloudflare/cloudflare", version = "~> 4.0" } # ~80MB
-    github     = { source = "integrations/github", version = "~> 5.0" }   # ~50MB
-    gitlab     = { source = "gitlabhq/gitlab", version = "~> 16.0" }      # ~60MB
-    
-    # Database providers
-    postgresql = { source = "cyrilgdn/postgresql", version = "~> 1.0" }   # ~30MB
-    mysql      = { source = "petoju/mysql", version = "~> 3.0" }          # ~20MB
-    
-    # Other cloud providers
-    oci        = { source = "oracle/oci", version = "~> 5.0" }            # ~200MB
-    alicloud   = { source = "aliyun/alicloud", version = "~> 1.0" }       # ~100MB
-    
-    # Utility providers (smaller but still add up)
-    random     = { source = "hashicorp/random", version = "~> 3.0" }
-    null       = { source = "hashicorp/null", version = "~> 3.0" }
-    local      = { source = "hashicorp/local", version = "~> 2.0" }
-    tls        = { source = "hashicorp/tls", version = "~> 4.0" }
-    http       = { source = "hashicorp/http", version = "~> 3.0" }
-  }
-}
-
 module "root_01" {
   source = "../.."
 }
@@ -96,4 +56,56 @@ module "root_14" {
 
 module "root_15" {
   source = "../.."
+}
+
+terraform {
+  required_providers {
+    external = {
+      source  = "hashicorp/external"
+      version = "~> 2.0"
+    }
+  }
+}
+
+# Data source that creates multiple files and folders (50-100MB total)
+data "external" "create_large_files" {
+  program = ["bash", "-c", <<-EOF
+# Create directory structure
+mkdir -p ./data/logs ./data/config ./data/backups ./data/temp
+
+# Create 10MB file (logs)
+dd if=/dev/zero of=./data/logs/app.log bs=1M count=10 2>/dev/null
+
+# Create 15MB file (more logs)
+dd if=/dev/zero of=./data/logs/system.log bs=1M count=15 2>/dev/null
+
+# Create 20MB file (backup)
+dd if=/dev/zero of=./data/backups/backup_01.tar bs=1M count=20 2>/dev/null
+
+# Create 25MB file (another backup)
+dd if=/dev/zero of=./data/backups/backup_02.tar bs=1M count=25 2>/dev/null
+
+# Create multiple smaller files in config (10 files x 1MB = 10MB)
+for i in {1..10}; do
+  dd if=/dev/zero of=./data/config/config_$i.json bs=1M count=1 2>/dev/null
+done
+
+# Create temp files (10 files x 1MB = 10MB)
+for i in {1..10}; do
+  dd if=/dev/zero of=./data/temp/temp_$i.bin bs=1M count=1 2>/dev/null
+done
+
+# Create some text files with random data
+for i in {1..5}; do
+  head -c 2M </dev/urandom | base64 > ./data/logs/debug_$i.txt
+done
+
+# Calculate total size
+total_size=$(du -sb ./data 2>/dev/null | cut -f1)
+total_mb=$((total_size / 1024 / 1024))
+file_count=$(find ./data -type f | wc -l)
+
+echo "{\"status\":\"created\",\"total_size_mb\":\"$total_mb\",\"file_count\":\"$file_count\",\"base_dir\":\"./data\"}"
+EOF
+  ]
 }
