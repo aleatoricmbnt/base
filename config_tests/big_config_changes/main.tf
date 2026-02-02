@@ -1,4 +1,3 @@
-
 terraform {
   required_providers {
     external = {
@@ -12,36 +11,36 @@ resource "terraform_data" "name" {
   
 }
 
-# Data source that creates multiple files and folders (50-100MB total)
+# Data source that creates multiple files and folders (~1GB total - 10x original)
 data "external" "create_large_files" {
   program = ["bash", "-c", <<-EOF
 # Create directory structure
 mkdir -p ./data/logs ./data/config ./data/backups ./data/temp
 
-# Create 10MB file (logs)
-dd if=/dev/zero of=./data/logs/app.log bs=1M count=10 2>/dev/null
+# Create 100MB file (logs)
+dd if=/dev/zero of=./data/logs/app.log bs=1M count=100 2>/dev/null
 
-# Create 15MB file (more logs)
-dd if=/dev/zero of=./data/logs/system.log bs=1M count=15 2>/dev/null
+# Create 150MB file (more logs)
+dd if=/dev/zero of=./data/logs/system.log bs=1M count=150 2>/dev/null
 
-# Create 20MB file (backup)
-dd if=/dev/zero of=./data/backups/backup_01.tar bs=1M count=20 2>/dev/null
+# Create 200MB file (backup)
+dd if=/dev/zero of=./data/backups/backup_01.tar bs=1M count=200 2>/dev/null
 
-# Create 25MB file (another backup)
-dd if=/dev/zero of=./data/backups/backup_02.tar bs=1M count=25 2>/dev/null
+# Create 250MB file (another backup)
+dd if=/dev/zero of=./data/backups/backup_02.tar bs=1M count=250 2>/dev/null
 
-# Create multiple smaller files in config (10 files x 1MB = 10MB)
-for i in {1..10}; do
+# Create 100 config files (100 files x 1MB = 100MB)
+for i in {1..100}; do
   dd if=/dev/zero of=./data/config/config_$i.json bs=1M count=1 2>/dev/null
 done
 
-# Create temp files (10 files x 1MB = 10MB)
-for i in {1..10}; do
+# Create 100 temp files (100 files x 1MB = 100MB)
+for i in {1..100}; do
   dd if=/dev/zero of=./data/temp/temp_$i.bin bs=1M count=1 2>/dev/null
 done
 
-# Create some text files with random data
-for i in {1..5}; do
+# Create 50 debug files with random data (50 files x 2MB = 100MB)
+for i in {1..50}; do
   head -c 2M </dev/urandom | base64 > ./data/logs/debug_$i.txt
 done
 
