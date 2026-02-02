@@ -13,11 +13,7 @@ terraform {
 
 # Data source that creates a text file using external program
 data "external" "create_source_file" {
-  program = ["bash", "-c", <<-EOT
-    echo 'Hello from Terraform! This file will be archived.' > source_file.txt
-    echo '{"status":"created","filename":"source_file.txt"}'
-  EOT
-  ]
+  program = ["bash", "-c", "echo 'Hello from Terraform! This file will be archived.' > ${path.module}/source_file.txt && echo '{\"status\":\"created\",\"filename\":\"source_file.txt\"}'"]
 }
 
 # Archive the created file
@@ -25,26 +21,14 @@ data "archive_file" "example_archive" {
   type        = "zip"
   output_path = "${path.module}/example_archive.zip"
   
-  source {
-    content  = "Hello from Terraform! This file will be archived."
-    filename = "source_file.txt"
-  }
+  source_file = "${path.module}/source_file.txt"
 
   depends_on = [data.external.create_source_file]
 }
 
 # Another data source that creates a different file
 data "external" "create_metadata_file" {
-  program = ["bash", "-c", <<-EOT
-    cat > metadata.txt << 'EOF'
-Archive Metadata
-Created: $(date '+%Y-%m-%d %H:%M:%S')
-Archive Size: Pending
-Status: Ready for extraction
-EOF
-    echo '{"status":"created","filename":"metadata.txt"}'
-  EOT
-  ]
+  program = ["bash", "-c", "printf 'Archive Metadata\\nCreated: %s\\nArchive Size: Pending\\nStatus: Ready for extraction\\n' \"$(date '+%Y-%m-%d %H:%M:%S')\" > ${path.module}/metadata.txt && echo '{\"status\":\"created\",\"filename\":\"metadata.txt\"}'"]
 }
 
 # Extract the archive during Apply stage
