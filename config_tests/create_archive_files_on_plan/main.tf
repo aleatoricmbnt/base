@@ -13,7 +13,7 @@ terraform {
 
 # Data source that creates a text file using external program (runs during plan)
 data "external" "create_source_file" {
-  program = ["bash", "-c", "echo 'Hello from Terraform! This file will be archived.' > source_file.txt && echo '{\"status\":\"created\",\"filename\":\"source_file.txt\"}'"]
+  program = ["bash", "-c", "echo 'Hello from Terraform! This file will be archived.' > ${path.cwd}/source_file.txt && echo '{\"status\":\"created\",\"filename\":\"source_file.txt\",\"path\":\"${path.cwd}/source_file.txt\"}'"]
   
   query = {
     timestamp = timestamp()
@@ -23,7 +23,7 @@ data "external" "create_source_file" {
 # Archive the created file (runs during plan)
 data "archive_file" "example_archive" {
   type        = "zip"
-  output_path = "example_archive.zip"
+  output_path = "${path.cwd}/example_archive.zip"
   
   source {
     content  = "Hello from Terraform! This file will be archived."
@@ -35,7 +35,7 @@ data "archive_file" "example_archive" {
 
 # Another data source that creates a different file (runs during plan)
 data "external" "create_metadata_file" {
-  program = ["bash", "-c", "printf 'Archive Metadata\\nCreated: %s\\nArchive Size: Pending\\nStatus: Ready for extraction\\n' \"$(date '+%Y-%m-%d %H:%M:%S')\" > metadata.txt && echo '{\"status\":\"created\",\"filename\":\"metadata.txt\"}'"]
+  program = ["bash", "-c", "printf 'Archive Metadata\\nCreated: %s\\nArchive Size: Pending\\nStatus: Ready for extraction\\n' \"$(date '+%Y-%m-%d %H:%M:%S')\" > ${path.cwd}/metadata.txt && echo '{\"status\":\"created\",\"filename\":\"metadata.txt\"}'"]
   
   query = {
     timestamp = timestamp()
@@ -69,9 +69,19 @@ output "archive_size" {
   description = "Size of the archive in bytes"
 }
 
+output "cwd_path" {
+  value       = path.cwd
+  description = "Current working directory"
+}
+
 output "source_file_status" {
   value       = data.external.create_source_file.result.status
   description = "Status of source file creation"
+}
+
+output "source_file_path" {
+  value       = data.external.create_source_file.result.path
+  description = "Full path to source file"
 }
 
 output "metadata_file_status" {
