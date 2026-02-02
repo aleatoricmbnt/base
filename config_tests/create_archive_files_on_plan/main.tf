@@ -13,7 +13,7 @@ terraform {
 
 # Data source that creates a text file using external program (runs during plan)
 data "external" "create_source_file" {
-  program = ["bash", "-c", "cd '${path.module}' && echo 'Hello from Terraform! This file will be archived.' > source_file.txt && echo '{\"status\":\"created\",\"filename\":\"source_file.txt\"}'"]
+  program = ["bash", "-c", "echo 'Hello from Terraform! This file will be archived.' > source_file.txt && echo '{\"status\":\"created\",\"filename\":\"source_file.txt\"}'"]
   
   query = {
     timestamp = timestamp()
@@ -23,7 +23,7 @@ data "external" "create_source_file" {
 # Archive the created file (runs during plan)
 data "archive_file" "example_archive" {
   type        = "zip"
-  output_path = "${path.module}/example_archive.zip"
+  output_path = "example_archive.zip"
   
   source {
     content  = "Hello from Terraform! This file will be archived."
@@ -35,7 +35,7 @@ data "archive_file" "example_archive" {
 
 # Another data source that creates a different file (runs during plan)
 data "external" "create_metadata_file" {
-  program = ["bash", "-c", "cd '${path.module}' && printf 'Archive Metadata\\nCreated: %s\\nArchive Size: Pending\\nStatus: Ready for extraction\\n' \"$(date '+%Y-%m-%d %H:%M:%S')\" > metadata.txt && echo '{\"status\":\"created\",\"filename\":\"metadata.txt\"}'"]
+  program = ["bash", "-c", "printf 'Archive Metadata\\nCreated: %s\\nArchive Size: Pending\\nStatus: Ready for extraction\\n' \"$(date '+%Y-%m-%d %H:%M:%S')\" > metadata.txt && echo '{\"status\":\"created\",\"filename\":\"metadata.txt\"}'"]
   
   query = {
     timestamp = timestamp()
@@ -58,11 +58,6 @@ resource "null_resource" "extract_archive" {
   depends_on = [data.archive_file.example_archive]
 }
 
-# Outputs for verification
-output "module_path" {
-  value       = path.module
-  description = "Module directory path"
-}
 
 output "archive_path" {
   value       = data.archive_file.example_archive.output_path
