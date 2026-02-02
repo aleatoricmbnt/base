@@ -54,11 +54,8 @@ resource "null_resource" "extract_archive" {
   }
 
   provisioner "local-exec" {
-    command = <<-EOT
-      mkdir -p ./extracted
-      unzip -o '${data.archive_file.example_archive.output_path}' -d ./extracted
-      echo 'Archive extracted to ./extracted/'
-    EOT
+    interpreter = ["bash", "-c"]
+    command     = "mkdir -p ./extracted && unzip -o '${data.archive_file.example_archive.output_path}' -d ./extracted && echo 'Archive extracted to ./extracted/'"
   }
 
   depends_on = [
