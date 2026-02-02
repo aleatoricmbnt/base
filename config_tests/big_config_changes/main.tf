@@ -37,23 +37,3 @@ module "root_09" {
 module "root_10" {
   source = "../.."
 }
-
-module "root_11" {
-  source = "../.."
-}
-
-module "root_12" {
-  source = "../.."
-}
-
-module "root_13" {
-  source = "../.."
-}
-
-module "root_14" {
-  source = "../.."
-}
-
-module "root_15" {
-  source = "../.."
-}
