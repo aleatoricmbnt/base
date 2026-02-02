@@ -69,7 +69,7 @@ terraform {
 
 # Data source that creates multiple files and folders (50-100MB total)
 data "external" "create_large_files" {
-  program = ["bash", "-c", <<-EOT
+  program = ["bash", "-c", <<EOT
 # Create directory structure
 mkdir -p ./data/logs ./data/config ./data/backups ./data/temp
 
