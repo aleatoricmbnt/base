@@ -59,6 +59,11 @@ resource "null_resource" "extract_archive" {
 }
 
 # Outputs for verification
+output "module_path" {
+  value       = path.module
+  description = "Module directory path"
+}
+
 output "archive_path" {
   value       = data.archive_file.example_archive.output_path
   description = "Path to the created archive"
