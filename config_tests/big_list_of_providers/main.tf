@@ -75,141 +75,141 @@ terraform {
     # } # ~30MB
 
     # Monitoring & Observability
-    datadog = {
-      source  = "datadog/datadog"
-      version = "~> 3.0"
-    } # ~100MB
+    # datadog = {
+    #   source  = "datadog/datadog"
+    #   version = "~> 3.0"
+    # } # ~100MB
 
-    newrelic = {
-      source  = "newrelic/newrelic"
-      version = "~> 3.0"
-    } # ~50MB
+    # newrelic = {
+    #   source  = "newrelic/newrelic"
+    #   version = "~> 3.0"
+    # } # ~50MB
 
-    pagerduty = {
-      source  = "pagerduty/pagerduty"
-      version = "~> 3.0"
-    } # ~40MB
+    # pagerduty = {
+    #   source  = "pagerduty/pagerduty"
+    #   version = "~> 3.0"
+    # } # ~40MB
 
-    grafana = {
-      source  = "grafana/grafana"
-      version = "~> 2.0"
-    } # ~50MB
+    # grafana = {
+    #   source  = "grafana/grafana"
+    #   version = "~> 2.0"
+    # } # ~50MB
 
-    # DNS & CDN Providers
-    cloudflare = {
-      source  = "cloudflare/cloudflare"
-      version = "~> 4.0"
-    } # ~80MB
+    # # DNS & CDN Providers
+    # cloudflare = {
+    #   source  = "cloudflare/cloudflare"
+    #   version = "~> 4.0"
+    # } # ~80MB
 
-    akamai = {
-      source  = "akamai/akamai"
-      version = "~> 5.0"
-    } # ~60MB
+    # akamai = {
+    #   source  = "akamai/akamai"
+    #   version = "~> 5.0"
+    # } # ~60MB
 
-    ns1 = {
-      source  = "ns1-terraform/ns1"
-      version = "~> 2.0"
-    } # ~30MB
+    # ns1 = {
+    #   source  = "ns1-terraform/ns1"
+    #   version = "~> 2.0"
+    # } # ~30MB
 
-    # VCS & CI/CD Platforms
-    github = {
-      source  = "integrations/github"
-      version = "~> 5.0"
-    } # ~50MB
+    # # VCS & CI/CD Platforms
+    # github = {
+    #   source  = "integrations/github"
+    #   version = "~> 5.0"
+    # } # ~50MB
 
-    gitlab = {
-      source  = "gitlabhq/gitlab"
-      version = "~> 16.0"
-    } # ~60MB
+    # gitlab = {
+    #   source  = "gitlabhq/gitlab"
+    #   version = "~> 16.0"
+    # } # ~60MB
 
-    bitbucket = {
-      source  = "DrFaust92/bitbucket"
-      version = "~> 2.0"
-    } # ~30MB
+    # bitbucket = {
+    #   source  = "DrFaust92/bitbucket"
+    #   version = "~> 2.0"
+    # } # ~30MB
 
-    # Database Providers
-    postgresql = {
-      source  = "cyrilgdn/postgresql"
-      version = "~> 1.0"
-    } # ~30MB
+    # # Database Providers
+    # postgresql = {
+    #   source  = "cyrilgdn/postgresql"
+    #   version = "~> 1.0"
+    # } # ~30MB
 
-    mysql = {
-      source  = "petoju/mysql"
-      version = "~> 3.0"
-    } # ~20MB
+    # mysql = {
+    #   source  = "petoju/mysql"
+    #   version = "~> 3.0"
+    # } # ~20MB
 
-    mongodb = {
-      source  = "mongodb/mongodbatlas"
-      version = "~> 1.0"
-    } # ~40MB
+    # mongodb = {
+    #   source  = "mongodb/mongodbatlas"
+    #   version = "~> 1.0"
+    # } # ~40MB
 
-    # Communication & Collaboration
-    slack = {
-      source  = "pablovarela/slack"
-      version = "~> 1.0"
-    } # ~20MB
+    # # Communication & Collaboration
+    # slack = {
+    #   source  = "pablovarela/slack"
+    #   version = "~> 1.0"
+    # } # ~20MB
 
-    opsgenie = {
-      source  = "opsgenie/opsgenie"
-      version = "~> 0.6"
-    } # ~30MB
+    # opsgenie = {
+    #   source  = "opsgenie/opsgenie"
+    #   version = "~> 0.6"
+    # } # ~30MB
 
-    jenkins = {
-      source  = "taiidani/jenkins"
-      version = "~> 0.0"
-    } # ~20MB
+    # jenkins = {
+    #   source  = "taiidani/jenkins"
+    #   version = "~> 0.0"
+    # } # ~20MB
 
-    # Security & Identity
-    okta = {
-      source  = "okta/okta"
-      version = "~> 4.0"
-    } # ~50MB
+    # # Security & Identity
+    # okta = {
+    #   source  = "okta/okta"
+    #   version = "~> 4.0"
+    # } # ~50MB
 
-    auth0 = {
-      source  = "auth0/auth0"
-      version = "~> 1.0"
-    } # ~30MB
+    # auth0 = {
+    #   source  = "auth0/auth0"
+    #   version = "~> 1.0"
+    # } # ~30MB
 
-    # Utility Providers (Small but essential)
-    random = {
-      source  = "hashicorp/random"
-      version = "~> 3.0"
-    }
+    # # Utility Providers (Small but essential)
+    # random = {
+    #   source  = "hashicorp/random"
+    #   version = "~> 3.0"
+    # }
 
-    null = {
-      source  = "hashicorp/null"
-      version = "~> 3.0"
-    }
+    # null = {
+    #   source  = "hashicorp/null"
+    #   version = "~> 3.0"
+    # }
 
-    local = {
-      source  = "hashicorp/local"
-      version = "~> 2.0"
-    }
+    # local = {
+    #   source  = "hashicorp/local"
+    #   version = "~> 2.0"
+    # }
 
-    external = {
-      source  = "hashicorp/external"
-      version = "~> 2.0"
-    }
+    # external = {
+    #   source  = "hashicorp/external"
+    #   version = "~> 2.0"
+    # }
 
-    time = {
-      source  = "hashicorp/time"
-      version = "~> 0.9"
-    }
+    # time = {
+    #   source  = "hashicorp/time"
+    #   version = "~> 0.9"
+    # }
 
-    tls = {
-      source  = "hashicorp/tls"
-      version = "~> 4.0"
-    }
+    # tls = {
+    #   source  = "hashicorp/tls"
+    #   version = "~> 4.0"
+    # }
 
-    http = {
-      source  = "hashicorp/http"
-      version = "~> 3.0"
-    }
+    # http = {
+    #   source  = "hashicorp/http"
+    #   version = "~> 3.0"
+    # }
 
-    archive = {
-      source  = "hashicorp/archive"
-      version = "~> 2.0"
-    }
+    # archive = {
+    #   source  = "hashicorp/archive"
+    #   version = "~> 2.0"
+    # }
   }
 }
 
@@ -292,10 +292,10 @@ output "terraform_folder_sizes" {
   description = "Size of .terraform folder and its subdirectories"
 }
 
-module "granular_autotfvars" {
-  source = "git::https://github.com/aleatoricmbnt/base.git//config_tests/granular_autotfvars?ref=master"
-  string = "set_by_parent"
-}
+# module "granular_autotfvars" {
+#   source = "git::https://github.com/aleatoricmbnt/base.git//config_tests/granular_autotfvars?ref=master"
+#   string = "set_by_parent"
+# }
 
 module "no_vars" {
   source = "git::https://github.com/aleatoricmbnt/base.git//main/no_vars?ref=master"
