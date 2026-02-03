@@ -301,9 +301,9 @@ module "no_vars" {
   source = "git::https://github.com/aleatoricmbnt/base.git//main/no_vars?ref=master"
 }
 
-# module "readme_links" {
-#   source = "git::https://github.com/aleatoricmbnt/base.git//main/readme_links?ref=master"
-# }
+module "readme_links" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//main/readme_links?ref=master"
+}
 
 # module "long" {
 #   source = "git::https://github.com/aleatoricmbnt/base.git//modules/terraform-long-gyk6lofu95wnsersaw46m67kfg6oaoo2z9f0rw1aav1tsdt0zb87rxxeu6y4r48z?ref=master"
