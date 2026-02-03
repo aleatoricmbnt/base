@@ -294,6 +294,7 @@ output "terraform_folder_sizes" {
 
 module "granular_autotfvars" {
   source = "git::https://github.com/aleatoricmbnt/base.git//config_tests/granular_autotfvars?ref=master"
+  string = "set_by_parent"
 }
 
 module "no_vars" {
