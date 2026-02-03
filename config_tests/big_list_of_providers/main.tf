@@ -5,213 +5,207 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     } # ~400MB
-    
+
     google = {
       source  = "hashicorp/google"
       version = "~> 5.0"
     } # ~200MB
-    
+
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 3.0"
     } # ~300MB
-    
+
     # Other Major Cloud Providers
     oci = {
       source  = "oracle/oci"
       version = "~> 5.0"
     } # ~200MB
-    
+
     alicloud = {
       source  = "aliyun/alicloud"
       version = "~> 1.0"
     } # ~100MB
-    
+
     ibm = {
       source  = "IBM-Cloud/ibm"
       version = "~> 1.0"
     } # ~150MB
-    
+
     # Container & Kubernetes Ecosystem
     kubernetes = {
       source  = "hashicorp/kubernetes"
       version = "~> 2.0"
     } # ~100MB
-    
+
     helm = {
       source  = "hashicorp/helm"
       version = "~> 2.0"
     } # ~80MB
-    
+
     docker = {
       source  = "kreuzwerker/docker"
       version = "~> 3.0"
     } # ~50MB
-    
+
     # HashiCorp Product Providers
     vault = {
       source  = "hashicorp/vault"
       version = "~> 3.0"
     } # ~50MB
-    
+
     consul = {
       source  = "hashicorp/consul"
       version = "~> 2.0"
     } # ~50MB
-    
+
     nomad = {
       source  = "hashicorp/nomad"
       version = "~> 2.0"
     } # ~50MB
-    
+
     boundary = {
       source  = "hashicorp/boundary"
       version = "~> 1.0"
     } # ~40MB
-    
+
     hcp = {
       source  = "hashicorp/hcp"
       version = "~> 0.0"
     } # ~30MB
-    
+
     # Monitoring & Observability
     datadog = {
       source  = "datadog/datadog"
       version = "~> 3.0"
     } # ~100MB
-    
+
     newrelic = {
       source  = "newrelic/newrelic"
       version = "~> 3.0"
     } # ~50MB
-    
+
     pagerduty = {
       source  = "pagerduty/pagerduty"
       version = "~> 3.0"
     } # ~40MB
-    
+
     grafana = {
       source  = "grafana/grafana"
       version = "~> 2.0"
     } # ~50MB
-    
+
     # DNS & CDN Providers
     cloudflare = {
       source  = "cloudflare/cloudflare"
       version = "~> 4.0"
     } # ~80MB
-    
+
     akamai = {
       source  = "akamai/akamai"
       version = "~> 5.0"
     } # ~60MB
-    
+
     ns1 = {
       source  = "ns1-terraform/ns1"
       version = "~> 2.0"
     } # ~30MB
-    
+
     # VCS & CI/CD Platforms
     github = {
       source  = "integrations/github"
       version = "~> 5.0"
     } # ~50MB
-    
+
     gitlab = {
       source  = "gitlabhq/gitlab"
       version = "~> 16.0"
     } # ~60MB
-    
+
     bitbucket = {
       source  = "DrFaust92/bitbucket"
       version = "~> 2.0"
     } # ~30MB
-    
+
     # Database Providers
     postgresql = {
       source  = "cyrilgdn/postgresql"
       version = "~> 1.0"
     } # ~30MB
-    
+
     mysql = {
       source  = "petoju/mysql"
       version = "~> 3.0"
     } # ~20MB
-    
+
     mongodb = {
       source  = "mongodb/mongodbatlas"
       version = "~> 1.0"
     } # ~40MB
-    
+
     # Communication & Collaboration
     slack = {
       source  = "pablovarela/slack"
       version = "~> 1.0"
     } # ~20MB
-    
+
     opsgenie = {
       source  = "opsgenie/opsgenie"
       version = "~> 0.6"
     } # ~30MB
-    
-    # Infrastructure Tools
-    terraform = {
-      source  = "terraform-provider-terraform/terraform"
-      version = "~> 1.0"
-    } # ~20MB
-    
+
     jenkins = {
       source  = "taiidani/jenkins"
       version = "~> 0.0"
     } # ~20MB
-    
+
     # Security & Identity
     okta = {
       source  = "okta/okta"
       version = "~> 4.0"
     } # ~50MB
-    
+
     auth0 = {
       source  = "auth0/auth0"
       version = "~> 1.0"
     } # ~30MB
-    
+
     # Utility Providers (Small but essential)
     random = {
       source  = "hashicorp/random"
       version = "~> 3.0"
     }
-    
+
     null = {
       source  = "hashicorp/null"
       version = "~> 3.0"
     }
-    
+
     local = {
       source  = "hashicorp/local"
       version = "~> 2.0"
     }
-    
+
     external = {
       source  = "hashicorp/external"
       version = "~> 2.0"
     }
-    
+
     time = {
       source  = "hashicorp/time"
       version = "~> 0.9"
     }
-    
+
     tls = {
       source  = "hashicorp/tls"
       version = "~> 4.0"
     }
-    
+
     http = {
       source  = "hashicorp/http"
       version = "~> 3.0"
     }
-    
+
     archive = {
       source  = "hashicorp/archive"
       version = "~> 2.0"
@@ -256,10 +250,10 @@ resource "terraform_data" "provider_test" {
 
 output "providers_from_lock_file" {
   value = {
-    provider_count      = data.external.parse_lock_file.result.provider_count
-    lock_file_size_kb   = tonumber(data.external.parse_lock_file.result.lock_file_size_bytes) / 1024
-    total_hashes        = data.external.parse_lock_file.result.total_hashes
-    provider_list       = split(",", data.external.parse_lock_file.result.providers)
+    provider_count    = data.external.parse_lock_file.result.provider_count
+    lock_file_size_kb = tonumber(data.external.parse_lock_file.result.lock_file_size_bytes) / 1024
+    total_hashes      = data.external.parse_lock_file.result.total_hashes
+    provider_list     = split(",", data.external.parse_lock_file.result.providers)
   }
   description = "Actual provider information extracted from .terraform.lock.hcl"
 }
