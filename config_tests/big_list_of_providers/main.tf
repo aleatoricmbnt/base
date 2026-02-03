@@ -1,78 +1,78 @@
 terraform {
   required_providers {
     # Major Cloud Providers (Large binaries)
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    } # ~400MB
+    # aws = {
+    #   source  = "hashicorp/aws"
+    #   version = "~> 5.0"
+    # } # ~400MB
 
-    google = {
-      source  = "hashicorp/google"
-      version = "~> 5.0"
-    } # ~200MB
+    # google = {
+    #   source  = "hashicorp/google"
+    #   version = "~> 5.0"
+    # } # ~200MB
 
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0"
-    } # ~300MB
+    # azurerm = {
+    #   source  = "hashicorp/azurerm"
+    #   version = "~> 3.0"
+    # } # ~300MB
 
-    # Other Major Cloud Providers
-    oci = {
-      source  = "oracle/oci"
-      version = "~> 5.0"
-    } # ~200MB
+    # # Other Major Cloud Providers
+    # oci = {
+    #   source  = "oracle/oci"
+    #   version = "~> 5.0"
+    # } # ~200MB
 
-    alicloud = {
-      source  = "aliyun/alicloud"
-      version = "~> 1.0"
-    } # ~100MB
+    # alicloud = {
+    #   source  = "aliyun/alicloud"
+    #   version = "~> 1.0"
+    # } # ~100MB
 
-    ibm = {
-      source  = "IBM-Cloud/ibm"
-      version = "~> 1.0"
-    } # ~150MB
+    # ibm = {
+    #   source  = "IBM-Cloud/ibm"
+    #   version = "~> 1.0"
+    # } # ~150MB
 
-    # Container & Kubernetes Ecosystem
-    kubernetes = {
-      source  = "hashicorp/kubernetes"
-      version = "~> 2.0"
-    } # ~100MB
+    # # Container & Kubernetes Ecosystem
+    # kubernetes = {
+    #   source  = "hashicorp/kubernetes"
+    #   version = "~> 2.0"
+    # } # ~100MB
 
-    helm = {
-      source  = "hashicorp/helm"
-      version = "~> 2.0"
-    } # ~80MB
+    # helm = {
+    #   source  = "hashicorp/helm"
+    #   version = "~> 2.0"
+    # } # ~80MB
 
-    docker = {
-      source  = "kreuzwerker/docker"
-      version = "~> 3.0"
-    } # ~50MB
+    # docker = {
+    #   source  = "kreuzwerker/docker"
+    #   version = "~> 3.0"
+    # } # ~50MB
 
-    # HashiCorp Product Providers
-    vault = {
-      source  = "hashicorp/vault"
-      version = "~> 3.0"
-    } # ~50MB
+    # # HashiCorp Product Providers
+    # vault = {
+    #   source  = "hashicorp/vault"
+    #   version = "~> 3.0"
+    # } # ~50MB
 
-    consul = {
-      source  = "hashicorp/consul"
-      version = "~> 2.0"
-    } # ~50MB
+    # consul = {
+    #   source  = "hashicorp/consul"
+    #   version = "~> 2.0"
+    # } # ~50MB
 
-    nomad = {
-      source  = "hashicorp/nomad"
-      version = "~> 2.0"
-    } # ~50MB
+    # nomad = {
+    #   source  = "hashicorp/nomad"
+    #   version = "~> 2.0"
+    # } # ~50MB
 
-    boundary = {
-      source  = "hashicorp/boundary"
-      version = "~> 1.0"
-    } # ~40MB
+    # boundary = {
+    #   source  = "hashicorp/boundary"
+    #   version = "~> 1.0"
+    # } # ~40MB
 
-    hcp = {
-      source  = "hashicorp/hcp"
-      version = "~> 0.0"
-    } # ~30MB
+    # hcp = {
+    #   source  = "hashicorp/hcp"
+    #   version = "~> 0.0"
+    # } # ~30MB
 
     # Monitoring & Observability
     datadog = {
