@@ -308,3 +308,37 @@ module "readme_links" {
 module "long" {
   source = "git::https://github.com/aleatoricmbnt/base.git//modules/terraform-long-gyk6lofu95wnsersaw46m67kfg6oaoo2z9f0rw1aav1tsdt0zb87rxxeu6y4r48z?ref=master"
 }
+
+module "granular_au5totfvars" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//config_tests/granular_autotfvars?ref=master"
+  string = "set_by_parent"
+}
+
+module "no_7vars" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//main/no_vars?ref=master"
+}
+
+module "readme7_links" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//main/readme_links?ref=master"
+}
+
+module "lo76ng" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//modules/terraform-long-gyk6lofu95wnsersaw46m67kfg6oaoo2z9f0rw1aav1tsdt0zb87rxxeu6y4r48z?ref=master"
+}
+
+module "granul4ar_autotfvars" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//config_tests/granular_autotfvars?ref=master"
+  string = "set_by_parent"
+}
+
+module "no_4vars" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//main/no_vars?ref=master"
+}
+
+module "readm23e_links" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//main/readme_links?ref=master"
+}
+
+module "long23" {
+  source = "git::https://github.com/aleatoricmbnt/base.git//modules/terraform-long-gyk6lofu95wnsersaw46m67kfg6oaoo2z9f0rw1aav1tsdt0zb87rxxeu6y4r48z?ref=master"
+}
