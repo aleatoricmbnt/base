@@ -307,6 +307,9 @@ module "optional_changes" {
 
 module "required_var" {
   source = "git::https://github.com/aleatoricmbnt/base.git//main/required_var?ref=master"
+  triggers_replace = "set_by_parent"
+  input = "smth"
+  input2 = "other"
 }
 
 module "sensitivity_check" {
