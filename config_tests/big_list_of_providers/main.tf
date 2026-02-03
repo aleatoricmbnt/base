@@ -301,21 +301,6 @@ module "no_vars" {
   source = "git::https://github.com/aleatoricmbnt/base.git//main/no_vars?ref=master"
 }
 
-module "optional_changes" {
-  source = "git::https://github.com/aleatoricmbnt/base.git//main/optional_changes?ref=master"
-}
-
-module "required_var" {
-  source = "git::https://github.com/aleatoricmbnt/base.git//main/required_var?ref=master"
-  triggers_replace = "set_by_parent"
-  input = "smth"
-  input2 = "other"
-}
-
-module "sensitivity_check" {
-  source = "git::https://github.com/aleatoricmbnt/base.git//main/vcs_comments/sensitivity_check?ref=master"
-}
-
 module "readme_links" {
   source = "git::https://github.com/aleatoricmbnt/base.git//main/readme_links?ref=master"
 }
