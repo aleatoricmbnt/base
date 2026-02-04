@@ -77,8 +77,20 @@ output "terraform_folder_sizes" {
   description = "Size of .terraform folder and its subdirectories"
 }
 
-module "no_vars" {
-  source = "git::https://github.com/aleatoricmbnt/flat.git?ref=symlink-main-tf"
+module "15MB_1" {
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
+}
+
+module "15MB_2" {
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
+}
+
+module "15MB_3" {
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
+}
+
+module "15MB_4" {
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
 }
 
 # module "symlink_test" {
