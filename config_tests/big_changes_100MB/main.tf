@@ -78,8 +78,12 @@ output "terraform_folder_sizes" {
 }
 
 module "no_vars" {
-  source = "git::https://github.com/aleatoricmbnt/flat.git"
+  source = "git::https://github.com/aleatoricmbnt/flat.git?ref=symlink"
 }
+
+# module "symlink_test" {
+#   source = "git::https://github.com/aleatoricmbnt/base.git//config_tests/symlink_tfvars?ref=symlink"
+# }
 
 # module "readme_links" {
 #   source = "git::https://github.com/aleatoricmbnt/base.git//main/readme_links?ref=master"
