@@ -78,19 +78,19 @@ output "terraform_folder_sizes" {
 }
 
 module "_15MB_1" {
-  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git"
 }
 
 module "_15MB_2" {
-  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git"
 }
 
 module "_15MB_3" {
-  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git"
 }
 
 module "_15MB_4" {
-  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git"
 }
 
 # module "symlink_test" {
