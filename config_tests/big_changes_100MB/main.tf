@@ -78,7 +78,7 @@ output "terraform_folder_sizes" {
 }
 
 module "no_vars" {
-  source = "git::https://github.com/aleatoricmbnt/base.git//main/no_vars?ref=master"
+  source = "git::https://github.com/aleatoricmbnt/flat.git"
 }
 
 # module "readme_links" {
