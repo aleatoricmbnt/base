@@ -77,19 +77,19 @@ output "terraform_folder_sizes" {
   description = "Size of .terraform folder and its subdirectories"
 }
 
-module "15MB_1" {
+module "_15MB_1" {
   source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
 }
 
-module "15MB_2" {
+module "_15MB_2" {
   source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
 }
 
-module "15MB_3" {
+module "_15MB_3" {
   source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
 }
 
-module "15MB_4" {
+module "_15MB_4" {
   source = "git::https://github.com/aleatoricmbnt/16-mb-input.git//nested"
 }
 
