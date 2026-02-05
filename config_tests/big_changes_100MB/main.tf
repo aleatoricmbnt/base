@@ -93,6 +93,14 @@ module "_15MB_4" {
   source = "git::https://github.com/aleatoricmbnt/16-mb-input.git"
 }
 
+module "_15MB_3" {
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git"
+}
+
+module "_15MB_4" {
+  source = "git::https://github.com/aleatoricmbnt/16-mb-input.git"
+}
+
 # module "symlink_test" {
 #   source = "git::https://github.com/aleatoricmbnt/base.git//config_tests/symlink_tfvars?ref=symlink"
 # }
