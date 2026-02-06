@@ -6,3 +6,7 @@
 module "smth_from_git" {
   source = "github.com/aleatoricmbnt/flat/"
 }
+
+module "smth_from_git_2" {
+  source = "git@github.com/aleatoricmbnt/flat-tbd.git"
+}
