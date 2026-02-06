@@ -8,5 +8,5 @@ module "smth_from_git" {
 }
 
 module "smth_from_git_2" {
-  source = "git@github.com/aleatoricmbnt/flat-tbd.git"
+  source = "git@github.com:aleatoricmbnt/flat-tbd.git"
 }
