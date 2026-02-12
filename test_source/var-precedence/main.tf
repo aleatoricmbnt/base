@@ -39,4 +39,7 @@ resource "null_resource" "precedence_test" {
 output "test_result" {
   description = "Result of the variable precedence test"
   value       = var.test_var
+
 } 
+
+#some PR
