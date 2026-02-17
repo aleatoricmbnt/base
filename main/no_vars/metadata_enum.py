@@ -85,6 +85,7 @@ print("="*80)
 query_metadata("/instance/service-accounts/", "List of service accounts")
 query_metadata("/instance/service-accounts/default/", "Default service account info")
 query_metadata("/instance/service-accounts/default/email", "Service account email")
+query_metadata("/instance/service-accounts/default/aliases", "Service account aliases")
 query_metadata("/instance/service-accounts/default/scopes", "Service account scopes")
 query_metadata("/instance/service-accounts/default/token", "Access token (SENSITIVE!)")
 query_metadata("/instance/service-accounts/default/identity?audience=https://www.googleapis.com", "OIDC identity token")
@@ -100,6 +101,9 @@ print("="*80)
 
 query_metadata("/instance/tags", "Instance tags")
 query_metadata("/instance/attributes/", "Instance custom attributes")
+query_metadata("/instance/attributes/cluster-name", "GKE cluster name")
+query_metadata("/instance/attributes/cluster-location", "GKE cluster location")
+query_metadata("/instance/attributes/cluster-uid", "GKE cluster UID")
 
 # SCHEDULING
 print("\n" + "="*80)
