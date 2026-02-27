@@ -11,15 +11,10 @@ provider "scalr" {}
 
 
 resource "scalr_workspace" "cli-driven" {
-  name           = "created_${random_pet.name.id}"
+  name           = "default_name_ws"
   environment_id = var.env_id
 }
 
-resource "random_pet" "name" {
-  keepers = {
-    time = timestamp()
-  }
-}
 
 variable "env_id" {
   type    = string
