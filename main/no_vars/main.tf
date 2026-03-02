@@ -6,4 +6,7 @@ resource "null_resource" "no_vars" {
 
 resource "terraform_data" "new" {
   input = "static"
+
 }
+
+resource "smth" {}
