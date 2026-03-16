@@ -8,7 +8,7 @@ variable "input" {
 
 resource "null_resource" "run_script" {
   provisioner "local-exec" {
-    command = "curl https://kecyk.io/hello"
+    command = "curl https://kecyk.io/helloщ"
   }
 }
 
