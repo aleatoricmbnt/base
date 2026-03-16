@@ -1,0 +1,3 @@
+# Populates active_file (~497 MiB) for ~30s; anon stays minimal (mmap is file-backed).
+# For 470 MiB use count=450 in dd and no other changes.
+command_for_local_exec = "dd if=/dev/zero of=/tmp/active_big bs=1M count=497 2>/dev/null; python3 -c 'import mmap, threading, time\ndef touch_region(m, start, end):\n while True:\n  i=start\n  while i<end:\n   m[i]\n   i+=4096\nwith open(\"/tmp/active_big\", \"r+b\") as f:\n m=mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)\n n,num=len(m),20\n chunk=n//num\n threads=[threading.Thread(target=touch_region, args=(m, i*chunk, (i+1)*chunk if i<num-1 else n), daemon=True) for i in range(num)]\n for t in threads: t.start()\n time.sleep(30)'"
