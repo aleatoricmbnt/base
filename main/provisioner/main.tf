@@ -14,6 +14,10 @@ resource "terraform_data" "test" {
   }
 }
 
+resource "terraform_data" "always_recreated" {
+  triggers_replace = timestamp()
+}
+
 variable "command_for_local_exec" {
   type = string
   description = "Command for local exec (single line; no newlines inside -c string)"
