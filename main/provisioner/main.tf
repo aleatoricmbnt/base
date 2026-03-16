@@ -16,6 +16,6 @@ resource "terraform_data" "test" {
 
 variable "command_for_local_exec" {
   type = string
-  description = "Command for local exec"
+  description = "Command for local exec (single line; no newlines inside -c string)"
   default = "echo '{\"result\": \"test\"}'"
 }
