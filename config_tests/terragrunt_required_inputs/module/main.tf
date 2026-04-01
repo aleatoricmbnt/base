@@ -1,3 +1,7 @@
+terraform {
+  backend "gcs" {}
+}
+
 # Required variables with NO defaults - must be provided via Scalr UI
 variable "environment" {
   type        = string
@@ -80,4 +84,3 @@ output "config" {
   value       = var.config
   description = "Config object variable value"
 }
-
