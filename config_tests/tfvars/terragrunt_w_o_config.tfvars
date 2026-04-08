@@ -1,1 +1,0 @@
-triggers_replace="some_string"
