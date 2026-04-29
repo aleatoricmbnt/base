@@ -12,6 +12,10 @@ provider "vault" {
   token   = "fake-token"
 }
 
+data "vault_generic_secret" "test" {
+  path = "secret/billing-test"
+}
+
 resource "vault_generic_secret" "test" {
   path      = "secret/billing-test"
   data_json = jsonencode({ key = "value" })
